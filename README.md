@@ -1,12 +1,10 @@
-# Remix Application Template
+# Digitalcheck Tool Finder
 
-[![Pipeline](https://github.com/digitalservicebund/remix-application-template/actions/workflows/pipeline.yml/badge.svg)](https://github.com/digitalservicebund/remix-application-template/actions/workflows/pipeline.yml)
-[![Scan](https://github.com/digitalservicebund/remix-application-template/actions/workflows/scan.yml/badge.svg)](https://github.com/digitalservicebund/remix-application-template/actions/workflows/scan.yml)
-[![Secrets Check](https://github.com/digitalservicebund/remix-application-template/actions/workflows/secrets-check.yml/badge.svg)](https://github.com/digitalservicebund/remix-application-template/actions/workflows/secrets-check.yml)
+[![Pipeline](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml)
+[![Scan](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml)
+[![Secrets Check](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml)
 
-⚠️ **Be warned:** This template is currently work in progress and has not been tested in production yet.
-
-Bootstrap a [Remix](https://remix.run/docs) and TypeScript application with Continuous Delivery
+A simple web-application to enable anyone working on policy making in the german government to find the right tool for visualisation.
 
 ## Prerequisites
 
@@ -118,12 +116,12 @@ brew install adr-tools
 ## Contributing
 
 🇬🇧
-Everyone is welcome to contribute the development of the _remix-application-template_. You can contribute by opening pull request,
+Everyone is welcome to contribute the development of the _digitalcheck-tool-finder_. You can contribute by opening pull request,
 providing documentation or answering questions or giving feedback. Please always follow the guidelines and our
 [Code of Conduct](CODE_OF_CONDUCT.md).
 
 🇩🇪  
-Jede:r ist herzlich eingeladen, die Entwicklung der _remix-application-template_ mitzugestalten. Du kannst einen Beitrag leisten,
+Jede:r ist herzlich eingeladen, die Entwicklung der _digitalcheck-tool-finder_ mitzugestalten. Du kannst einen Beitrag leisten,
 indem du Pull-Requests eröffnest, die Dokumentation erweiterst, Fragen beantwortest oder Feedback gibst.
 Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUCT_DE.md).
 

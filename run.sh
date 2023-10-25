@@ -24,7 +24,7 @@ _user() {
 }
 
 _find_placeholder_strings() {
-  grep -rlZ 'remix-application-template' --exclude-dir=.git --exclude-dir=node_modules --exclude=run.sh .
+  grep -rlZ 'digitalcheck-tool-finder' --exclude-dir=.git --exclude-dir=node_modules --exclude=run.sh .
 }
 
 _setup_repo() {
@@ -36,7 +36,7 @@ _setup_repo() {
     if [ -z "$newname" ]; then
       newname=$defaultname
     fi
-    _find_placeholder_strings | xargs sed -i '' 's/remix-application-template/'"$newname"'/g'
+    _find_placeholder_strings | xargs sed -i '' 's/digitalcheck-tool-finder/'"$newname"'/g'
     _info "Renamed, please commit the changes!"
   fi
 }
