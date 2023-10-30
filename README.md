@@ -92,6 +92,7 @@ The project uses [ESLint](https://eslint.org/docs/latest/) for linting and [Pret
 Build and run the app in production mode:
 
 ```sh
+npm run build
 npm start
 ```
 

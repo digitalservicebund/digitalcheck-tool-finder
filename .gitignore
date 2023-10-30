@@ -2,6 +2,7 @@
 /.cache
 /build
 /public/build
+/static
 
 # Logs
 logs
