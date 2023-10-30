@@ -68,8 +68,7 @@ jobs:
       - name: Start server and generate static page
         run: |
           npm start &
-          sleep 10 &&
-          npm run build-static
+          sleep 30 && npm run build-static
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
