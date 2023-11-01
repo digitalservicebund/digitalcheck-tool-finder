@@ -21,6 +21,7 @@ concurrency:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
+  NODE_ENV: production
 
 jobs:
   build:
