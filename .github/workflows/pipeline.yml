@@ -48,8 +48,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Build
-        run: npm run build
       - name: Check format
         run: npm run format:check
       - name: Lint
@@ -66,9 +64,10 @@ jobs:
         with:
           name: playwright-test-results
           path: test-results
-      - name: Start server and generate static page
+      - name: Build
+        run: npm run build
+      - name: Generate static page
         run: |
-          npm run build
           npm start &
           sleep 10 &&
           npm run build-static
