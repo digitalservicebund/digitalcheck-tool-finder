@@ -8,7 +8,7 @@
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
-    "build-static": "wget -r -nH -i static-urls.txt -P static",
+    "build-static": "wget -r -nH --convert-links -i static-urls.txt -P static",
     "serve-static": "serve static",
     "typecheck": "tsc",
     "test": "jest test",
