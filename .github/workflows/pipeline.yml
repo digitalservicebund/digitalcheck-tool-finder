@@ -49,11 +49,7 @@ jobs:
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build
-        run: |
-          echo "NODE_ENV: $NODE_ENV"
-          export NODE_ENV=production
-          echo "NODE_ENV: $NODE_ENV"
-          npm run build
+        run: npm run build
       - name: Check format
         run: npm run format:check
       - name: Lint
@@ -72,6 +68,7 @@ jobs:
           path: test-results
       - name: Start server and generate static page
         run: |
+          npm run build
           npm start &
           sleep 10 &&
           npm run build-static
