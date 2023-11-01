@@ -2,7 +2,8 @@
 /.cache
 /build
 /public/build
-/static
+/static/*
+!/static/.nojekyll
 
 # Logs
 logs
