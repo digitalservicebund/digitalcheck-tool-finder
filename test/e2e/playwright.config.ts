@@ -1,6 +1,7 @@
 import { devices, PlaywrightTestConfig } from "@playwright/test";
 
-const port = process.env.VITE_PORT || 4173; // Vite's default port when running `vite preview`
+const port = parseInt(process.env.VITE_PORT ?? "4173"); // Vite's default port when running `vite preview`
+const timeout = parseInt(process.env.WAIT_ON_TIMEOUT ?? `${20 * 1000}`);
 
 const config: PlaywrightTestConfig = {
   testDir: ".",
@@ -28,8 +29,8 @@ const config: PlaywrightTestConfig = {
   ],
   webServer: {
     command: `npm start -- --port ${port}`,
-    port: port,
-    timeout: parseInt(process.env.WAIT_ON_TIMEOUT) || 20 * 1000,
+    port,
+    timeout,
   },
 };
 

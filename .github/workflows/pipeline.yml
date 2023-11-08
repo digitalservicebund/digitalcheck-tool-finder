@@ -41,7 +41,7 @@ jobs:
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Check build
+      - name: Build
         run: npm run build
 
       - name: Check format
