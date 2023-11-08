@@ -1,6 +1,6 @@
 name: QualityChecks
 on:
-  #  workflow_call:
+  workflow_call:
   #    secrets:
   #      SONAR_TOKEN:
   #        required: true
