@@ -1,9 +1,5 @@
-# Remix
-/.cache
-/build
-/public/build
-/static/*
-!/static/.nojekyll
+# Vite
+dist
 
 # Logs
 logs

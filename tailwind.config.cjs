@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("@digitalservice4germany/style-dictionary/tailwind")],
+  plugins: [require("@digitalservice4germany/angie")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: "BundesSansWeb",
+      },
+    },
   },
   corePlugins: {
     container: false,
   },
-  plugins: [require("@digitalservice4germany/angie")],
 };

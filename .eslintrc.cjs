@@ -7,8 +7,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "@remix-run/eslint-config",
-    "@remix-run/eslint-config/node",
   ],
   overrides: [
     {
