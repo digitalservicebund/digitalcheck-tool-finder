@@ -47,6 +47,9 @@ jobs:
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: Check format
         run: npm run format:check
 
@@ -78,9 +81,6 @@ jobs:
           # Error: http://localhost:4173 is already used ...
           # See https://github.com/digitalservicebund/typescript-vite-application-template/actions/runs/3486985178/jobs/5834089375
           VITE_PORT: 4183
-
-      - name: Build
-        run: npm run build
 
       - name: Setup Pages
         id: pages
