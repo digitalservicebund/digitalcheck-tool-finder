@@ -1,9 +1,11 @@
 name: QualityChecks
 on:
-  workflow_call:
-    secrets:
-#      SONAR_TOKEN:
-#        required: true
+  #  workflow_call:
+  #    secrets:
+  #      SONAR_TOKEN:
+  #        required: true
+  # Allow to run this workflow manually
+  workflow_dispatch:
 
 jobs:
   code-quality:
