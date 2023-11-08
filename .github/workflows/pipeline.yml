@@ -11,6 +11,12 @@ on:
 env:
   IMAGE_NAME: ${{ github.repository }}
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,9 +46,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
-
-      - name: Build
-        run: npm run build
 
       - name: Check format
         run: npm run format:check
@@ -75,6 +78,18 @@ jobs:
           # Error: http://localhost:4173 is already used ...
           # See https://github.com/digitalservicebund/typescript-vite-application-template/actions/runs/3486985178/jobs/5834089375
           VITE_PORT: 4183
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
 
       - name: Send status to Slack
         # Third-party action, pin to commit SHA!
@@ -172,6 +187,40 @@ jobs:
         with:
           type: ${{ job.status }}
           job_name: "Vulnerability scan :point_right:"
+          mention: "here"
+          mention_if: "failure"
+          commit: true
+          url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - build
+      - audit-licenses
+      - vulnerability-scan
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+      - name: Send status to Slack
+        # Third-party action, pin to commit SHA!
+        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+        uses: lazy-actions/slatify@c4847b8c84e3e8076fd3c42cc00517a10426ed65 # == v3.0.0
+        if: ${{ failure() && env.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          type: ${{ job.status }}
+          job_name: "Deploy to GitHub Pages :point_right:"
           mention: "here"
           mention_if: "failure"
           commit: true
