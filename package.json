@@ -10,16 +10,16 @@
     "start": "remix-serve ./build/index.js",
     "build-static": "wget -r -nH --convert-links -i static-urls.txt -P static",
     "serve-static": "serve static",
-    "typecheck": "tsc",
     "test": "jest test",
     "test:e2e": "playwright test",
+    "typecheck": "tsc",
     "lint:check": "eslint --ext .js,.ts --ignore-path .gitignore .",
     "lint:fix": "npm run lint:check -- --fix",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write --ignore-unknown .",
     "style:check": "npm run format:check && npm run lint:check",
     "style:fix": "npm run format:fix && npm run lint:fix",
-    "audit:licences": "license-checker --production --excludePrivatePackages --onlyAllow ''"
+    "audit:licences": "license-checker --production --excludePrivatePackages --onlyAllow '' --summary"
   },
   "dependencies": {
     "@digitalservice4germany/angie": "^1.1.0",

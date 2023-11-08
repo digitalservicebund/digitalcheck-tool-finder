@@ -12,24 +12,21 @@ permissions:
   contents: read
   packages: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 env:
   IMAGE_NAME: ${{ github.repository }}
   REGISTRY: ghcr.io
 
 jobs:
-  build:
+  code-quality:
+    uses: ./.github/workflows/quality-checks.yml
+  #    secrets:
+  #      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: validate github workflow files to have pinned versions
-        uses: digitalservicebund/github-actions/github-actions-linter@5009471245d84903ea1af84104eb1908f8e2b2a2
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -47,10 +44,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Check format
-        run: npm run format:check
-      - name: Lint
-        run: npm run lint:check
       - name: Run tests
         run: npm test
       - name: Install E2E test dependencies
@@ -63,31 +56,6 @@ jobs:
         with:
           name: playwright-test-results
           path: test-results
-      - name: Build
-        run: npm run build
-
-      - name: Build an image from Dockerfile
-        run: |
-          docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} . --build-arg COMMIT_SHA=${{ github.sha }}
-
-      - name: Create SBOM
-        uses: digitalservicebund/github-actions/create-sbom@24b9a8a55f22d21cebeae777aede3ae1b2fd3889
-        with:
-          image_name: ${{ env.IMAGE_NAME }}:${{ github.sha }}
-
-      - name: Login to container registry
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push image
-        run: |
-          docker tag ${{ github.repository }}:${{ github.sha }} ghcr.io/${{ github.repository }}
-          docker tag ${{ github.repository }}:${{ github.sha }} ghcr.io/${{ github.repository }}:${{ github.sha }}
-          docker push --all-tags ghcr.io/${{ github.repository }}
-
       - name: Send status to Slack
         # Third-party action, pin to commit SHA!
         # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
@@ -97,7 +65,60 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           type: ${{ job.status }}
-          job_name: "Build :point_right:"
+          job_name: "Tests :point_right:"
+          mention: "here"
+          mention_if: "failure"
+          commit: true
+          url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  build-image:
+    runs-on: ubuntu-latest
+    needs: [tests]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Cache npm dependencies
+        id: cache-npm-deps
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        if: steps.cache-npm-deps.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Build an image from Dockerfile
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} . --build-arg COMMIT_SHA=${{ github.sha }}
+          docker save ${{ env.IMAGE_NAME }}:${{ github.sha }} > container.tar
+      - name: Create SBOM
+        uses: digitalservicebund/github-actions/create-sbom@24b9a8a55f22d21cebeae777aede3ae1b2fd3889
+        with:
+          image_name: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docker-image
+          path: container.tar
+      - name: Send status to Slack
+        # Third-party action, pin to commit SHA!
+        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+        uses: lazy-actions/slatify@c4847b8c84e3e8076fd3c42cc00517a10426ed65 # == v3.0.0
+        if: ${{ failure() && env.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          type: ${{ job.status }}
+          job_name: "Build Image :point_right:"
           mention: "here"
           mention_if: "failure"
           commit: true
@@ -109,16 +130,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: validate github workflow files to have pinned versions
-        uses: digitalservicebund/github-actions/github-actions-linter@5009471245d84903ea1af84104eb1908f8e2b2a2
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
           cache: npm
-
       - name: Cache npm dependencies
         id: cache-npm-deps
         uses: actions/cache@v3
@@ -128,14 +144,11 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
       - name: Install dependencies
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm install
-
       - name: Audit used licences
         run: npm run audit:licences
-
       - name: Send status to Slack
         # Third-party action, pin to commit SHA!
         # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
@@ -158,30 +171,23 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - name: validate github workflow files to have pinned versions
-        uses: digitalservicebund/github-actions/github-actions-linter@5009471245d84903ea1af84104eb1908f8e2b2a2
-
       - name: Run Trivy vulnerability scanner
-        # Third-party action, pin to commit SHA!
-        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
         uses: aquasecurity/trivy-action@2b6a709cf9c4025c5438138008beaddbb02086f0
         env:
           TRIVY_USERNAME: ${{ github.actor }}
           TRIVY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         with:
-          scan-type: "fs"
+          image-ref: "${{ env.IMAGE_NAME }}:${{ github.sha }}"
           skip-dirs: "node_modules" # See https://github.com/aquasecurity/trivy/issues/1283
           format: "sarif"
           output: "trivy-results.sarif"
           severity: "CRITICAL,HIGH"
           exit-code: "1" # Fail the build!
-
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@9885f86fab4879632b7e44514f19148225dfbdcd # == v2
         if: always() # Bypass non-zero exit code..
         with:
           sarif_file: "trivy-results.sarif"
-
       - name: Send status to Slack
         # Third-party action, pin to commit SHA!
         # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
@@ -192,6 +198,46 @@ jobs:
         with:
           type: ${{ job.status }}
           job_name: "Vulnerability scan :point_right:"
+          mention: "here"
+          mention_if: "failure"
+          commit: true
+          url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  push-image:
+    needs:
+      [code-quality, tests, build-image, audit-licenses, vulnerability-scan]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: write
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: docker-image
+      - name: Login to container registry
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push image
+        run: |
+          docker load < container.tar
+          docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push --all-tags ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Send status to Slack
+        # Third-party action, pin to commit SHA!
+        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+        uses: lazy-actions/slatify@c4847b8c84e3e8076fd3c42cc00517a10426ed65 # == v3.0.0
+        if: ${{ failure() && env.SLACK_WEBHOOK_URL }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          type: ${{ job.status }}
+          job_name: "Push Image :point_right:"
           mention: "here"
           mention_if: "failure"
           commit: true
