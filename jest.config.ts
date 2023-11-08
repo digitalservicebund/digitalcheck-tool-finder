@@ -6,8 +6,8 @@ const config: Config.InitialOptions = {
     "^.+\\.ts$": "ts-jest",
   },
   testEnvironment: "jsdom",
-  testPathIgnorePatterns: ["<rootDir>/tests/e2e"],
-  setupFilesAfterEnv: ["<rootDir>/tests/jest.setup.ts"],
+  testPathIgnorePatterns: ["<rootDir>/test/e2e", "<rootDir>/test/a11y"],
+  setupFilesAfterEnv: ["<rootDir>/test/jest.setup.ts"],
   collectCoverageFrom: ["src/**", "!**/*.d.ts"],
 };
 

@@ -7,9 +7,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "@remix-run/eslint-config",
-    "@remix-run/eslint-config/node",
+    "plugin:react-hooks/recommended",
   ],
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
   overrides: [
     {
       env: {
@@ -26,8 +26,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react"],
-  rules: {},
+  plugins: ["@typescript-eslint", "react", "react-refresh"],
+  rules: {
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
+  },
   settings: {
     react: {
       version: "detect", // React version. "detect" automatically picks the version you have installed.

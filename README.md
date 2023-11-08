@@ -73,6 +73,7 @@ The application has
 - Run unit tests: `npm test`
 - Run unit tests with watcher: `npm test -- --watch`
 - Run E2E tests: `npm run test:e2e`
+- Run accessibility tests: `npm run test:a11y`
 
 ### Code quality checks (linting & formatting)
 
