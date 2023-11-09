@@ -24,8 +24,11 @@
   "dependencies": {
     "@digitalservice4germany/angie": "^1.1.0",
     "@digitalservice4germany/style-dictionary": "^2.0.0",
+    "classnames": "^2.3.2",
+    "marked": "^9.1.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@playwright-testing-library/test": "^4.5.0",

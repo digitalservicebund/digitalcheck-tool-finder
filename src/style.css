@@ -3,3 +3,153 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+li,
+p {
+  max-width: 70ch;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+html {
+  /* keep 16px, don't change! (e.g. angie library depends on it) */
+  font-size: 16px;
+}
+
+body {
+  font-family: "BundesSansWeb", "Calibri", "Verdana", "Arial", "Helvetica",
+    sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: currentcolor;
+}
+
+.ds-textarea.has-error {
+  box-shadow: inset 0 0 0 2px #b0243f;
+  background-color: #f9e5ec;
+}
+
+.ds-radio {
+  background: transparent; /* for old Safari */
+}
+
+/* Tailwind's container core plugin is disabled,
+ * because its breakpoint-based nature does not fit our needs */
+.container {
+  @apply mx-auto;
+  max-width: 61rem;
+  padding: 2.5rem 1rem 3rem 1rem;
+  padding-left: clamp(
+    1rem,
+    5vw,
+    3rem
+  ); /* ignored when clamp is not available */
+  padding-right: clamp(
+    1rem,
+    5vw,
+    3rem
+  ); /* ignored when clamp is not available */
+}
+
+/* There is a specific design request to remove the margin above lists and below small headlines */
+.rich-text ul,
+.rich-text .ds-label-01-bold + p {
+  @apply mt-0;
+}
+
+.text-link {
+  /* IE 11 and others that don't support text-decoration-line */
+  text-decoration: underline;
+  @apply text-blue-800;
+  @apply underline;
+  @apply underline-offset-4;
+  @apply decoration-1;
+}
+
+/* Only apply hover effect on devices that support it, see https://stackoverflow.com/a/28058919 */
+@media (hover: hover) {
+  .text-link:hover {
+    @apply decoration-[3px];
+  }
+}
+
+.text-link:visited {
+  @apply text-[#4c2c92];
+}
+
+/* browsers without :focus-visible support */
+.text-link:focus {
+  @apply outline;
+  @apply outline-2;
+  @apply no-underline;
+  @apply outline-offset-1;
+  @apply text-blue-800;
+  @apply outline-blue-800;
+}
+
+/* reset :focus styles for browsers with :focus-visible support */
+.text-link:not(:focus-visible):focus {
+  @apply outline-none;
+  @apply underline;
+}
+
+/* ignored by browsers without :focus-visible support */
+.text-link:focus-visible {
+  @apply outline;
+  @apply outline-2;
+  @apply no-underline;
+  @apply outline-offset-1;
+  @apply !text-blue-800;
+  @apply outline-blue-800;
+}
+
+.text-link:active {
+  @apply text-black;
+}
+
+.increase-tap-area {
+  @apply relative;
+  @apply inline-block;
+}
+
+.increase-tap-area::before {
+  content: "";
+  @apply absolute;
+  top: -0.75rem;
+  bottom: -0.75rem;
+  left: -0.75rem;
+  right: -0.75rem;
+}
+
+@media (max-width: 499px) {
+  /* project-specific overwriting of angie styling */
+  .ds-heading-01-reg {
+    font-size: 2.25rem;
+    line-height: 1.2222;
+  }
+}
+
+.progress-bar::-webkit-progress-bar {
+  @apply bg-blue-500;
+  @apply h-4;
+  @apply border-0;
+}
+
+.progress-bar::-webkit-progress-value {
+  @apply bg-blue-800;
+}
+
+.progress-bar::-moz-progress-bar {
+  @apply bg-blue-800;
+}
