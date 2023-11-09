@@ -1,8 +1,8 @@
 import { z } from "zod";
-import Heading, { HeadingPropsSchema } from "./tmp/Heading";
+import Heading, { HeadingPropsSchema } from "./Heading";
 import RichText, { RichTextPropsSchema } from "./RichText";
-import Button, { ButtonPropsSchema } from "./tmp/Button";
-import ButtonContainer from "./tmp/ButtonContainer";
+import Button, { ButtonPropsSchema } from "./Button";
+import ButtonContainer from "./ButtonContainer";
 
 export const BoxPropsSchema = z.object({
   identifier: z.string().optional(),
