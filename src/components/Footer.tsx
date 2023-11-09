@@ -1,8 +1,8 @@
 import { z } from "zod";
 import type { Renderer } from "marked";
 import Container from "./Container";
-import Image, { ImagePropsSchema } from "./Image";
-import RichText, { RichTextPropsSchema } from "./RichText";
+import Image from "./Image";
+import RichText from "./RichText";
 import bmiLogo from "../../public/img/bmi-logo.png";
 
 const LinkPropsSchema = z.object({
@@ -13,33 +13,25 @@ const LinkPropsSchema = z.object({
 
 type LinkProps = z.infer<typeof LinkPropsSchema>;
 
-export const FooterPropsSchema = z.object({
-  image: ImagePropsSchema.optional(),
-  paragraphs: z.array(RichTextPropsSchema),
-  links: z.array(LinkPropsSchema),
-});
+const paragraphs = [
+  {
+    markdown:
+      "Ein Online Dienst der [DigitalService GmbH des Bundes](https://digitalservice.bund.de/)",
+  },
+  {
+    markdown:
+      "Im Auftrag des [Bundesministerium des Innern und für Heimat](https://www.bmi.bund.de/)",
+  },
+];
+const links = [
+  { url: "#", text: "Impressum" },
+  { url: "#", text: "Datenschutzbestimmung" },
+  { url: "#", text: "Cookie-Einstellungen" },
+  { url: "#", text: "Barrierefreiheit" },
+  { url: "#", text: "Open Source Code" },
+];
 
-type FooterProps = z.infer<typeof FooterPropsSchema>;
-
-export default function Footer({
-  paragraphs = [
-    {
-      markdown:
-        "Ein Online Dienst der [DigitalService GmbH des Bundes](https://digitalservice.bund.de/)",
-    },
-    {
-      markdown:
-        "Im Auftrag des [Bundesministerium des Innern und für Heimat](https://www.bmi.bund.de/)",
-    },
-  ],
-  links = [
-    { url: "#", text: "Impressum" },
-    { url: "#", text: "Datenschutzbestimmung" },
-    { url: "#", text: "Cookie-Einstellungen" },
-    { url: "#", text: "Barrierefreiheit" },
-    { url: "#", text: "Open Source Code" },
-  ],
-}: FooterProps) {
+export default function Footer() {
   const linksMiddleIndex = Math.ceil(links.length / 2);
   const linksFirstColumn: typeof links = links.slice(0, linksMiddleIndex);
   const linksSecondColumn: typeof links = links.slice(linksMiddleIndex);
