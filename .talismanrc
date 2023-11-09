@@ -15,6 +15,10 @@ fileignoreconfig:
   checksum: b1743150cdd537be3a66f5308f887d130f0f320ab21628b63713808090a84e3f
 - filename: src/vite-env.d.ts
   checksum: 9c2ae9b11db645629df3b350633cdc6fac8a281a806f39c9c4b817373de19fa2
+- filename: src/components/Footer.tsx
+  checksum: b7bc23f30510f023c6d94185820ca2afab89c103838ed1dcba01b4b3c0f2a9c6
+- filename: src/components/Box.tsx
+  checksum: 6e095f5da564deaf9dc79ec60602c3702375336a25faf36fe4acb3d28fff05bd
 version: ""
 scopeconfig:
   - scope: node
