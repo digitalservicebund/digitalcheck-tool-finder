@@ -9,7 +9,7 @@ test.describe("basic example test", () => {
   test("shows hello message", async ({ page }) => {
     await page.goto("/");
     await expect(
-      page.locator("text=Digitalcheck Werkzeugfinder"),
+      page.locator("text=Werkzeugfinder für Visualisierungen"),
     ).toBeVisible();
   });
 });
