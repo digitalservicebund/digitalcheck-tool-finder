@@ -88,23 +88,13 @@ The project uses [ESLint](https://eslint.org/docs/latest/) for linting and [Pret
 - Check style (formatting & linting): `npm run style:check`
 - Autofix style issues (formatting & linting): `npm run style:fix`
 
-## Deployment
+## Build
 
-Build and run the app in production mode:
+Build the app for production:
 
 ```sh
 npm run build
-npm start
 ```
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
 
 ## Architecture Decision Records
 
