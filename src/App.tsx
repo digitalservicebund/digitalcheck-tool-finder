@@ -13,7 +13,7 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Routes>
-          <Route path={"/"} element={<Home />} />
+          <Route path={""} element={<Home />} />
         </Routes>
         <FeedbackBanner />
       </main>
