@@ -1,9 +1,12 @@
 import Container from "../components/Container";
 import Background from "../components/Background";
 import Header from "../components/Header";
+import Box from "../components/Box";
+import Button from "../components/Button";
+import ButtonContainer from "../components/ButtonContainer";
 import RichText from "../components/RichText";
 
-function Home() {
+function Quiz() {
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
@@ -29,8 +32,29 @@ function Home() {
           />
         </Container>
       </Background>
+      <Container paddingTop="48" paddingBottom="48">
+        <Box
+          heading={{
+            tagName: "h2",
+            look: "ds-heading-02-reg",
+            text: "In welchem Ressort arbeiten Sie?",
+          }}
+          content={{
+            markdown: `...`,
+          }}
+        ></Box>
+      </Container>
+      <Container paddingTop="0" paddingBottom="48">
+        <ButtonContainer>
+          <Button
+            text={"Werkzeug suchen"}
+            size={"large"}
+            href={"werkzeugfinder/ergebnis"}
+          />
+        </ButtonContainer>
+      </Container>
     </>
   );
 }
 
-export default Home;
+export default Quiz;
