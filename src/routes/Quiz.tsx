@@ -6,6 +6,8 @@ import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import RichText from "../components/RichText";
 
+import { PATH_RESULT } from "./";
+
 function Quiz() {
   return (
     <>
@@ -46,11 +48,7 @@ function Quiz() {
       </Container>
       <Container paddingTop="0" paddingBottom="48">
         <ButtonContainer>
-          <Button
-            text={"Werkzeug suchen"}
-            size={"large"}
-            href={"werkzeugfinder/ergebnis"}
-          />
+          <Button text={"Werkzeug suchen"} size={"large"} href={PATH_RESULT} />
         </ButtonContainer>
       </Container>
     </>

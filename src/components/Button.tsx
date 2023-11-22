@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { cloneElement, type ReactElement } from "react";
 import { z } from "zod";
+import { Link } from "react-router-dom";
 
 export const ButtonPropsSchema = z.object({
   text: z.string().optional(),
@@ -66,15 +67,15 @@ function Button({
 
   if (href) {
     return (
-      <a
+      <Link
         {...(props as ButtonLinkProps)}
-        href={href}
+        to={href}
         className={buttonClasses}
         role="button"
         onKeyDown={onKeyDown}
       >
         {iconLeft} {children ? childrenSpan : textSpan} {iconRight}
-      </a>
+      </Link>
     );
   }
 

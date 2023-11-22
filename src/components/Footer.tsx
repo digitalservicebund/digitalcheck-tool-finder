@@ -4,6 +4,7 @@ import Container from "./Container";
 import Image from "./Image";
 import RichText from "./RichText";
 import bmiLogo from "../../public/img/bmi-logo.png";
+import { Link } from "react-router-dom";
 
 const LinkPropsSchema = z.object({
   url: z.string(),
@@ -38,14 +39,14 @@ export default function Footer() {
 
   const renderLink = (link: LinkProps) => (
     <li key={link.url} className="leading-snug">
-      <a
-        href={link.url}
+      <Link
+        to={link.url}
         className="text-link increase-tap-area"
         target={link.openInNewTab ? "_blank" : undefined}
         rel={link.openInNewTab ? "noreferrer" : undefined}
       >
         {link.text}
-      </a>
+      </Link>
     </li>
   );
 

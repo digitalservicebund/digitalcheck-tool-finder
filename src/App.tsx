@@ -9,6 +9,8 @@ import Info from "./routes/Info";
 import Quiz from "./routes/Quiz";
 import Result from "./routes/Result";
 
+import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
+
 function App() {
   return (
     <body className="flex flex-col min-h-screen">
@@ -16,16 +18,16 @@ function App() {
       <PageHeader />
       <Breadcrumbs
         breadcrumbs={[
-          { url: "/", title: "Visualisieren im Digitalcheck" },
-          { url: "/", title: "Werkzeugfinder für Visualisierungen" },
-          { url: "/", title: "Empfohlene Werkzeuge" },
+          { url: PATH_INFO, title: "Visualisieren im Digitalcheck" },
+          { url: PATH_QUIZ, title: "Werkzeugfinder für Visualisierungen" },
+          { url: PATH_RESULT, title: "Empfohlene Werkzeuge" },
         ]}
       />
       <main className="flex-grow">
         <Routes>
-          <Route path={"/"} element={<Info />} />
-          <Route path={"/werkzeugfinder"} element={<Quiz />} />
-          <Route path={"/werkzeugfinder/ergebnis"} element={<Result />} />
+          <Route path={PATH_INFO} element={<Info />} />
+          <Route path={PATH_QUIZ} element={<Quiz />} />
+          <Route path={PATH_RESULT} element={<Result />} />
         </Routes>
         <FeedbackBanner />
       </main>

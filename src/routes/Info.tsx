@@ -3,6 +3,8 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import Box from "../components/Box";
 
+import { PATH_QUIZ } from "./";
+
 function Info() {
   return (
     <>
@@ -40,7 +42,7 @@ function Info() {
           buttons={[
             {
               text: "Werkzeug finden",
-              href: "werkzeugfinder",
+              href: PATH_QUIZ,
               size: "large",
             },
           ]}
