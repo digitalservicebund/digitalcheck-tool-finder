@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export type Breadcrumb = {
   url: string;
@@ -13,6 +14,14 @@ export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const validBreadcrumbs = breadcrumbs?.filter(
     (breadcrumb) => breadcrumb.title !== undefined,
   );
+  const location = useLocation();
+  const indexOfCurrentPageBreadcrump = validBreadcrumbs.findIndex(
+    (breadcrump) => breadcrump.url === location.pathname,
+  );
+  if (indexOfCurrentPageBreadcrump == -1) {
+    return <></>;
+  }
+  validBreadcrumbs.splice(indexOfCurrentPageBreadcrump + 1);
 
   return (
     validBreadcrumbs.length > 0 && (
