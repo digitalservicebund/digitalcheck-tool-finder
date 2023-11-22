@@ -10,9 +10,6 @@ import Quiz from "./routes/Quiz";
 import Result from "./routes/Result";
 
 function App() {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
-
   return (
     <body className="flex flex-col min-h-screen">
       {/*<CookieBanner hasTrackingConsent={hasTrackingConsent} content={cookieBannerContent} ip={ip} />*/}
@@ -25,7 +22,7 @@ function App() {
         ]}
       />
       <main className="flex-grow">
-        <Routes basename={basename}>
+        <Routes>
           <Route path={""} element={<Info />} />
           <Route path={"werkzeugfinder"} element={<Quiz />} />
           <Route path={"werkzeugfinder/ergebnis"} element={<Result />} />
