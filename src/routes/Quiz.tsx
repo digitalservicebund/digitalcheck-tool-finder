@@ -1,14 +1,57 @@
 import Container from "../components/Container";
 import Background from "../components/Background";
 import Header from "../components/Header";
-import Box from "../components/Box";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import RichText from "../components/RichText";
+import { OptionsProps } from "../components/Select";
 
 import { PATH_RESULT } from "./";
+import Question from "../components/Question";
 
 function Quiz() {
+  const ressorts: string[] = [
+    "BMWK",
+    "BMF",
+    "BMI",
+    "AA",
+    "BMJ",
+    "BMAS",
+    "BMVg",
+    "BMEL",
+    "BMFSFJ",
+    "BMG",
+    "BMDV",
+    "BMUV",
+    "BMBF",
+    "BMZ",
+    "BMWSB",
+  ];
+  const ressortOptions: OptionsProps = ressorts.map((element) => {
+    return {
+      value: element,
+      text: element,
+    };
+  });
+  const objectOptions: OptionsProps = [
+    { value: "interaction", text: "Interaktion von Akteuren" },
+    { value: "dataflows", text: "Datenflüsse" },
+    { value: "decision", text: "Entscheidungslogiken" },
+    { value: "process", text: "Prozesse (zeitliche Abfolgen)" },
+    { value: "unknown", text: "Weiß ich nicht" },
+    { value: "other", text: "Anderes" },
+  ];
+  const reasonOptions: OptionsProps = [
+    { value: "understanding", text: "Gemeinsames Verständnis aufbauen" },
+    { value: "ideas", text: "Ideen austauschen" },
+    { value: "dependencies", text: "Abhängigkeiten strukturieren" },
+    { value: "logic", text: "Logikbrüche erkennen" },
+    { value: "digital", text: "Digitaltauglichkeit erkennen" },
+    { value: "media", text: "Medienbrüche erkennen" },
+    { value: "unknown", text: "Weiß ich nicht" },
+    { value: "other", text: "Anderes" },
+  ];
+
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
@@ -34,19 +77,35 @@ function Quiz() {
           />
         </Container>
       </Background>
+      <Question
+        heading={"In welchem Ressort arbeiten Sie?"}
+        description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
+        select={{
+          name: "ressort",
+          label: "Ressort",
+          options: ressortOptions,
+        }}
+      />
+      <Question
+        heading={"Was möchten Sie darstellen?"}
+        description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
+        auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
+        select={{
+          name: "object",
+          label: "Objekt der Darstellung",
+          options: objectOptions,
+        }}
+      />
+      <Question
+        heading={"Was möchten Sie mit der Visualisierung erreichen?"}
+        description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
+        select={{
+          name: "reason",
+          label: "Grund der Visualisierung",
+          options: reasonOptions,
+        }}
+      />
       <Container paddingTop="48" paddingBottom="48">
-        <Box
-          heading={{
-            tagName: "h2",
-            look: "ds-heading-02-reg",
-            text: "In welchem Ressort arbeiten Sie?",
-          }}
-          content={{
-            markdown: `...`,
-          }}
-        ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
         <ButtonContainer>
           <Button text={"Werkzeug suchen"} size={"large"} href={PATH_RESULT} />
         </ButtonContainer>
