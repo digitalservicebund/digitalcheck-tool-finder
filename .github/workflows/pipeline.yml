@@ -105,7 +105,6 @@ jobs:
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-
   audit-licenses:
     runs-on: ubuntu-latest
     steps:
@@ -141,7 +140,6 @@ jobs:
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-
   vulnerability-scan:
     runs-on: ubuntu-latest
     permissions:
@@ -172,7 +170,6 @@ jobs:
         if: ${{ failure() }}
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
 
   deploy:
     environment:
