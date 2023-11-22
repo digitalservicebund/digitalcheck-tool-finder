@@ -5,6 +5,13 @@ import Image from "./Image";
 import RichText from "./RichText";
 import bmiLogo from "../../public/img/bmi-logo.png";
 import { Link } from "react-router-dom";
+import {
+  PATH_IMPRINT,
+  PATH_PRIVACY,
+  PATH_COOKIE,
+  PATH_A11Y,
+  PATH_OSS,
+} from "../routes";
 
 const LinkPropsSchema = z.object({
   url: z.string(),
@@ -25,11 +32,11 @@ const paragraphs = [
   },
 ];
 const links = [
-  { url: "#", text: "Impressum" },
-  { url: "#", text: "Datenschutzbestimmung" },
-  { url: "#", text: "Cookie-Einstellungen" },
-  { url: "#", text: "Barrierefreiheit" },
-  { url: "#", text: "Open Source Code" },
+  { url: PATH_IMPRINT, text: "Impressum" },
+  { url: PATH_PRIVACY, text: "Datenschutzbestimmung" },
+  { url: PATH_COOKIE, text: "Cookie-Einstellungen" },
+  { url: PATH_A11Y, text: "Barrierefreiheit" },
+  { url: PATH_OSS, text: "Open Source Code" },
 ];
 
 export default function Footer() {

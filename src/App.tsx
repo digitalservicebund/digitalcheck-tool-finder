@@ -13,7 +13,7 @@ import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
 
 function App() {
   return (
-    <body className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       {/*<CookieBanner hasTrackingConsent={hasTrackingConsent} content={cookieBannerContent} ip={ip} />*/}
       <PageHeader />
       <Breadcrumbs
@@ -32,7 +32,7 @@ function App() {
         <FeedbackBanner />
       </main>
       <Footer />
-    </body>
+    </div>
   );
 }
 
