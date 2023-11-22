@@ -10,7 +10,6 @@ on:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
-  VITE_PATH_BASENAME: ${{ vars.VITE_PATH_BASENAME }}
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -48,7 +47,7 @@ jobs:
         if: steps.cache-npm-deps.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Build
+      - name: Build for tests
         run: npm run build
 
       - name: Check format
@@ -85,6 +84,11 @@ jobs:
           # Error: http://localhost:4173 is already used ...
           # See https://github.com/digitalservicebund/typescript-vite-application-template/actions/runs/3486985178/jobs/5834089375
           VITE_PORT: 4183
+
+      - name: Build for production
+        env:
+          VITE_PATH_BASENAME: ${{ vars.VITE_PATH_BASENAME }}
+        run: npm run build
 
       - name: Setup Pages
         id: pages
