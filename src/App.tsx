@@ -23,9 +23,9 @@ function App() {
       />
       <main className="flex-grow">
         <Routes>
-          <Route path={""} element={<Info />} />
-          <Route path={"werkzeugfinder"} element={<Quiz />} />
-          <Route path={"werkzeugfinder/ergebnis"} element={<Result />} />
+          <Route path={"/"} element={<Info />} />
+          <Route path={"/werkzeugfinder"} element={<Quiz />} />
+          <Route path={"/werkzeugfinder/ergebnis"} element={<Result />} />
         </Routes>
         <FeedbackBanner />
       </main>
