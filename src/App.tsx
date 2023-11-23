@@ -10,8 +10,11 @@ import Quiz from "./routes/Quiz";
 import Result from "./routes/Result";
 
 import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
+import { useState } from "react";
 
 function App() {
+  const [ressort, setRessort] = useState("");
+
   return (
     <div className="flex flex-col min-h-screen">
       {/*<CookieBanner hasTrackingConsent={hasTrackingConsent} content={cookieBannerContent} ip={ip} />*/}
@@ -26,8 +29,11 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path={PATH_INFO} element={<Info />} />
-          <Route path={PATH_QUIZ} element={<Quiz />} />
-          <Route path={PATH_RESULT} element={<Result />} />
+          <Route
+            path={PATH_QUIZ}
+            element={<Quiz ressort={ressort} setRessort={setRessort} />}
+          />
+          <Route path={PATH_RESULT} element={<Result ressort={ressort} />} />
         </Routes>
         <FeedbackBanner />
       </main>

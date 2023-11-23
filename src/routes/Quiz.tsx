@@ -8,8 +8,17 @@ import { OptionsProps } from "../components/Select";
 
 import { PATH_RESULT } from "./";
 import Question from "../components/Question";
+import { z } from "zod";
+import { Dispatch, SetStateAction } from "react";
 
-function Quiz() {
+export const QuizPropsSchema = z.object({
+  ressort: z.string(),
+  setRessort: z.custom<Dispatch<SetStateAction<string>>>(),
+});
+
+type QuizProps = z.infer<typeof QuizPropsSchema>;
+
+function Quiz({ ressort, setRessort }: QuizProps) {
   const ressorts: string[] = [
     "BMWK",
     "BMF",
@@ -83,6 +92,8 @@ function Quiz() {
         select={{
           name: "ressort",
           label: "Ressort",
+          value: ressort,
+          onChange: setRessort,
           options: ressortOptions,
         }}
       />
