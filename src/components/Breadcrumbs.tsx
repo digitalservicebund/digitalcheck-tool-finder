@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { z } from "zod";
 
-export type Breadcrumb = {
-  url: string;
-  title?: string;
-};
+export const BreadcrumbPropsSchema = z.object({
+  url: z.string(),
+  title: z.string(),
+});
 
-export type BreadcrumbsProps = {
-  breadcrumbs: Breadcrumb[];
-};
+export const BreadcrumbsPropsSchema = z.object({
+  breadcrumbs: z.array(BreadcrumbPropsSchema),
+});
+
+export type BreadcrumbsProps = z.infer<typeof BreadcrumbsPropsSchema>;
 
 export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const validBreadcrumbs = breadcrumbs?.filter(
     (breadcrumb) => breadcrumb.title !== undefined,
   );
   const location = useLocation();
-  const indexOfCurrentPageBreadcrump = validBreadcrumbs.findIndex(
-    (breadcrump) => breadcrump.url === location.pathname,
+  const indexOfCurrentPageBreadcrumb = validBreadcrumbs.findIndex(
+    (breadcrumb) => breadcrumb.url === location.pathname,
   );
-  if (indexOfCurrentPageBreadcrump == -1) {
+  if (indexOfCurrentPageBreadcrumb == -1) {
     return <></>;
   }
-  validBreadcrumbs.splice(indexOfCurrentPageBreadcrump + 1);
+  validBreadcrumbs.splice(indexOfCurrentPageBreadcrumb + 1);
 
   return (
     validBreadcrumbs.length > 0 && (
