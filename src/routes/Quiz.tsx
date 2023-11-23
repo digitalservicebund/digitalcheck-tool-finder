@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import RichText from "../components/RichText";
-import { OptionsProps } from "../components/Select";
 
 import { PATH_RESULT } from "./";
 import Question from "../components/Question";
@@ -14,11 +13,31 @@ import { Dispatch, SetStateAction } from "react";
 export const QuizPropsSchema = z.object({
   ressort: z.string(),
   setRessort: z.custom<Dispatch<SetStateAction<string>>>(),
+  object: z.string(),
+  setObject: z.custom<Dispatch<SetStateAction<string>>>(),
+  reason: z.string(),
+  setReason: z.custom<Dispatch<SetStateAction<string>>>(),
 });
 
-type QuizProps = z.infer<typeof QuizPropsSchema>;
+export type QuizProps = z.infer<typeof QuizPropsSchema>;
 
-function Quiz({ ressort, setRessort }: QuizProps) {
+function mapToOptions(ressorts: string[]) {
+  return ressorts.map((element) => {
+    return {
+      value: element,
+      text: element,
+    };
+  });
+}
+
+function Quiz({
+  ressort,
+  setRessort,
+  object,
+  setObject,
+  reason,
+  setReason,
+}: QuizProps) {
   const ressorts: string[] = [
     "BMWK",
     "BMF",
@@ -36,29 +55,23 @@ function Quiz({ ressort, setRessort }: QuizProps) {
     "BMZ",
     "BMWSB",
   ];
-  const ressortOptions: OptionsProps = ressorts.map((element) => {
-    return {
-      value: element,
-      text: element,
-    };
-  });
-  const objectOptions: OptionsProps = [
-    { value: "interaction", text: "Interaktion von Akteuren" },
-    { value: "dataflows", text: "Datenflüsse" },
-    { value: "decision", text: "Entscheidungslogiken" },
-    { value: "process", text: "Prozesse (zeitliche Abfolgen)" },
-    { value: "unknown", text: "Weiß ich nicht" },
-    { value: "other", text: "Anderes" },
+  const objects: string[] = [
+    "Interaktion von Akteuren",
+    "Datenflüsse",
+    "Entscheidungslogiken",
+    "Prozesse (zeitliche Abfolgen)",
+    "Weiß ich nicht",
+    "Anderes",
   ];
-  const reasonOptions: OptionsProps = [
-    { value: "understanding", text: "Gemeinsames Verständnis aufbauen" },
-    { value: "ideas", text: "Ideen austauschen" },
-    { value: "dependencies", text: "Abhängigkeiten strukturieren" },
-    { value: "logic", text: "Logikbrüche erkennen" },
-    { value: "digital", text: "Digitaltauglichkeit erkennen" },
-    { value: "media", text: "Medienbrüche erkennen" },
-    { value: "unknown", text: "Weiß ich nicht" },
-    { value: "other", text: "Anderes" },
+  const reasons: string[] = [
+    "Gemeinsames Verständnis aufbauen",
+    "Ideen austauschen",
+    "Abhängigkeiten strukturieren",
+    "Logikbrüche erkennen",
+    "Digitaltauglichkeit erkennen",
+    "Medienbrüche erkennen",
+    "Weiß ich nicht",
+    "Anderes",
   ];
 
   return (
@@ -94,7 +107,7 @@ function Quiz({ ressort, setRessort }: QuizProps) {
           label: "Ressort",
           value: ressort,
           onChange: setRessort,
-          options: ressortOptions,
+          options: mapToOptions(ressorts),
         }}
       />
       <Question
@@ -104,7 +117,9 @@ function Quiz({ ressort, setRessort }: QuizProps) {
         select={{
           name: "object",
           label: "Objekt der Darstellung",
-          options: objectOptions,
+          value: object,
+          onChange: setObject,
+          options: mapToOptions(objects),
         }}
       />
       <Question
@@ -113,7 +128,9 @@ function Quiz({ ressort, setRessort }: QuizProps) {
         select={{
           name: "reason",
           label: "Grund der Visualisierung",
-          options: reasonOptions,
+          value: reason,
+          onChange: setReason,
+          options: mapToOptions(reasons),
         }}
       />
       <Container paddingTop="48" paddingBottom="48">

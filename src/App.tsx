@@ -6,8 +6,8 @@ import FeedbackBanner from "./components/FeedbackBanner";
 import Breadcrumbs, { BreadcrumbsProps } from "./components/Breadcrumbs";
 
 import Info from "./routes/Info";
-import Quiz from "./routes/Quiz";
-import Result from "./routes/Result";
+import Quiz, { QuizProps } from "./routes/Quiz";
+import Result, { ResultProps } from "./routes/Result";
 
 import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
 import { useState } from "react";
@@ -33,6 +33,23 @@ function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
 
 function App() {
   const [ressort, setRessort] = useState("");
+  const [object, setObject] = useState("");
+  const [reason, setReason] = useState("");
+
+  const quizProps: QuizProps = {
+    ressort: ressort,
+    setRessort: setRessort,
+    object: object,
+    setObject: setObject,
+    reason: reason,
+    setReason: setReason,
+  };
+
+  const resultProps: ResultProps = {
+    ressort: ressort,
+    object: object,
+    reason: reason,
+  };
 
   const routes: RoutesProps = [
     {
@@ -43,12 +60,12 @@ function App() {
     {
       url: PATH_QUIZ,
       title: "Werkzeugfinder für Visualisierungen",
-      element: <Quiz ressort={ressort} setRessort={setRessort} />,
+      element: <Quiz {...quizProps} />,
     },
     {
       url: PATH_RESULT,
       title: "Empfohlene Werkzeuge",
-      element: <Result ressort={ressort} />,
+      element: <Result {...resultProps} />,
     },
   ];
 

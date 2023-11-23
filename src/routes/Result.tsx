@@ -2,14 +2,20 @@ import Container from "../components/Container";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import { z } from "zod";
+import ButtonContainer from "../components/ButtonContainer";
+import Button from "../components/Button";
+import { PATH_QUIZ } from "./index";
+import RichText from "../components/RichText";
 
 export const ResultPropsSchema = z.object({
   ressort: z.string(),
+  object: z.string(),
+  reason: z.string(),
 });
 
-type ResultProps = z.infer<typeof ResultPropsSchema>;
+export type ResultProps = z.infer<typeof ResultPropsSchema>;
 
-function Result({ ressort }: ResultProps) {
+function Result({ ressort, object, reason }: ResultProps) {
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
@@ -26,6 +32,23 @@ function Result({ ressort }: ResultProps) {
           ></Header>
         </Container>
       </Background>
+      <Container paddingTop="48" paddingBottom="0">
+        <RichText
+          markdown={`Ressort: **${ressort}** 
+        | Object der Darstellung: **${object}** 
+        | Grund der Visualisierung: **${reason}**`}
+        />
+      </Container>
+      <Container paddingTop="10" paddingBottom="48">
+        <ButtonContainer>
+          <Button
+            text={"Eingaben ändern"}
+            size={"small"}
+            look={"tertiary"}
+            href={PATH_QUIZ}
+          />
+        </ButtonContainer>
+      </Container>
     </>
   );
 }
