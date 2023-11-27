@@ -10,8 +10,9 @@ import Quiz, { QuizProps } from "./routes/Quiz";
 import Result, { ResultProps } from "./routes/Result";
 
 import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
-import { useState } from "react";
 import { z } from "zod";
+import useStorage from "./services/useStorage";
+import { Dispatch, SetStateAction } from "react";
 
 export const RoutesPropsSchema = z.array(
   z.object({
@@ -32,9 +33,12 @@ function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
 }
 
 function App() {
-  const [ressort, setRessort] = useState("");
-  const [object, setObject] = useState("");
-  const [reason, setReason] = useState("");
+  const [ressort, setRessort]: [string, Dispatch<SetStateAction<string>>] =
+    useStorage("ressort", "");
+  const [object, setObject]: [string, Dispatch<SetStateAction<string>>] =
+    useStorage("object", "");
+  const [reason, setReason]: [string, Dispatch<SetStateAction<string>>] =
+    useStorage("reason", "");
 
   const quizProps: QuizProps = {
     ressort: ressort,
