@@ -7,8 +7,12 @@ export default function useStorage<Type>(
   const [data, setState]: [Type, Dispatch<SetStateAction<Type>>] =
     useState<Type>(getValueFromStorage() ?? defaultValue);
 
-  function getValueFromStorage(): Type {
-    return JSON.parse(localStorage.getItem(key) ?? "");
+  function getValueFromStorage(): Type | null {
+    const value = localStorage.getItem(key);
+    if (!value) {
+      return null;
+    }
+    return JSON.parse(value);
   }
 
   useEffect(() => {
