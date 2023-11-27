@@ -4,6 +4,13 @@ import App from "./App.tsx";
 import "./style.css";
 import { HashRouter as Router } from "react-router-dom";
 
+import Plausible from "plausible-tracker";
+
+Plausible({
+  domain: "digitalservicebund.github.io/digitalcheck-tool-finder",
+  hashMode: true,
+});
+
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
 

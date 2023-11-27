@@ -71,7 +71,6 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/*<CookieBanner hasTrackingConsent={hasTrackingConsent} content={cookieBannerContent} ip={ip} />*/}
       <PageHeader />
       <Breadcrumbs {...getBreadcrumbs(routes)} />
       <main className="flex-grow">
