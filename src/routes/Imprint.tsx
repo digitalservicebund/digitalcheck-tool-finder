@@ -36,7 +36,7 @@ Frau Christina Lang
 Frau Anja Theurer  
             
 Alleingesellschafterin: Bundesrepublik Deutschland, vertreten durch das 
-Bundesministerium des Innern und für Heimat (100% der Gesellschaftsanteile)  
+Bundesministerium des Innern und für Heimat  
 
 Handelsregister-Nummer: HRB 212879 B  
 Registergericht: Berlin Charlottenburg  
