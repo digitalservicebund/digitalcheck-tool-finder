@@ -33,10 +33,10 @@ const paragraphs = [
 ];
 const links = [
   { url: PATH_IMPRINT, text: "Impressum" },
-  { url: PATH_PRIVACY, text: "Datenschutzbestimmung" },
-  { url: PATH_COOKIE, text: "Cookie-Einstellungen" },
-  { url: PATH_A11Y, text: "Barrierefreiheit" },
-  { url: PATH_OSS, text: "Open Source Code" },
+  // { url: PATH_PRIVACY, text: "Datenschutzbestimmung" },
+  // { url: PATH_COOKIE, text: "Cookie-Einstellungen" },
+  // { url: PATH_A11Y, text: "Barrierefreiheit" },
+  // { url: PATH_OSS, text: "Open Source Code" },
 ];
 
 export default function Footer() {
