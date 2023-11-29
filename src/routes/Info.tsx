@@ -66,18 +66,6 @@ function Info() {
           }}
         ></Box>
       </Container>
-      <Container paddingTop="0" paddingBottom="48">
-        <Box
-          heading={{
-            tagName: "h2",
-            look: "ds-heading-02-reg",
-            text: "Anleitung",
-          }}
-          content={{
-            markdown: `...`,
-          }}
-        ></Box>
-      </Container>
     </>
   );
 }

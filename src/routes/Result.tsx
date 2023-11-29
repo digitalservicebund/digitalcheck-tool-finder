@@ -6,6 +6,7 @@ import ButtonContainer from "../components/ButtonContainer";
 import Button from "../components/Button";
 import { PATH_QUIZ } from "./index";
 import RichText from "../components/RichText";
+import Box from "../components/Box";
 
 export const ResultPropsSchema = z.object({
   ressort: z.string(),
@@ -24,14 +25,28 @@ function Result({ ressort, object, reason }: ResultProps) {
             heading={{
               tagName: "h1",
               look: "ds-heading-01-reg",
-              text: `Im ${ressort} nutzbar`,
+              text: `Empfohlenes Werkzeug`,
             }}
             content={{
-              markdown: `Diese Werkzeuge sind im BMI verfügbar. Die Empfehlung erfolgt nach Ihren getätigten Eingaben.`,
+              markdown: `Die Empfehlung erfolgt nach Ihren getätigten Eingaben.`,
             }}
           ></Header>
         </Container>
       </Background>
+      <Container paddingTop="48" paddingBottom="0">
+        <Box
+          heading={{
+            tagName: "h1",
+            look: "ds-heading-02-reg",
+            text: `Achtung`,
+          }}
+          content={{
+            markdown: `
+Diese Seite befindet sich noch in der Entwicklung. Bald können Sie hier Werkzeuge sehen, 
+die wir Ihnen anhand der getätigten Eingaben empfehlen können.`,
+          }}
+        ></Box>
+      </Container>
       <Container paddingTop="48" paddingBottom="0">
         <RichText
           markdown={`Ressort: **${ressort}** 
