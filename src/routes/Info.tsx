@@ -34,7 +34,7 @@ function Info() {
             text: "In welchem Programm visualisieren?",
           }}
           content={{
-            markdown: `Es existieren eine Vielzahl von Programmen, in denen Visualisierungen angefertigt werden kann. 
+            markdown: `Es existiert eine Vielzahl von Programmen, in denen Visualisierungen angefertigt werden können. 
             Je nach Detailgrad oder Verwendung kann sich die Auswahl dabei verändern. Zudem ist der Katalog an 
             verfügbaren Werkzeugen von Ressort zu Ressort unterschiedlich. Hier können Sie das Werkzeug finden, 
             das für die Visualisierung in Ihrem Regelungsvorhaben das richtige ist.`,
