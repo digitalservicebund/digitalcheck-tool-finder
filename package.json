@@ -27,10 +27,6 @@
   "dependencies": {
     "@digitalservice4germany/angie": "^1.1.0",
     "@digitalservice4germany/style-dictionary": "^2.0.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.18",
-    "@mui/material": "^5.14.18",
     "classnames": "^2.3.2",
     "marked": "^10.0.0",
     "plausible-tracker": "^0.3.8",

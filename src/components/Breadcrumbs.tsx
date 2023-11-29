@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { z } from "zod";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 export const BreadcrumbPropsSchema = z.object({
   url: z.string(),
@@ -45,7 +44,7 @@ export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
           aria-label="Startseite"
           className="focus:outline ds-link-01-bold"
         >
-          <HomeOutlinedIcon className="!h-[1.6rem] !w-[1.6rem]" />
+          Home
         </Link>
         {filteredBreadcrumbs.map((breadcrumb, idx, arr) => (
           <div key={breadcrumb.title}>
