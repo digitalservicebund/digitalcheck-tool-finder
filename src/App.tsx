@@ -8,8 +8,9 @@ import Breadcrumbs, { BreadcrumbsProps } from "./components/Breadcrumbs";
 import Info from "./routes/Info";
 import Quiz, { QuizProps } from "./routes/Quiz";
 import Result, { ResultProps } from "./routes/Result";
+import Imprint from "./routes/Imprint";
 
-import { PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
+import { PATH_IMPRINT, PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
 import { z } from "zod";
 import useStorage from "./services/useStorage";
 import { Dispatch, SetStateAction } from "react";
@@ -70,6 +71,11 @@ function App() {
       url: PATH_RESULT,
       title: "Empfohlene Werkzeuge",
       element: <Result {...resultProps} />,
+    },
+    {
+      url: PATH_IMPRINT,
+      title: "Impressum",
+      element: <Imprint />,
     },
   ];
 
