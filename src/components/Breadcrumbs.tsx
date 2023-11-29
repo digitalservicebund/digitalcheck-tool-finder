@@ -5,7 +5,10 @@ import { z } from "zod";
 export const BreadcrumbPropsSchema = z.object({
   url: z.string(),
   title: z.string(),
+  parent: z.string().optional(),
 });
+
+export type BreadcrumbProps = z.infer<typeof BreadcrumbPropsSchema>;
 
 export const BreadcrumbsPropsSchema = z.object({
   breadcrumbs: z.array(BreadcrumbPropsSchema),
@@ -13,23 +16,30 @@ export const BreadcrumbsPropsSchema = z.object({
 
 export type BreadcrumbsProps = z.infer<typeof BreadcrumbsPropsSchema>;
 
-export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
-  const validBreadcrumbs = breadcrumbs?.filter(
-    (breadcrumb) => breadcrumb.title !== undefined,
-  );
-  const location = useLocation();
-  const indexOfCurrentPageBreadcrumb = validBreadcrumbs.findIndex(
-    (breadcrumb) => breadcrumb.url === location.pathname,
-  );
-  if (indexOfCurrentPageBreadcrumb == -1) {
-    return <></>;
+function filterBreadcrumbs(
+  list: BreadcrumbProps[],
+  currentPath: string,
+): BreadcrumbProps[] {
+  const filteredList: BreadcrumbProps[] = [];
+
+  let currentElement = list.find((item) => item.url === currentPath);
+
+  while (currentElement) {
+    filteredList.unshift(currentElement);
+    currentElement = list.find((item) => item.url === currentElement!.parent);
   }
-  validBreadcrumbs.splice(indexOfCurrentPageBreadcrumb + 1);
+
+  return filteredList;
+}
+
+export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
+  const location = useLocation();
+  const filteredBreadcrumbs = filterBreadcrumbs(breadcrumbs, location.pathname);
 
   return (
-    validBreadcrumbs.length > 0 && (
+    filteredBreadcrumbs.length > 0 && (
       <nav className="py-8 px-16 bg-blue-100 flex flex-wrap items-center text-base">
-        {validBreadcrumbs.map((breadcrumb, idx, arr) => (
+        {filteredBreadcrumbs.map((breadcrumb, idx, arr) => (
           <div key={breadcrumb.title}>
             {idx !== 0 ? <span className="mx-8">/</span> : ""}
             <span>

@@ -19,6 +19,7 @@ export const RoutesPropsSchema = z.array(
   z.object({
     url: z.string(),
     title: z.string(),
+    parent: z.string().optional(),
     element: z.custom<JSX.Element>(),
   }),
 );
@@ -28,7 +29,7 @@ export type RoutesProps = z.infer<typeof RoutesPropsSchema>;
 function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
   return {
     breadcrumbs: routes.map((route) => {
-      return { url: route.url, title: route.title };
+      return { url: route.url, title: route.title, parent: route.parent };
     }),
   };
 }
@@ -66,11 +67,13 @@ function App() {
       url: PATH_QUIZ,
       title: "Werkzeugfinder für Visualisierungen",
       element: <Quiz {...quizProps} />,
+      parent: PATH_INFO,
     },
     {
       url: PATH_RESULT,
       title: "Empfohlene Werkzeuge",
       element: <Result {...resultProps} />,
+      parent: PATH_QUIZ,
     },
     {
       url: PATH_IMPRINT,
