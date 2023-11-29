@@ -33,7 +33,7 @@ function Result({ ressort, object, reason }: ResultProps) {
           ></Header>
         </Container>
       </Background>
-      <Container paddingTop="48" paddingBottom="0">
+      <Container paddingTop="48" paddingBottom="48">
         <Box
           heading={{
             tagName: "h1",
@@ -47,14 +47,16 @@ die wir Ihnen anhand der getätigten Eingaben empfehlen können.`,
           }}
         ></Box>
       </Container>
-      <Container paddingTop="48" paddingBottom="0">
-        <RichText
-          markdown={`Ressort: **${ressort}** 
-        | Object der Darstellung: **${object}** 
-        | Grund der Visualisierung: **${reason}**`}
-        />
-      </Container>
-      <Container paddingTop="10" paddingBottom="48">
+      {ressort && object && reason && (
+        <Container paddingTop="0" paddingBottom="10">
+          <RichText
+            markdown={`Ressort: **${ressort}** 
+            | Object der Darstellung: **${object}** 
+            | Grund der Visualisierung: **${reason}**`}
+          />
+        </Container>
+      )}
+      <Container paddingTop="0" paddingBottom="48">
         <ButtonContainer>
           <Button
             text={"Eingaben ändern"}
