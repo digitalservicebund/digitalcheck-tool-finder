@@ -1,0 +1,40 @@
+{
+  "notations": [
+    { "id": "frei", "name": "Frei", "tools": ["papier", "bundescloud"] },
+    { "id": "rulemap", "name": "Rulemap", "tools": ["logos"] },
+    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
+    { "id": "bpmn", "name": "BPMN", "tools": ["adonis", "bic"] },
+    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
+  ],
+  "objects": [
+    { "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"] },
+    { "name": "Entscheidungslogiken", "notations": ["rulemap", "dmn", "frei"] },
+    { "name": "Ganzen Prozess", "notations": ["fim", "bpmn", "frei"] },
+    { "name": "Weiß ich nicht" },
+    { "name": "Anderes" }
+  ],
+  "tools": [
+    { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"], "contact": {   "name": "Person A",   "email": "a@b.c",   "phone": "123"}},
+    { "id": "bundescloud", "name": "Bundescloud", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "logos", "name": "Logos", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "bic", "name": "BIC", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] }
+  ],
+  "ressorts": [
+    { "id": "bmwk", "name": "BMWK" },
+    { "id": "bmf", "name": "BMF" },
+    { "id": "bmi", "name": "BMI" },
+    { "id": "aa", "name": "AA" },
+    { "id": "bmj", "name": "BMJ" },
+    { "id": "bmas", "name": "BMAS" },
+    { "id": "bmvg", "name": "BMVg" },
+    { "id": "bmel", "name": "BMEL" },
+    { "id": "bmfsfj", "name": "BMFSFJ" },
+    { "id": "bmg", "name": "BMG" },
+    { "id": "bmdv", "name": "BMDV" },
+    { "id": "bmuv", "name": "BMUV" },
+    { "id": "bmbf", "name": "BMBF" },
+    { "id": "bmz", "name": "BMZ" },
+    { "id": "bmwsb", "name": "BMWSB" }
+  ]
+}
