@@ -60,7 +60,7 @@ function App() {
   const routes: RoutesProps = [
     {
       url: PATH_INFO,
-      title: "Visualisieren im Digitalcheck",
+      title: "Startseite",
       element: <Info />,
     },
     {
@@ -71,7 +71,7 @@ function App() {
     },
     {
       url: PATH_RESULT,
-      title: "Empfohlene Werkzeuge",
+      title: "Empfohlenes Werkzeug",
       element: <Result {...resultProps} />,
       parent: PATH_QUIZ,
     },
@@ -79,6 +79,7 @@ function App() {
       url: PATH_IMPRINT,
       title: "Impressum",
       element: <Imprint />,
+      parent: PATH_INFO,
     },
   ];
 
