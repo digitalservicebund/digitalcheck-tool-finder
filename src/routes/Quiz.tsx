@@ -56,20 +56,16 @@ function Quiz({
     "BMWSB",
   ];
   const objects: string[] = [
-    "Interaktion von Akteuren",
-    "Datenflüsse",
+    "Einfache Interaktionen von Akteuren oder Datenflüsse",
     "Entscheidungslogiken",
-    "Prozesse (zeitliche Abfolgen)",
+    "Ganzen Prozess",
     "Weiß ich nicht",
     "Anderes",
   ];
   const reasons: string[] = [
-    "Gemeinsames Verständnis aufbauen",
-    "Ideen austauschen",
-    "Abhängigkeiten strukturieren",
-    "Logikbrüche erkennen",
-    "Digitaltauglichkeit erkennen",
-    "Medienbrüche erkennen",
+    "Für den Austausch mit anderen",
+    "Für mich selbst",
+    "Für die Ablage",
     "Weiß ich nicht",
     "Anderes",
   ];

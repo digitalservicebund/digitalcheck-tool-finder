@@ -13,6 +13,13 @@
     { "name": "Weiß ich nicht" },
     { "name": "Anderes" }
   ],
+  "reasons": [
+    { "name": "Für den Austausch mit anderen" },
+    { "name": "Für mich selbst" },
+    { "name": "Für die Ablage" },
+    { "name": "Weiß ich nicht" },
+    { "name": "Anderes" }
+  ],
   "tools": [
     { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"], "contact": {   "name": "Person A",   "email": "a@b.c",   "phone": "123"}},
     { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "ressorts": ["bmi", "bmj"] },
