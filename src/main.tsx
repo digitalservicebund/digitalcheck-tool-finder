@@ -5,12 +5,13 @@ import "./style.css";
 import { HashRouter as Router } from "react-router-dom";
 import Plausible from "plausible-tracker";
 
-const { trackPageview } = Plausible({
-  domain: "digitalservicebund.github.io/digitalcheck-tool-finder",
+const { enableAutoPageviews } = Plausible({
+  domain: "visualisieren.digitalcheck.bund.de",
   hashMode: true,
+  trackLocalhost: true,
 });
 
-trackPageview();
+enableAutoPageviews();
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
