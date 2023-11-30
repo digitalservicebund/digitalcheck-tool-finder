@@ -18,12 +18,12 @@
     { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "ressorts": ["bmi", "bmj"] },
     { "id": "logos", "name": "Logos", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
     { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmi", "bmas"] },
-    { "id": "bic", "name": "BIC", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "bic", "name": "BIC", "ressorts": ["bmi"] },
     { "id": "conceptboard", "name": "Conceptboard", "ressorts": ["bmas"] },
     { "id": "msvisio", "name": "MS Visio", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
     { "id": "modulo", "name": "Modulo", "ressorts": ["bmas"] },
     { "id": "aris", "name": "Aris", "ressorts": ["bmbf", "bmdv"] },
-    { "id": "aris-cloud", "name": "Aris Cloud", "ressorts": ["bmd"] }
+    { "id": "aris-cloud", "name": "Aris Cloud", "ressorts": ["bmf"] }
   ],
   "ressorts": [
     { "id": "bmwk", "name": "BMWK" },
