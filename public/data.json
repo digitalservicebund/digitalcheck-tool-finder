@@ -1,10 +1,10 @@
 {
   "notations": [
     { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
-    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "Bundescloud draw.io"] },
-    { "id": "dmn", "name": "DMN", "tools": ["papier", "adonis"] },
-    { "id": "bpmn", "name": "BPMN", "tools": ["papier", "adonis", "bic"] },
-    { "id": "fim", "name": "FIM", "tools": ["papier", "adonis", "bic"] }
+    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "bundescloud-drawio"] },
+    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
+    { "id": "bpmn", "name": "BPMN", "tools": ["modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio", "bundescloud-drawio"] },
+    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
   ],
   "objects": [
     { "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"] },
