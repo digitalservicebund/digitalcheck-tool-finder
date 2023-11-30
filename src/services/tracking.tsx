@@ -17,13 +17,16 @@ export function trackButtonClick(
   id: string | undefined,
   href: string | undefined,
 ) {
-  console.log(id);
   trackEvent(EVENT_BUTTON_CLICK, {
     props: {
       id: id ?? "",
       href: href ?? "",
     },
   });
+}
+
+function combine(...values: string[]) {
+  return values.join(" --- ");
 }
 
 export function trackSelection(
@@ -36,10 +39,10 @@ export function trackSelection(
       ressort: ressort,
       object: object,
       reason: reason,
-      ressortAndObject: `${ressort}-${object}`,
-      ressortAndReason: `${ressort}-${reason}`,
-      objectAndReason: `${object}-${reason}`,
-      ressortAndObjectAndReason: `${ressort}-${object}-${reason}`,
+      ressortAndObject: combine(ressort, object),
+      ressortAndReason: combine(ressort, reason),
+      objectAndReason: combine(object, reason),
+      ressortAndObjectAndReason: combine(ressort, object, reason),
     },
   });
 }
