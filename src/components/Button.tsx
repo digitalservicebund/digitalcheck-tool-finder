@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { trackButtonClick } from "../services/tracking";
 
 export const ButtonPropsSchema = z.object({
-  id: z.string(),
   text: z.string().optional(),
   look: z.enum(["primary", "secondary", "tertiary", "ghost"]).optional(),
   size: z.enum(["large", "medium", "small"]).optional(),
@@ -18,8 +17,12 @@ export const ButtonPropsSchema = z.object({
 
 type Props = z.infer<typeof ButtonPropsSchema>;
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<"button">, Props {}
-interface ButtonLinkProps extends React.ComponentPropsWithoutRef<"a">, Props {}
+export interface ButtonProps
+  extends React.ComponentPropsWithoutRef<"button">,
+    Props {}
+export interface ButtonLinkProps
+  extends React.ComponentPropsWithoutRef<"a">,
+    Props {}
 
 function formatIcon(icon: ReactElement | undefined) {
   if (!icon) return undefined;

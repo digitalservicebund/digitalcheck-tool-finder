@@ -1,7 +1,7 @@
 import { z } from "zod";
 import Heading, { HeadingPropsSchema } from "./Heading";
 import RichText, { RichTextPropsSchema } from "./RichText";
-import Button, { ButtonPropsSchema } from "./Button";
+import Button, { ButtonLinkProps, ButtonProps } from "./Button";
 import ButtonContainer from "./ButtonContainer";
 
 export const BoxPropsSchema = z.object({
@@ -9,7 +9,9 @@ export const BoxPropsSchema = z.object({
   label: HeadingPropsSchema.optional(),
   heading: HeadingPropsSchema.optional(),
   content: RichTextPropsSchema.optional(),
-  buttons: z.array(ButtonPropsSchema).optional(),
+  buttons: z
+    .array(z.custom<ButtonLinkProps>().or(z.custom<ButtonProps>()))
+    .optional(),
 });
 
 type BoxProps = z.infer<typeof BoxPropsSchema>;
@@ -29,11 +31,7 @@ const Box = ({ identifier, label, heading, content, buttons }: BoxProps) => {
       {buttons && buttons.length > 0 && (
         <ButtonContainer>
           {buttons.map((button) => (
-            <Button
-              key={button.text ?? button.href}
-              id={button.id}
-              {...button}
-            />
+            <Button key={button.text ?? button.href} {...button} />
           ))}
         </ButtonContainer>
       )}
