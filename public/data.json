@@ -1,10 +1,10 @@
 {
   "notations": [
-    { "id": "frei", "name": "Frei", "tools": ["papier", "bundescloud"] },
-    { "id": "rulemap", "name": "Rulemap", "tools": ["logos"] },
-    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
-    { "id": "bpmn", "name": "BPMN", "tools": ["adonis", "bic"] },
-    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
+    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
+    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "Bundescloud draw.io"] },
+    { "id": "dmn", "name": "DMN", "tools": ["papier", "adonis"] },
+    { "id": "bpmn", "name": "BPMN", "tools": ["papier", "adonis", "bic"] },
+    { "id": "fim", "name": "FIM", "tools": ["papier", "adonis", "bic"] }
   ],
   "objects": [
     { "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"] },
@@ -15,10 +15,15 @@
   ],
   "tools": [
     { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"], "contact": {   "name": "Person A",   "email": "a@b.c",   "phone": "123"}},
-    { "id": "bundescloud", "name": "Bundescloud", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "ressorts": ["bmi", "bmj"] },
     { "id": "logos", "name": "Logos", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
-    { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
-    { "id": "bic", "name": "BIC", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] }
+    { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmi", "bmas"] },
+    { "id": "bic", "name": "BIC", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "conceptboard", "name": "Conceptboard", "ressorts": ["bmas"] },
+    { "id": "msvisio", "name": "MS Visio", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
+    { "id": "modulo", "name": "Modulo", "ressorts": ["bmas"] },
+    { "id": "aris", "name": "Aris", "ressorts": ["bmbf", "bmdv"] },
+    { "id": "aris-cloud", "name": "Aris Cloud", "ressorts": ["bmd"] }
   ],
   "ressorts": [
     { "id": "bmwk", "name": "BMWK" },
