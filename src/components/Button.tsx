@@ -2,8 +2,10 @@ import classNames from "classnames";
 import { cloneElement, type ReactElement } from "react";
 import { z } from "zod";
 import { Link } from "react-router-dom";
+import { trackButtonClick } from "../services/tracking";
 
 export const ButtonPropsSchema = z.object({
+  id: z.string(),
   text: z.string().optional(),
   look: z.enum(["primary", "secondary", "tertiary", "ghost"]).optional(),
   size: z.enum(["large", "medium", "small"]).optional(),
@@ -11,6 +13,7 @@ export const ButtonPropsSchema = z.object({
   iconLeft: z.custom<ReactElement>().optional(),
   iconRight: z.custom<ReactElement>().optional(),
   fullWidth: z.boolean().optional(),
+  onClickCallback: z.function().optional(),
 });
 
 type Props = z.infer<typeof ButtonPropsSchema>;
@@ -25,6 +28,7 @@ function formatIcon(icon: ReactElement | undefined) {
 }
 
 function Button({
+  id,
   children,
   text,
   iconLeft,
@@ -33,6 +37,7 @@ function Button({
   look,
   size,
   href,
+  onClickCallback,
   ...props
 }: ButtonProps | ButtonLinkProps) {
   const buttonClasses = classNames(
@@ -65,6 +70,13 @@ function Button({
     }
   };
 
+  const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    trackButtonClick(id, href);
+    if (onClickCallback) {
+      onClickCallback(event);
+    }
+  };
+
   if (href) {
     return (
       <Link
@@ -73,6 +85,8 @@ function Button({
         className={buttonClasses}
         role="button"
         onKeyDown={onKeyDown}
+        onClick={onClick}
+        id={id}
       >
         {iconLeft} {children ? childrenSpan : textSpan} {iconRight}
       </Link>

@@ -29,7 +29,11 @@ const Box = ({ identifier, label, heading, content, buttons }: BoxProps) => {
       {buttons && buttons.length > 0 && (
         <ButtonContainer>
           {buttons.map((button) => (
-            <Button key={button.text ?? button.href} {...button} />
+            <Button
+              key={button.text ?? button.href}
+              id={button.id}
+              {...button}
+            />
           ))}
         </ButtonContainer>
       )}

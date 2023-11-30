@@ -59,6 +59,7 @@ die wir Ihnen anhand der getätigten Eingaben empfehlen können.`,
       <Container paddingTop="0" paddingBottom="48">
         <ButtonContainer>
           <Button
+            id={"result-change-selection"}
             text={"Eingaben ändern"}
             size={"small"}
             look={"tertiary"}

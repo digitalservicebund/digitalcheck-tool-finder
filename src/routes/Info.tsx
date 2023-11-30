@@ -41,6 +41,7 @@ function Info() {
           }}
           buttons={[
             {
+              id: "info-find-tool",
               text: "Werkzeug finden",
               href: PATH_QUIZ,
               size: "large",

@@ -9,6 +9,7 @@ import { PATH_RESULT } from "./";
 import Question from "../components/Question";
 import { z } from "zod";
 import { Dispatch, SetStateAction } from "react";
+import { trackSelection } from "../services/tracking";
 
 export const QuizPropsSchema = z.object({
   ressort: z.string(),
@@ -69,6 +70,10 @@ function Quiz({
     "Weiß ich nicht",
     "Anderes",
   ];
+
+  const submitSelection = () => {
+    trackSelection(ressort, object, reason);
+  };
 
   return (
     <>
@@ -131,7 +136,13 @@ function Quiz({
       />
       <Container paddingTop="48" paddingBottom="48">
         <ButtonContainer>
-          <Button text={"Werkzeug suchen"} size={"large"} href={PATH_RESULT} />
+          <Button
+            text={"Werkzeug suchen"}
+            size={"large"}
+            href={PATH_RESULT}
+            id={"quiz-find-tool"}
+            onClickCallback={submitSelection}
+          />
         </ButtonContainer>
       </Container>
     </>

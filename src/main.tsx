@@ -3,18 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./style.css";
 import { HashRouter as Router } from "react-router-dom";
-import Plausible from "plausible-tracker";
-
-const { enableAutoPageviews } = Plausible({
-  domain: "visualisieren.digitalcheck.bund.de",
-  hashMode: true,
-  trackLocalhost: true,
-});
-
-enableAutoPageviews();
+import { enableTracking } from "./services/tracking";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
+
+enableTracking();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
