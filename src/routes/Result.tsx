@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { z } from "zod";
 import ButtonContainer from "../components/ButtonContainer";
 import Button from "../components/Button";
-import { PATH_FLOWCHART } from "./";
+import { PATH_FLOWCHART, PATH_QUIZ } from "./";
 import RichText from "../components/RichText";
 import Box from "../components/Box";
 import BoxWithImage, { BoxWithImageProps } from "../components/BoxWithImage";
@@ -148,7 +148,7 @@ Ein Flussdiagramm ist eine Art von Diagramm, das einen Prozess oder Arbeitsablau
             text={"Eingaben ändern"}
             size={"small"}
             look={"tertiary"}
-            href={PATH_FLOWCHART}
+            href={PATH_QUIZ}
           />
         </ButtonContainer>
       </Container>
