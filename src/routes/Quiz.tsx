@@ -95,8 +95,7 @@ function Quiz({
       <Background backgroundColor="yellow" paddingTop="16" paddingBottom="16">
         <Container paddingTop="0" paddingBottom="0">
           <RichText
-            markdown={`Der Werkzeugfinder kann genutzt werden, wenn Sie im Kontext des Digitalcheck 
-          eine Visualisierung erstellen möchten.`}
+            markdown={`Der Werkzeugfinder ist im Aufbau und einzelne Funktionalitäten können sich ändern, wenn Notwendigkeit besteht.`}
           />
         </Container>
       </Background>
