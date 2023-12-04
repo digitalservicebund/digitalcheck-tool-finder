@@ -1,7 +1,7 @@
 export const PATH_INFO: string = "/";
 export const PATH_QUIZ: string = "/werkzeugfinder";
 export const PATH_RESULT: string = PATH_QUIZ + "/empfehlung";
-export const PATH_FLOWCHART: string = PATH_QUIZ + "/flussdiagramm";
+export const PATH_FLOWCHART: string = "/flussdiagramm";
 export const PATH_IMPRINT: string = "/impressum";
 export const PATH_PRIVACY: string = "/datenschutzbestimmung";
 export const PATH_COOKIE: string = "/cookie-einstellungen";
