@@ -3,12 +3,14 @@ import Heading, { HeadingPropsSchema } from "./Heading";
 import RichText, { RichTextPropsSchema } from "./RichText";
 import Button, { ButtonLinkProps, ButtonProps } from "./Button";
 import ButtonContainer from "./ButtonContainer";
+import classNames from "classnames";
 
 export const BoxPropsSchema = z.object({
   identifier: z.string().optional(),
   label: HeadingPropsSchema.optional(),
   heading: HeadingPropsSchema.optional(),
   content: RichTextPropsSchema.optional(),
+  additionalClassNames: z.string().optional(),
   buttons: z
     .array(z.custom<ButtonLinkProps>().or(z.custom<ButtonProps>()))
     .optional(),
@@ -16,9 +18,22 @@ export const BoxPropsSchema = z.object({
 
 type BoxProps = z.infer<typeof BoxPropsSchema>;
 
-const Box = ({ identifier, label, heading, content, buttons }: BoxProps) => {
+const Box = ({
+  identifier,
+  label,
+  heading,
+  content,
+  buttons,
+  additionalClassNames,
+}: BoxProps) => {
   return (
-    <div className="ds-stack-16 scroll-my-40" id={identifier}>
+    <div
+      className={classNames(
+        additionalClassNames ?? "",
+        "ds-stack-16 scroll-my-40",
+      )}
+      id={identifier}
+    >
       <div className="ds-stack-8">
         {label && <Heading {...label} />}
         {heading && <Heading {...heading} />}

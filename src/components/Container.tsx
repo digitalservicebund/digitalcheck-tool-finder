@@ -8,6 +8,7 @@ const DEFAULT_PADDING_BOTTOM = "48";
 
 type ContainerProps = {
   overhangingBackground?: boolean;
+  additionalClassNames?: string;
 } & PropsWithChildren<CommonWrapperProps>;
 
 export default function Container({
@@ -16,8 +17,11 @@ export default function Container({
   backgroundColor = "default",
   overhangingBackground,
   children,
+  additionalClassNames,
 }: ContainerProps) {
-  let cssClasses = classNames(
+  let cssClasses = additionalClassNames ?? "";
+  cssClasses = classNames(
+    cssClasses,
     "container",
     `!pt-${paddingTop === "default" ? DEFAULT_PADDING_TOP : paddingTop}`,
     `!pb-${
