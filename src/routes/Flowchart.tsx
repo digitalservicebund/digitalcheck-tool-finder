@@ -3,7 +3,7 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import Box from "../components/Box";
 
-import flowChartElements from "../../public/img/flow-chart-elements.png";
+import flowchartElementsImage from "../../public/img/flowchart-elements.png";
 import Image from "../components/Image";
 
 function Flowchart() {
@@ -46,7 +46,7 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
         ></Box>
         <div className={"pb-16"}></div>
         <Image
-          url={flowChartElements}
+          url={flowchartElementsImage}
           alternativeText="Beispielhafte Darstellung von Elementen eines Flussdiagramms"
         />
       </Container>
