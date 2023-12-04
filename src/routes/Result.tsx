@@ -86,7 +86,7 @@ function Result({ ressort, object, reason }: ResultProps) {
               text: `Empfohlenes Werkzeug`,
             }}
             content={{
-              markdown: `Die Empfehlung erfolgt nach Ihren getätigten Eingaben.`,
+              markdown: `Die Empfehlung erfolgt nach Ihren getätigten Eingaben. Weiter unten können Sie Ihre Eingaben ändern.`,
             }}
           ></Header>
         </Container>
