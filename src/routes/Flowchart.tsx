@@ -1,0 +1,103 @@
+import Container from "../components/Container";
+import Background from "../components/Background";
+import Header from "../components/Header";
+import Box from "../components/Box";
+
+import flowChartElements from "../../public/img/flow-chart-elements.png";
+import Image from "../components/Image";
+
+function Flowchart() {
+  return (
+    <>
+      <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
+        <Container paddingTop="0" paddingBottom="0">
+          <Header
+            heading={{
+              tagName: "h1",
+              look: "ds-heading-01-reg",
+              text: "Flussdiagramm Anleitung",
+            }}
+          ></Header>
+        </Container>
+      </Background>
+      <Container paddingTop="48" paddingBottom="24">
+        <Box
+          heading={{
+            tagName: "h3",
+            look: "ds-heading-03-bold",
+            text: "So fangen Sie an",
+          }}
+          content={{
+            markdown: `Es gibt unterschiedliche Arten der Visualisierung. Je nach Zielsetzung eignen 
+            sich beispielsweise Nutzerreisen, Entscheidungsbäume, Datenflüsse oder Prozessmodellierungen 
+            (z. B. nach BPMN oder FIM-Methodik). Um den Vollzug einer Regelung zu visualisieren, 
+            empfehlen wir die Arbeit mit einem Flussdiagramm.
+            
+Notieren Sie die am Vollzug Beteiligten und deren Aktionen. Fragen Sie sich: 
+- Welche Akteure sind beteiligt? (z. B. Bürger oder Bürgerin, eine Behörde, ein System, eine Applikation) 
+- Welche Aktionen passieren? (z. B. prüft Angaben, sendet Daten) 
+- Wann passiert etwas? (z. B. zeitliche oder prozessuale Abhängigkeit) 
+- Wo passiert etwas? (z. B. Medium, Format, Ort, Datenbank) 
+- Warum passiert etwas? (Hinweis auf den Paragrafen) 
+
+Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge wählen. Hier sind einige Elemente, die Sie nutzen können:           
+            `,
+          }}
+        ></Box>
+        <div className={"pb-16"}></div>
+        <Image
+          url={flowChartElements}
+          alternativeText="Beispielhafte Darstellung von Elementen eines Flussdiagramms"
+        />
+      </Container>
+      <Container paddingTop="0" paddingBottom="24">
+        <Box
+          heading={{
+            tagName: "h3",
+            look: "ds-heading-03-bold",
+            text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungen darauf an",
+          }}
+          content={{
+            markdown: `Markieren Sie in Ihrer Visualisierung, in welchen Schritten des Vollzugs die fünf Prinzipien 
+            für digitaltaugliche Gesetze relevant sein könnten. Gehen Sie dabei Prinzip für Prinzip vor. 
+            Lassen Sie die dadurch gewonnenen Erkenntnisse in die digitaltaugliche Gestaltung der 
+            Regelung einfließen.`,
+          }}
+        ></Box>
+      </Container>
+      <Container paddingTop="0" paddingBottom="24">
+        <Box
+          heading={{
+            tagName: "h3",
+            look: "ds-heading-03-bold",
+            text: "Arbeiten Sie von grob zu fein",
+          }}
+          content={{
+            markdown: `Starten Sie mit reduzierten Informationen und ergänzen Sie nach und nach Details in Ihrem 
+            Diagramm. Starten Sie mit Stift auf Papier. Im Mittelpunkt steht der Nutzen der Visualisierung, 
+            nicht deren visuelle Qualität.`,
+          }}
+        ></Box>
+      </Container>
+      <Container paddingTop="0" paddingBottom="48">
+        <Box
+          heading={{
+            tagName: "h3",
+            look: "ds-heading-03-bold",
+            text: "Hier bekommen Sie Hilfe",
+          }}
+          content={{
+            markdown: `In Ihrem Referat, in Ihrem Ministerium oder in nachgelagerten Behörden kann es 
+            Kolleginnen und Kollegen geben, die bereits mit Visualisierungen arbeiten oder an einem 
+            der DigitalcheckWorkshops teilgenommen haben. Bitten Sie sie um Unterstützung oder 
+            wenden Sie sich an den Digitalcheck-Support (digitalcheck@digitalservice.bund.de, 
+            0151 4076 7839). Mehr zur Visualisierung mit Flussdiagrammen finden Sie hier: 
+            [ondea.de/DE/ZfL/ZfL_node.html](https://www.ondea.de/DE/ZfL/ZfL_node.html), Modul 10 im Video “Visualisierung“.`,
+          }}
+        ></Box>
+      </Container>
+    </>
+  );
+}
+
+export default Flowchart;

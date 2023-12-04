@@ -9,8 +9,15 @@ import Info from "./routes/Info";
 import Quiz, { QuizProps } from "./routes/Quiz";
 import Result, { ResultProps } from "./routes/Result";
 import Imprint from "./routes/Imprint";
+import Flowchart from "./routes/Flowchart";
 
-import { PATH_IMPRINT, PATH_INFO, PATH_QUIZ, PATH_RESULT } from "./routes";
+import {
+  PATH_FLOWCHART,
+  PATH_IMPRINT,
+  PATH_INFO,
+  PATH_QUIZ,
+  PATH_RESULT,
+} from "./routes";
 import { z } from "zod";
 import useStorage from "./services/useStorage";
 import { Dispatch, SetStateAction } from "react";
@@ -74,6 +81,12 @@ function App() {
       title: "Empfohlenes Werkzeug",
       element: <Result {...resultProps} />,
       parent: PATH_QUIZ,
+    },
+    {
+      url: PATH_FLOWCHART,
+      title: "Flussdiagramm Anleitung",
+      element: <Flowchart />,
+      parent: PATH_INFO,
     },
     {
       url: PATH_IMPRINT,
