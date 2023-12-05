@@ -65,8 +65,8 @@ function Quiz({
   useEffect(() => {
     const getData = async () => {
       setRessorts(await findAllRessorts());
-      setObjects(await findAllObjects());
-      setReasons(await findAllReasons());
+      setObjects((await findAllObjects()).sort((a, b) => a.order - b.order));
+      setReasons((await findAllReasons()).sort((a, b) => a.order - b.order));
     };
     getData();
   }, []);

@@ -7,18 +7,18 @@
     { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
   ],
   "objects": [
-    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"] },
-    { "id": "logik", "name": "Entscheidungslogiken", "notations": ["rulemap", "dmn", "frei"] },
-    { "id": "prozess", "name": "Ganzen Prozess", "notations": ["fim", "bpmn", "frei"] },
-    { "id": "unbekannt", "name": "Weiß ich nicht", "notations": [] },
-    { "id": "anderes", "name": "Anderes", "notations": [] }
+    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"], "order": 1 },
+    { "id": "logik", "name": "Entscheidungslogiken", "notations": ["rulemap", "dmn", "frei"], "order": 2 },
+    { "id": "prozess", "name": "Ganzen Prozess", "notations": ["fim", "bpmn", "frei"], "order": 3 },
+    { "id": "unbekannt", "name": "Weiß ich nicht", "notations": [], "order": 4 },
+    { "id": "anderes", "name": "Anderes", "notations": [], "order": 5 }
   ],
   "reasons": [
-    { "id": "austausch", "name": "Für den Austausch mit anderen" },
-    { "id": "selbst", "name": "Für mich selbst" },
-    { "id": "ablage", "name": "Für die Ablage" },
-    { "id": "unbekannt", "name": "Weiß ich nicht" },
-    { "id": "anderes", "name": "Anderes" }
+    { "id": "austausch", "name": "Für den Austausch mit anderen", "order": 1 },
+    { "id": "selbst", "name": "Für mich selbst", "order": 2 },
+    { "id": "ablage", "name": "Für die Ablage", "order": 3 },
+    { "id": "unbekannt", "name": "Weiß ich nicht", "order": 4 },
+    { "id": "anderes", "name": "Anderes", "order": 5 }
   ],
   "tools": [
     { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
