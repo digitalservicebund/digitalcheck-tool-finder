@@ -1,26 +1,9 @@
 import Dexie, { Table } from "dexie";
-
-export interface Notation {
-  id: string;
-  name: string;
-  tools: string[];
-}
-export interface VisualisationObject {
-  name: string;
-  notations: string[];
-}
-export interface Reason {
-  name: string;
-}
-export interface Ressort {
-  id: string;
-  name: string;
-}
-export interface Tool {
-  id: string;
-  name: string;
-  ressorts: string[];
-}
+import { Notation } from "./models/Notation";
+import { VisualisationObject } from "./models/VisualisationObject";
+import { Reason } from "./models/Reason";
+import { Ressort } from "./models/Ressort";
+import { Tool } from "./models/Tool";
 
 export class Database extends Dexie {
   notations!: Table<Notation>;

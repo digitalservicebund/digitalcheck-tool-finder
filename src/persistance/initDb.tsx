@@ -1,34 +1,24 @@
-import {
-  Database,
-  Notation,
-  Reason,
-  Ressort,
-  Tool,
-  VisualisationObject,
-} from "./db";
+import { Database } from "./db";
 import { Table } from "dexie";
 import rawData from "../../resources/data.json";
 import { trackDBInitErrors } from "../services/tracking";
-
-interface Data {
-  notations: Notation[];
-  objects: VisualisationObject[];
-  reasons: Reason[];
-  ressorts: Ressort[];
-  tools: Tool[];
-}
+import { Data } from "./models/Data";
+import { Reason } from "./models/Reason";
+import { VisualisationObject } from "./models/VisualisationObject";
+import { Notation } from "./models/Notation";
+import { Ressort } from "./models/Ressort";
+import { Tool } from "./models/Tool";
 
 const data: Data = rawData;
+export let db: Database = new Database();
 
-async function recreateDb(): Promise<Database> {
-  let db = new Database();
+async function recreateDb() {
   await db.delete();
   db = new Database();
   db.open();
-  return db;
 }
 
-async function initTable(db: Database, tableName: string) {
+async function initTable(tableName: string) {
   const table: Table = db.table(tableName);
   const tableData:
     | Reason[]
@@ -44,13 +34,14 @@ async function initTable(db: Database, tableName: string) {
 
 export async function initDb() {
   try {
-    const db = await recreateDb();
+    await recreateDb();
 
     for (const table of db.tables) {
-      await initTable(db, table.name);
+      await initTable(table.name);
     }
   } catch (e) {
     const error: Error = e instanceof Error ? e : new Error(`${e}`);
+    console.error(`Failed to initialise database: ${error.message}`);
     trackDBInitErrors(error);
   }
 }
