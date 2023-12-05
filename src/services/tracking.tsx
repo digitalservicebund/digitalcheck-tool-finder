@@ -46,3 +46,11 @@ export function trackSelection(
     },
   });
 }
+
+export function trackDBInitErrors(error: Error) {
+  trackEvent("Database: Initialisation Error", {
+    props: {
+      errorMessage: error.message,
+    },
+  });
+}
