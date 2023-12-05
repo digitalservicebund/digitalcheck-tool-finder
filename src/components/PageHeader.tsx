@@ -1,5 +1,5 @@
 import Image from "./Image";
-import bundLogo from "../../public/img/bund-logo.png";
+import bundLogo from "../../resources/img/bund-logo.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {

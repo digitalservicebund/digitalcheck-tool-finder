@@ -3,7 +3,7 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import Box from "../components/Box";
 
-import flowchartElementsImage from "../../public/img/flowchart-elements.png";
+import flowchartElementsImage from "../../resources/img/flowchart-elements.png";
 import Image from "../components/Image";
 
 function Flowchart() {

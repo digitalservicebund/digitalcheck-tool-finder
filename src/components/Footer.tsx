@@ -3,14 +3,14 @@ import type { Renderer } from "marked";
 import Container from "./Container";
 import Image from "./Image";
 import RichText from "./RichText";
-import bmiLogo from "../../public/img/bmi-logo.png";
+import bmiLogo from "../../resources/img/bmi-logo.png";
 import { Link } from "react-router-dom";
 import {
   PATH_IMPRINT,
-  PATH_PRIVACY,
-  PATH_COOKIE,
-  PATH_A11Y,
-  PATH_OSS,
+  // PATH_PRIVACY,
+  // PATH_COOKIE,
+  // PATH_A11Y,
+  // PATH_OSS,
 } from "../routes";
 
 const LinkPropsSchema = z.object({

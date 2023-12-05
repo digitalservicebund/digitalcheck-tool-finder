@@ -8,9 +8,9 @@ import { PATH_FLOWCHART, PATH_QUIZ } from "./";
 import RichText from "../components/RichText";
 import Box from "../components/Box";
 import BoxWithImage, { BoxWithImageProps } from "../components/BoxWithImage";
-import paperImage from "../../public/img/tools/paper.png";
-import adonisImage from "../../public/img/tools/adonis.png";
-import flowchartImage from "../../public/img/notations/flowchart.png";
+import paperImage from "../../resources/img/tools/paper.png";
+import adonisImage from "../../resources/img/tools/adonis.png";
+import flowchartImage from "../../resources/img/notations/flowchart.png";
 import Image from "../components/Image";
 
 const tools: BoxWithImageProps[] = [
