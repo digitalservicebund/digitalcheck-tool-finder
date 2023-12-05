@@ -1,18 +1,17 @@
-import {
-  Database,
-  Notation,
-  Reason,
-  Ressort,
-  Tool,
-  VisualisationObject,
-} from "./db";
+import { Database } from "./db";
 import { Table } from "dexie";
 import data from "../../resources/data.json";
 import { trackDBInitErrors } from "../services/tracking";
 
-let db = new Database();
+async function recreateDb(): Promise<Database> {
+  let db = new Database();
+  await db.delete();
+  db = new Database();
+  db.open();
+  return db;
+}
 
-async function initTable<Type>(tableName: string) {
+async function initTable<Type>(db: Database, tableName: string) {
   const table: Table<Type> = db.table(tableName);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const tableData: Type[] = data[tableName];
@@ -22,20 +21,13 @@ async function initTable<Type>(tableName: string) {
   await table.bulkAdd(tableData, { allKeys: true });
 }
 
-async function recreateDb() {
-  await db.delete();
-  db = new Database();
-  db.open();
-}
-
 export async function initDb() {
-  await recreateDb();
   try {
-    await initTable<Notation>("notations");
-    await initTable<VisualisationObject>("objects");
-    await initTable<Reason>("reasons");
-    await initTable<Ressort>("ressorts");
-    await initTable<Tool>("tools");
+    const db = await recreateDb();
+
+    for (const table of db.tables) {
+      await initTable(db, table.name);
+    }
   } catch (e) {
     trackDBInitErrors(e);
   }
