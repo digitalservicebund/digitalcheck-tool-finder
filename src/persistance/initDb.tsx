@@ -1,7 +1,24 @@
-import { Database } from "./db";
+import {
+  Database,
+  Notation,
+  Reason,
+  Ressort,
+  Tool,
+  VisualisationObject,
+} from "./db";
 import { Table } from "dexie";
-import data from "../../resources/data.json";
+import rawData from "../../resources/data.json";
 import { trackDBInitErrors } from "../services/tracking";
+
+interface Data {
+  notations: Notation[];
+  objects: VisualisationObject[];
+  reasons: Reason[];
+  ressorts: Ressort[];
+  tools: Tool[];
+}
+
+const data: Data = rawData;
 
 async function recreateDb(): Promise<Database> {
   let db = new Database();
@@ -11,10 +28,14 @@ async function recreateDb(): Promise<Database> {
   return db;
 }
 
-async function initTable<Type>(db: Database, tableName: string) {
-  const table: Table<Type> = db.table(tableName);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const tableData: Type[] = data[tableName];
+async function initTable(db: Database, tableName: string) {
+  const table: Table = db.table(tableName);
+  const tableData:
+    | Reason[]
+    | Ressort[]
+    | Notation[]
+    | VisualisationObject[]
+    | Tool[] = data[tableName as keyof Data];
   if (!tableData) {
     throw new Error(`Could not read table data for table '${tableName}'`);
   }
@@ -29,6 +50,7 @@ export async function initDb() {
       await initTable(db, table.name);
     }
   } catch (e) {
-    trackDBInitErrors(e);
+    const error: Error = e instanceof Error ? e : new Error(`${e}`);
+    trackDBInitErrors(error);
   }
 }

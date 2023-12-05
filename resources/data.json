@@ -10,8 +10,8 @@
     { "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"] },
     { "name": "Entscheidungslogiken", "notations": ["rulemap", "dmn", "frei"] },
     { "name": "Ganzen Prozess", "notations": ["fim", "bpmn", "frei"] },
-    { "name": "Weiß ich nicht" },
-    { "name": "Anderes" }
+    { "name": "Weiß ich nicht", "notations": [] },
+    { "name": "Anderes", "notations": [] }
   ],
   "reasons": [
     { "name": "Für den Austausch mit anderen" },
@@ -21,7 +21,7 @@
     { "name": "Anderes" }
   ],
   "tools": [
-    { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"], "contact": {   "name": "Person A",   "email": "a@b.c",   "phone": "123"}},
+    { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
     { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "ressorts": ["bmi", "bmj"] },
     { "id": "logos", "name": "Logos", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
     { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmi", "bmas"] },

@@ -6,7 +6,6 @@ export interface Notation {
   tools: string[];
 }
 export interface VisualisationObject {
-  id: string;
   name: string;
   notations: string[];
 }
