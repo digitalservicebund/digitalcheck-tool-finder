@@ -16,8 +16,8 @@ export class Database extends Dexie {
     super("tool-finder-database");
     this.version(1).stores({
       notations: "&id, name, *tools",
-      objects: "name, *notations",
-      reasons: "name",
+      objects: "&id, name, *notations",
+      reasons: "&id, name",
       ressorts: "&id, name",
       tools: "&id, name, *ressorts",
     });

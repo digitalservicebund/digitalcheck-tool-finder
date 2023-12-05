@@ -8,8 +8,17 @@ import RichText from "../components/RichText";
 import { PATH_RESULT } from "./";
 import Question from "../components/Question";
 import { z } from "zod";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { trackSelection } from "../services/tracking";
+import {
+  findAllObjects,
+  findAllReasons,
+  findAllRessorts,
+} from "../persistance/repository";
+import { Ressort } from "../persistance/models/Ressort";
+import { VisualisationObject } from "../persistance/models/VisualisationObject";
+import { Reason } from "../persistance/models/Reason";
+import { Entity } from "../persistance/models/Entity";
 
 export const QuizPropsSchema = z.object({
   ressort: z.string(),
@@ -22,11 +31,11 @@ export const QuizPropsSchema = z.object({
 
 export type QuizProps = z.infer<typeof QuizPropsSchema>;
 
-function mapToOptions(ressorts: string[]) {
-  return ressorts.map((element) => {
+function mapToOptions(entities: Entity[]) {
+  return entities.map((element) => {
     return {
-      value: element,
-      text: element,
+      value: element.name,
+      text: element.name,
     };
   });
 }
@@ -39,37 +48,28 @@ function Quiz({
   reason,
   setReason,
 }: QuizProps) {
-  const ressorts: string[] = [
-    "BMWK",
-    "BMF",
-    "BMI",
-    "AA",
-    "BMJ",
-    "BMAS",
-    "BMVg",
-    "BMEL",
-    "BMFSFJ",
-    "BMG",
-    "BMDV",
-    "BMUV",
-    "BMBF",
-    "BMZ",
-    "BMWSB",
-  ];
-  const objects: string[] = [
-    "Einfache Interaktionen von Akteuren oder Datenflüsse",
-    "Entscheidungslogiken",
-    "Ganzen Prozess",
-    "Weiß ich nicht",
-    "Anderes",
-  ];
-  const reasons: string[] = [
-    "Für den Austausch mit anderen",
-    "Für mich selbst",
-    "Für die Ablage",
-    "Weiß ich nicht",
-    "Anderes",
-  ];
+  const initialStateRessorts: Ressort[] = [];
+  const [ressorts, setRessorts]: [
+    Ressort[],
+    Dispatch<SetStateAction<Ressort[]>>,
+  ] = useState(initialStateRessorts);
+  const initialStateObjects: VisualisationObject[] = [];
+  const [objects, setObjects]: [
+    VisualisationObject[],
+    Dispatch<SetStateAction<VisualisationObject[]>>,
+  ] = useState(initialStateObjects);
+  const initialStateReasons: Reason[] = [];
+  const [reasons, setReasons]: [Reason[], Dispatch<SetStateAction<Reason[]>>] =
+    useState(initialStateReasons);
+
+  useEffect(() => {
+    const getData = async () => {
+      setRessorts(await findAllRessorts());
+      setObjects(await findAllObjects());
+      setReasons(await findAllReasons());
+    };
+    getData();
+  }, []);
 
   const submitSelection = () => {
     trackSelection(ressort, object, reason);
