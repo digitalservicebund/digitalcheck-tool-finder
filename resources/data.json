@@ -1,17 +1,10 @@
 {
-  "notations": [
-    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
-    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "bundescloud-drawio"] },
-    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
-    { "id": "bpmn", "name": "BPMN", "tools": ["modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio", "bundescloud-drawio"] },
-    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
-  ],
   "objects": [
-    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "notations": ["frei"], "order": 1 },
-    { "id": "logik", "name": "Entscheidungslogiken", "notations": ["rulemap", "dmn", "frei"], "order": 2 },
-    { "id": "prozess", "name": "Ganzen Prozess", "notations": ["fim", "bpmn", "frei"], "order": 3 },
-    { "id": "unbekannt", "name": "Weiß ich nicht", "notations": [], "order": 4 },
-    { "id": "anderes", "name": "Anderes", "notations": [], "order": 5 }
+    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "cluster": "schaubild", "order": 1 },
+    { "id": "logik", "name": "Entscheidungslogiken", "cluster": "entscheidungsbaum", "order": 2 },
+    { "id": "prozess", "name": "Ganzen Prozess", "cluster": "flussdiagramm", "order": 3 },
+    { "id": "unbekannt", "name": "Weiß ich nicht", "cluster": "schaubild", "order": 4 },
+    { "id": "anderes", "name": "Anderes", "cluster": "schaubild", "order": 5 }
   ],
   "reasons": [
     { "id": "austausch", "name": "Für den Austausch mit anderen", "order": 1 },
@@ -20,17 +13,34 @@
     { "id": "unbekannt", "name": "Weiß ich nicht", "order": 4 },
     { "id": "anderes", "name": "Anderes", "order": 5 }
   ],
+  "clusters": [
+    { "id": "schaubild", "name": "Schaubild", "notations": [ "frei" ] },
+    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "notations": [ "rulemap", "dmn", "frei" ] },
+    { "id": "flussdiagramm", "name": "Flussdiagramm", "notations": [ "bmpn", "fim", "frei" ] }
+  ],
+  "notations": [
+    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
+    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "bundescloud-drawio"] },
+    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
+    { "id": "bpmn", "name": "BPMN", "tools": ["modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio", "bundescloud-drawio"] },
+    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
+  ],
   "tools": [
-    { "id": "papier", "name": "Papier", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
-    { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "ressorts": ["bmi", "bmj"] },
-    { "id": "logos", "name": "Logos", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
-    { "id": "adonis", "name": "Adonis", "ressorts": ["bmwk", "bmi", "bmas"] },
-    { "id": "bic", "name": "BIC", "ressorts": ["bmi"] },
-    { "id": "conceptboard", "name": "Conceptboard", "ressorts": ["bmas"] },
-    { "id": "msvisio", "name": "MS Visio", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
-    { "id": "modulo", "name": "Modulo", "ressorts": ["bmas"] },
-    { "id": "aris", "name": "Aris", "ressorts": ["bmbf", "bmdv"] },
-    { "id": "aris-cloud", "name": "Aris Cloud", "ressorts": ["bmf"] }
+    { "id": "papier", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
+    { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
+    { "id": "logos", "name": "Logos", "fidelity": "digital", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
+    { "id": "adonis", "name": "Adonis", "fidelity": "pro", "ressorts": ["bmwk", "bmi", "bmas"] },
+    { "id": "bic", "name": "BIC", "fidelity": "pro", "ressorts": ["bmi"] },
+    { "id": "conceptboard", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
+    { "id": "msvisio", "name": "MS Visio", "fidelity": "pro", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
+    { "id": "modulo", "name": "Modulo", "fidelity": "digital", "ressorts": ["bmas"] },
+    { "id": "aris", "name": "Aris", "fidelity": "pro", "ressorts": ["bmbf", "bmdv"] },
+    { "id": "aris-cloud", "name": "Aris Cloud", "fidelity": "pro", "ressorts": ["bmf"] }
+  ],
+  "fidelities": [
+    { "id": "einfach", "name": "Einfach" },
+    { "id": "digital", "name": "Digital Einfach" },
+    { "id": "pro", "name": "Digital Profi" }
   ],
   "ressorts": [
     { "id": "bmwk", "name": "BMWK" },

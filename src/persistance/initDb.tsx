@@ -8,6 +8,8 @@ import { VisualisationObject } from "./models/VisualisationObject";
 import { Notation } from "./models/Notation";
 import { Ressort } from "./models/Ressort";
 import { Tool } from "./models/Tool";
+import { Cluster } from "cluster";
+import { Fidelity } from "./models/Fidelity";
 
 const data: Data = rawData;
 export let db: Database = new Database();
@@ -21,11 +23,13 @@ async function recreateDb() {
 async function initTable(tableName: string) {
   const table: Table = db.table(tableName);
   const tableData:
-    | Reason[]
-    | Ressort[]
-    | Notation[]
     | VisualisationObject[]
-    | Tool[] = data[tableName as keyof Data];
+    | Reason[]
+    | Cluster[]
+    | Notation[]
+    | Tool[]
+    | Fidelity[]
+    | Ressort[] = data[tableName as keyof Data];
   if (!tableData) {
     throw new Error(`Could not read table data for table '${tableName}'`);
   }
