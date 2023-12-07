@@ -5,7 +5,7 @@ import Box from "../components/Box";
 
 import { PATH_QUIZ } from "./";
 import LinkListBox from "../components/LinkListBox";
-import RichText from "../components/RichText";
+import BetaBanner from "../components/BetaBanner";
 
 function Info() {
   return (
@@ -41,13 +41,7 @@ function Info() {
           />
         </Container>
       </Background>
-      <Background backgroundColor="yellow" paddingTop="16" paddingBottom="16">
-        <Container paddingTop="0" paddingBottom="0">
-          <RichText
-            markdown={`Der Werkzeugfinder ist im Aufbau und einzelne Funktionalitäten können sich ändern, wenn Notwendigkeit besteht.`}
-          />
-        </Container>
-      </Background>
+      <BetaBanner />
       <Container paddingTop="48" paddingBottom="48">
         <Box
           identifier={"info-section-which-tool"}

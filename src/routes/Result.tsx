@@ -12,6 +12,7 @@ import paperImage from "../../resources/img/tools/paper.png";
 import adonisImage from "../../resources/img/tools/adonis.png";
 import flowchartImage from "../../resources/img/notations/flowchart.png";
 import Image from "../components/Image";
+import BetaBanner from "../components/BetaBanner";
 
 const tools: BoxWithImageProps[] = [
   {
@@ -91,6 +92,7 @@ function Result({ ressort, object, reason }: ResultProps) {
           ></Header>
         </Container>
       </Background>
+      <BetaBanner />
       <Container paddingTop="48" paddingBottom="40">
         <div className={"border border-8 rounded-lg border-[#EBF3FD]"}>
           <Image

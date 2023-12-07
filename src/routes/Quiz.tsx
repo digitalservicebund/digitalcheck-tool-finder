@@ -3,7 +3,6 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
-import RichText from "../components/RichText";
 
 import { PATH_RESULT } from "./";
 import Question from "../components/Question";
@@ -19,6 +18,7 @@ import { Ressort } from "../persistance/models/Ressort";
 import { VisualisationObject } from "../persistance/models/VisualisationObject";
 import { Reason } from "../persistance/models/Reason";
 import { Entity } from "../persistance/models/Entity";
+import BetaBanner from "../components/BetaBanner";
 
 export const QuizPropsSchema = z.object({
   ressort: z.string(),
@@ -92,13 +92,7 @@ function Quiz({
           ></Header>
         </Container>
       </Background>
-      <Background backgroundColor="yellow" paddingTop="16" paddingBottom="16">
-        <Container paddingTop="0" paddingBottom="0">
-          <RichText
-            markdown={`Der Werkzeugfinder ist im Aufbau und einzelne Funktionalitäten können sich ändern, wenn Notwendigkeit besteht.`}
-          />
-        </Container>
-      </Background>
+      <BetaBanner />
       <Question
         heading={"In welchem Ressort arbeiten Sie?"}
         description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
