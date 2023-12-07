@@ -45,8 +45,6 @@ const tools: BoxWithImageProps[] = [
               (bspw. durch vorherige Skizzen auf Papier).
               
 https://www.boc-group.com/de/adonis/#features
-  
-Ansprechperson für den **Zugang**: Referat Zb3 (formlose E-Mail reicht).
                 `,
     },
     image: {
