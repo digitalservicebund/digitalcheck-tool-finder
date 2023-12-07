@@ -21,12 +21,12 @@ import { Entity } from "../persistance/models/Entity";
 import BetaBanner from "../components/BetaBanner";
 
 export const QuizPropsSchema = z.object({
-  ressort: z.string(),
-  setRessort: z.custom<Dispatch<SetStateAction<string>>>(),
-  object: z.string(),
-  setObject: z.custom<Dispatch<SetStateAction<string>>>(),
-  reason: z.string(),
-  setReason: z.custom<Dispatch<SetStateAction<string>>>(),
+  ressortId: z.string(),
+  setRessortId: z.custom<Dispatch<SetStateAction<string>>>(),
+  objectId: z.string(),
+  setObjectId: z.custom<Dispatch<SetStateAction<string>>>(),
+  reasonId: z.string(),
+  setReasonId: z.custom<Dispatch<SetStateAction<string>>>(),
 });
 
 export type QuizProps = z.infer<typeof QuizPropsSchema>;
@@ -34,19 +34,19 @@ export type QuizProps = z.infer<typeof QuizPropsSchema>;
 function mapToOptions(entities: Entity[]) {
   return entities.map((element) => {
     return {
-      value: element.name,
+      value: element.id,
       text: element.name,
     };
   });
 }
 
 function Quiz({
-  ressort,
-  setRessort,
-  object,
-  setObject,
-  reason,
-  setReason,
+  ressortId,
+  setRessortId,
+  objectId,
+  setObjectId,
+  reasonId,
+  setReasonId,
 }: QuizProps) {
   const initialStateRessorts: Ressort[] = [];
   const [ressorts, setRessorts]: [
@@ -72,7 +72,7 @@ function Quiz({
   }, []);
 
   const submitSelection = () => {
-    trackSelection(ressort, object, reason);
+    trackSelection(ressortId, objectId, reasonId);
   };
 
   return (
@@ -99,8 +99,8 @@ function Quiz({
         select={{
           name: "ressort",
           label: "Ressort",
-          value: ressort,
-          onChange: setRessort,
+          value: ressortId,
+          onChange: setRessortId,
           options: mapToOptions(ressorts),
         }}
       />
@@ -111,8 +111,8 @@ function Quiz({
         select={{
           name: "object",
           label: "Objekt der Darstellung",
-          value: object,
-          onChange: setObject,
+          value: objectId,
+          onChange: setObjectId,
           options: mapToOptions(objects),
         }}
       />
@@ -122,8 +122,8 @@ function Quiz({
         select={{
           name: "reason",
           label: "Grund der Visualisierung",
-          value: reason,
-          onChange: setReason,
+          value: reasonId,
+          onChange: setReasonId,
           options: mapToOptions(reasons),
         }}
       />

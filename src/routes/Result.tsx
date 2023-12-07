@@ -13,6 +13,11 @@ import adonisImage from "../../resources/img/tools/adonis.png";
 import flowchartImage from "../../resources/img/notations/flowchart.png";
 import Image from "../components/Image";
 import BetaBanner from "../components/BetaBanner";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { getObject, getReason, getRessort } from "../persistance/repository";
+import { Ressort } from "../persistance/models/Ressort";
+import { VisualisationObject } from "../persistance/models/VisualisationObject";
+import { Reason } from "../persistance/models/Reason";
 
 const tools: BoxWithImageProps[] = [
   {
@@ -55,14 +60,32 @@ https://www.boc-group.com/de/adonis/#features
 ];
 
 export const ResultPropsSchema = z.object({
-  ressort: z.string(),
-  object: z.string(),
-  reason: z.string(),
+  ressortId: z.string(),
+  objectId: z.string(),
+  reasonId: z.string(),
 });
 
 export type ResultProps = z.infer<typeof ResultPropsSchema>;
 
-function Result({ ressort, object, reason }: ResultProps) {
+function Result({ ressortId, objectId, reasonId }: ResultProps) {
+  const [ressort, setRessort]: [Ressort, Dispatch<SetStateAction<Ressort>>] =
+    useState();
+  const [object, setObject]: [
+    VisualisationObject,
+    Dispatch<SetStateAction<VisualisationObject>>,
+  ] = useState();
+  const [reason, setReason]: [Reason, Dispatch<SetStateAction<Reason>>] =
+    useState();
+
+  useEffect(() => {
+    const getResults = async () => {
+      setRessort(await getRessort(ressortId));
+      setObject(await getObject(objectId));
+      setReason(await getReason(reasonId));
+    };
+    getResults();
+  }, [ressortId, objectId, reasonId]);
+
   const renderTool = (tool: BoxWithImageProps, index: number) => (
     <div
       key={`tool-${index}`}
@@ -135,9 +158,9 @@ Ein Flussdiagramm ist eine Art von Diagramm, das einen Prozess oder Arbeitsablau
       {ressort && object && reason && (
         <Container paddingTop="0" paddingBottom="10">
           <RichText
-            markdown={`Ressort: **${ressort}** 
-            | Object der Darstellung: **${object}** 
-            | Grund der Visualisierung: **${reason}**`}
+            markdown={`Ressort: **${ressort.name}** 
+            | Object der Darstellung: **${object.name}** 
+            | Grund der Visualisierung: **${reason.name}**`}
           />
         </Container>
       )}

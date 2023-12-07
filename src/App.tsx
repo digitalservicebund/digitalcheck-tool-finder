@@ -42,26 +42,26 @@ function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
 }
 
 function App() {
-  const [ressort, setRessort]: [string, Dispatch<SetStateAction<string>>] =
+  const [ressortId, setRessortId]: [string, Dispatch<SetStateAction<string>>] =
     useStorage("ressort", "");
-  const [object, setObject]: [string, Dispatch<SetStateAction<string>>] =
+  const [objectId, setObjectId]: [string, Dispatch<SetStateAction<string>>] =
     useStorage("object", "");
-  const [reason, setReason]: [string, Dispatch<SetStateAction<string>>] =
+  const [reasonId, setReasonId]: [string, Dispatch<SetStateAction<string>>] =
     useStorage("reason", "");
 
   const quizProps: QuizProps = {
-    ressort: ressort,
-    setRessort: setRessort,
-    object: object,
-    setObject: setObject,
-    reason: reason,
-    setReason: setReason,
+    ressortId: ressortId,
+    setRessortId: setRessortId,
+    objectId: objectId,
+    setObjectId: setObjectId,
+    reasonId: reasonId,
+    setReasonId: setReasonId,
   };
 
   const resultProps: ResultProps = {
-    ressort: ressort,
-    object: object,
-    reason: reason,
+    ressortId: ressortId,
+    objectId: objectId,
+    reasonId: reasonId,
   };
 
   const routes: RoutesProps = [

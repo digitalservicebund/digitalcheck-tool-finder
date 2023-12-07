@@ -1,4 +1,8 @@
 import Plausible from "plausible-tracker";
+import { VisualisationObject } from "../persistance/models/VisualisationObject";
+import { Reason } from "../persistance/models/Reason";
+import { Ressort } from "../persistance/models/Ressort";
+import { getObject, getReason, getRessort } from "../persistance/repository";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
 
@@ -25,24 +29,32 @@ export function trackButtonClick(
   });
 }
 
-function combine(...values: string[]) {
-  return values.join(" --- ");
-}
-
-export function trackSelection(
-  ressort: string,
-  object: string,
-  reason: string,
+export async function trackSelection(
+  ressortId: string,
+  objectId: string,
+  reasonId: string,
 ) {
+  const combine = (...values: string[]) => {
+    return values.join(" --- ");
+  };
+
+  const ressort: Ressort = await getRessort(ressortId);
+  const object: VisualisationObject = await getObject(objectId);
+  const reason: Reason = await getReason(reasonId);
+
+  const ressortName = ressort.name;
+  const objectName = object.name;
+  const reasonName = reason.name;
+
   trackEvent("Selection: Submit", {
     props: {
-      ressort: ressort,
-      object: object,
-      reason: reason,
-      ressortAndObject: combine(ressort, object),
-      ressortAndReason: combine(ressort, reason),
-      objectAndReason: combine(object, reason),
-      ressortAndObjectAndReason: combine(ressort, object, reason),
+      ressort: ressortName,
+      object: objectName,
+      reason: reasonName,
+      ressortAndObject: combine(ressortName, objectName),
+      ressortAndReason: combine(ressortName, reasonName),
+      objectAndReason: combine(objectName, reasonName),
+      ressortAndObjectAndReason: combine(ressortName, objectName, reasonName),
     },
   });
 }
