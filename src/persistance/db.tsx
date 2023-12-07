@@ -24,7 +24,7 @@ export class Database extends Dexie {
       clusters: "&id, name, *notations",
       notations: "&id, name, *tools",
       tools: "&id, name, fidelity, *ressorts",
-      fidelities: "&id, name",
+      fidelities: "&id, name, order",
       ressorts: "&id, name",
     });
   }

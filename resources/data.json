@@ -38,9 +38,9 @@
     { "id": "aris-cloud", "name": "Aris Cloud", "fidelity": "pro", "ressorts": ["bmf"] }
   ],
   "fidelities": [
-    { "id": "einfach", "name": "Einfach" },
-    { "id": "digital", "name": "Digital Einfach" },
-    { "id": "pro", "name": "Digital Profi" }
+    { "id": "einfach", "name": "Einfach", "order": 1 },
+    { "id": "digital", "name": "Digital Einfach", "order": 2 },
+    { "id": "pro", "name": "Digital Profi", "order": 3 }
   ],
   "ressorts": [
     { "id": "bmwk", "name": "BMWK" },
