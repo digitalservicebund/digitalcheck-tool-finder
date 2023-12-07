@@ -5,11 +5,12 @@ import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
 import { Tool } from "./models/Tool";
 import { Fidelity } from "./models/Fidelity";
+import { Cluster } from "./models/Cluster";
 
 export class Database extends Dexie {
   objects!: Table<VisualisationObject>;
   reasons!: Table<Reason>;
-  cluster!: Table<Notation>;
+  clusters!: Table<Cluster>;
   notations!: Table<Notation>;
   tools!: Table<Tool>;
   fidelities!: Table<Fidelity>;

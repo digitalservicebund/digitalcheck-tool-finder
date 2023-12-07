@@ -16,7 +16,7 @@
   "clusters": [
     { "id": "schaubild", "name": "Schaubild", "notations": [ "frei" ] },
     { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "notations": [ "rulemap", "dmn", "frei" ] },
-    { "id": "flussdiagramm", "name": "Flussdiagramm", "notations": [ "bmpn", "fim", "frei" ] }
+    { "id": "flussdiagramm", "name": "Flussdiagramm", "notations": [ "bpmn", "fim", "frei" ] }
   ],
   "notations": [
     { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
