@@ -2,7 +2,6 @@ import Plausible from "plausible-tracker";
 import { VisualisationObject } from "../models/VisualisationObject";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
-import { getObject, getReason, getRessort } from "../persistance/repository";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
 
@@ -29,18 +28,14 @@ export function trackButtonClick(
   });
 }
 
-export async function trackSelection(
-  ressortId: string,
-  objectId: string,
-  reasonId: string,
+export function trackSelection(
+  ressort: Ressort,
+  object: VisualisationObject,
+  reason: Reason,
 ) {
   const combine = (...values: string[]) => {
     return values.join(" --- ");
   };
-
-  const ressort: Ressort = await getRessort(ressortId);
-  const object: VisualisationObject = await getObject(objectId);
-  const reason: Reason = await getReason(reasonId);
 
   const ressortName = ressort.name;
   const objectName = object.name;

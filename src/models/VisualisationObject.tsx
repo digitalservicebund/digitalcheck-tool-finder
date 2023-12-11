@@ -1,6 +1,13 @@
 import { Entity } from "./Entity";
 
-export interface VisualisationObject extends Entity {
+export class VisualisationObject implements Entity {
+  constructor() {
+    this.id = "";
+    this.name = "";
+    this.cluster = "";
+    this.order = 0;
+  }
+
   id: string;
   name: string;
   cluster: string;

@@ -3,7 +3,6 @@ import { z } from "zod";
 import classNames from "classnames";
 import InputLabel from "./InputLabel";
 import { ErrorMessagePropsSchema } from "./index";
-import { Dispatch, SetStateAction } from "react";
 
 export const OptionsPropsSchema = z.array(
   z.object({ value: z.string(), text: z.string() }),
@@ -18,7 +17,7 @@ export const DropdownPropsSchema = z.object({
   altLabel: z.string().optional(),
   placeholder: z.string().optional(),
   value: z.string().optional(),
-  onChange: z.custom<Dispatch<SetStateAction<string>>>().optional(),
+  onChange: z.function().args(z.string()).returns(z.void()).optional(),
   errorMessages: z.array(ErrorMessagePropsSchema).optional(),
 });
 

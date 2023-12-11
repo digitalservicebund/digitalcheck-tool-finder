@@ -19,19 +19,20 @@ import { VisualisationObject } from "../models/VisualisationObject";
 import { Reason } from "../models/Reason";
 import { Entity } from "../models/Entity";
 import BetaBanner from "../components/BetaBanner";
+import { OptionsProps } from "../components/Select";
 
 export const QuizPropsSchema = z.object({
-  ressortId: z.string(),
-  setRessortId: z.custom<Dispatch<SetStateAction<string>>>(),
-  objectId: z.string(),
-  setObjectId: z.custom<Dispatch<SetStateAction<string>>>(),
-  reasonId: z.string(),
-  setReasonId: z.custom<Dispatch<SetStateAction<string>>>(),
+  ressort: z.custom<Ressort>(),
+  setRessort: z.custom<Dispatch<SetStateAction<Ressort>>>(),
+  object: z.custom<VisualisationObject>(),
+  setObject: z.custom<Dispatch<SetStateAction<VisualisationObject>>>(),
+  reason: z.custom<Reason>(),
+  setReason: z.custom<Dispatch<SetStateAction<Reason>>>(),
 });
 
 export type QuizProps = z.infer<typeof QuizPropsSchema>;
 
-function mapToOptions(entities: Entity[]) {
+function mapToOptions(entities: Entity[]): OptionsProps {
   return entities.map((element) => {
     return {
       value: element.id,
@@ -41,12 +42,12 @@ function mapToOptions(entities: Entity[]) {
 }
 
 function Quiz({
-  ressortId,
-  setRessortId,
-  objectId,
-  setObjectId,
-  reasonId,
-  setReasonId,
+  ressort,
+  setRessort,
+  object,
+  setObject,
+  reason,
+  setReason,
 }: QuizProps) {
   const initialStateRessorts: Ressort[] = [];
   const [ressorts, setRessorts]: [
@@ -64,15 +65,44 @@ function Quiz({
 
   useEffect(() => {
     const getData = async () => {
-      setRessorts(await findAllRessorts());
-      setObjects((await findAllObjects()).sort((a, b) => a.order - b.order));
-      setReasons((await findAllReasons()).sort((a, b) => a.order - b.order));
+      const allResorts = await findAllRessorts();
+      const allObjects = (await findAllObjects()).sort(
+        (a, b) => a.order - b.order,
+      );
+      const allReasons = (await findAllReasons()).sort(
+        (a, b) => a.order - b.order,
+      );
+      setRessorts(allResorts);
+      setObjects(allObjects);
+      setReasons(allReasons);
     };
     getData();
   }, []);
 
   const submitSelection = () => {
-    trackSelection(ressortId, objectId, reasonId);
+    trackSelection(ressort, object, reason);
+  };
+
+  const onChangeRessort = (ressortId: string) => {
+    const selectedRessort = ressorts.find((r) => r.id === ressortId);
+    if (!selectedRessort) {
+      throw new Error("Could not find ressort " + ressortId);
+    }
+    setRessort(selectedRessort);
+  };
+  const onChangeObject = (objectId: string) => {
+    const selectedObject = objects.find((o) => o.id === objectId);
+    if (!selectedObject) {
+      throw new Error("Could not find object " + objectId);
+    }
+    setObject(selectedObject);
+  };
+  const onChangeReason = (reasonId: string) => {
+    const selectedReason = reasons.find((r) => r.id === reasonId);
+    if (!selectedReason) {
+      throw new Error("Could not find reason " + reasonId);
+    }
+    setReason(selectedReason);
   };
 
   return (
@@ -99,8 +129,8 @@ function Quiz({
         select={{
           name: "ressort",
           label: "Ressort",
-          value: ressortId,
-          onChange: setRessortId,
+          value: ressort.id,
+          onChange: onChangeRessort,
           options: mapToOptions(ressorts),
         }}
       />
@@ -111,8 +141,8 @@ function Quiz({
         select={{
           name: "object",
           label: "Objekt der Darstellung",
-          value: objectId,
-          onChange: setObjectId,
+          value: object.id,
+          onChange: onChangeObject,
           options: mapToOptions(objects),
         }}
       />
@@ -122,8 +152,8 @@ function Quiz({
         select={{
           name: "reason",
           label: "Grund der Visualisierung",
-          value: reasonId,
-          onChange: setReasonId,
+          value: reason.id,
+          onChange: onChangeReason,
           options: mapToOptions(reasons),
         }}
       />

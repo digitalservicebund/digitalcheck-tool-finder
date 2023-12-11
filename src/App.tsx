@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import PageHeader from "./components/PageHeader";
 import Footer from "./components/Footer";
@@ -21,6 +21,9 @@ import {
 import { z } from "zod";
 import useStorage from "./services/useStorage";
 import { Dispatch, SetStateAction } from "react";
+import { Ressort } from "./models/Ressort";
+import { VisualisationObject } from "./models/VisualisationObject";
+import { Reason } from "./models/Reason";
 
 export const RoutesPropsSchema = z.array(
   z.object({
@@ -42,26 +45,28 @@ function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
 }
 
 function App() {
-  const [ressortId, setRessortId]: [string, Dispatch<SetStateAction<string>>] =
-    useStorage("ressort", "");
-  const [objectId, setObjectId]: [string, Dispatch<SetStateAction<string>>] =
-    useStorage("object", "");
-  const [reasonId, setReasonId]: [string, Dispatch<SetStateAction<string>>] =
-    useStorage("reason", "");
+  const [ressort, setRessort]: [Ressort, Dispatch<SetStateAction<Ressort>>] =
+    useStorage("ressort", new Ressort());
+  const [object, setObject]: [
+    VisualisationObject,
+    Dispatch<SetStateAction<VisualisationObject>>,
+  ] = useStorage("object", new VisualisationObject());
+  const [reason, setReason]: [Reason, Dispatch<SetStateAction<Reason>>] =
+    useStorage("reason", new Reason());
 
   const quizProps: QuizProps = {
-    ressortId: ressortId,
-    setRessortId: setRessortId,
-    objectId: objectId,
-    setObjectId: setObjectId,
-    reasonId: reasonId,
-    setReasonId: setReasonId,
+    ressort: ressort,
+    setRessort: setRessort,
+    object: object,
+    setObject: setObject,
+    reason: reason,
+    setReason: setReason,
   };
 
   const resultProps: ResultProps = {
-    ressortId: ressortId,
-    objectId: objectId,
-    reasonId: reasonId,
+    ressort: ressort,
+    object: object,
+    reason: reason,
   };
 
   const routes: RoutesProps = [

@@ -13,8 +13,6 @@ import adonisImage from "../../resources/img/tools/adonis.png";
 import flowchartImage from "../../resources/img/notations/flowchart.png";
 import Image from "../components/Image";
 import BetaBanner from "../components/BetaBanner";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { getObject, getReason, getRessort } from "../persistance/repository";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
 import { Reason } from "../models/Reason";
@@ -60,54 +58,14 @@ https://www.boc-group.com/de/adonis/#features
 ];
 
 export const ResultPropsSchema = z.object({
-  ressortId: z.string(),
-  objectId: z.string(),
-  reasonId: z.string(),
+  ressort: z.custom<Ressort>(),
+  object: z.custom<VisualisationObject>(),
+  reason: z.custom<Reason>(),
 });
 
 export type ResultProps = z.infer<typeof ResultPropsSchema>;
 
-async function getData(
-  ressortId: string,
-  setRessort: Dispatch<SetStateAction<Ressort>>,
-  objectId: string,
-  setObject: Dispatch<SetStateAction<VisualisationObject>>,
-  reasonId: string,
-  setReason: Dispatch<SetStateAction<Reason>>,
-) {
-  const ressort = await getRessort(ressortId);
-  if (!ressort) {
-    throw new Error("Could not find ressort " + ressortId);
-  }
-  setRessort(ressort);
-
-  const object = await getObject(objectId);
-  if (!object) {
-    throw new Error("Could not find object " + objectId);
-  }
-  setObject(object);
-
-  const reason = await getReason(reasonId);
-  if (!reason) {
-    throw new Error("Could not find reason " + reasonId);
-  }
-  setReason(reason);
-}
-
-function Result({ ressortId, objectId, reasonId }: ResultProps) {
-  const [ressort, setRessort]: [Ressort, Dispatch<SetStateAction<Ressort>>] =
-    useState();
-  const [object, setObject]: [
-    VisualisationObject,
-    Dispatch<SetStateAction<VisualisationObject>>,
-  ] = useState();
-  const [reason, setReason]: [Reason, Dispatch<SetStateAction<Reason>>] =
-    useState();
-
-  useEffect(() => {
-    getData(ressortId, setRessort, objectId, setObject, reasonId, setReason);
-  }, [ressortId, objectId, reasonId]);
-
+function Result({ ressort, object, reason }: ResultProps) {
   const renderTool = (tool: BoxWithImageProps, index: number) => (
     <div
       key={`tool-${index}`}
