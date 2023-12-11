@@ -57,15 +57,15 @@ https://www.boc-group.com/de/adonis/#features
   },
 ];
 
-export const ResultPropsSchema = z.object({
+export const ResultPagePropsSchema = z.object({
   ressort: z.custom<Ressort>(),
   object: z.custom<VisualisationObject>(),
   reason: z.custom<Reason>(),
 });
 
-export type ResultProps = z.infer<typeof ResultPropsSchema>;
+export type ResultPageProps = z.infer<typeof ResultPagePropsSchema>;
 
-function Result({ ressort, object, reason }: ResultProps) {
+function ResultPage({ ressort, object, reason }: ResultPageProps) {
   const renderTool = (tool: BoxWithImageProps, index: number) => (
     <div
       key={`tool-${index}`}
@@ -159,4 +159,4 @@ Ein Flussdiagramm ist eine Art von Diagramm, das einen Prozess oder Arbeitsablau
   );
 }
 
-export default Result;
+export default ResultPage;

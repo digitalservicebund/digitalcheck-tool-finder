@@ -7,7 +7,7 @@ import BetaBanner from "../components/BetaBanner";
 import LinkListBox from "../components/LinkListBox";
 import { PATH_QUIZ } from "./";
 
-function Info() {
+function InfoPage() {
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
@@ -128,4 +128,4 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
   );
 }
 
-export default Info;
+export default InfoPage;

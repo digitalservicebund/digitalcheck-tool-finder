@@ -7,9 +7,9 @@ import PageHeader from "./components/PageHeader";
 
 import Flowchart from "./routes/Flowchart";
 import Imprint from "./routes/Imprint";
-import Info from "./routes/Info";
-import Quiz, { QuizProps } from "./routes/Quiz";
-import Result, { ResultProps } from "./routes/Result";
+import InfoPage from "./routes/InfoPage";
+import QuizPage, { QuizPageProps } from "./routes/QuizPage";
+import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
 import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
@@ -54,7 +54,7 @@ function App() {
   const [reason, setReason]: [Reason, Dispatch<SetStateAction<Reason>>] =
     useStorage("reason", new Reason());
 
-  const quizProps: QuizProps = {
+  const quizProps: QuizPageProps = {
     ressort: ressort,
     setRessort: setRessort,
     object: object,
@@ -63,7 +63,7 @@ function App() {
     setReason: setReason,
   };
 
-  const resultProps: ResultProps = {
+  const resultProps: ResultPageProps = {
     ressort: ressort,
     object: object,
     reason: reason,
@@ -73,18 +73,18 @@ function App() {
     {
       url: PATH_INFO,
       title: "Startseite",
-      element: <Info />,
+      element: <InfoPage />,
     },
     {
       url: PATH_QUIZ,
       title: "Werkzeugfinder für Visualisierungen",
-      element: <Quiz {...quizProps} />,
+      element: <QuizPage {...quizProps} />,
       parent: PATH_INFO,
     },
     {
       url: PATH_RESULT,
       title: "Empfohlenes Werkzeug",
-      element: <Result {...resultProps} />,
+      element: <ResultPage {...resultProps} />,
       parent: PATH_QUIZ,
     },
     {

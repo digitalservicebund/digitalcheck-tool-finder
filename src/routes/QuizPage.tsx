@@ -21,7 +21,7 @@ import {
 import { trackSelection } from "../services/tracking";
 import { PATH_RESULT } from "./";
 
-export const QuizPropsSchema = z.object({
+export const QuizPagePropsSchema = z.object({
   ressort: z.custom<Ressort>(),
   setRessort: z.custom<Dispatch<SetStateAction<Ressort>>>(),
   object: z.custom<VisualisationObject>(),
@@ -30,7 +30,7 @@ export const QuizPropsSchema = z.object({
   setReason: z.custom<Dispatch<SetStateAction<Reason>>>(),
 });
 
-export type QuizProps = z.infer<typeof QuizPropsSchema>;
+export type QuizPageProps = z.infer<typeof QuizPagePropsSchema>;
 
 function mapToOptions(entities: Entity[]): OptionsProps {
   return entities.map((element) => {
@@ -41,14 +41,14 @@ function mapToOptions(entities: Entity[]): OptionsProps {
   });
 }
 
-function Quiz({
+function QuizPage({
   ressort,
   setRessort,
   object,
   setObject,
   reason,
   setReason,
-}: QuizProps) {
+}: QuizPageProps) {
   const ressorts: Ressort[] = findAllRessorts();
   const objects: VisualisationObject[] = findAllObjects();
   const reasons: Reason[] = findAllReasons();
@@ -146,4 +146,4 @@ function Quiz({
   );
 }
 
-export default Quiz;
+export default QuizPage;
