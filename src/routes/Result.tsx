@@ -15,9 +15,9 @@ import Image from "../components/Image";
 import BetaBanner from "../components/BetaBanner";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { getObject, getReason, getRessort } from "../persistance/repository";
-import { Ressort } from "../persistance/models/Ressort";
-import { VisualisationObject } from "../persistance/models/VisualisationObject";
-import { Reason } from "../persistance/models/Reason";
+import { Ressort } from "../models/Ressort";
+import { VisualisationObject } from "../models/VisualisationObject";
+import { Reason } from "../models/Reason";
 
 const tools: BoxWithImageProps[] = [
   {
@@ -67,6 +67,33 @@ export const ResultPropsSchema = z.object({
 
 export type ResultProps = z.infer<typeof ResultPropsSchema>;
 
+async function getData(
+  ressortId: string,
+  setRessort: Dispatch<SetStateAction<Ressort>>,
+  objectId: string,
+  setObject: Dispatch<SetStateAction<VisualisationObject>>,
+  reasonId: string,
+  setReason: Dispatch<SetStateAction<Reason>>,
+) {
+  const ressort = await getRessort(ressortId);
+  if (!ressort) {
+    throw new Error("Could not find ressort " + ressortId);
+  }
+  setRessort(ressort);
+
+  const object = await getObject(objectId);
+  if (!object) {
+    throw new Error("Could not find object " + objectId);
+  }
+  setObject(object);
+
+  const reason = await getReason(reasonId);
+  if (!reason) {
+    throw new Error("Could not find reason " + reasonId);
+  }
+  setReason(reason);
+}
+
 function Result({ ressortId, objectId, reasonId }: ResultProps) {
   const [ressort, setRessort]: [Ressort, Dispatch<SetStateAction<Ressort>>] =
     useState();
@@ -78,12 +105,7 @@ function Result({ ressortId, objectId, reasonId }: ResultProps) {
     useState();
 
   useEffect(() => {
-    const getResults = async () => {
-      setRessort(await getRessort(ressortId));
-      setObject(await getObject(objectId));
-      setReason(await getReason(reasonId));
-    };
-    getResults();
+    getData(ressortId, setRessort, objectId, setObject, reasonId, setReason);
   }, [ressortId, objectId, reasonId]);
 
   const renderTool = (tool: BoxWithImageProps, index: number) => (
