@@ -41,6 +41,23 @@ function mapToOptions(entities: Entity[]): OptionsProps {
   });
 }
 
+function onChangeHandler<Type extends Entity>(
+  selectedEntityId: string,
+  setEntity: Dispatch<SetStateAction<Type>>,
+  allEntities: Type[],
+  defaultEntity: Type,
+) {
+  if (!selectedEntityId) {
+    setEntity(defaultEntity);
+    return;
+  }
+  const selectedEntity = allEntities.find((e) => e.id === selectedEntityId);
+  if (!selectedEntity) {
+    throw new Error("Could not find entity " + selectedEntityId);
+  }
+  setEntity(selectedEntity);
+}
+
 function QuizPage({
   ressort,
   setRessort,
@@ -58,25 +75,13 @@ function QuizPage({
   };
 
   const onChangeRessort = (ressortId: string) => {
-    const selectedRessort = ressorts.find((r) => r.id === ressortId);
-    if (!selectedRessort) {
-      throw new Error("Could not find ressort " + ressortId);
-    }
-    setRessort(selectedRessort);
+    onChangeHandler(ressortId, setRessort, ressorts, new Ressort());
   };
   const onChangeObject = (objectId: string) => {
-    const selectedObject = objects.find((o) => o.id === objectId);
-    if (!selectedObject) {
-      throw new Error("Could not find object " + objectId);
-    }
-    setObject(selectedObject);
+    onChangeHandler(objectId, setObject, objects, new VisualisationObject());
   };
   const onChangeReason = (reasonId: string) => {
-    const selectedReason = reasons.find((r) => r.id === reasonId);
-    if (!selectedReason) {
-      throw new Error("Could not find reason " + reasonId);
-    }
-    setReason(selectedReason);
+    onChangeHandler(reasonId, setReason, reasons, new Reason());
   };
 
   return (
