@@ -14,9 +14,9 @@ import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
 import {
-  findAllObjects,
-  findAllReasons,
-  findAllRessorts,
+  getAllObjects,
+  getAllReasons,
+  getAllRessorts,
 } from "../persistance/repository";
 import { trackSelection } from "../services/tracking";
 import { PATH_RESULT } from "./";
@@ -49,9 +49,9 @@ function QuizPage({
   reason,
   setReason,
 }: QuizPageProps) {
-  const ressorts: Ressort[] = findAllRessorts();
-  const objects: VisualisationObject[] = findAllObjects();
-  const reasons: Reason[] = findAllReasons();
+  const ressorts: Ressort[] = getAllRessorts();
+  const objects: VisualisationObject[] = getAllObjects();
+  const reasons: Reason[] = getAllReasons();
 
   const submitSelection = () => {
     trackSelection(ressort, object, reason);

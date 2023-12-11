@@ -15,6 +15,7 @@ import RichText from "../components/RichText";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
+import { findResultByObjectAndRessort } from "../persistance/repository";
 import { PATH_FLOWCHART, PATH_QUIZ } from "./";
 
 const tools: BoxWithImageProps[] = [
@@ -66,6 +67,11 @@ export const ResultPagePropsSchema = z.object({
 export type ResultPageProps = z.infer<typeof ResultPagePropsSchema>;
 
 function ResultPage({ ressort, object, reason }: ResultPageProps) {
+  const result = findResultByObjectAndRessort(object, ressort);
+  console.log("Cluster: " + result.cluster.name);
+  console.log("Notations: " + result.notations.map((n) => n.name).toString());
+  console.log("Tools: " + result.tools.map((t) => t.name).toString());
+
   const renderTool = (tool: BoxWithImageProps, index: number) => (
     <div
       key={`tool-${index}`}
