@@ -7,7 +7,7 @@ import ButtonContainer from "../components/ButtonContainer";
 import { PATH_RESULT } from "./";
 import Question from "../components/Question";
 import { z } from "zod";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { trackSelection } from "../services/tracking";
 import {
   findAllObjects,
@@ -49,35 +49,9 @@ function Quiz({
   reason,
   setReason,
 }: QuizProps) {
-  const initialStateRessorts: Ressort[] = [];
-  const [ressorts, setRessorts]: [
-    Ressort[],
-    Dispatch<SetStateAction<Ressort[]>>,
-  ] = useState(initialStateRessorts);
-  const initialStateObjects: VisualisationObject[] = [];
-  const [objects, setObjects]: [
-    VisualisationObject[],
-    Dispatch<SetStateAction<VisualisationObject[]>>,
-  ] = useState(initialStateObjects);
-  const initialStateReasons: Reason[] = [];
-  const [reasons, setReasons]: [Reason[], Dispatch<SetStateAction<Reason[]>>] =
-    useState(initialStateReasons);
-
-  useEffect(() => {
-    const getData = async () => {
-      const allResorts = await findAllRessorts();
-      const allObjects = (await findAllObjects()).sort(
-        (a, b) => a.order - b.order,
-      );
-      const allReasons = (await findAllReasons()).sort(
-        (a, b) => a.order - b.order,
-      );
-      setRessorts(allResorts);
-      setObjects(allObjects);
-      setReasons(allReasons);
-    };
-    getData();
-  }, []);
+  const ressorts: Ressort[] = findAllRessorts();
+  const objects: VisualisationObject[] = findAllObjects();
+  const reasons: Reason[] = findAllReasons();
 
   const submitSelection = () => {
     trackSelection(ressort, object, reason);

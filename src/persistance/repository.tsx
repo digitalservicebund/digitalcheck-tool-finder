@@ -1,16 +1,27 @@
-import { db } from "./initDb";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
 import { Reason } from "../models/Reason";
+import { Data } from "../models/Data";
+import rawData from "../../resources/data.json";
 
-export async function findAllRessorts(): Promise<Array<Ressort>> {
-  return db.ressorts.toArray();
+const data: Data = rawData;
+
+export function findAllRessorts(): Ressort[] {
+  return data.ressorts;
 }
 
-export async function findAllObjects(): Promise<Array<VisualisationObject>> {
-  return db.objects.toArray();
+export function findAllObjects(sorted: boolean = true): VisualisationObject[] {
+  let objects = data.objects;
+  if (sorted) {
+    objects = objects.sort((a, b) => a.order - b.order);
+  }
+  return objects;
 }
 
-export async function findAllReasons(): Promise<Array<Reason>> {
-  return db.reasons.toArray();
+export function findAllReasons(sorted: boolean = true): Reason[] {
+  let reasons = data.reasons;
+  if (sorted) {
+    reasons = reasons.sort((a, b) => a.order - b.order);
+  }
+  return reasons;
 }
