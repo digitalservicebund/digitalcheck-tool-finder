@@ -1,7 +1,7 @@
 import Plausible from "plausible-tracker";
-import { VisualisationObject } from "../models/VisualisationObject";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
+import { VisualisationObject } from "../models/VisualisationObject";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
 
@@ -50,14 +50,6 @@ export function trackSelection(
       ressortAndReason: combine(ressortName, reasonName),
       objectAndReason: combine(objectName, reasonName),
       ressortAndObjectAndReason: combine(ressortName, objectName, reasonName),
-    },
-  });
-}
-
-export function trackDBInitErrors(error: Error) {
-  trackEvent("Database: Initialisation Error", {
-    props: {
-      errorMessage: error.message,
     },
   });
 }
