@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import flowchartImage from "../../resources/img/notations/flowchart.png";
 import adonisImage from "../../resources/img/tools/adonis.png";
@@ -67,6 +69,14 @@ export const ResultPagePropsSchema = z.object({
 export type ResultPageProps = z.infer<typeof ResultPagePropsSchema>;
 
 function ResultPage({ ressort, object, reason }: ResultPageProps) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!ressort.id || !object.id || !reason.id) {
+      navigate(PATH_QUIZ);
+    }
+  });
+
   const result = findResultByObjectAndRessort(object, ressort);
   console.log("Cluster: " + result.cluster.name);
   console.log("Notations: " + result.notations.map((n) => n.name).toString());
