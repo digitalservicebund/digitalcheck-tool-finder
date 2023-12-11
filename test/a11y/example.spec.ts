@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { injectAxe, checkA11y } from "axe-playwright";
+import { checkA11y, injectAxe } from "axe-playwright";
 
 test.describe("basic example a11y test", () => {
   test("test start page", async ({ page }) => {

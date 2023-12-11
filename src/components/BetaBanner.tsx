@@ -1,6 +1,6 @@
+import Background from "./Background";
 import Container from "./Container";
 import RichText from "./RichText";
-import Background from "./Background";
 
 const BetaBanner = () => {
   return (

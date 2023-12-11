@@ -1,7 +1,7 @@
-import Container from "../components/Container";
 import Background from "../components/Background";
-import Header from "../components/Header";
 import Box from "../components/Box";
+import Container from "../components/Container";
+import Header from "../components/Header";
 
 import flowchartElementsImage from "../../resources/img/flowchart-elements.png";
 import Image from "../components/Image";

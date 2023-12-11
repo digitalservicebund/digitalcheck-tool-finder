@@ -1,8 +1,8 @@
+import rawData from "../../resources/data.json";
+import { Data } from "../models/Data";
+import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
-import { Reason } from "../models/Reason";
-import { Data } from "../models/Data";
-import rawData from "../../resources/data.json";
 
 const data: Data = rawData;
 

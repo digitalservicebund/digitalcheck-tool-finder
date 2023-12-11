@@ -1,11 +1,11 @@
-import Container from "../components/Container";
 import Background from "../components/Background";
-import Header from "../components/Header";
 import Box from "../components/Box";
+import Container from "../components/Container";
+import Header from "../components/Header";
 
-import { PATH_QUIZ } from "./";
-import LinkListBox from "../components/LinkListBox";
 import BetaBanner from "../components/BetaBanner";
+import LinkListBox from "../components/LinkListBox";
+import { PATH_QUIZ } from "./";
 
 function Info() {
   return (

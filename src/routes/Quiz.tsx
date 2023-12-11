@@ -1,25 +1,25 @@
-import Container from "../components/Container";
 import Background from "../components/Background";
-import Header from "../components/Header";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
+import Container from "../components/Container";
+import Header from "../components/Header";
 
-import { PATH_RESULT } from "./";
-import Question from "../components/Question";
-import { z } from "zod";
 import { Dispatch, SetStateAction } from "react";
-import { trackSelection } from "../services/tracking";
+import { z } from "zod";
+import BetaBanner from "../components/BetaBanner";
+import Question from "../components/Question";
+import { OptionsProps } from "../components/Select";
+import { Entity } from "../models/Entity";
+import { Reason } from "../models/Reason";
+import { Ressort } from "../models/Ressort";
+import { VisualisationObject } from "../models/VisualisationObject";
 import {
   findAllObjects,
   findAllReasons,
   findAllRessorts,
 } from "../persistance/repository";
-import { Ressort } from "../models/Ressort";
-import { VisualisationObject } from "../models/VisualisationObject";
-import { Reason } from "../models/Reason";
-import { Entity } from "../models/Entity";
-import BetaBanner from "../components/BetaBanner";
-import { OptionsProps } from "../components/Select";
+import { trackSelection } from "../services/tracking";
+import { PATH_RESULT } from "./";
 
 export const QuizPropsSchema = z.object({
   ressort: z.custom<Ressort>(),

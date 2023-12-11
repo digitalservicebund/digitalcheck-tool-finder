@@ -1,16 +1,21 @@
 import { Route, Routes } from "react-router-dom";
 
-import PageHeader from "./components/PageHeader";
-import Footer from "./components/Footer";
-import FeedbackBanner from "./components/FeedbackBanner";
 import Breadcrumbs, { BreadcrumbsProps } from "./components/Breadcrumbs";
+import FeedbackBanner from "./components/FeedbackBanner";
+import Footer from "./components/Footer";
+import PageHeader from "./components/PageHeader";
 
+import Flowchart from "./routes/Flowchart";
+import Imprint from "./routes/Imprint";
 import Info from "./routes/Info";
 import Quiz, { QuizProps } from "./routes/Quiz";
 import Result, { ResultProps } from "./routes/Result";
-import Imprint from "./routes/Imprint";
-import Flowchart from "./routes/Flowchart";
 
+import { Dispatch, SetStateAction } from "react";
+import { z } from "zod";
+import { Reason } from "./models/Reason";
+import { Ressort } from "./models/Ressort";
+import { VisualisationObject } from "./models/VisualisationObject";
 import {
   PATH_FLOWCHART,
   PATH_IMPRINT,
@@ -18,12 +23,7 @@ import {
   PATH_QUIZ,
   PATH_RESULT,
 } from "./routes";
-import { z } from "zod";
 import useStorage from "./services/useStorage";
-import { Dispatch, SetStateAction } from "react";
-import { Ressort } from "./models/Ressort";
-import { VisualisationObject } from "./models/VisualisationObject";
-import { Reason } from "./models/Reason";
 
 export const RoutesPropsSchema = z.array(
   z.object({

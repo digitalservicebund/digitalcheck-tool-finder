@@ -1,21 +1,21 @@
-import Container from "../components/Container";
-import Background from "../components/Background";
-import Header from "../components/Header";
 import { z } from "zod";
-import ButtonContainer from "../components/ButtonContainer";
-import Button from "../components/Button";
-import { PATH_FLOWCHART, PATH_QUIZ } from "./";
-import RichText from "../components/RichText";
+import flowchartImage from "../../resources/img/notations/flowchart.png";
+import adonisImage from "../../resources/img/tools/adonis.png";
+import paperImage from "../../resources/img/tools/paper.png";
+import Background from "../components/Background";
+import BetaBanner from "../components/BetaBanner";
 import Box from "../components/Box";
 import BoxWithImage, { BoxWithImageProps } from "../components/BoxWithImage";
-import paperImage from "../../resources/img/tools/paper.png";
-import adonisImage from "../../resources/img/tools/adonis.png";
-import flowchartImage from "../../resources/img/notations/flowchart.png";
+import Button from "../components/Button";
+import ButtonContainer from "../components/ButtonContainer";
+import Container from "../components/Container";
+import Header from "../components/Header";
 import Image from "../components/Image";
-import BetaBanner from "../components/BetaBanner";
+import RichText from "../components/RichText";
+import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
 import { VisualisationObject } from "../models/VisualisationObject";
-import { Reason } from "../models/Reason";
+import { PATH_FLOWCHART, PATH_QUIZ } from "./";
 
 const tools: BoxWithImageProps[] = [
   {

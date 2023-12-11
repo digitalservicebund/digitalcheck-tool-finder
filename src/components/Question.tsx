@@ -1,7 +1,7 @@
 import { z } from "zod";
 import Box from "./Box";
-import Select, { DropdownPropsSchema } from "./Select";
 import Container from "./Container";
+import Select, { DropdownPropsSchema } from "./Select";
 
 export const QuestionPropsSchema = z.object({
   heading: z.string(),

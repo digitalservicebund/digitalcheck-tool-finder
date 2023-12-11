@@ -1,17 +1,11 @@
-import { z } from "zod";
 import type { Renderer } from "marked";
+import { Link } from "react-router-dom";
+import { z } from "zod";
+import bmiLogo from "../../resources/img/bmi-logo.png";
+import { PATH_IMPRINT } from "../routes";
 import Container from "./Container";
 import Image from "./Image";
 import RichText from "./RichText";
-import bmiLogo from "../../resources/img/bmi-logo.png";
-import { Link } from "react-router-dom";
-import {
-  PATH_IMPRINT,
-  // PATH_PRIVACY,
-  // PATH_COOKIE,
-  // PATH_A11Y,
-  // PATH_OSS,
-} from "../routes";
 
 const LinkPropsSchema = z.object({
   url: z.string(),

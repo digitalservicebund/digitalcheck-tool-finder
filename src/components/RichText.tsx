@@ -1,4 +1,4 @@
-import { type Renderer, Marked } from "marked";
+import { Marked, type Renderer } from "marked";
 import { z } from "zod";
 
 export const RichTextPropsSchema = z.object({
