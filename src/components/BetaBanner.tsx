@@ -7,7 +7,8 @@ const BetaBanner = () => {
     <Background backgroundColor="yellow" paddingTop="16" paddingBottom="16">
       <Container paddingTop="0" paddingBottom="0">
         <RichText
-          markdown={`Der Werkzeugfinder befindet sich noch im Aufbau. Die Funktionalität kann zeitweise eingeschränkt sein.`}
+          markdown={`Der Werkzeugfinder befindet sich noch im Aufbau. 
+          Inhalte können noch angepasst werden und die Funktionalität kann zeitweise eingeschränkt sein.`}
         />
       </Container>
     </Background>
