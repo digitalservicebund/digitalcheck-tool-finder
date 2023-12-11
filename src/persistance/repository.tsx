@@ -1,7 +1,7 @@
 import { db } from "./initDb";
-import { Ressort } from "./models/Ressort";
-import { VisualisationObject } from "./models/VisualisationObject";
-import { Reason } from "./models/Reason";
+import { Ressort } from "../models/Ressort";
+import { VisualisationObject } from "../models/VisualisationObject";
+import { Reason } from "../models/Reason";
 
 export async function getRessort(ressortId: string): Promise<Ressort> {
   return db.ressorts.get(ressortId);

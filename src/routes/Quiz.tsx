@@ -14,10 +14,10 @@ import {
   findAllReasons,
   findAllRessorts,
 } from "../persistance/repository";
-import { Ressort } from "../persistance/models/Ressort";
-import { VisualisationObject } from "../persistance/models/VisualisationObject";
-import { Reason } from "../persistance/models/Reason";
-import { Entity } from "../persistance/models/Entity";
+import { Ressort } from "../models/Ressort";
+import { VisualisationObject } from "../models/VisualisationObject";
+import { Reason } from "../models/Reason";
+import { Entity } from "../models/Entity";
 import BetaBanner from "../components/BetaBanner";
 
 export const QuizPropsSchema = z.object({

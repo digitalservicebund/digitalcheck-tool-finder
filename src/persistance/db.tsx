@@ -1,11 +1,11 @@
 import Dexie, { Table } from "dexie";
-import { Notation } from "./models/Notation";
-import { VisualisationObject } from "./models/VisualisationObject";
-import { Reason } from "./models/Reason";
-import { Ressort } from "./models/Ressort";
-import { Tool } from "./models/Tool";
-import { Fidelity } from "./models/Fidelity";
-import { Cluster } from "./models/Cluster";
+import { Notation } from "../models/Notation";
+import { VisualisationObject } from "../models/VisualisationObject";
+import { Reason } from "../models/Reason";
+import { Ressort } from "../models/Ressort";
+import { Tool } from "../models/Tool";
+import { Fidelity } from "../models/Fidelity";
+import { Cluster } from "../models/Cluster";
 
 export class Database extends Dexie {
   objects!: Table<VisualisationObject>;
