@@ -45,6 +45,7 @@ export function findResultByObjectAndRessort(
   let tools = findToolsByNotations(notations);
   tools = filterToolsByRessort(tools, ressort);
   tools = findRecommendedTools(tools);
+  tools = removeDuplicates(tools);
   return new Result(cluster, notations, tools);
 }
 
@@ -61,8 +62,8 @@ function getOrThrow<Type extends Entity>(list: Type[], entityId: string): Type {
 }
 
 function findNotationsByCluster(cluster: Cluster): Notation[] {
-  return data.notations.filter(
-    (notation) => cluster.notations.indexOf(notation.id) !== 0,
+  return data.notations.filter((notation) =>
+    contains(cluster.notations, notation.id),
   );
 }
 
@@ -75,7 +76,7 @@ function findToolsByNotations(notations: Notation[]) {
 }
 
 function findToolsByNotation(notation: Notation): Tool[] {
-  return data.tools.filter((tool) => notation.tools.indexOf(tool.id) !== 0);
+  return data.tools.filter((tool) => contains(notation.tools, tool.id));
 }
 
 function findRecommendedTools(tools: Tool[]) {
@@ -98,9 +99,22 @@ function findRecommendedToolByFidelity(tools: Tool[], fidelity: Fidelity) {
 }
 
 function filterToolsByRessort(tools: Tool[], ressort: Ressort) {
-  return tools.filter((tool) => tool.ressorts.indexOf(ressort.id) !== -1);
+  return tools.filter((tool) => contains(tool.ressorts, ressort.id));
 }
 
 function filterToolsByFidelity(tools: Tool[], fidelity: Fidelity) {
   return tools.filter((tool) => tool.fidelity === fidelity.id);
+}
+
+function removeDuplicates(tools: Tool[]) {
+  const setOfIds: Set<string> = new Set(tools.map((t) => t.id));
+  const arrayOfIds = Array.from(setOfIds);
+  const uniqueTools: (Tool | undefined)[] = arrayOfIds.map((id) =>
+    tools.find((t) => t.id === id),
+  );
+  return uniqueTools.filter((tool): tool is Tool => tool !== undefined);
+}
+
+function contains(list: string[], entityId: string) {
+  return list.indexOf(entityId) !== -1;
 }
