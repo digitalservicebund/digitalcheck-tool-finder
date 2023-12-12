@@ -1,9 +1,9 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
-  moduleFileExtensions: ["js", "ts", "json"],
+  moduleFileExtensions: ["js", "ts", "tsx", "json"],
   transform: {
-    "^.+\\.ts$": "ts-jest",
+    "^.+\\.(j|)tsx?$": "ts-jest",
   },
   testEnvironment: "jsdom",
   testPathIgnorePatterns: ["<rootDir>/test/e2e", "<rootDir>/test/a11y"],
