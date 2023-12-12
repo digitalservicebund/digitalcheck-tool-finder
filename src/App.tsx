@@ -13,6 +13,7 @@ import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
 import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
+import ScrollToTop from "./components/ScrollToTop";
 import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
 import { VisualisationObject } from "./models/VisualisationObject";
@@ -103,6 +104,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <PageHeader />
       <Breadcrumbs {...getBreadcrumbs(routes)} />
       <main className="flex-grow">
