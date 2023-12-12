@@ -36,7 +36,7 @@ const Radio = ({
       {
         <label htmlFor={id}>
           {text}
-          <div className={"text-gray-800 text-sm"}>{subText}</div>
+          <div className={"text-gray-800 ds-body-02-reg"}>{subText}</div>
         </label>
       }
     </div>
