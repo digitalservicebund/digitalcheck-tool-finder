@@ -12,7 +12,8 @@ type Padding =
   | "48" // !pt-48 !pb-48
   | "50" // !pt-50 !pb-50
   | "56" // !pt-56 !pb-56
-  | "64"; // !pt-64 !pb-64
+  | "64" // !pt-64 !pb-64
+  | "80"; // !pt-80 !pb-80
 
 export type CommonWrapperProps = {
   backgroundColor?: BackgroundColor;

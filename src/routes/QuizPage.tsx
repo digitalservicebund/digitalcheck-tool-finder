@@ -102,54 +102,56 @@ function QuizPage({
         </Container>
       </Background>
       <BetaBanner />
-      <Question
-        heading={"In welchem Ressort arbeiten Sie?"}
-        label={"1 von 3"}
-        description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
-        select={{
-          name: "ressort",
-          label: "Ressort",
-          value: ressort.id,
-          onChange: onChangeRessort,
-          options: mapToOptions(ressorts),
-        }}
-      />
-      <Question
-        heading={"Was möchten Sie darstellen?"}
-        label={"2 von 3"}
-        description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
+      <div className={"pt-48 max-w-2xl m-auto"}>
+        <Question
+          heading={"In welchem Ressort arbeiten Sie?"}
+          label={"1 von 3"}
+          description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
+          select={{
+            name: "ressort",
+            label: "Ressort",
+            value: ressort.id,
+            onChange: onChangeRessort,
+            options: mapToOptions(ressorts),
+          }}
+        />
+        <Question
+          heading={"Was möchten Sie darstellen?"}
+          label={"2 von 3"}
+          description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
         auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
-        radio={{
-          name: "object",
-          label: "Objekt der Darstellung",
-          value: object.id,
-          onChange: onChangeObject,
-          options: mapToOptions(objects),
-        }}
-      />
-      <Question
-        heading={"Was möchten Sie mit der Visualisierung erreichen?"}
-        label={"3 von 3"}
-        description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
-        radio={{
-          name: "reason",
-          label: "Grund der Visualisierung",
-          value: reason.id,
-          onChange: onChangeReason,
-          options: mapToOptions(reasons),
-        }}
-      />
-      <Container paddingTop="48" paddingBottom="48">
-        <ButtonContainer>
-          <Button
-            text={"Werkzeug suchen"}
-            size={"large"}
-            href={PATH_RESULT}
-            id={"quiz-find-tool"}
-            onClickCallback={submitSelection}
-          />
-        </ButtonContainer>
-      </Container>
+          radio={{
+            name: "object",
+            label: "Objekt der Darstellung",
+            value: object.id,
+            onChange: onChangeObject,
+            options: mapToOptions(objects),
+          }}
+        />
+        <Question
+          heading={"Was möchten Sie mit der Visualisierung erreichen?"}
+          label={"3 von 3"}
+          description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
+          radio={{
+            name: "reason",
+            label: "Grund der Visualisierung",
+            value: reason.id,
+            onChange: onChangeReason,
+            options: mapToOptions(reasons),
+          }}
+        />
+        <Container paddingTop="0" paddingBottom="48">
+          <ButtonContainer>
+            <Button
+              text={"Werkzeug suchen"}
+              size={"large"}
+              href={PATH_RESULT}
+              id={"quiz-find-tool"}
+              onClickCallback={submitSelection}
+            />
+          </ButtonContainer>
+        </Container>
+      </div>
     </>
   );
 }

@@ -22,7 +22,7 @@ export default function Question({
   radio,
 }: QuestionProps) {
   return (
-    <Container paddingTop="48" paddingBottom="0">
+    <Container paddingTop="0" paddingBottom="80">
       <Box
         label={{
           tagName: "p",
