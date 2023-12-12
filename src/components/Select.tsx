@@ -1,8 +1,10 @@
 import classNames from "classnames";
 import type { ReactNode } from "react";
+import { ChangeEvent } from "react";
+import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
+import InputError from "./InputError";
 import InputLabel from "./InputLabel";
-import { ErrorMessagePropsSchema } from "./index";
 
 export const SelectOptionsPropsSchema = z.array(
   z.object({ value: z.string(), text: z.string() }),
@@ -17,8 +19,13 @@ export const SelectPropsSchema = z.object({
   altLabel: z.string().optional(),
   placeholder: z.string().optional(),
   value: z.string().optional(),
-  onChange: z.function().args(z.string()).returns(z.void()).optional(),
-  errorMessages: z.array(ErrorMessagePropsSchema).optional(),
+  onChange: z
+    .function()
+    .args(z.custom<ChangeEvent<HTMLInputElement>>())
+    .returns(z.void())
+    .optional(),
+  formRegister: z.custom<UseFormRegister<FieldValues>>().optional(),
+  error: z.custom<FieldError>().optional(),
 });
 
 type SelectProps = z.infer<typeof SelectPropsSchema>;
@@ -30,8 +37,21 @@ const Select = ({
   placeholder,
   value,
   onChange,
+  formRegister,
+  error,
 }: SelectProps) => {
-  const selectClassName = classNames("ds-select");
+  const selectClassName = classNames("ds-select", {
+    "has-error": error,
+  });
+  const errorId = `${name}-error`;
+  const registeredFormProps =
+    formRegister !== undefined
+      ? formRegister("ressort", {
+          required: "Bitte wählen Sie eine Option aus.",
+          onChange: onChange,
+        })
+      : {};
+
   return (
     <div>
       {label && <InputLabel id={name}>{label}</InputLabel>}
@@ -40,7 +60,10 @@ const Select = ({
         id={name}
         className={selectClassName}
         value={value}
-        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        {...registeredFormProps}
+        aria-invalid={error !== undefined}
+        aria-describedby={error?.message && errorId}
+        aria-errormessage={error?.message && errorId}
       >
         {placeholder && <option value="">{placeholder}</option>}
         {options.map((option) => {
@@ -51,6 +74,7 @@ const Select = ({
           );
         })}
       </select>
+      {error?.message && <InputError id={errorId}>{error.message}</InputError>}
     </div>
   );
 };

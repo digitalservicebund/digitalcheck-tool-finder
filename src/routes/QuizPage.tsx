@@ -4,7 +4,9 @@ import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
 import Header from "../components/Header";
 
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import { UseFormReturn, useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 import { z } from "zod";
 import BetaBanner from "../components/BetaBanner";
 import Question from "../components/Question";
@@ -85,22 +87,41 @@ function QuizPage({
   reason,
   setReason,
 }: QuizPageProps) {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  }: UseFormReturn = useForm();
+
   const ressorts: Ressort[] = getAllRessorts();
   const objects: VisualisationObject[] = getAllObjects();
   const reasons: Reason[] = getAllReasons();
 
-  const submitSelection = () => {
-    trackSelection(ressort, object, reason);
-  };
-
-  const onChangeRessort = (ressortId: string) => {
-    onChangeHandler(ressortId, setRessort, ressorts, new Ressort());
+  const onChangeRessort = (e: ChangeEvent<HTMLInputElement>) => {
+    onChangeHandler(e.target.value, setRessort, ressorts, new Ressort());
   };
   const onChangeObject = (objectId: string) => {
     onChangeHandler(objectId, setObject, objects, new VisualisationObject());
   };
   const onChangeReason = (reasonId: string) => {
     onChangeHandler(reasonId, setReason, reasons, new Reason());
+  };
+
+  const getRessortErrors = () => {
+    let ressortErrors = {};
+    if (errors.ressort) {
+      ressortErrors = {
+        error: errors.ressort,
+      };
+    }
+    return ressortErrors;
+  };
+
+  const onSubmit = () => {
+    console.log("submit");
+    trackSelection(ressort, object, reason);
+    navigate(PATH_RESULT);
   };
 
   return (
@@ -122,52 +143,55 @@ function QuizPage({
       </Background>
       <BetaBanner />
       <div className={"pt-48 max-w-2xl m-auto"}>
-        <Question
-          heading={"In welchem Ressort arbeiten Sie?"}
-          label={"1 von 3"}
-          description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
-          select={{
-            name: "ressort",
-            label: "Ressort",
-            value: ressort.id,
-            onChange: onChangeRessort,
-            options: mapToSelectOptions(ressorts),
-          }}
-        />
-        <Question
-          heading={"Was möchten Sie darstellen?"}
-          label={"2 von 3"}
-          description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
-        auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
-          radio={{
-            name: "object",
-            value: object.id,
-            onChange: onChangeObject,
-            options: mapToRadioOptions(objects),
-          }}
-        />
-        <Question
-          heading={"Was möchten Sie mit der Visualisierung erreichen?"}
-          label={"3 von 3"}
-          description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
-          radio={{
-            name: "reason",
-            value: reason.id,
-            onChange: onChangeReason,
-            options: mapToRadioOptions(reasons),
-          }}
-        />
-        <Container paddingTop="0" paddingBottom="48">
-          <ButtonContainer>
-            <Button
-              text={"Werkzeug suchen"}
-              size={"large"}
-              href={PATH_RESULT}
-              id={"quiz-find-tool"}
-              onClickCallback={submitSelection}
-            />
-          </ButtonContainer>
-        </Container>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Question
+            heading={"In welchem Ressort arbeiten Sie?"}
+            label={"1 von 3"}
+            description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
+            select={{
+              name: "ressort",
+              label: "Ressort",
+              value: ressort.id,
+              onChange: onChangeRessort,
+              options: mapToSelectOptions(ressorts),
+              formRegister: register,
+              ...getRessortErrors(),
+            }}
+          />
+          <Question
+            heading={"Was möchten Sie darstellen?"}
+            label={"2 von 3"}
+            description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
+          auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
+            radio={{
+              name: "object",
+              value: object.id,
+              onChange: onChangeObject,
+              options: mapToRadioOptions(objects),
+            }}
+          />
+          <Question
+            heading={"Was möchten Sie mit der Visualisierung erreichen?"}
+            label={"3 von 3"}
+            description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
+            radio={{
+              name: "reason",
+              value: reason.id,
+              onChange: onChangeReason,
+              options: mapToRadioOptions(reasons),
+            }}
+          />
+          <Container paddingTop="0" paddingBottom="48">
+            <ButtonContainer>
+              <Button
+                text={"Werkzeug suchen"}
+                size={"large"}
+                id={"quiz-find-tool"}
+                type={"submit"}
+              />
+            </ButtonContainer>
+          </Container>
+        </form>
       </div>
     </>
   );
