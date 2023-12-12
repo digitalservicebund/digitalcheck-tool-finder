@@ -104,6 +104,7 @@ function QuizPage({
       <BetaBanner />
       <Question
         heading={"In welchem Ressort arbeiten Sie?"}
+        label={"1 von 3"}
         description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
         select={{
           name: "ressort",
@@ -115,6 +116,7 @@ function QuizPage({
       />
       <Question
         heading={"Was möchten Sie darstellen?"}
+        label={"2 von 3"}
         description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
         auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
         radio={{
@@ -127,6 +129,7 @@ function QuizPage({
       />
       <Question
         heading={"Was möchten Sie mit der Visualisierung erreichen?"}
+        label={"3 von 3"}
         description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
         radio={{
           name: "reason",
