@@ -117,7 +117,7 @@ function QuizPage({
         heading={"Was möchten Sie darstellen?"}
         description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
         auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
-        select={{
+        radio={{
           name: "object",
           label: "Objekt der Darstellung",
           value: object.id,
@@ -128,7 +128,7 @@ function QuizPage({
       <Question
         heading={"Was möchten Sie mit der Visualisierung erreichen?"}
         description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
-        select={{
+        radio={{
           name: "reason",
           label: "Grund der Visualisierung",
           value: reason.id,
