@@ -2,11 +2,19 @@ import { z } from "zod";
 import Radio from "./Radio";
 import { ErrorMessagePropsSchema } from "./index";
 
+export const RadioOptionsPropsSchema = z.array(
+  z.object({
+    value: z.string(),
+    text: z.string(),
+    subText: z.string().optional(),
+  }),
+);
+
+export type RadioOptionsProps = z.infer<typeof RadioOptionsPropsSchema>;
+
 export const RadioGroupPropsSchema = z.object({
   name: z.string(),
-  options: z.array(
-    z.object({ value: z.string(), text: z.string().optional() }),
-  ),
+  options: RadioOptionsPropsSchema,
   label: z.string().optional(),
   altLabel: z.string().optional(),
   value: z.string().optional(),
@@ -36,6 +44,7 @@ const RadioGroup = ({
               name={name}
               value={o.value}
               text={o.text}
+              subText={o.subText}
               onChange={onChange}
               checked={value === o.value}
             />

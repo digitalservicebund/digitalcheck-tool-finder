@@ -9,5 +9,6 @@ export class Reason implements Entity {
 
   id: string;
   name: string;
+  description?: string;
   order: number;
 }

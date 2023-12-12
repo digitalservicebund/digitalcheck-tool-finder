@@ -10,6 +10,7 @@ export class VisualisationObject implements Entity {
 
   id: string;
   name: string;
+  description?: string;
   cluster: string;
   order: number;
 }

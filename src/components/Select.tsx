@@ -4,15 +4,15 @@ import { z } from "zod";
 import InputLabel from "./InputLabel";
 import { ErrorMessagePropsSchema } from "./index";
 
-export const OptionsPropsSchema = z.array(
+export const SelectOptionsPropsSchema = z.array(
   z.object({ value: z.string(), text: z.string() }),
 );
 
-export type OptionsProps = z.infer<typeof OptionsPropsSchema>;
+export type SelectOptionsProps = z.infer<typeof SelectOptionsPropsSchema>;
 
-export const DropdownPropsSchema = z.object({
+export const SelectPropsSchema = z.object({
   name: z.string(),
-  options: OptionsPropsSchema,
+  options: SelectOptionsPropsSchema,
   label: z.custom<ReactNode>().optional(),
   altLabel: z.string().optional(),
   placeholder: z.string().optional(),
@@ -21,7 +21,7 @@ export const DropdownPropsSchema = z.object({
   errorMessages: z.array(ErrorMessagePropsSchema).optional(),
 });
 
-type SelectProps = z.infer<typeof DropdownPropsSchema>;
+type SelectProps = z.infer<typeof SelectPropsSchema>;
 
 const Select = ({
   name,

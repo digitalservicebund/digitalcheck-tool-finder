@@ -2,13 +2,13 @@ import { z } from "zod";
 import Box from "./Box";
 import Container from "./Container";
 import RadioGroup, { RadioGroupPropsSchema } from "./RadioGroup";
-import Select, { DropdownPropsSchema } from "./Select";
+import Select, { SelectPropsSchema } from "./Select";
 
 export const QuestionPropsSchema = z.object({
   heading: z.string(),
   label: z.string(),
   description: z.string(),
-  select: DropdownPropsSchema.optional(),
+  select: SelectPropsSchema.optional(),
   radio: RadioGroupPropsSchema.optional(),
 });
 

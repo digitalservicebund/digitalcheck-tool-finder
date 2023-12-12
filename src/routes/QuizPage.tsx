@@ -8,7 +8,8 @@ import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
 import BetaBanner from "../components/BetaBanner";
 import Question from "../components/Question";
-import { OptionsProps } from "../components/Select";
+import { RadioOptionsProps } from "../components/RadioGroup";
+import { SelectOptionsProps } from "../components/Select";
 import { Entity } from "../models/Entity";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
@@ -32,12 +33,30 @@ export const QuizPagePropsSchema = z.object({
 
 export type QuizPageProps = z.infer<typeof QuizPagePropsSchema>;
 
-function mapToOptions(entities: Entity[]): OptionsProps {
-  return entities.map((element) => {
+function mapToSelectOptions(entities: Entity[]): SelectOptionsProps {
+  return entities.map((entity) => {
     return {
-      value: element.id,
-      text: element.name,
+      value: entity.id,
+      text: entity.name,
     };
+  });
+}
+
+function mapToRadioOptions<Type extends VisualisationObject | Reason>(
+  entities: Type[],
+): RadioOptionsProps {
+  return entities.map((entity) => {
+    const option = {
+      value: entity.id,
+      text: entity.name,
+    };
+    if (entity.description) {
+      return {
+        ...option,
+        subText: entity.description,
+      };
+    }
+    return option;
   });
 }
 
@@ -112,7 +131,7 @@ function QuizPage({
             label: "Ressort",
             value: ressort.id,
             onChange: onChangeRessort,
-            options: mapToOptions(ressorts),
+            options: mapToSelectOptions(ressorts),
           }}
         />
         <Question
@@ -122,10 +141,9 @@ function QuizPage({
         auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
           radio={{
             name: "object",
-            label: "Objekt der Darstellung",
             value: object.id,
             onChange: onChangeObject,
-            options: mapToOptions(objects),
+            options: mapToRadioOptions(objects),
           }}
         />
         <Question
@@ -134,10 +152,9 @@ function QuizPage({
           description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
           radio={{
             name: "reason",
-            label: "Grund der Visualisierung",
             value: reason.id,
             onChange: onChangeReason,
-            options: mapToOptions(reasons),
+            options: mapToRadioOptions(reasons),
           }}
         />
         <Container paddingTop="0" paddingBottom="48">

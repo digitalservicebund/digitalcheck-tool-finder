@@ -1,15 +1,15 @@
 {
   "objects": [
-    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "cluster": "schaubild", "order": 1 },
-    { "id": "logik", "name": "Entscheidungslogiken", "cluster": "entscheidungsbaum", "order": 2 },
-    { "id": "prozess", "name": "Ganzen Prozess", "cluster": "flussdiagramm", "order": 3 },
+    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?", "cluster": "schaubild", "order": 1 },
+    { "id": "logik", "name": "Entscheidungslogiken", "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.", "cluster": "entscheidungsbaum", "order": 2 },
+    { "id": "prozess", "name": "Ganzen Prozess", "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung aufzeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.", "cluster": "flussdiagramm", "order": 3 },
     { "id": "unbekannt", "name": "Weiß ich nicht", "cluster": "schaubild", "order": 4 },
     { "id": "anderes", "name": "Anderes", "cluster": "schaubild", "order": 5 }
   ],
   "reasons": [
-    { "id": "austausch", "name": "Für den Austausch mit anderen", "order": 1 },
-    { "id": "selbst", "name": "Für mich selbst", "order": 2 },
-    { "id": "ablage", "name": "Für die Ablage", "order": 3 },
+    { "id": "austausch", "name": "Für den Austausch mit anderen", "description": "z. B. Kommunikation, gemeinsames Verständnis aufbauen, Ideen austauschen", "order": 1 },
+    { "id": "selbst", "name": "Für mich selbst", "description": "z. B. Abhängigkeiten strukturieren; Erkennen von Logikbrüchen, Digitaltauglichkeit oder Medienbrüchen", "order": 2 },
+    { "id": "ablage", "name": "Für die Ablage", "description": "z. B. Dokumentieren", "order": 3 },
     { "id": "unbekannt", "name": "Weiß ich nicht", "order": 4 },
     { "id": "anderes", "name": "Anderes", "order": 5 }
   ],
