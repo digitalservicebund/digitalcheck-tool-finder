@@ -77,10 +77,12 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
     }
   });
 
-  const result = findResultByObjectAndRessort(object, ressort);
-  console.log("Cluster: " + result.cluster.name);
-  console.log("Notations: " + result.notations.map((n) => n.name).toString());
-  console.log("Tools: " + result.tools.map((t) => t.name).toString());
+  if (ressort.id && object.id && reason.id) {
+    const result = findResultByObjectAndRessort(object, ressort);
+    console.log("Cluster: " + result.cluster.name);
+    console.log("Notations: " + result.notations.map((n) => n.name).toString());
+    console.log("Tools: " + result.tools.map((t) => t.name).toString());
+  }
 
   const renderTool = (tool: BoxWithImageProps, index: number) => (
     <div
