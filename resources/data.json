@@ -1,6 +1,6 @@
 {
   "objects": [
-    { "id": "interaktion", "name": "Einfache Interaktionen von Akteuren oder Datenflüsse", "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?", "cluster": "schaubild", "order": 1 },
+    { "id": "interaktion", "name": "Interaktionen von Akteuren oder Datenflüsse", "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?", "cluster": "schaubild", "order": 1 },
     { "id": "logik", "name": "Entscheidungslogiken", "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.", "cluster": "entscheidungsbaum", "order": 2 },
     { "id": "prozess", "name": "Ganzen Prozess", "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung aufzeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.", "cluster": "flussdiagramm", "order": 3 },
     { "id": "unbekannt", "name": "Weiß ich nicht", "cluster": "schaubild", "order": 4 },
@@ -19,7 +19,7 @@
     { "id": "flussdiagramm", "name": "Flussdiagramm", "notations": [ "bpmn", "fim", "frei" ] }
   ],
   "notations": [
-    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard"] },
+    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard", "bundescloud-drawio"] },
     { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "bundescloud-drawio"] },
     { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
     { "id": "bpmn", "name": "BPMN", "tools": ["modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio", "bundescloud-drawio"] },
