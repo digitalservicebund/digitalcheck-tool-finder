@@ -14,9 +14,9 @@
     { "id": "anderes", "name": "Anderes", "order": 5 }
   ],
   "clusters": [
-    { "id": "schaubild", "name": "Schaubild", "tools": ["papier", "conceptboard", "bundescloud-drawio"], "notations": [ "frei" ] },
-    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "tools": ["papier", "conceptboard", "logos", "bundescloud-drawio", "adonis"], "notations": [ "rulemap", "dmn", "frei" ] },
-    { "id": "flussdiagramm", "name": "Flussdiagramm", "tools": ["papier", "conceptboard", "bundescloud-drawio", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio"], "notations": [ "bpmn", "fim", "frei" ] }
+    { "id": "schaubild", "name": "Schaubild", "tools": ["papier-schaubild", "conceptboard-schaubild", "bundescloud-drawio-schaubild"], "notations": [ "frei" ] },
+    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "tools": ["papier-entscheidungsbaum", "conceptboard-entscheidungsbaum", "logos", "bundescloud-drawio-entscheidungsbaum", "adonis"], "notations": [ "rulemap", "dmn", "frei" ] },
+    { "id": "flussdiagramm", "name": "Flussdiagramm", "tools": ["papier-flussdiagramm", "conceptboard-flussdiagramm", "bundescloud-drawio-flussdiagramm", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio"], "notations": [ "bpmn", "fim", "frei" ] }
   ],
   "notations": [
     { "id": "frei", "name": "Frei" },
@@ -26,12 +26,18 @@
     { "id": "fim", "name": "FIM" }
   ],
   "tools": [
-    { "id": "papier", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
-    { "id": "bundescloud-drawio", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
+    { "id": "papier-schaubild", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
+    { "id": "papier-entscheidungsbaum", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
+    { "id": "papier-flussdiagramm", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
+    { "id": "bundescloud-drawio-schaubild", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
+    { "id": "bundescloud-drawio-entscheidungsbaum", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
+    { "id": "bundescloud-drawio-flussdiagramm", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
     { "id": "logos", "name": "Logos", "fidelity": "digital", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
     { "id": "adonis", "name": "Adonis", "fidelity": "pro", "ressorts": ["bmwk", "bmi", "bmas"] },
     { "id": "bic", "name": "BIC", "fidelity": "pro", "ressorts": ["bmi"] },
-    { "id": "conceptboard", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
+    { "id": "conceptboard-schaubild", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
+    { "id": "conceptboard-entscheidungsbaum", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
+    { "id": "conceptboard-flussdiagramm", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
     { "id": "msvisio", "name": "MS Visio", "fidelity": "pro", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
     { "id": "modulo", "name": "Modulo", "fidelity": "digital", "ressorts": ["bmas"] },
     { "id": "aris", "name": "Aris", "fidelity": "pro", "ressorts": ["bmbf", "bmdv"] },
