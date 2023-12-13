@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import flowchartImage from "../../resources/img/notations/flowchart.png";
+import flowchartImage from "../../resources/img/clusters/flowchart.png";
 import adonisImage from "../../resources/img/tools/adonis.png";
-import paperImage from "../../resources/img/tools/paper.png";
+import paperImage from "../../resources/img/tools/papier.png";
 import Background from "../components/Background";
 import BetaBanner from "../components/BetaBanner";
 import Box from "../components/Box";
