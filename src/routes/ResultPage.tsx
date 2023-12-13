@@ -16,6 +16,7 @@ import Image from "../components/Image";
 import RichText from "../components/RichText";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
+import { Result } from "../models/Result";
 import { VisualisationObject } from "../models/VisualisationObject";
 import { findResultByObjectAndRessort } from "../persistance/repository";
 import { PATH_FLOWCHART, PATH_QUIZ } from "./";
@@ -77,8 +78,9 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
     }
   });
 
+  let result: Result | undefined;
   if (ressort.id && object.id && reason.id) {
-    const result = findResultByObjectAndRessort(object, ressort);
+    result = findResultByObjectAndRessort(object, ressort);
     console.log("Cluster: " + result.cluster.name);
     console.log("Tools: " + result.tools.map((t) => t.name).toString());
   }
@@ -111,47 +113,72 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
         </Container>
       </Background>
       <BetaBanner />
-      <Container paddingTop="48" paddingBottom="40">
-        <div className={"border border-8 rounded-lg border-[#EBF3FD]"}>
-          <Image
-            url={flowchartImage}
-            alternativeText="Darstellung eines vereinfachten Flussdiagramms ohne Text"
-          />
-          <div className={"p-24 pt-16"}>
-            <div className={"p-24 pb-32"}>
-              <Box
-                content={{
-                  markdown: `Unsere Empfehlung:`,
-                }}
-              ></Box>
-              <Box
-                heading={{
-                  tagName: "h1",
-                  look: "ds-heading-02-reg",
-                  text: `Das Flussdiagramm`,
-                }}
-                content={{
-                  markdown: `
+      {result && (
+        <Container paddingTop="48" paddingBottom="40">
+          <div className={"border border-8 rounded-lg border-[#EBF3FD]"}>
+            <Image
+              url={flowchartImage}
+              alternativeText="Darstellung eines vereinfachten Flussdiagramms ohne Text"
+            />
+            <div className={"p-24 pt-16"}>
+              <div className={"p-24 pb-32"}>
+                <Box
+                  content={{
+                    markdown: `Unsere Empfehlung:`,
+                  }}
+                ></Box>
+                <Box
+                  heading={{
+                    tagName: "h1",
+                    look: "ds-heading-02-reg",
+                    text: `Das Flussdiagramm`,
+                  }}
+                  content={{
+                    markdown: `
 Ein Flussdiagramm ist eine Art von Diagramm, das einen Prozess oder Arbeitsablauf visuell erklärt. 
     Unter Verwendung standardisierter Symbole und Definitionen beschreiben diese visuell die 
     verschiedenen Schritte und Entscheidungen eines Prozesses. So wird der Fluss, den ein 
     Prozess durchläuft abgebildet.`,
-                }}
-                buttons={[
-                  {
-                    id: "result-page-flowchart-button",
-                    text: "Flussdiagramm Anleitung",
-                    href: PATH_FLOWCHART,
-                    size: "small",
-                    look: "tertiary",
-                  },
-                ]}
-              ></Box>
+                  }}
+                  buttons={[
+                    {
+                      id: "result-page-flowchart-button",
+                      text: "Flussdiagramm Anleitung",
+                      href: PATH_FLOWCHART,
+                      size: "small",
+                      look: "tertiary",
+                    },
+                  ]}
+                ></Box>
+              </div>
+              <div>{tools.map(renderTool)}</div>
             </div>
-            <div>{tools.map(renderTool)}</div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      )}
+      {!result && (
+        <Container paddingTop="48" paddingBottom="48">
+          <Box
+            identifier={"info-section-why-visualisation"}
+            heading={{
+              tagName: "h2",
+              look: "ds-heading-02-reg",
+              text: "Es ist ein Fehler aufgetreten.",
+            }}
+            content={{
+              markdown: `Es tut uns Leid! Aus unbekannten Gründen ist ein Fehler aufgetreten. 
+                    Bitte versuchen sie Es erneut.`,
+            }}
+            buttons={[
+              {
+                id: "result-error-back",
+                text: "Zurück",
+                href: PATH_QUIZ,
+              },
+            ]}
+          ></Box>
+        </Container>
+      )}
       {ressort && object && reason && (
         <Container paddingTop="0" paddingBottom="10">
           <RichText
