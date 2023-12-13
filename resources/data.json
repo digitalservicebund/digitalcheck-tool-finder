@@ -1,22 +1,88 @@
 {
   "objects": [
-    { "id": "interaktion", "name": "Interaktionen von Akteuren oder Datenflüsse", "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?", "cluster": "schaubild", "order": 1 },
-    { "id": "logik", "name": "Entscheidungslogiken", "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.", "cluster": "entscheidungsbaum", "order": 2 },
-    { "id": "prozess", "name": "Ganzen Prozess", "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung aufzeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.", "cluster": "flussdiagramm", "order": 3 },
-    { "id": "unbekannt", "name": "Weiß ich nicht", "cluster": "schaubild", "order": 4 },
-    { "id": "anderes", "name": "Anderes", "cluster": "schaubild", "order": 5 }
+    {
+      "id": "interaktion",
+      "name": "Interaktionen von Akteuren oder Datenflüsse",
+      "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?",
+      "cluster": "schaubild",
+      "order": 1
+    },
+    {
+      "id": "logik",
+      "name": "Entscheidungslogiken",
+      "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
+      "cluster": "entscheidungsbaum",
+      "order": 2
+    },
+    {
+      "id": "prozess",
+      "name": "Ganzen Prozess",
+      "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung aufzeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
+      "cluster": "flussdiagramm",
+      "order": 3
+    },
+    {
+      "id": "unbekannt",
+      "name": "Weiß ich nicht",
+      "cluster": "schaubild",
+      "order": 4
+    },
+    {
+      "id": "anderes",
+      "name": "Anderes",
+      "cluster": "schaubild",
+      "order": 5
+    }
   ],
   "reasons": [
-    { "id": "austausch", "name": "Für den Austausch mit anderen", "description": "z. B. Kommunikation, gemeinsames Verständnis aufbauen, Ideen austauschen", "order": 1 },
-    { "id": "selbst", "name": "Für mich selbst", "description": "z. B. Abhängigkeiten strukturieren; Erkennen von Logikbrüchen, Digitaltauglichkeit oder Medienbrüchen", "order": 2 },
-    { "id": "ablage", "name": "Für die Ablage", "description": "z. B. Dokumentieren", "order": 3 },
-    { "id": "unbekannt", "name": "Weiß ich nicht", "order": 4 },
-    { "id": "anderes", "name": "Anderes", "order": 5 }
+    {
+      "id": "austausch",
+      "name": "Für den Austausch mit anderen",
+      "description": "z. B. Kommunikation, gemeinsames Verständnis aufbauen, Ideen austauschen",
+      "order": 1
+    },
+    {
+      "id": "selbst",
+      "name": "Für mich selbst",
+      "description": "z. B. Abhängigkeiten strukturieren; Erkennen von Logikbrüchen, Digitaltauglichkeit oder Medienbrüchen",
+      "order": 2
+    },
+    {
+      "id": "ablage",
+      "name": "Für die Ablage",
+      "description": "z. B. Dokumentieren",
+      "order": 3
+    },
+    {
+      "id": "unbekannt",
+      "name": "Weiß ich nicht",
+      "order": 4
+    },
+    {
+      "id": "anderes",
+      "name": "Anderes",
+      "order": 5
+    }
   ],
   "clusters": [
-    { "id": "schaubild", "name": "Schaubild", "tools": ["papier-schaubild", "conceptboard-schaubild", "bundescloud-drawio-schaubild"], "notations": [ "frei" ] },
-    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "tools": ["papier-entscheidungsbaum", "conceptboard-entscheidungsbaum", "logos", "bundescloud-drawio-entscheidungsbaum", "adonis"], "notations": [ "rulemap", "dmn", "frei" ] },
-    { "id": "flussdiagramm", "name": "Flussdiagramm", "tools": ["papier-flussdiagramm", "conceptboard-flussdiagramm", "bundescloud-drawio-flussdiagramm", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio"], "notations": [ "bpmn", "fim", "frei" ] }
+    {
+      "id": "schaubild",
+      "name": "Schaubild",
+      "tools": [ "papier-schaubild", "conceptboard-schaubild", "bundescloud-drawio-schaubild"],
+      "notations": [ "frei" ]
+    },
+    {
+      "id": "entscheidungsbaum",
+      "name": "Entscheidungsbaum",
+      "tools": [ "papier-entscheidungsbaum", "conceptboard-entscheidungsbaum", "logos", "bundescloud-drawio-entscheidungsbaum", "adonis" ],
+      "notations": [ "rulemap", "dmn", "frei" ]
+    },
+    {
+      "id": "flussdiagramm",
+      "name": "Flussdiagramm",
+      "tools": [ "papier-flussdiagramm", "conceptboard-flussdiagramm", "bundescloud-drawio-flussdiagramm", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio" ],
+      "notations": ["bpmn", "fim", "frei"]
+    }
   ],
   "notations": [
     { "id": "frei", "name": "Frei" },
@@ -26,43 +92,211 @@
     { "id": "fim", "name": "FIM" }
   ],
   "tools": [
-    { "id": "papier-schaubild", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
-    { "id": "papier-entscheidungsbaum", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
-    { "id": "papier-flussdiagramm", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},
-    { "id": "bundescloud-drawio-schaubild", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
-    { "id": "bundescloud-drawio-entscheidungsbaum", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
-    { "id": "bundescloud-drawio-flussdiagramm", "name": "Bundescloud draw.io", "fidelity": "digital", "ressorts": ["bmi", "bmj"] },
-    { "id": "logos", "name": "Logos", "fidelity": "digital", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"] },
-    { "id": "adonis", "name": "Adonis", "fidelity": "pro", "ressorts": ["bmwk", "bmi", "bmas"] },
-    { "id": "bic", "name": "BIC", "fidelity": "pro", "ressorts": ["bmi"] },
-    { "id": "conceptboard-schaubild", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
-    { "id": "conceptboard-entscheidungsbaum", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
-    { "id": "conceptboard-flussdiagramm", "name": "Conceptboard", "fidelity": "digital", "ressorts": ["bmas"] },
-    { "id": "msvisio", "name": "MS Visio", "fidelity": "pro", "ressorts": ["bmj","bmfsfj","bmf","bmg", "bmz"] },
-    { "id": "modulo", "name": "Modulo", "fidelity": "digital", "ressorts": ["bmas"] },
-    { "id": "aris", "name": "Aris", "fidelity": "pro", "ressorts": ["bmbf", "bmdv"] },
-    { "id": "aris-cloud", "name": "Aris Cloud", "fidelity": "pro", "ressorts": ["bmf"] }
+    {
+      "id": "papier-schaubild",
+      "name": "Papier",
+      "fidelity": "einfach",
+      "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
+      "description": "Die ersten Versionen eines Schaubilds sollten mit Stift und Papier angefertigt werden. Dies ist schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten.",
+      "link": ""
+    },
+    {
+      "id": "papier-entscheidungsbaum",
+      "name": "Papier",
+      "fidelity": "einfach",
+      "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
+      "description": "Einen ersten Aufschlag eines Entscheidungsbaums kann man schnell mit Stift und Papier abbilden. Post-It's, können dabei helfen, einzelne Bereiche schneller verschiebbar zu machen. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten.",
+      "link": ""
+    },
+    {
+      "id": "papier-flussdiagramm",
+      "name": "Papier",
+      "fidelity": "einfach",
+      "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
+      "description": "Die ersten Versionen eines Flussdiagramms sollten mit Stift und Papier angefertigt werden (Post-It's helfen beim schnelleren \"verschieben\"). Papier ist gerade in der frühen Ideenphase oft zeiteffizienter, um Gedanken und Annahmen zu skizzieren, als diese in einem digitalen Werkzeug abzubilden. Auch ist die Barriere des Verwerfens und neuen Anfangens so geringer.",
+      "link": ""
+    },
+    {
+      "id": "bundescloud-drawio-schaubild",
+      "name": "Bundescloud draw.io",
+      "fidelity": "digital",
+      "ressorts": [ "bmi", "bmj" ],
+      "description": "\"Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"\"Neues Diagramm erstellen\"\"\n- Suche nach \"\"Ablaufdiagramm\"\"\n-> Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren\"",
+      "link": "https://www.draw.io/"
+    },
+    {
+      "id": "bundescloud-drawio-entscheidungsbaum",
+      "name": "Bundescloud draw.io",
+      "fidelity": "digital",
+      "ressorts": [ "bmi", "bmj" ],
+      "description": "\"Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"\"Neues Diragramm erstellen\"\"\n- Suche Nach \"\"Decision\"\"\n-> Speichere das Diagramm Lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren\"",
+      "link": "https://www.draw.io/"
+    },
+    {
+      "id": "bundescloud-drawio-flussdiagramm",
+      "name": "Bundescloud draw.io",
+      "fidelity": "digital",
+      "ressorts": [ "bmi", "bmj" ],
+      "description": "\"Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass deine Flussdiagramme gut strukturiert und formatiert sind. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür ein Flussdiagramm wähle: \"\"Neues Diagramm erstellen\"\"\n- für mehrere Akteure: \"\"Swimlane-Diagramm\"\"\n- für nur einen Akteur \"\"Ablaufdiagramm\"\" \n-> Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml, um es später wieder zu editieren. \nDu kannst es sonst auch als PNG, PDF, etc. exportieren\"",
+      "link": "https://www.draw.io/"
+    },
+    {
+      "id": "logos",
+      "name": "Logos",
+      "fidelity": "digital",
+      "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
+      "description": "Eine Rulemap ist eine Art Entscheidungsbaum welcher extra für den juristischen Kontext entwickelt wurde. Mit derm Werkzeug kannst du diese erstellen, der Vorteil hier ist, dass es direkt eine Logikprüfung ermöglicht. Desweiteren kannst du deine gesamte Regelung in einer Rulemap abbilden und so verschiedene Tatbestände simulieren.",
+      "link": "https://rulemapping.knowledgetools.de/rulemapping/#"
+    },
+    {
+      "id": "adonis",
+      "name": "Adonis",
+      "fidelity": "pro",
+      "ressorts": [ "bmwk", "bmi", "bmas" ],
+      "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. Die Modellierung passiert in der \"BPMN\" Notation. Adonis solltest du also dann einsetzen, wenn du eine FIM-Modellierung anfertigen möchtest, oder du weißt, dass du in Zukunft öfter mit FIM-Modellierungen zu tun hast. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "link": ""
+    },
+    {
+      "id": "bic",
+      "name": "BIC",
+      "fidelity": "pro",
+      "ressorts": [ "bmi" ],
+      "description": "BIC Process Design ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "link": ""
+    },
+    {
+      "id": "conceptboard-schaubild",
+      "name": "Conceptboard",
+      "fidelity": "digital",
+      "ressorts": [ "bmas" ],
+      "description": "Lorem ipsum",
+      "link": ""
+    },
+    {
+      "id": "conceptboard-entscheidungsbaum",
+      "name": "Conceptboard",
+      "fidelity": "digital",
+      "ressorts": [ "bmas" ],
+      "description": "Lorem ipsum",
+      "link": ""
+    },
+    {
+      "id": "conceptboard-flussdiagramm",
+      "name": "Conceptboard",
+      "fidelity": "digital",
+      "ressorts": [ "bmas" ],
+      "description": "Lorem ipsum",
+      "link": ""
+    },
+    {
+      "id": "msvisio",
+      "name": "MS Visio",
+      "fidelity": "pro",
+      "ressorts": [ "bmj", "bmfsfj", "bmf", "bmg", "bmz" ],
+      "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen, sie lehnt sich vom Interface an die bekannten Office-Programme an, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "link": ""
+    },
+    {
+      "id": "modulo",
+      "name": "Modulo",
+      "fidelity": "digital",
+      "ressorts": [ "bmas" ],
+      "description": "Ist ein analoges, kartenbasiertes Werkzeug das extra für die öffentliche Verwaltung konzipiert wurde. Mit Hilfe von vordefinierten Magnetkarten kannst du einfache Prozesse der Leistungsverwaltung darstellen. Den Koffer findest du bei deinem hausinternen Ansprechpartner, kontaktiere uns hierzu gerne direkt.",
+      "link": "https://shi-institut.de/produkte/modulo/"
+    },
+    {
+      "id": "aris",
+      "name": "Aris",
+      "fidelity": "pro",
+      "ressorts": [ "bmbf", "bmdv" ],
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "link": ""
+    },
+    {
+      "id": "aris-cloud",
+      "name": "Aris Cloud",
+      "fidelity": "pro",
+      "ressorts": [ "bmf" ],
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner."
+    }
   ],
   "fidelities": [
-    { "id": "einfach", "name": "Einfach", "order": 1 },
-    { "id": "digital", "name": "Digital Einfach", "order": 2 },
-    { "id": "pro", "name": "Digital Profi", "order": 3 }
+    {
+      "id": "einfach",
+      "name": "Einfach",
+      "order": 1
+    },
+    {
+      "id": "digital",
+      "name": "Digital Einfach",
+      "order": 2
+    },
+    {
+      "id": "pro",
+      "name": "Digital Profi",
+      "order": 3
+    }
   ],
   "ressorts": [
-    { "id": "bmwk", "name": "BMWK" },
-    { "id": "bmf", "name": "BMF" },
-    { "id": "bmi", "name": "BMI" },
-    { "id": "aa", "name": "AA" },
-    { "id": "bmj", "name": "BMJ" },
-    { "id": "bmas", "name": "BMAS" },
-    { "id": "bmvg", "name": "BMVg" },
-    { "id": "bmel", "name": "BMEL" },
-    { "id": "bmfsfj", "name": "BMFSFJ" },
-    { "id": "bmg", "name": "BMG" },
-    { "id": "bmdv", "name": "BMDV" },
-    { "id": "bmuv", "name": "BMUV" },
-    { "id": "bmbf", "name": "BMBF" },
-    { "id": "bmz", "name": "BMZ" },
-    { "id": "bmwsb", "name": "BMWSB" }
+    {
+      "id": "bmwk",
+      "name": "BMWK"
+    },
+    {
+      "id": "bmf",
+      "name": "BMF"
+    },
+    {
+      "id": "bmi",
+      "name": "BMI"
+    },
+    {
+      "id": "aa",
+      "name": "AA"
+    },
+    {
+      "id": "bmj",
+      "name": "BMJ"
+    },
+    {
+      "id": "bmas",
+      "name": "BMAS"
+    },
+    {
+      "id": "bmvg",
+      "name": "BMVg"
+    },
+    {
+      "id": "bmel",
+      "name": "BMEL"
+    },
+    {
+      "id": "bmfsfj",
+      "name": "BMFSFJ"
+    },
+    {
+      "id": "bmg",
+      "name": "BMG"
+    },
+    {
+      "id": "bmdv",
+      "name": "BMDV"
+    },
+    {
+      "id": "bmuv",
+      "name": "BMUV"
+    },
+    {
+      "id": "bmbf",
+      "name": "BMBF"
+    },
+    {
+      "id": "bmz",
+      "name": "BMZ"
+    },
+    {
+      "id": "bmwsb",
+      "name": "BMWSB"
+    }
   ]
 }
