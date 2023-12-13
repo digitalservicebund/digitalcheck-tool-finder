@@ -14,16 +14,16 @@
     { "id": "anderes", "name": "Anderes", "order": 5 }
   ],
   "clusters": [
-    { "id": "schaubild", "name": "Schaubild", "notations": [ "frei" ] },
-    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "notations": [ "rulemap", "dmn", "frei" ] },
-    { "id": "flussdiagramm", "name": "Flussdiagramm", "notations": [ "bpmn", "fim", "frei" ] }
+    { "id": "schaubild", "name": "Schaubild", "tools": ["papier", "conceptboard", "bundescloud-drawio"], "notations": [ "frei" ] },
+    { "id": "entscheidungsbaum", "name": "Entscheidungsbaum", "tools": ["papier", "conceptboard", "logos", "bundescloud-drawio", "adonis"], "notations": [ "rulemap", "dmn", "frei" ] },
+    { "id": "flussdiagramm", "name": "Flussdiagramm", "tools": ["papier", "conceptboard", "bundescloud-drawio", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio"], "notations": [ "bpmn", "fim", "frei" ] }
   ],
   "notations": [
-    { "id": "frei", "name": "Frei", "tools": ["papier", "conceptboard", "bundescloud-drawio"] },
-    { "id": "rulemap", "name": "Rulemap", "tools": ["papier", "logos", "bundescloud-drawio"] },
-    { "id": "dmn", "name": "DMN", "tools": ["adonis"] },
-    { "id": "bpmn", "name": "BPMN", "tools": ["modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio", "bundescloud-drawio"] },
-    { "id": "fim", "name": "FIM", "tools": ["adonis", "bic"] }
+    { "id": "frei", "name": "Frei" },
+    { "id": "rulemap", "name": "Rulemap" },
+    { "id": "dmn", "name": "DMN" },
+    { "id": "bpmn", "name": "BPMN" },
+    { "id": "fim", "name": "FIM" }
   ],
   "tools": [
     { "id": "papier", "name": "Papier", "fidelity": "einfach", "ressorts": ["bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb"]},

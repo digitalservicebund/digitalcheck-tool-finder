@@ -3,7 +3,6 @@ import { Cluster } from "../models/Cluster";
 import { Data } from "../models/Data";
 import { Entity } from "../models/Entity";
 import { Fidelity } from "../models/Fidelity";
-import { Notation } from "../models/Notation";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
 import { Result } from "../models/Result";
@@ -37,16 +36,11 @@ export function findResultByObjectAndRessort(
   ressort: Ressort,
 ): Result {
   const cluster: Cluster = getClusterOrThrow(object.cluster);
-  const notations: Notation[] = findNotationsByCluster(cluster);
-  if (notations.length === 0) {
-    throw new Error("Could not find any notation for cluster " + cluster.id);
-  }
-
-  let tools = findToolsByNotations(notations);
+  let tools = findToolsByCluster(cluster);
   tools = filterToolsByRessort(tools, ressort);
-  tools = findRecommendedTools(tools);
+  tools = filterRecommendedTools(tools);
   tools = removeDuplicates(tools);
-  return new Result(cluster, notations, tools);
+  return new Result(cluster, tools);
 }
 
 function getClusterOrThrow(clusterId: string): Cluster {
@@ -61,25 +55,11 @@ function getOrThrow<Type extends Entity>(list: Type[], entityId: string): Type {
   return entity;
 }
 
-function findNotationsByCluster(cluster: Cluster): Notation[] {
-  return data.notations.filter((notation) =>
-    contains(cluster.notations, notation.id),
-  );
+function findToolsByCluster(cluster: Cluster): Tool[] {
+  return data.tools.filter((tool) => contains(cluster.tools, tool.id));
 }
 
-function findToolsByNotations(notations: Notation[]) {
-  const tools: Tool[] = [];
-  notations.forEach((notation) => {
-    tools.push(...findToolsByNotation(notation));
-  });
-  return tools;
-}
-
-function findToolsByNotation(notation: Notation): Tool[] {
-  return data.tools.filter((tool) => contains(notation.tools, tool.id));
-}
-
-function findRecommendedTools(tools: Tool[]) {
+function filterRecommendedTools(tools: Tool[]) {
   const recommendedTools: Tool[] = [];
   data.fidelities.forEach((fidelity) => {
     const recommendedToolForFidelity = findRecommendedToolByFidelity(

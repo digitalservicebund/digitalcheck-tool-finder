@@ -1,4 +1,3 @@
-import { screen } from "@testing-library/dom";
 import { Ressort } from "../../src/models/Ressort";
 import { VisualisationObject } from "../../src/models/VisualisationObject";
 import {
@@ -7,14 +6,7 @@ import {
   getAllRessorts,
 } from "../../src/persistance/repository";
 
-describe("App", () => {
-  it("shows hello message", () => {
-    document.body.innerHTML = `
-      <h1>Hello DigitalService<h1>
-    `;
-    expect(screen.getByText("Hello DigitalService")).toBeVisible();
-  });
-
+describe("Repository", () => {
   test.each(createTestCases())(
     'findResultByObjectAndRessort for "%s" and "%s" returns at least one recommended tool.',
     (
