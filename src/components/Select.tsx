@@ -46,7 +46,7 @@ const Select = ({
   const errorId = `${name}-error`;
   const registeredFormProps =
     formRegister !== undefined
-      ? formRegister("ressort", {
+      ? formRegister(name, {
           required: "Bitte wählen Sie eine Option aus.",
           onChange: onChange,
         })

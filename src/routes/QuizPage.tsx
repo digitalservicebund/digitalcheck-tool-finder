@@ -101,21 +101,26 @@ function QuizPage({
   const onChangeRessort = (e: ChangeEvent<HTMLInputElement>) => {
     onChangeHandler(e.target.value, setRessort, ressorts, new Ressort());
   };
-  const onChangeObject = (objectId: string) => {
-    onChangeHandler(objectId, setObject, objects, new VisualisationObject());
+  const onChangeObject = (e: ChangeEvent<HTMLInputElement>) => {
+    onChangeHandler(
+      e.target.value,
+      setObject,
+      objects,
+      new VisualisationObject(),
+    );
   };
-  const onChangeReason = (reasonId: string) => {
-    onChangeHandler(reasonId, setReason, reasons, new Reason());
+  const onChangeReason = (e: ChangeEvent<HTMLInputElement>) => {
+    onChangeHandler(e.target.value, setReason, reasons, new Reason());
   };
 
-  const getRessortErrors = () => {
-    let ressortErrors = {};
-    if (errors.ressort) {
-      ressortErrors = {
-        error: errors.ressort,
+  const getErrorsForField = (name: string) => {
+    let fieldErrors = {};
+    if (errors[name]) {
+      fieldErrors = {
+        error: errors[name],
       };
     }
-    return ressortErrors;
+    return fieldErrors;
   };
 
   const onSubmit = () => {
@@ -155,7 +160,7 @@ function QuizPage({
               onChange: onChangeRessort,
               options: mapToSelectOptions(ressorts),
               formRegister: register,
-              ...getRessortErrors(),
+              ...getErrorsForField("ressort"),
             }}
           />
           <Question
@@ -168,6 +173,8 @@ function QuizPage({
               value: object.id,
               onChange: onChangeObject,
               options: mapToRadioOptions(objects),
+              formRegister: register,
+              ...getErrorsForField("object"),
             }}
           />
           <Question
@@ -179,6 +186,8 @@ function QuizPage({
               value: reason.id,
               onChange: onChangeReason,
               options: mapToRadioOptions(reasons),
+              formRegister: register,
+              ...getErrorsForField("reason"),
             }}
           />
           <Container paddingTop="0" paddingBottom="48">

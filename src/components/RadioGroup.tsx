@@ -1,6 +1,8 @@
+import { ChangeEvent } from "react";
+import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
+import InputError from "./InputError";
 import Radio from "./Radio";
-import { ErrorMessagePropsSchema } from "./index";
 
 export const RadioOptionsPropsSchema = z.array(
   z.object({
@@ -18,8 +20,13 @@ export const RadioGroupPropsSchema = z.object({
   label: z.string().optional(),
   altLabel: z.string().optional(),
   value: z.string().optional(),
-  errorMessages: z.array(ErrorMessagePropsSchema).optional(),
-  onChange: z.function().args(z.string()).returns(z.void()).optional(),
+  onChange: z
+    .function()
+    .args(z.custom<ChangeEvent<HTMLInputElement>>())
+    .returns(z.void())
+    .optional(),
+  formRegister: z.custom<UseFormRegister<FieldValues>>().optional(),
+  error: z.custom<FieldError>().optional(),
 });
 
 type RadioGroupProps = z.infer<typeof RadioGroupPropsSchema>;
@@ -31,9 +38,18 @@ const RadioGroup = ({
   altLabel,
   value,
   onChange,
+  formRegister,
+  error,
 }: RadioGroupProps) => {
+  const errorId = `${name}-error`;
+
   return (
-    <fieldset className="border-0 p-0 m-0">
+    <fieldset
+      className="border-0 p-0 m-0"
+      aria-invalid={error !== undefined}
+      aria-describedby={error?.message && errorId}
+      aria-errormessage={error?.message && errorId}
+    >
       {altLabel && <legend className="sr-only">{altLabel}</legend>}
       <div className="ds-stack-16">
         {label && <legend>{label}</legend>}
@@ -47,9 +63,13 @@ const RadioGroup = ({
               subText={o.subText}
               onChange={onChange}
               checked={value === o.value}
+              formRegister={formRegister}
             />
           );
         })}
+        {error?.message && (
+          <InputError id={errorId}>{error.message}</InputError>
+        )}
       </div>
     </fieldset>
   );
