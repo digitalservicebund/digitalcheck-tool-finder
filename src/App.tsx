@@ -100,7 +100,7 @@ function App() {
     },
     {
       url: PATH_DIAGRAM,
-      title: "Diagram Anleitung",
+      title: "Schaubild Anleitung",
       element: <Diagram />,
       parent: PATH_INFO,
     },
