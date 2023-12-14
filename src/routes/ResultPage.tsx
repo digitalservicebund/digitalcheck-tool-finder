@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import flowchartImage from "../../resources/img/clusters/flowchart.png";
-import adonisImage from "../../resources/img/tools/adonis.png";
-import paperImage from "../../resources/img/tools/papier.png";
 import Background from "../components/Background";
 import BetaBanner from "../components/BetaBanner";
 import Box from "../components/Box";
-import BoxWithImage, { BoxWithImageProps } from "../components/BoxWithImage";
+import BoxWithImage from "../components/BoxWithImage";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
@@ -16,50 +13,13 @@ import Image from "../components/Image";
 import RichText from "../components/RichText";
 import { Reason } from "../models/Reason";
 import { Ressort } from "../models/Ressort";
-import { Result } from "../models/Result";
+import { Tool } from "../models/Tool";
 import { VisualisationObject } from "../models/VisualisationObject";
-import { findResultByObjectAndRessort } from "../persistance/repository";
-import { PATH_FLOWCHART, PATH_QUIZ } from "./";
-
-const tools: BoxWithImageProps[] = [
-  {
-    label: "Für den schnellen Start",
-    heading: {
-      tagName: "h3",
-      look: "ds-heading-03-bold",
-      text: `Stift und Papier`,
-    },
-    content: {
-      markdown: `Mit Stift und Papier lässt sich ein perfekter Aufschlag eines Flussdiagramms abbilden. 
-                  Das ist häufig **schneller, um erste Gedanken zu skizzieren**, als in einem digitalen Werkzeug zu arbeiten.`,
-    },
-    image: {
-      url: paperImage,
-      alternativeText: `Foto von einer Person, die mit schwarzem Stift eine Zeichnung 
-                  auf ein weißes Papier zeichnet.`,
-    },
-  },
-  {
-    label: "Eine digitale Version",
-    heading: {
-      tagName: "h3",
-      look: "ds-heading-03-bold",
-      text: `Adonis`,
-    },
-    content: {
-      markdown: `Eine digitales Flussdiagramm können Sie erstellen, wenn Sie remote mit anderen 
-              zusammenarbeiten oder bereits eine grobe Idee für eine Visualisierung haben 
-              (bspw. durch vorherige Skizzen auf Papier).
-              
-https://www.boc-group.com/de/adonis/#features
-                `,
-    },
-    image: {
-      url: adonisImage,
-      alternativeText: `Bildschirmaufnahme von der Software Adonis, die ein Flussdiagramm zeigt.`,
-    },
-  },
-];
+import {
+  findResultByObjectAndRessort,
+  getFidelityOrThrow,
+} from "../persistance/repository";
+import { PATH_QUIZ } from "./";
 
 export const ResultPagePropsSchema = z.object({
   ressort: z.custom<Ressort>(),
@@ -68,6 +28,10 @@ export const ResultPagePropsSchema = z.object({
 });
 
 export type ResultPageProps = z.infer<typeof ResultPagePropsSchema>;
+
+function getImageUrl(src: string) {
+  return new URL(`../../resources/img/${src}`, import.meta.url).href;
+}
 
 function ResultPage({ ressort, object, reason }: ResultPageProps) {
   const navigate = useNavigate();
@@ -78,23 +42,46 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
     }
   });
 
-  let result: Result | undefined;
-  if (ressort.id && object.id && reason.id) {
-    result = findResultByObjectAndRessort(object, ressort);
-    console.log("Cluster: " + result.cluster.name);
-    console.log("Tools: " + result.tools.map((t) => t.name).toString());
+  if (!ressort.id || !object.id || !reason.id) {
+    return null;
   }
 
-  const renderTool = (tool: BoxWithImageProps, index: number) => (
-    <div
-      key={`tool-${index}`}
-      className={
-        "p-24 border border-gray-400 border-b-0 last:border-b last:rounded-bl last:rounded-br first:rounded-tl first:rounded-tr"
-      }
-    >
-      <BoxWithImage {...tool} />
-    </div>
-  );
+  const result = findResultByObjectAndRessort(object, ressort);
+
+  const renderTool = (tool: Tool) => {
+    const fidelity = getFidelityOrThrow(tool.fidelity);
+
+    return (
+      <div
+        key={`tool-${tool.id}`}
+        className={
+          "p-24 border border-gray-400 border-b-0 last:border-b last:rounded-bl last:rounded-br first:rounded-tl first:rounded-tr"
+        }
+      >
+        <BoxWithImage
+          {...{
+            label: fidelity.name,
+            heading: {
+              tagName: "h3",
+              look: "ds-heading-03-bold",
+              text: tool.name,
+            },
+            content: {
+              markdown: `${tool.description}${
+                tool.link ? "\n\n" + tool.link : ""
+              }`,
+            },
+            image: tool.img.src
+              ? {
+                  url: getImageUrl(tool.img.src),
+                  alternativeText: tool.img.alt,
+                }
+              : undefined,
+          }}
+        />
+      </div>
+    );
+  };
 
   return (
     <>
@@ -117,8 +104,8 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
         <Container paddingTop="48" paddingBottom="40">
           <div className={"border border-8 rounded-lg border-[#EBF3FD]"}>
             <Image
-              url={flowchartImage}
-              alternativeText="Darstellung eines vereinfachten Flussdiagramms ohne Text"
+              url={getImageUrl(result.cluster.img.src)}
+              alternativeText={result.cluster.img.alt}
             />
             <div className={"p-24 pt-16"}>
               <div className={"p-24 pb-32"}>
@@ -131,27 +118,14 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
                   heading={{
                     tagName: "h1",
                     look: "ds-heading-02-reg",
-                    text: `Das Flussdiagramm`,
+                    text: result.cluster.name,
                   }}
                   content={{
-                    markdown: `
-Ein Flussdiagramm ist eine Art von Diagramm, das einen Prozess oder Arbeitsablauf visuell erklärt. 
-    Unter Verwendung standardisierter Symbole und Definitionen beschreiben diese visuell die 
-    verschiedenen Schritte und Entscheidungen eines Prozesses. So wird der Fluss, den ein 
-    Prozess durchläuft abgebildet.`,
+                    markdown: result.cluster.description,
                   }}
-                  buttons={[
-                    {
-                      id: "result-page-flowchart-button",
-                      text: "Flussdiagramm Anleitung",
-                      href: PATH_FLOWCHART,
-                      size: "small",
-                      look: "tertiary",
-                    },
-                  ]}
                 ></Box>
               </div>
-              <div>{tools.map(renderTool)}</div>
+              <div>{result.tools.map(renderTool)}</div>
             </div>
           </div>
         </Container>

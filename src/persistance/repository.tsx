@@ -31,6 +31,22 @@ export function getAllReasons(sorted: boolean = true): Reason[] {
   return reasons;
 }
 
+function getClusterOrThrow(clusterId: string): Cluster {
+  return getOrThrow(data.clusters, clusterId);
+}
+
+export function getFidelityOrThrow(fidelityId: string): Fidelity {
+  return getOrThrow(data.fidelities, fidelityId);
+}
+
+function getOrThrow<Type extends Entity>(list: Type[], entityId: string): Type {
+  const entity = list.find((e) => e.id === entityId);
+  if (!entity) {
+    throw new Error("Could not find entity" + entityId);
+  }
+  return entity;
+}
+
 export function findResultByObjectAndRessort(
   object: VisualisationObject,
   ressort: Ressort,
@@ -41,18 +57,6 @@ export function findResultByObjectAndRessort(
   tools = filterRecommendedTools(tools);
   tools = removeDuplicates(tools);
   return new Result(cluster, tools);
-}
-
-function getClusterOrThrow(clusterId: string): Cluster {
-  return getOrThrow(data.clusters, clusterId);
-}
-
-function getOrThrow<Type extends Entity>(list: Type[], entityId: string): Type {
-  const entity = list.find((e) => e.id === entityId);
-  if (!entity) {
-    throw new Error("Could not find entity" + entityId);
-  }
-  return entity;
 }
 
 function findToolsByCluster(cluster: Cluster): Tool[] {
