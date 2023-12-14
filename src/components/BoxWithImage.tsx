@@ -24,7 +24,7 @@ const BoxWithImage = ({
   return (
     <div
       id={identifier}
-      className="flex flex-row items-start gap-32 max-[499px]:flex-col items-center"
+      className="flex flex-row items-start gap-32 max-[499px]:flex-col"
     >
       <div className={"ds-stack-8 break-words w-full"}>
         {label && (
@@ -33,16 +33,16 @@ const BoxWithImage = ({
         {heading && <Heading {...heading} />}
         {content && <RichText {...content} />}
       </div>
-      <div className="ds-stack-16 w-full">
-        {image && (
+      {image && (
+        <div className="ds-stack-16 w-full self-center">
           <Image
             {...image}
             {...{
               className: content ? "" : "max-w-none",
             }}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
