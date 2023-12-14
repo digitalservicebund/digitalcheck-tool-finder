@@ -124,7 +124,6 @@ function QuizPage({
   };
 
   const onSubmit = () => {
-    console.log("submit");
     trackSelection(ressort, object, reason);
     navigate(PATH_RESULT);
   };
