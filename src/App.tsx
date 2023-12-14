@@ -123,16 +123,22 @@ function App() {
       <ScrollToTop />
       <PageHeader />
       <Breadcrumbs {...getBreadcrumbs(routes)} />
-      <main className="flex-grow">
-        <Routes>
-          {routes.map((route) => {
-            return (
-              <Route path={route.url} element={route.element} key={route.url} />
-            );
-          })}
-        </Routes>
+      <main className={"flex-grow flex flex-col"}>
+        <div className={"flex-grow"}>
+          <Routes>
+            {routes.map((route) => {
+              return (
+                <Route
+                  path={route.url}
+                  element={route.element}
+                  key={route.url}
+                />
+              );
+            })}
+          </Routes>
+        </div>
+        <FeedbackBanner />
       </main>
-      <FeedbackBanner />
       <Footer />
     </div>
   );
