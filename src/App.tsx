@@ -120,7 +120,7 @@ function App() {
   ];
 
   const maintenanceMode: boolean =
-    import.meta.env.VITE_MAINTENANCE_MODE == "true";
+    import.meta.env.VITE_MAINTENANCE_MODE === "true";
 
   return (
     <>
