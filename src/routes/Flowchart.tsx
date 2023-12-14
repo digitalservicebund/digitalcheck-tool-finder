@@ -4,7 +4,10 @@ import Container from "../components/Container";
 import Header from "../components/Header";
 
 import flowchartElementsImage from "../../resources/img/flowchart-elements.png";
+import Button from "../components/Button";
+import ButtonContainer from "../components/ButtonContainer";
 import Image from "../components/Image";
+import { PATH_RESULT } from "./";
 
 function Flowchart() {
   return (
@@ -95,6 +98,17 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
             [ondea.de/DE/ZfL/ZfL_node.html](https://www.ondea.de/DE/ZfL/ZfL_node.html), Modul 10 im Video “Visualisierung“.`,
           }}
         ></Box>
+      </Container>
+      <Container paddingTop="0" paddingBottom="48">
+        <ButtonContainer>
+          <Button
+            {...{
+              id: "flowchart-guide-page-back-button",
+              text: "Zurück",
+              href: PATH_RESULT,
+            }}
+          />
+        </ButtonContainer>
       </Container>
     </>
   );

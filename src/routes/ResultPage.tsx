@@ -123,6 +123,15 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
                   content={{
                     markdown: result.cluster.description,
                   }}
+                  buttons={[
+                    {
+                      id: "result-page-cluster-guide-button",
+                      text: `${result.cluster.name} Anleitung`,
+                      href: `/${result.cluster.id}`,
+                      size: "small",
+                      look: "tertiary",
+                    },
+                  ]}
                 ></Box>
               </div>
               <div>{result.tools.map(renderTool)}</div>
@@ -145,7 +154,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
             }}
             buttons={[
               {
-                id: "result-error-back",
+                id: "result-error-page-back-button",
                 text: "Zurück",
                 href: PATH_QUIZ,
               },

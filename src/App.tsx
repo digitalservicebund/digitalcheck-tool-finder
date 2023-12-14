@@ -18,12 +18,16 @@ import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
 import { VisualisationObject } from "./models/VisualisationObject";
 import {
+  PATH_DECISIONTREE,
+  PATH_DIAGRAM,
   PATH_FLOWCHART,
   PATH_IMPRINT,
   PATH_INFO,
   PATH_QUIZ,
   PATH_RESULT,
 } from "./routes";
+import DecisionTree from "./routes/DecisionTree";
+import Diagram from "./routes/Diagram";
 import useStorage from "./services/useStorage";
 
 export const RoutesPropsSchema = z.array(
@@ -92,6 +96,18 @@ function App() {
       url: PATH_FLOWCHART,
       title: "Flussdiagramm Anleitung",
       element: <Flowchart />,
+      parent: PATH_INFO,
+    },
+    {
+      url: PATH_DIAGRAM,
+      title: "Diagram Anleitung",
+      element: <Diagram />,
+      parent: PATH_INFO,
+    },
+    {
+      url: PATH_DECISIONTREE,
+      title: "Entscheidungsbaum Anleitung",
+      element: <DecisionTree />,
       parent: PATH_INFO,
     },
     {
