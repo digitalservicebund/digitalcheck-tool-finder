@@ -44,8 +44,7 @@ Umsatzsteueridentifikationsnummer: DE327075535
             `,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
@@ -56,8 +55,7 @@ Umsatzsteueridentifikationsnummer: DE327075535
             markdown: `E-Mail: digitalcheck@digitalservice.bund.de`,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
@@ -77,8 +75,7 @@ vor einer Verbraucherschlichtungsstelle teilzunehmen.
             `,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
@@ -101,8 +98,7 @@ werden wir die entsprechenden Inhalte umgehend entfernen.
             `,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
@@ -126,8 +122,7 @@ werden wir die entsprechenden Links umgehend entfernen.
             `,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
@@ -151,8 +146,7 @@ werden wir derartige Inhalte umgehend entfernen.
             `,
           }}
         ></Box>
-      </Container>
-      <Container paddingTop="0" paddingBottom="48">
+        <div className={"pb-48"}></div>
         <Box
           heading={{
             tagName: "h2",
