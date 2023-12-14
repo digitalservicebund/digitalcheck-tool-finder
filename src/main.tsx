@@ -8,8 +8,8 @@ import "./style.css";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
-const maintenanceMode: boolean =
-  import.meta.env.VITE_MAINTENANCE_MODE == "true";
+const maintenanceMode: boolean = true; // FIXME: read this from env. Currently not working with the variable von GitHub Pages.
+// import.meta.env.VITE_MAINTENANCE_MODE == "true";
 
 enableTracking();
 
