@@ -13,6 +13,7 @@ import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
 import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
+import MaintenanceModeApp from "./MaintenanceModeApp";
 import ScrollToTop from "./components/ScrollToTop";
 import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
@@ -118,29 +119,37 @@ function App() {
     },
   ];
 
+  const maintenanceMode: boolean =
+    import.meta.env.VITE_MAINTENANCE_MODE == "true";
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <ScrollToTop />
-      <PageHeader />
-      <Breadcrumbs {...getBreadcrumbs(routes)} />
-      <main className={"flex-grow flex flex-col"}>
-        <div className={"flex-grow"}>
-          <Routes>
-            {routes.map((route) => {
-              return (
-                <Route
-                  path={route.url}
-                  element={route.element}
-                  key={route.url}
-                />
-              );
-            })}
-          </Routes>
+    <>
+      {!maintenanceMode && (
+        <div className="flex flex-col min-h-screen">
+          <ScrollToTop />
+          <PageHeader />
+          <Breadcrumbs {...getBreadcrumbs(routes)} />
+          <main className={"flex-grow flex flex-col"}>
+            <div className={"flex-grow"}>
+              <Routes>
+                {routes.map((route) => {
+                  return (
+                    <Route
+                      path={route.url}
+                      element={route.element}
+                      key={route.url}
+                    />
+                  );
+                })}
+              </Routes>
+            </div>
+            <FeedbackBanner />
+          </main>
+          <Footer />
         </div>
-        <FeedbackBanner />
-      </main>
-      <Footer />
-    </div>
+      )}
+      {maintenanceMode && <MaintenanceModeApp />}
+    </>
   );
 }
 
