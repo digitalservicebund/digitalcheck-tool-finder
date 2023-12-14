@@ -131,8 +131,8 @@ function App() {
             );
           })}
         </Routes>
-        <FeedbackBanner />
       </main>
+      <FeedbackBanner />
       <Footer />
     </div>
   );
