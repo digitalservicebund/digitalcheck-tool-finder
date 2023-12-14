@@ -10,7 +10,6 @@ on:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
-  VITE_MAINTENANCE_MODE: ${{ vars.VITE_MAINTENANCE_MODE }}
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -88,6 +87,7 @@ jobs:
       - name: Build for production
         env:
           VITE_PATH_BASENAME: ${{ vars.VITE_PATH_BASENAME }}
+          VITE_MAINTENANCE_MODE: ${{ vars.VITE_MAINTENANCE_MODE }}
         run: npm run build
 
       - name: Setup Pages
