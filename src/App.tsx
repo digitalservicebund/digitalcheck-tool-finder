@@ -119,31 +119,28 @@ function App() {
   ];
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen">
-        <ScrollToTop />
-        <PageHeader />
-        <Breadcrumbs {...getBreadcrumbs(routes)} />
-        <main className={"flex-grow flex flex-col"}>
-          <div className={"flex-grow"}>
-            <Routes>
-              {routes.map((route) => {
-                return (
-                  <Route
-                    path={route.url}
-                    element={route.element}
-                    key={route.url}
-                  />
-                );
-              })}
-            </Routes>
-          </div>
-          <FeedbackBanner />
-        </main>
-        <Footer />
-      </div>
-      )
-    </>
+    <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
+      <PageHeader />
+      <Breadcrumbs {...getBreadcrumbs(routes)} />
+      <main className={"flex-grow flex flex-col"}>
+        <div className={"flex-grow"}>
+          <Routes>
+            {routes.map((route) => {
+              return (
+                <Route
+                  path={route.url}
+                  element={route.element}
+                  key={route.url}
+                />
+              );
+            })}
+          </Routes>
+        </div>
+        <FeedbackBanner />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
