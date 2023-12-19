@@ -13,6 +13,7 @@ import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
 import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
+import { Aria } from "./components/Aria";
 import ScrollToTop from "./components/ScrollToTop";
 import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
@@ -140,6 +141,7 @@ function App() {
         <FeedbackBanner />
       </main>
       <Footer />
+      <Aria />
     </div>
   );
 }

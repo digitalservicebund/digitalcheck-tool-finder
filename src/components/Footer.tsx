@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { z } from "zod";
 import bmiLogo from "../../resources/img/bmi-logo.png";
 import { PATH_IMPRINT } from "../routes";
+import { A11Y_MESSAGE_NEW_WINDOW } from "./Aria";
 import Container from "./Container";
 import Image from "./Image";
 import RichText from "./RichText";
@@ -45,6 +46,9 @@ export default function Footer() {
         className="text-link increase-tap-area"
         target={link.openInNewTab ? "_blank" : undefined}
         rel={link.openInNewTab ? "noreferrer" : undefined}
+        aria-describedby={
+          link.openInNewTab ? A11Y_MESSAGE_NEW_WINDOW : undefined
+        }
       >
         {link.text}
       </Link>
@@ -59,7 +63,7 @@ export default function Footer() {
 
   const paragraphRenderer: Partial<Renderer> = {
     link(href, _, text) {
-      return `<a class="text-link increase-tap-area whitespace-nowrap" href=${href} target="_blank" rel="noopener">${text}</a>`;
+      return `<a class="text-link increase-tap-area whitespace-nowrap" href=${href} target="_blank" rel="noopener" aria-describedby=${A11Y_MESSAGE_NEW_WINDOW}>${text}</a>`;
     },
     paragraph(text) {
       return `<p class="leading-snug">${text}</p>`;
