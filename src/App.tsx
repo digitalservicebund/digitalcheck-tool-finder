@@ -125,7 +125,7 @@ function App() {
       <PageHeader />
       <Breadcrumbs {...getBreadcrumbs(routes)} />
       <main className={"flex-grow flex flex-col"}>
-        <div className={"flex-grow"}>
+        <div className={"flex-grow"} aria-live="assertive">
           <Routes>
             {routes.map((route) => {
               return (
