@@ -73,7 +73,7 @@
       "description": "In einem Schaubild stehen die Akteure im Mittelpunkt. Das können z.B. sein: Menschen, Datenbanken, Intermediäre sowie die Daten bzw. Informationen welche zwischen diesen ausgetauscht werden. Es geht um die Darstellung des Gesamtsystems, nicht um einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen zeigen Lücken in Systemen und helfen beim Austausch mit IT-Expertisen. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
       "img": {
         "src": "clusters/schaubild.jpg",
-        "alt": "Darstellung eines vereinfachten freien Schaubilds ohne Text"
+        "alt": "Ein vereinfachtes freies Schaubilds ohne Text"
       }
     },
     {
@@ -84,7 +84,7 @@
       "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Ergebnisse bzw. Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangsknoten immer weiter auf; zusätzlich können logische Operatoren wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ an den Verbindungskanten dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. Entscheidungsbäume helfen dabei, Logikbrüche zu identifizieren und sind eine Grundlage der Automatisierung.",
       "img": {
         "src": "clusters/entscheidungsbaum.jpg",
-        "alt": "Darstellung eines Entscheidungsbaumes ohne Text"
+        "alt": "Ein Entscheidungsbaumes ohne Text"
       }
     },
     {
@@ -95,7 +95,7 @@
       "description": "Ein Flussdiagramm stellt einen (Vollzugs-)Prozess, oder Arbeitsablauf visuell dar. Unter Verwendung standardisierter Symbole und Definitionen wird chronologisch der Prozess in Schritten abgebildet; Detaillevel können dabei variieren. Flussdiagramm helfen dabei, Medienbrüche, Lücken und Potenziale zur Vereinfachung zu erkennen.",
       "img": {
         "src": "clusters/flussdiagramm.jpg",
-        "alt": "Darstellung eines vereinfachten Flussdiagramms ohne Text"
+        "alt": "Ein vereinfachtes Flussdiagramms ohne Text"
       }
     }
   ],
@@ -116,7 +116,7 @@
       "link": "",
       "img": {
         "src": "tools/papier.png",
-        "alt": "Foto einer Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
+        "alt": "Eine Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
       }
     },
     {
@@ -128,7 +128,7 @@
       "link": "",
       "img": {
         "src": "tools/papier.png",
-        "alt": "Foto einer Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
+        "alt": "Eine Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
       }
     },
     {
@@ -140,7 +140,7 @@
       "link": "",
       "img": {
         "src": "tools/papier.png",
-        "alt": "Foto einer Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
+        "alt": "Eine Person, die mit einem Stift eine Abbildung auf ein Papier zeichnet"
       }
     },
     {
@@ -152,7 +152,7 @@
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
-        "alt": "Bildschirmfoto von der Benutzeroberfläche von Draw.io, die ein einfaches Schaubild darstellt"
+        "alt": "Die Benutzeroberfläche von Draw.io, die ein einfaches Schaubild darstellt"
       }
     },
     {
@@ -164,7 +164,7 @@
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-entscheidungsbaum.png",
-        "alt": "Bildschirmfoto von der Benutzeroberfläche von Draw.io, die einen einfachen Entscheidungsbaum darstellt"
+        "alt": "Die Benutzeroberfläche von Draw.io, die einen einfachen Entscheidungsbaum darstellt"
       }
     },
     {
@@ -176,7 +176,7 @@
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
-        "alt": "Bildschirmfoto von der Benutzeroberfläche von Draw.io, die ein einfaches Flussdiagramm darstellt"
+        "alt": "Die Benutzeroberfläche von Draw.io, die ein einfaches Flussdiagramm darstellt"
       }
     },
     {
