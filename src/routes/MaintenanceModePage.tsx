@@ -25,7 +25,7 @@ function MaintenanceModePage() {
             text: "Diese Seite ist momentan nicht verfügbar",
           }}
           content={{
-            markdown: `Der Werkzeugfinder für Visualisierungen ist momentan leider nicht verfügbar. Wir hoffen, diesen Service ab Januar 2024 wieder für Sie anbieten zu können.`,
+            markdown: `Der Werkzeugfinder für Visualisierungen ist momentan leider nicht verfügbar.`,
           }}
         ></Box>
       </Container>
