@@ -160,7 +160,7 @@ jobs:
           output: "trivy-results.sarif"
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@2eaf0149ef77a69a9bf07ee5cea830aba5a36459 # == v2
+        uses: github/codeql-action/upload-sarif@1515e2bb2096a8d1db5a171cddbb13bfc8eea43b # == v2
         if: always() # Bypass non-zero exit code..
         with:
           sarif_file: "trivy-results.sarif"
