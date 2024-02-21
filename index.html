@@ -9,9 +9,22 @@
       name="description"
       content="Prototyp für einen Visualisierungswerkzeugfinder mit kräftiger Unterstützung vom Digitalcheck"
     />
+    <style id="antiClickjack">
+      body {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/javascript">
+      if (self === top) {
+        let antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
