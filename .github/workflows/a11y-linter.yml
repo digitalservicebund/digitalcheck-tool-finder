@@ -1,6 +1,10 @@
 name: Linting for accessibility issues
 
-on: [pull_request]
+on:
+  pull_request:
+    branches: [main]
+  # Allow to run this workflow manually
+  workflow_dispatch:
 
 jobs:
   build:
