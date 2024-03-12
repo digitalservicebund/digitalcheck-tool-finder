@@ -148,7 +148,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"\"Neues Diagramm erstellen\"\"\n- Suche nach \"\"Ablaufdiagramm\"\"\n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"Neues Diagramm erstellen\"\n- Suche nach \"Ablaufdiagramm\"\n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -160,7 +160,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"\"Neues Diragramm erstellen\"\"\n- Suche Nach \"\"Decision\"\"\n- Speichere das Diagramm Lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"Neues Diagramm erstellen\"\n- Suche Nach \"Decision\"\n- Speichere das Diagramm Lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-entscheidungsbaum.png",
@@ -172,7 +172,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass deine Flussdiagramme gut strukturiert und formatiert sind. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür ein Flussdiagramm wähle: \"\"Neues Diagramm erstellen\"\"\n- für mehrere Akteure: \"\"Swimlane-Diagramm\"\"\n- für nur einen Akteur \"\"Ablaufdiagramm\"\" \n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml, um es später wieder zu editieren. \nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass deine Flussdiagramme gut strukturiert und formatiert sind. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür ein Flussdiagramm wähle: \"Neues Diagramm erstellen\"\n- für mehrere Akteure: \"Swimlane-Diagramm\"\n- für nur einen Akteur \"Ablaufdiagramm\" \n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml, um es später wieder zu editieren. \nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
