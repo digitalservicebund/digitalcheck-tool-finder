@@ -86,7 +86,6 @@ function Button({
         {...(props as ButtonLinkProps)}
         to={href}
         className={buttonClasses}
-        role="button"
         onKeyDown={onKeyDown}
         onClick={onClick}
         id={id}

@@ -25,7 +25,7 @@ function filterBreadcrumbs(
 
   while (currentElement) {
     filteredList.unshift(currentElement);
-    currentElement = list.find((item) => item.url === currentElement!.parent);
+    currentElement = list.find((item) => item.url === currentElement?.parent);
   }
 
   return filteredList;

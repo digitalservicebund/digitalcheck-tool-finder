@@ -4,7 +4,7 @@ export default function useStorage<Type>(
   key: string,
   defaultValue: Type,
 ): [Type, Dispatch<SetStateAction<Type>>] {
-  const [data, setState]: [Type, Dispatch<SetStateAction<Type>>] =
+  const [data, setData]: [Type, Dispatch<SetStateAction<Type>>] =
     useState<Type>(getValueFromStorage() ?? defaultValue);
 
   function getValueFromStorage(): Type | null {
@@ -19,5 +19,5 @@ export default function useStorage<Type>(
     localStorage.setItem(key, JSON.stringify(data));
   }, [data, key]);
 
-  return [data, setState];
+  return [data, setData];
 }
