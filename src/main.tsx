@@ -6,8 +6,6 @@ import MaintenanceModeApp from "./MaintenanceModeApp";
 import { enableTracking } from "./services/tracking";
 import "./style.css";
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-const basename: string = import.meta.env.VITE_PATH_BASENAME ?? "";
 const maintenanceMode: boolean = true; // FIXME: read this from env. Currently not working with the variable von GitHub Pages.
 // import.meta.env.VITE_MAINTENANCE_MODE == "true";
 
@@ -15,7 +13,7 @@ enableTracking();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Router basename={basename}>
+    <Router>
       {!maintenanceMode && <App />}
       {maintenanceMode && <MaintenanceModeApp />}
     </Router>

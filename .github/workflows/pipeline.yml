@@ -86,7 +86,6 @@ jobs:
 
       - name: Build for production
         env:
-          VITE_PATH_BASENAME: ${{ vars.VITE_PATH_BASENAME }}
           VITE_MAINTENANCE_MODE: ${{ vars.VITE_MAINTENANCE_MODE }}
         run: npm run build
 
