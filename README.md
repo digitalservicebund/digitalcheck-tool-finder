@@ -24,10 +24,10 @@ npx playwright install
 ### Git Hooks
 
 For the provided Git hooks you will need to install [lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md)
-(git hook manager) and [talisman](https://thoughtworks.github.io/talisman/docs) (secrets scanner):
+(git hook manager):
 
 ```bash
-brew install lefthook talisman
+brew install lefthook
 ./run.sh init
 ```
 
@@ -40,7 +40,6 @@ The following hooks are specified in the `lefthook.yml`:
 Before pushing, the following checks are additionally ran:
 
 - `licenses-audit` - uses `license-checker` to verify depency licenses
-- `secrets-audit` - avoid accidental pushes of [secrets and sensitive information](https://thoughtworks.github.io/talisman/)
 
 ### security.txt
 
