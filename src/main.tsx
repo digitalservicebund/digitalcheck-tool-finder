@@ -13,9 +13,6 @@ enableTracking();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Router>
-      {!maintenanceMode && <App />}
-      {maintenanceMode && <MaintenanceModeApp />}
-    </Router>
+    <Router>{maintenanceMode ? <MaintenanceModeApp /> : <App />}</Router>
   </React.StrictMode>,
 );
