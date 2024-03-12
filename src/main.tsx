@@ -6,8 +6,8 @@ import MaintenanceModeApp from "./MaintenanceModeApp";
 import { enableTracking } from "./services/tracking";
 import "./style.css";
 
-const maintenanceMode: boolean = true; // FIXME: read this from env. Currently not working with the variable von GitHub Pages.
-// import.meta.env.VITE_MAINTENANCE_MODE == "true";
+const maintenanceMode: boolean =
+  import.meta.env.VITE_MAINTENANCE_MODE == "true";
 
 enableTracking();
 
