@@ -11,7 +11,6 @@ function Imprint() {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Impressum",
             }}
           ></Header>
@@ -21,7 +20,6 @@ function Imprint() {
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Angaben gemäß § 5 TMG",
           }}
           content={{
@@ -48,7 +46,6 @@ Umsatzsteueridentifikationsnummer: DE327075535
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Kontakt",
           }}
           content={{
@@ -59,7 +56,6 @@ Umsatzsteueridentifikationsnummer: DE327075535
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Informationspflichten gemäß Art. 14 ODR-VO, § 36 VSBG",
           }}
           content={{
@@ -79,7 +75,6 @@ vor einer Verbraucherschlichtungsstelle teilzunehmen.
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Haftung für Inhalte",
           }}
           content={{
@@ -102,7 +97,6 @@ werden wir die entsprechenden Inhalte umgehend entfernen.
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Haftung für Verweise und Links",
           }}
           content={{
@@ -126,7 +120,6 @@ werden wir die entsprechenden Links umgehend entfernen.
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Urheberrecht",
           }}
           content={{
@@ -150,7 +143,6 @@ werden wir derartige Inhalte umgehend entfernen.
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV",
           }}
           content={{

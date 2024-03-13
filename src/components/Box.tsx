@@ -37,11 +37,7 @@ const Box = ({
       <div className="ds-stack-8">
         {label && <Heading {...label} />}
         {heading && <Heading {...heading} />}
-        {content && (
-          <div>
-            <RichText {...content} />
-          </div>
-        )}
+        {content && <RichText {...content} />}
       </div>
       {buttons && buttons.length > 0 && (
         <ButtonContainer>

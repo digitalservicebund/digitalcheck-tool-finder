@@ -17,7 +17,6 @@ function Flowchart() {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Flussdiagramm Anleitung",
             }}
           ></Header>
@@ -27,7 +26,6 @@ function Flowchart() {
         <Box
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "So fangen Sie an",
           }}
           content={{
@@ -57,7 +55,6 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
         <Box
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungen darauf an",
           }}
           content={{
@@ -72,7 +69,6 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
         <Box
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "Arbeiten Sie von grob zu fein",
           }}
           content={{
@@ -86,7 +82,6 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
         <Box
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "Hier bekommen Sie Hilfe",
           }}
           content={{

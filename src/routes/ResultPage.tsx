@@ -63,7 +63,6 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
             label: fidelity.name,
             heading: {
               tagName: "h3",
-              look: "ds-heading-03-bold",
               text: tool.name,
             },
             content: {
@@ -90,7 +89,6 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: `Empfohlenes Werkzeug`,
             }}
             content={{
@@ -116,8 +114,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
                 ></Box>
                 <Box
                   heading={{
-                    tagName: "h1",
-                    look: "ds-heading-02-reg",
+                    tagName: "h2",
                     text: result.cluster.name,
                   }}
                   content={{
@@ -145,7 +142,6 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
             identifier={"info-section-why-visualisation"}
             heading={{
               tagName: "h2",
-              look: "ds-heading-02-reg",
               text: "Es ist ein Fehler aufgetreten.",
             }}
             content={{

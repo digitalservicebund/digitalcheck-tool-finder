@@ -15,7 +15,6 @@ function InfoPage() {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Visualisieren im Digitalcheck",
             }}
             content={{
@@ -47,7 +46,6 @@ function InfoPage() {
           identifier={"info-section-which-tool"}
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "In welchem Programm visualisieren?",
           }}
           content={{
@@ -71,7 +69,6 @@ function InfoPage() {
           identifier={"info-section-why-visualisation"}
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Wobei helfen Ihnen Visualisierungen?",
           }}
           content={{
@@ -95,7 +92,6 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
           additionalClassNames={"pr-20"}
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "Die Darstellungen helfen auch bei Verständnis und Umsetzung im Vollzug",
           }}
           content={{
@@ -111,7 +107,6 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
             additionalClassNames={"p-20"}
             heading={{
               tagName: "h3",
-              look: "ds-heading-03-bold",
               text: "Tipp: Schaffen Sie ein gemeinsames Verständnis",
             }}
             content={{

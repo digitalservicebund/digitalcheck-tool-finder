@@ -11,7 +11,6 @@ function MaintenanceModePage() {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Werkzeugfinder für Visualisierungen",
             }}
           ></Header>
@@ -21,7 +20,6 @@ function MaintenanceModePage() {
         <Box
           heading={{
             tagName: "h2",
-            look: "ds-heading-02-reg",
             text: "Diese Seite ist momentan nicht verfügbar",
           }}
           content={{

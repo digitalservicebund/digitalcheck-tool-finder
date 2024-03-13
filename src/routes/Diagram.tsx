@@ -13,7 +13,6 @@ function Diagram() {
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Schaubild Anleitung",
             }}
           ></Header>
@@ -23,7 +22,6 @@ function Diagram() {
         <Box
           heading={{
             tagName: "h3",
-            look: "ds-heading-03-bold",
             text: "Diese Seite befindet sich im Aufbau",
           }}
           content={{

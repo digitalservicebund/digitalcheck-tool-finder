@@ -31,7 +31,6 @@ export default function Question({
         }}
         heading={{
           tagName: "h2",
-          look: "ds-heading-02-reg",
           text: heading,
         }}
         content={{
