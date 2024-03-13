@@ -45,7 +45,7 @@
     @apply mt-0;
   }
 
-  .rich-text h2 {
+  .rich-text h2:not(:first-child) {
     @apply pt-40;
   }
 }
