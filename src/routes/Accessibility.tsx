@@ -11,7 +11,7 @@ function Accessibility() {
           <Header
             heading={{
               tagName: "h1",
-              text: "Barrierefreiheit",
+              text: "Erklärung zur Barrierefreiheit",
             }}
             content={{
               markdown: `Informationen über die Zugänglichkeit dieser Webseiten gemäß § 12 Behindertengleichstellungsgesetz (BGG) sowie über diesbezügliche Kontaktmöglichkeiten.`,
