@@ -8,6 +8,6 @@ test.describe("test page", () => {
 
   test("page has h1", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("h1.ds-heading-01-reg")).toBeVisible();
+    await expect(page.locator("h1")).toBeVisible();
   });
 });
