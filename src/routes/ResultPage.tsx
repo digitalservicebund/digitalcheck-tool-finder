@@ -19,6 +19,7 @@ import {
   findResultByObjectAndRessort,
   getFidelityOrThrow,
 } from "../persistance/repository";
+import useTitle from "../services/useTitle";
 import { PATH_QUIZ } from "./";
 
 export const ResultPagePropsSchema = z.object({
@@ -34,6 +35,7 @@ function getImageUrl(src: string) {
 }
 
 function ResultPage({ ressort, object, reason }: ResultPageProps) {
+  useTitle("Empfohlenes Werkzeug");
   const navigate = useNavigate();
 
   useEffect(() => {

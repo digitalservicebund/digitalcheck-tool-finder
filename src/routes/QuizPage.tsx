@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import useTitle from "../services/useTitle";
 
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { UseFormReturn, useForm } from "react-hook-form";
@@ -87,6 +88,8 @@ function QuizPage({
   reason,
   setReason,
 }: QuizPageProps) {
+  useTitle("Werkzeugfinder für Visualisierungen");
+
   const navigate = useNavigate();
   const {
     register,

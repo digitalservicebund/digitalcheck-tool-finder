@@ -2,12 +2,15 @@ import Background from "../components/Background";
 import Box from "../components/Box";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import useTitle from "../services/useTitle";
 
 import BetaBanner from "../components/BetaBanner";
 import LinkListBox from "../components/LinkListBox";
 import { PATH_QUIZ } from "./";
 
 function InfoPage() {
+  useTitle("Visualisieren im Digitalcheck");
+
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
@@ -34,7 +37,10 @@ function InfoPage() {
               text: "Inhalt",
             }}
             links={[
-              { text: "In welchem Programm visualisieren?", url: "#" },
+              {
+                text: "In welchem Programm visualisieren?",
+                url: "/#info-section-which-tool",
+              },
               { text: "Wobei helfen Ihnen Visualisierungen?", url: "#" },
             ]}
           />

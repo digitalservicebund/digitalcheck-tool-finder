@@ -2,6 +2,7 @@ import Background from "../components/Background";
 import Box from "../components/Box";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import useTitle from "../services/useTitle";
 
 import flowchartElementsImage from "../../resources/img/flowchart-elements.png";
 import Button from "../components/Button";
@@ -10,6 +11,8 @@ import Image from "../components/Image";
 import { PATH_RESULT } from "./";
 
 function Flowchart() {
+  useTitle("Flussdiagramm Anleitung");
+
   return (
     <>
       <Background backgroundColor="blue" paddingTop="48" paddingBottom="48">
