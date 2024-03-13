@@ -22,7 +22,7 @@
         let antiClickjack = document.getElementById("antiClickjack");
         antiClickjack.parentNode.removeChild(antiClickjack);
       } else {
-        top.location = self.location; // NOSONAR
+        top.location = self.location; // NOSONAR https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html#best-for-now-legacy-browser-frame-breaking-script
       }
     </script>
     <script type="module" src="/src/main.tsx"></script>
