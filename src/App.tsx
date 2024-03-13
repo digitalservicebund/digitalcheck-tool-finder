@@ -25,12 +25,14 @@ import {
   PATH_FLOWCHART,
   PATH_IMPRINT,
   PATH_INFO,
+  PATH_PRIVACY,
   PATH_QUIZ,
   PATH_RESULT,
 } from "./routes";
 import Accessibility from "./routes/Accessibility";
 import DecisionTree from "./routes/DecisionTree";
 import Diagram from "./routes/Diagram";
+import Privacy from "./routes/Privacy";
 import useStorage from "./services/useStorage";
 
 export const RoutesPropsSchema = z.array(
@@ -123,6 +125,12 @@ function App() {
       url: PATH_A11Y,
       title: "Barrierefreiheit",
       element: <Accessibility />,
+      parent: PATH_INFO,
+    },
+    {
+      url: PATH_PRIVACY,
+      title: "Datenschutzerklärung",
+      element: <Privacy />,
       parent: PATH_INFO,
     },
   ];
