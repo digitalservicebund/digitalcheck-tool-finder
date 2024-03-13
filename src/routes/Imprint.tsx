@@ -20,89 +20,39 @@ function Imprint() {
         <Box
           content={{
             markdown: `
-## Angaben gemäß § 5 TMG
+**Das Internetangebot wird herausgegeben vom**
 
-DigitalService GmbH des Bundes
+Bundesministerium des Innern und für Heimat (BMI)
+Alt-Moabit 140  
+10557 Berlin  
+Telefon: +49 30 18681-0  
+Fax: +49 30 18681-12926  
+E-Mail: poststelle@bmi.bund.de 
+DE-Mail: poststelle@bmi-bund.de-mail.de 
+
+## Weitere Kontaktmöglichkeiten
+<br />
+
+**Redaktionsleitung**  
+Abteilung DV (Digitale Verwaltung; Steuerung OZG)  
+Referat DV I 3 – Digitale Verwaltungstransformation; Digitalcheck  
+Verantwortlich: Dany Homilius (Referatsleiterin DV I 3)  
+E-Mail: DVI3@bmi.bund.de
+<br /><br />
+
+**Realisierung, Design, Hosting**  
+DigitalService GmbH des Bundes  
+Christina Lang und Anja Theurer  
 Prinzessinnenstraße 8-14  
 10969 Berlin  
-Deutschland  
-                        
-Vertreten durch die Geschäftsführung:   
-Frau Christina Lang  
-Frau Anja Theurer  
-            
-Alleingesellschafterin: Bundesrepublik Deutschland, vertreten durch das 
-Bundesministerium des Innern und für Heimat  
+E-Mail: hallo@digitalservice.bund.de 
 
-Handelsregister-Nummer: HRB 212879 B  
-Registergericht: Berlin Charlottenburg  
-Umsatzsteueridentifikationsnummer: DE327075535  
+## Datenschutz
+Erfahren Sie mehr hierzu in der [Datenschutzerklärung](#/datenschutz)
 
-## Kontakt
-
-E-Mail: digitalcheck@digitalservice.bund.de
-
-## Informationspflichten gemäß Art. 14 ODR-VO, § 36 VSBG
-
-Die Europäische Kommission stellt eine Plattform zur 
-Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr.
-
-Im Falle von Problemen bitten wir unsere Nutzer:innen, sich über die 
-angegebenen Kontaktdaten direkt an uns zu wenden.
-
-Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren 
-vor einer Verbraucherschlichtungsstelle teilzunehmen.
-
-## Haftung für Inhalte
-
-Als Diensteanbieter im Sinne von § 2 Nr. 1 TMG sind wir gemäß § 7 Abs. 1 TMG 
-für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
-Wir sind nach §§ 8 bis 10 TMG jedoch nicht verpflichtet, übermittelte oder gespeicherte 
-fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine 
-rechtswidrige Tätigkeit hinweisen.
-
-Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach 
-den allgemeinen Gesetzen bleiben hiervon unberührt. Eine dahingehende Haftung ist 
-jedoch erst ab dem Zeitpunkt möglich, in dem wir Kenntnis von einer konkreten 
-Rechtsverletzung erlangen. Sollten solche Rechtsverletzungen bekannt werden, 
-werden wir die entsprechenden Inhalte umgehend entfernen.
-
-## Haftung für Verweise und Links
-
-Unser Angebot enthält Links zu externen Websites Dritter, 
-auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese 
-fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten 
-Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. 
-Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche 
-Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der 
-Verlinkung nicht erkennbar.
-
-Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne 
-konkrete Anhaltspunkte einer Rechtsverletzung nicht mit zumutbarem Aufwand möglich. 
-Sollten Rechtsverletzungen auf verlinkten, externen Seiten bekannt werden, 
-werden wir die entsprechenden Links umgehend entfernen.
-
-## Urheberrecht
-
-Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen 
-dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung 
-und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen 
-der schriftlichen Zustimmung der jeweiligen Autor:in bzw. Ersteller:in. 
-Downloads und Kopien dieser Seite sind nur für den privaten, nicht 
-kommerziellen Gebrauch gestattet.
-            
-Soweit die Inhalte auf dieser Seite nicht von uns erstellt wurden, werden die
-Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche 
-gekennzeichnet. Sollten Sie auf eine Urheberrechtsverletzung aufmerksam werden, 
-bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen 
-werden wir derartige Inhalte umgehend entfernen.
-
-## Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV
-
-DigitalService GmbH des Bundes  
-Frau Christina Lang  
-Prinzessinnenstraße 8-14  
-10969 Berlin`,
+## Barrierefreiheit
+Erfahren Sie mehr hierzu in der [Barrierefreiheitserklärung](#/barrierefreiheit)
+`,
           }}
         ></Box>
       </Container>
