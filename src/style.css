@@ -46,7 +46,7 @@
   }
 
   .rich-text h2 {
-    @apply pt-48;
+    @apply pt-40;
   }
 }
 

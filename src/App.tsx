@@ -19,6 +19,7 @@ import { Reason } from "./models/Reason";
 import { Ressort } from "./models/Ressort";
 import { VisualisationObject } from "./models/VisualisationObject";
 import {
+  PATH_A11Y,
   PATH_DECISIONTREE,
   PATH_DIAGRAM,
   PATH_FLOWCHART,
@@ -27,6 +28,7 @@ import {
   PATH_QUIZ,
   PATH_RESULT,
 } from "./routes";
+import Accessibility from "./routes/Accessibility";
 import DecisionTree from "./routes/DecisionTree";
 import Diagram from "./routes/Diagram";
 import useStorage from "./services/useStorage";
@@ -115,6 +117,12 @@ function App() {
       url: PATH_IMPRINT,
       title: "Impressum",
       element: <Imprint />,
+      parent: PATH_INFO,
+    },
+    {
+      url: PATH_A11Y,
+      title: "Barrierefreiheit",
+      element: <Accessibility />,
       parent: PATH_INFO,
     },
   ];
