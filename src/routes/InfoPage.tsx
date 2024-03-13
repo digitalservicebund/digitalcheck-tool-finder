@@ -28,22 +28,23 @@ function InfoPage() {
               erkennen und bei der Verschriftlichung Ihrer Regelung berücksichtigen zu können.`,
             }}
           ></Header>
-          <div className={"pt-24"}></div>
-          <LinkListBox
-            identifier={"info-header-toc"}
-            heading={{
-              tagName: "h2",
-              look: "ds-label-02-bold",
-              text: "Inhalt",
-            }}
-            links={[
-              {
-                text: "In welchem Programm visualisieren?",
-                url: "/#info-section-which-tool",
-              },
-              { text: "Wobei helfen Ihnen Visualisierungen?", url: "#" },
-            ]}
-          />
+          <nav className="pt-24" id="table-of-contents">
+            <LinkListBox
+              identifier={"info-header-toc"}
+              heading={{
+                tagName: "h2",
+                look: "ds-label-02-bold",
+                text: "Inhalt",
+              }}
+              links={[
+                {
+                  text: "In welchem Programm visualisieren?",
+                  url: "/#info-section-which-tool",
+                },
+                { text: "Wobei helfen Ihnen Visualisierungen?", url: "#" },
+              ]}
+            />
+          </nav>
         </Container>
       </Background>
       <BetaBanner />
