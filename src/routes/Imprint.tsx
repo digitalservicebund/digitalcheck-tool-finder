@@ -1,3 +1,4 @@
+import { PATH_A11Y, PATH_PRIVACY } from ".";
 import Background from "../components/Background";
 import Box from "../components/Box";
 import Container from "../components/Container";
@@ -48,10 +49,10 @@ Prinzessinnenstraße 8-14
 E-Mail: hallo@digitalservice.bund.de 
 
 ## Datenschutz
-Erfahren Sie mehr hierzu in der [Datenschutzerklärung](#/datenschutz)
+Erfahren Sie mehr hierzu in der [Datenschutzerklärung](#${PATH_PRIVACY})
 
 ## Barrierefreiheit
-Erfahren Sie mehr hierzu in der [Barrierefreiheitserklärung](#/barrierefreiheit)
+Erfahren Sie mehr hierzu in der [Barrierefreiheitserklärung](#${PATH_A11Y})
 `,
           }}
         ></Box>
