@@ -39,7 +39,7 @@ export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
     filteredBreadcrumbs.length > 0 && (
       <nav
         className="py-8 px-16 bg-blue-100 flex flex-wrap items-center text-base"
-        id="breadcrumbs-menu"
+        aria-label="breadcrumbs-menu"
       >
         {filteredBreadcrumbs.map((breadcrumb, idx, arr) => (
           <div key={breadcrumb.title}>

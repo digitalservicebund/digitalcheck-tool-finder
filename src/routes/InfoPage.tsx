@@ -28,7 +28,7 @@ function InfoPage() {
               erkennen und bei der Verschriftlichung Ihrer Regelung berücksichtigen zu können.`,
             }}
           ></Header>
-          <nav className="pt-24" id="table-of-contents">
+          <nav className="pt-24" aria-label="table-of-contents">
             <LinkListBox
               identifier={"info-header-toc"}
               heading={{
