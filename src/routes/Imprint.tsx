@@ -26,12 +26,12 @@ function Imprint() {
             markdown: `
 **Das Internetangebot wird herausgegeben vom**
 
-Bundesministerium des Innern und für Heimat (BMI)
+Bundesministerium des Innern und für Heimat (BMI)  
 Alt-Moabit 140  
 10557 Berlin  
 Telefon: +49 30 18681-0  
 Fax: +49 30 18681-12926  
-E-Mail: poststelle@bmi.bund.de 
+E-Mail: poststelle@bmi.bund.de  
 DE-Mail: poststelle@bmi-bund.de-mail.de 
 
 ## Weitere Kontaktmöglichkeiten
