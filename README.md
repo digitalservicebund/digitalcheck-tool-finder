@@ -87,12 +87,25 @@ The project uses [ESLint](https://eslint.org/docs/latest/) for linting and [Pret
 - Check style (formatting & linting): `npm run style:check`
 - Autofix style issues (formatting & linting): `npm run style:fix`
 
-## Build
+## Build and start
 
 Build the app for production:
 
 ```sh
 npm run build
+```
+
+Preview the production build:
+
+```sh
+npm run preview
+```
+
+Install a production ready server and use it to serve the build:
+
+```sh
+npm i -g serve
+npm run start
 ```
 
 ## Architecture Decision Records
