@@ -38,7 +38,14 @@ Teilbereiche, die z. B. nicht barrierefrei sind:
 * **Anderssprachige Abschnitte und Wörter** sind nicht immer technisch als solche gekennzeichnet, was zu unverständlicher Aussprache in Vorlese-Software führen kann.
 
 ## Barriere melden! Hinweise zur Barrierefreiheit
-Sind Ihnen weitere Mängel beim barrierefreien Zugang zu Inhalten von [visualisieren.digitalcheck.bund.de](visualisieren.digitalcheck.bund.de) aufgefallen? Dann können Sie sich gerne bei uns melden. Wenden Sie sich an die folgende E-Mail-Adresse: digitalcheck@digitalservice.bund.de.
+Sind Ihnen weitere Mängel beim barrierefreien Zugang zu Inhalten von [visualisieren.digitalcheck.bund.de](visualisieren.digitalcheck.bund.de) aufgefallen? Dann können Sie sich gerne bei uns melden:
+
+Bundesministerium des Innern und Heimat (BMI)  
+Alt Moabit 140  
+10557 Berlin  
+Telefon: 03018 681 - 0  
+Telefax: 03018 681 - 12926  
+E-Mail: DVI3@bmi.bund.de  
 
 ## Schlichtungsverfahren
 Wenn auch nach Ihrem Hinweis an den oben genannten Kontakt keine zufriedenstellende Lösung gefunden wurde, können Sie sich an die Schlichtungsstelle nach § 16 BGG wenden. Die Schlichtungsstelle BGG hat die Aufgabe, bei Konflikten zum Thema Barrierefreiheit zwischen Menschen mit Behinderungen und öffentlichen Stellen des Bundes eine außergerichtliche Streitbeilegung zu unterstützen. Dabei geht es nicht darum, Gewinner oder Verlierer zu finden. Vielmehr ist es das Ziel, mit Hilfe der Schlichtungsstelle gemeinsam und außergerichtlich eine Lösung für ein Problem zu finden. Das Schlichtungsverfahren ist kostenlos. Es muss kein Rechtsbeistand eingeschaltet werden.
