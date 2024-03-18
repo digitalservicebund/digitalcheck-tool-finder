@@ -145,7 +145,7 @@ jobs:
           output: "trivy-results.sarif"
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@592977e6ae857384aa79bb31e7a1d62d63449ec5 # == v2
+        uses: github/codeql-action/upload-sarif@592977e6ae857384aa79bb31e7a1d62d63449ec5 # v2
         if: always() # Bypass non-zero exit code..
         with:
           sarif_file: "trivy-results.sarif"
@@ -180,7 +180,7 @@ jobs:
       - name: Create SBOM
         uses: digitalservicebund/create-sbom@095884614dac5ea922dfcb09cce2e22f3d6391a3 # v1.1.0
         with:
-          image_name: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          image_name: ${{ github.repository }}:${{ github.sha }}
 
       - name: Generate cosign vulnerability scan record
         # Third-party action, pin to commit SHA!
