@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App.tsx";
 import MaintenanceModeApp from "./MaintenanceModeApp";
 import { enableTracking } from "./services/tracking";
