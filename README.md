@@ -98,12 +98,6 @@ npm run build
 Preview the production build:
 
 ```sh
-npm run preview
-```
-
-Run a production ready server and use it to serve the build:
-
-```sh
 npm run start
 ```
 

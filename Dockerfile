@@ -9,17 +9,9 @@ WORKDIR /src
 COPY . ./
 RUN npm ci && npm run build && npm prune --production
 
-FROM node:20.11.1-alpine3.19
+FROM nginx:1.25.4-alpine3.18
 
-RUN npm i --global serve
+COPY nginx.conf /etc/nginx/conf.d/CSR.conf
+COPY --from=build /src/dist /usr/share/nginx/html
 
-USER node
-ENV NODE_ENV=production
-ARG COMMIT_SHA
-ENV APP_VERSION=$COMMIT_SHA
-
-WORKDIR /home/node/src
-COPY --chown=node:node --from=build /src ./
-
-EXPOSE 3000
-ENTRYPOINT npm run start
+EXPOSE 80
