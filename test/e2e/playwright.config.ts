@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
     },
   ],
   webServer: {
-    command: `npm run preview -- --port ${port}`,
+    command: `npm start -- --port ${port}`,
     port,
     timeout,
   },
