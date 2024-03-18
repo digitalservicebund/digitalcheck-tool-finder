@@ -14,4 +14,4 @@ FROM nginx:1.25.4-alpine3.18
 COPY nginx.conf /etc/nginx/conf.d/CSR.conf
 COPY --from=build /src/dist /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
