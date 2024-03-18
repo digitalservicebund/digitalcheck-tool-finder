@@ -101,10 +101,9 @@ Preview the production build:
 npm run preview
 ```
 
-Install a production ready server and use it to serve the build:
+Run a production ready server and use it to serve the build:
 
 ```sh
-npm i -g serve
 npm run start
 ```
 
