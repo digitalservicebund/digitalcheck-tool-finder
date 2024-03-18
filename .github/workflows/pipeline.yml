@@ -171,14 +171,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: validate github workflow files to have pinned versions
-        uses: digitalservicebund/github-actions/github-actions-linter@a9479ef95842280372a310120ce42dc49c4735e1
+        uses: digitalservicebund/github-actions-linter@dccac3ada437947aada4bc901daff08ceb87c3f1
 
       - name: Build image from Dockerfile
         run: |
           docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} . --build-arg COMMIT_SHA=${{ github.sha }}
 
       - name: Create SBOM
-        uses: digitalservicebund/github-actions/create-sbom@a9479ef95842280372a310120ce42dc49c4735e1
+        uses: digitalservicebund/create-sbom@095884614dac5ea922dfcb09cce2e22f3d6391a3 # v1.1.0
         with:
           image_name: ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
