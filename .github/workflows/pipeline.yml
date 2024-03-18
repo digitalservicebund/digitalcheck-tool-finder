@@ -236,15 +236,14 @@ jobs:
       packages: read
     environment: production
     steps:
-      - name: Deploy new image
-        uses: digitalservicebund/github-actions/argocd-deploy@a9479ef95842280372a310120ce42dc49c4735e1
+      - name: Deploy latest container image
+        uses: digitalservicebund/argocd-deploy@4fac1bb67c92ed168f6d9b22f8779ce241a9e412 # v1.0.0
         with:
           environment: production
           version: ${{ github.sha }}
-          deploying_repo: ${{ github.repository }}
-          infra_repo: ${{ github.repository }}-infra
+          deploying_repo: ${{ github.event.repository.name }}
+          infra_repo: ${{ github.event.repository.name }}-infra
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-          app: ${{ github.repository }}
+          app: ${{ github.event.repository.name }}
           argocd_pipeline_password: ${{ secrets.ARGOCD_PIPELINE_PASSWORD }}
           argocd_server: ${{ secrets.ARGOCD_SERVER }}
-          argocd_sync_timeout: 300
