@@ -1,4 +1,4 @@
-FROM node:20.11.1 as build
+FROM node:20.11.1 AS build
 
 ARG COMMIT_SHA
 ENV APP_VERSION=$COMMIT_SHA
