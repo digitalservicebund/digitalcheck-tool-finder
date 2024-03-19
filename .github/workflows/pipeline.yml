@@ -2,7 +2,7 @@ name: Pipeline
 
 on:
   push:
-    branches: [main, deploy-on-OTC]
+    branches: [main]
   pull_request:
     branches: [main]
   # Allow to run this workflow manually
@@ -158,6 +158,7 @@ jobs:
 
   build-and-push-image:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs:
       - test
       - audit-licenses
@@ -231,6 +232,7 @@ jobs:
   deploy:
     needs: [build-and-push-image]
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
     timeout-minutes: 10
     permissions:
       packages: read
