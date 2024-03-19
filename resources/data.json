@@ -3,21 +3,21 @@
     {
       "id": "interaktion",
       "name": "Interaktionen von Akteuren oder Datenflüsse",
-      "description": "Ein Schaubild zeigt eine Darstellung des Gesamtsystems, nicht unbedingt einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen deuten auf Lücken in Systemen und helfen beim Austausch mit IT-Experten. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
+      "description": "Sie möchten auf einfache Weise darstellen, wie Betroffene miteinander und mit Dritten agieren; oder welche Daten benötigt werden und wie diese fließen.",
       "cluster": "schaubild",
       "order": 1
     },
     {
       "id": "logik",
       "name": "Entscheidungslogiken",
-      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangspunkt immer weiter auf; zusätzlich können logische Verknüpfungen wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. So können Logikfehler identifiziert und eine Grundlage für Automatisierung geschaffen werden. Der strukturierte Inhalt eines Entscheidungsbaums kann als Basis für einen Regelungstext genutzt werden.",
+      "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
       "cluster": "entscheidungsbaum",
       "order": 2
     },
     {
       "id": "prozess",
       "name": "Ganzer Prozess",
-      "description": "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Schritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
+      "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
       "cluster": "flussdiagramm",
       "order": 3
     },
@@ -69,7 +69,7 @@
       "name": "Schaubild",
       "tools": [ "papier-schaubild", "conceptboard-schaubild", "bundescloud-drawio-schaubild"],
       "notations": [ "frei" ],
-      "description": "In einem Schaubild stehen die Akteure im Mittelpunkt. Das können z.B. sein: Menschen, Datenbanken, Intermediäre sowie die Daten bzw. Informationen welche zwischen diesen ausgetauscht werden. Es geht um die Darstellung des Gesamtsystems, nicht um einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen zeigen Lücken in Systemen und helfen beim Austausch mit IT-Expertisen. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
+      "description": "Ein Schaubild zeigt eine Darstellung des Gesamtsystems, nicht unbedingt einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen deuten auf Lücken in Systemen und helfen beim Austausch mit IT-Experten. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
       "img": {
         "src": "clusters/schaubild.jpg",
         "alt": "Ein vereinfachtes freies Schaubilds ohne Text"
@@ -80,7 +80,7 @@
       "name": "Entscheidungsbaum",
       "tools": [ "papier-entscheidungsbaum", "conceptboard-entscheidungsbaum", "logos", "bundescloud-drawio-entscheidungsbaum", "adonis" ],
       "notations": [ "rulemap", "dmn", "frei" ],
-      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Ergebnisse bzw. Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangsknoten immer weiter auf; zusätzlich können logische Operatoren wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ an den Verbindungskanten dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. Entscheidungsbäume helfen dabei, Logikbrüche zu identifizieren und sind eine Grundlage der Automatisierung.",
+      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangspunkt immer weiter auf; zusätzlich können logische Verknüpfungen wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. So können Logikfehler identifiziert und eine Grundlage für Automatisierung geschaffen werden. Der strukturierte Inhalt eines Entscheidungsbaums kann als Basis für einen Regelungstext genutzt werden.",
       "img": {
         "src": "clusters/entscheidungsbaum.jpg",
         "alt": "Ein Entscheidungsbaumes ohne Text"
@@ -91,7 +91,7 @@
       "name": "Flussdiagramm",
       "tools": [ "papier-flussdiagramm", "conceptboard-flussdiagramm", "bundescloud-drawio-flussdiagramm", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio" ],
       "notations": ["bpmn", "fim", "frei"],
-      "description": "Ein Flussdiagramm stellt einen (Vollzugs-)Prozess, oder Arbeitsablauf visuell dar. Unter Verwendung standardisierter Symbole und Definitionen wird chronologisch der Prozess in Schritten abgebildet; Detaillevel können dabei variieren. Flussdiagramm helfen dabei, Medienbrüche, Lücken und Potenziale zur Vereinfachung zu erkennen.",
+      "description": "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Schritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
       "img": {
         "src": "clusters/flussdiagramm.jpg",
         "alt": "Ein vereinfachtes Flussdiagramms ohne Text"
