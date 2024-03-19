@@ -178,7 +178,7 @@ jobs:
           docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} . --build-arg COMMIT_SHA=${{ github.sha }}
 
       - name: Create SBOM
-        uses: digitalservicebund/create-sbom@095884614dac5ea922dfcb09cce2e22f3d6391a3
+        uses: digitalservicebund/github-actions/create-sbom@a9479ef95842280372a310120ce42dc49c4735e1
         with:
           image_name: ${{ github.repository }}:${{ github.sha }}
 
