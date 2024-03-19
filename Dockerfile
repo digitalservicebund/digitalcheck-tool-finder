@@ -5,9 +5,9 @@ ENV APP_VERSION=$COMMIT_SHA
 
 # Create app directory
 WORKDIR /src
-# Required files are whitelisted in dockerignore
+# NOSONAR Required files are whitelisted in dockerignore
 COPY . ./
-RUN npm ci && npm run build && npm prune --production
+RUN npm ci --ignore-scripts && npm run build && npm prune --production
 
 FROM nginxinc/nginx-unprivileged:1.25.4-alpine3.18
 

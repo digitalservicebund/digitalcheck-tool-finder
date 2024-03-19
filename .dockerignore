@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Whitelist
+!public/
+!resources/
+!src/
+
+!index.html
+!nginx.conf
+!package-lock.json
+!package.json
+!postcss.config.cjs
+!tailwind.config.cjs
+!tsconfig.json
+!vite.config.js
