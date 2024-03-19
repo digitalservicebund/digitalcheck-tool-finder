@@ -3,7 +3,7 @@
     {
       "id": "interaktion",
       "name": "Interaktionen von Akteuren oder Datenflüsse",
-      "description": "Wie werden die Betroffenen miteinander und mit Dritten agieren? Welche Daten werden benötigt und wie fließen sie?",
+      "description": "Sie möchten auf einfache Weise darstellen, wie Betroffene miteinander und mit Dritten agieren; oder welche Daten benötigt werden und wie diese fließen.",
       "cluster": "schaubild",
       "order": 1
     },
@@ -16,8 +16,8 @@
     },
     {
       "id": "prozess",
-      "name": "Ganzen Prozess",
-      "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung aufzeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
+      "name": "Ganzer Prozess",
+      "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
       "cluster": "flussdiagramm",
       "order": 3
     },
