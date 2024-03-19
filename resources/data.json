@@ -3,21 +3,21 @@
     {
       "id": "interaktion",
       "name": "Interaktionen von Akteuren oder Datenflüsse",
-      "description": "Sie möchten auf einfache Weise darstellen, wie Betroffene miteinander und mit Dritten agieren; oder welche Daten benötigt werden und wie diese fließen.",
+      "description": "Ein Schaubild zeigt eine Darstellung des Gesamtsystems, nicht unbedingt einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen deuten auf Lücken in Systemen und helfen beim Austausch mit IT-Experten. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
       "cluster": "schaubild",
       "order": 1
     },
     {
       "id": "logik",
       "name": "Entscheidungslogiken",
-      "description": "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
+      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangspunkt immer weiter auf; zusätzlich können logische Verknüpfungen wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. So können Logikfehler identifiziert und eine Grundlage für Automatisierung geschaffen werden. Der strukturierte Inhalt eines Entscheidungsbaums kann als Basis für einen Regelungstext genutzt werden.",
       "cluster": "entscheidungsbaum",
       "order": 2
     },
     {
       "id": "prozess",
       "name": "Ganzer Prozess",
-      "description": "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
+      "description": "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Schritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
       "cluster": "flussdiagramm",
       "order": 3
     },
