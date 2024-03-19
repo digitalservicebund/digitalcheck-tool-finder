@@ -302,6 +302,7 @@
       "id": "powerpoint",
       "name": "Microsoft PowerPoint",
       "fidelity": "digital",
+      "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
       "description": "Microsoft PowerPoint ist ein Programm, um Präsentationen zu erstellen. Sie können Inhalte auf begrenztem Platz darstellen.",
       "link": "",
       "img": {
