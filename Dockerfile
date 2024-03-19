@@ -9,9 +9,9 @@ WORKDIR /src
 COPY . ./
 RUN npm ci && npm run build && npm prune --production
 
-FROM nginxinc/nginx-unprivileged:1.25-alpine3.18
+FROM nginxinc/nginx-unprivileged:1.25.4-alpine3.18
 
-COPY nginx.conf /etc/nginx/conf.d/CSR.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /src/dist /usr/share/nginx/html
 
 EXPOSE 8080
