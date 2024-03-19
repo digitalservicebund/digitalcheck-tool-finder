@@ -111,7 +111,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Die ersten Versionen eines Schaubilds sollten mit Stift und Papier angefertigt werden. Dies ist schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten.",
+      "description": "Die erste Version eines Schaubilds sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
@@ -123,7 +123,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Einen ersten Aufschlag eines Entscheidungsbaums kann man schnell mit Stift und Papier abbilden. Post-It's, können dabei helfen, einzelne Bereiche schneller verschiebbar zu machen. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten.",
+      "description": "Die erste Version eines Entscheidungsbaums sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
@@ -135,7 +135,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Die ersten Versionen eines Flussdiagramms sollten mit Stift und Papier angefertigt werden (Post-It's helfen beim schnelleren \"verschieben\"). Papier ist gerade in der frühen Ideenphase oft zeiteffizienter, um Gedanken und Annahmen zu skizzieren, als diese in einem digitalen Werkzeug abzubilden. Auch ist die Barriere des Verwerfens und neuen Anfangens so geringer.",
+      "description": "Die erste Version eines Flussdiagramms sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
@@ -147,7 +147,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"Neues Diagramm erstellen\"\n- Suche nach \"Ablaufdiagramm\"\n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -159,7 +159,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass dein Entscheidungsbaum gut strukturiert und formatiert ist. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür einen Entscheidungsbaum wähle: \"Neues Diagramm erstellen\"\n- Suche Nach \"Decision\"\n- Speichere das Diagramm Lokal bei dir\nErstelle dein Diagramm, speichere es als .xml um es später wieder zu editieren.\nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihren Entscheidungsbaum gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-entscheidungsbaum.png",
@@ -171,7 +171,7 @@
       "name": "Bundescloud draw.io",
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
-      "description": "Als einfaches digitales Werkzeug hilft Draw.io dir dabei, dass deine Flussdiagramme gut strukturiert und formatiert sind. Außerdem bietet dir draw.io unendlich viel Platz.\n\nFür ein Flussdiagramm wähle: \"Neues Diagramm erstellen\"\n- für mehrere Akteure: \"Swimlane-Diagramm\"\n- für nur einen Akteur \"Ablaufdiagramm\" \n- Speichere das Diagramm lokal bei dir\nErstelle dein Diagramm, speichere es als .xml, um es später wieder zu editieren. \nDu kannst es sonst auch als PNG, PDF, etc. exportieren",
+      "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Flussdiagramm gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -183,7 +183,7 @@
       "name": "Logos",
       "fidelity": "digital",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Eine Rulemap ist eine Art Entscheidungsbaum welcher extra für den juristischen Kontext entwickelt wurde. Mit derm Werkzeug kannst du diese erstellen, der Vorteil hier ist, dass es direkt eine Logikprüfung ermöglicht. Desweiteren kannst du deine gesamte Regelung in einer Rulemap abbilden und so verschiedene Tatbestände simulieren.",
+      "description": "Mit Logos können Sie eine Rulemap erstellen; eine Art Entscheidungsbaum welcher spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
       "link": "https://rulemapping.knowledgetools.de/rulemapping/#",
       "img": {
         "src": "",
@@ -195,7 +195,7 @@
       "name": "Adonis",
       "fidelity": "pro",
       "ressorts": [ "bmwk", "bmi", "bmas" ],
-      "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. Die Modellierung passiert in der \"BPMN\" Notation. Adonis solltest du also dann einsetzen, wenn du eine FIM-Modellierung anfertigen möchtest, oder du weißt, dass du in Zukunft öfter mit FIM-Modellierungen zu tun hast. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. Adonis sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung passiert in der \"BPMN\"-Notation.",
       "link": "",
       "img": {
         "src": "",
@@ -207,7 +207,7 @@
       "name": "BIC",
       "fidelity": "pro",
       "ressorts": [ "bmi" ],
-      "description": "BIC Process Design ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "description": "BIC Process Design ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. BIC Process Design sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung geschieht in der \"BPMN\"-Notation.",
       "link": "",
       "img": {
         "src": "",
@@ -219,7 +219,7 @@
       "name": "Conceptboard",
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
-      "description": "Ist ein unendliches Whiteboard welches unter Anderem dazu verwendet werden kann ein Flussdiagramm darzustellen. Das Programm verhält sich wie ein Whiteboard, so können schnell Dinge ersetzt oder verschoben werde. Auch hier empfiehlt es sich an eine klare Struktur in Form von Aktionen, Akteuren und Kanten zu halten.",
+      "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
       "link": "",
       "img": {
         "src": "",
@@ -243,7 +243,7 @@
       "name": "Conceptboard",
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
-      "description": "Ist ein unendliches Whiteboard welches unter Anderem dazu verwendet werden kann ein Flussdiagramm darzustellen. Das Programm verhält sich wie ein Whiteboard, so können schnell Dinge ersetzt oder verschoben werde. Auch hier empfiehlt es sich an eine klare Struktur in Form von Aktionen, Akteuren und Kanten zu halten.",
+      "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihr Flussdiagramm gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
       "link": "",
       "img": {
         "src": "",
@@ -255,7 +255,7 @@
       "name": "MS Visio",
       "fidelity": "pro",
       "ressorts": [ "bmj", "bmfsfj", "bmf", "bmg", "bmz" ],
-      "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen, sie lehnt sich vom Interface an die bekannten Office-Programme an, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen. Das Interface erinnert an die bekannten Office-Programme, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
       "link": "",
       "img": {
         "src": "",
@@ -267,7 +267,7 @@
       "name": "Modulo",
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
-      "description": "Ist ein analoges, kartenbasiertes Werkzeug das extra für die öffentliche Verwaltung konzipiert wurde. Mit Hilfe von vordefinierten Magnetkarten kannst du einfache Prozesse der Leistungsverwaltung darstellen. Den Koffer findest du bei deinem hausinternen Ansprechpartner, kontaktiere uns hierzu gerne direkt.",
+      "description": "Modulo ist ein analoges, kartenbasiertes Werkzeug, das für die öffentliche Verwaltung konzipiert wurde. Mit Hilfe von vordefinierten Magnetkarten können Sie einfache Prozesse der Leistungsverwaltung darstellen.",
       "link": "https://shi-institut.de/produkte/modulo/",
       "img": {
         "src": "",
@@ -279,7 +279,7 @@
       "name": "Aris",
       "fidelity": "pro",
       "ressorts": [ "bmbf", "bmdv" ],
-      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
       "link": "",
       "img": {
         "src": "",
@@ -291,7 +291,18 @@
       "name": "Aris Cloud",
       "fidelity": "pro",
       "ressorts": [ "bmf" ],
-      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\" Notation, damit ist diese sehr FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn du dir sicher bist, dass du in der Zukunft öfter modellierst. Kontaktiere uns gerne und wir verweisen dich auf deinen hausinternen Ansprechpartner.",
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "link": "",
+      "img": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "powerpoint",
+      "name": "Microsoft PowerPoint",
+      "fidelity": "digital",
+      "description": "Microsoft PowerPoint ist ein Programm, um Präsentationen zu erstellen. Sie können Inhalte auf begrenztem Platz darstellen.",
       "link": "",
       "img": {
         "src": "",
