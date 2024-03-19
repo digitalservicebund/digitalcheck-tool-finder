@@ -48,9 +48,8 @@
       "order": 2
     },
     {
-      "id": "ablage",
-      "name": "Für die Ablage",
-      "description": "z. B. Dokumentieren",
+      "id": "dokumentation",
+      "name": "Zur Dokumentation",
       "order": 3
     },
     {
