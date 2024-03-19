@@ -8,5 +8,6 @@ export interface Tool extends Entity {
   link: string;
   fidelity: string;
   ressorts: string[];
+  access?: string;
   img: Image;
 }

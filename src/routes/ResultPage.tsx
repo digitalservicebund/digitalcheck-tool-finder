@@ -65,9 +65,9 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
               text: tool.name,
             },
             content: {
-              markdown: `${tool.description}${
-                tool.link ? "\n\n" + tool.link : ""
-              }`,
+              markdown: `${tool.description}
+              ${tool.link ? "\n\n" + tool.link : ""}
+              ${tool.access ? "\n\n" + tool.access : ""}`,
             },
             image: tool.img.src
               ? {

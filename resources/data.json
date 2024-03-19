@@ -148,6 +148,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -160,6 +161,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihren Entscheidungsbaum gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-entscheidungsbaum.png",
@@ -172,6 +174,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Flussdiagramm gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "https://www.draw.io/",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -184,6 +187,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
       "description": "Mit Logos können Sie eine Rulemap erstellen; eine Art Entscheidungsbaum welcher spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "https://rulemapping.knowledgetools.de/rulemapping/#",
       "img": {
         "src": "",
@@ -196,6 +200,7 @@
       "fidelity": "pro",
       "ressorts": [ "bmwk", "bmi", "bmas" ],
       "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. Adonis sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung passiert in der \"BPMN\"-Notation.",
+      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
       "link": "",
       "img": {
         "src": "",
@@ -208,6 +213,7 @@
       "fidelity": "pro",
       "ressorts": [ "bmi" ],
       "description": "BIC Process Design ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. BIC Process Design sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung geschieht in der \"BPMN\"-Notation.",
+      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
       "link": "",
       "img": {
         "src": "",
@@ -220,6 +226,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
       "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "",
       "img": {
         "src": "",
@@ -232,6 +239,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
       "description": "Ist ein unendliches Whiteboard welches unter Anderem dazu verwendet werden kann ein Flussdiagramm darzustellen. Das Programm verhält sich wie ein Whiteboard, so können schnell Dinge ersetzt oder verschoben werde. Auch hier empfiehlt es sich an eine klare Struktur in Form von Aktionen, Akteuren und Kanten zu halten.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
       "link": "",
       "img": {
         "src": "",
@@ -256,6 +264,7 @@
       "fidelity": "pro",
       "ressorts": [ "bmj", "bmfsfj", "bmf", "bmg", "bmz" ],
       "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen. Das Interface erinnert an die bekannten Office-Programme, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
       "link": "",
       "img": {
         "src": "",
@@ -268,6 +277,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
       "description": "Modulo ist ein analoges, kartenbasiertes Werkzeug, das für die öffentliche Verwaltung konzipiert wurde. Mit Hilfe von vordefinierten Magnetkarten können Sie einfache Prozesse der Leistungsverwaltung darstellen.",
+      "access": "Den Koffer mit den Magnetkarten finden Sie bei Ihrem hausinternen Ansprechpartner, kontaktieren Sie uns hierzu gerne direkt.",
       "link": "https://shi-institut.de/produkte/modulo/",
       "img": {
         "src": "",
@@ -280,6 +290,7 @@
       "fidelity": "pro",
       "ressorts": [ "bmbf", "bmdv" ],
       "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
       "link": "",
       "img": {
         "src": "",
@@ -292,6 +303,7 @@
       "fidelity": "pro",
       "ressorts": [ "bmf" ],
       "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
       "link": "",
       "img": {
         "src": "",
