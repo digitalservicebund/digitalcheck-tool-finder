@@ -1,14 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import Background from "../components/Background";
-import BetaBanner from "../components/BetaBanner";
 import Box from "../components/Box";
 import BoxWithImage from "../components/BoxWithImage";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
-import Header from "../components/Header";
 import Image from "../components/Image";
 import RichText from "../components/RichText";
 import { Reason } from "../models/Reason";
@@ -86,23 +83,9 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
 
   return (
     <>
-      <Background backgroundColor="blue" paddingTop="48" paddingBottom="40">
-        <Container paddingTop="0" paddingBottom="0">
-          <Header
-            heading={{
-              tagName: "h1",
-              text: `Empfohlenes Werkzeug`,
-            }}
-            content={{
-              markdown: `Die Empfehlung erfolgt nach Ihren getätigten Eingaben. Weiter unten können Sie Ihre Eingaben ändern.`,
-            }}
-          ></Header>
-        </Container>
-      </Background>
-      <BetaBanner />
       {result && (
         <Container paddingTop="48" paddingBottom="40">
-          <div className={"border border-8 rounded-lg border-[#EBF3FD]"}>
+          <div className={"border-8 rounded-lg border-[#EBF3FD]"}>
             <Image
               url={getImageUrl(result.cluster.img.src)}
               alternativeText={result.cluster.img.alt}

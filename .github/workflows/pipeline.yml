@@ -2,7 +2,7 @@ name: Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [main, deploy-on-OTC]
   pull_request:
     branches: [main]
   # Allow to run this workflow manually
@@ -18,9 +18,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    environment: github-pages
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -85,20 +84,6 @@ jobs:
           # See https://github.com/digitalservicebund/typescript-vite-application-template/actions/runs/3486985178/jobs/5834089375
           VITE_PORT: 4183
 
-      - name: Build for production
-        env:
-          VITE_MAINTENANCE_MODE: ${{ vars.VITE_MAINTENANCE_MODE }}
-        run: npm run build
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
       - name: Send status to Slack
         uses: digitalservicebund/notify-on-failure-gha@15dd05b628141b7bac0ad26e08c1935cb3ba6bc8 # v1.4.0
         if: ${{ failure() }}
@@ -160,7 +145,7 @@ jobs:
           output: "trivy-results.sarif"
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@592977e6ae857384aa79bb31e7a1d62d63449ec5 # == v2
+        uses: github/codeql-action/upload-sarif@592977e6ae857384aa79bb31e7a1d62d63449ec5 # v2
         if: always() # Bypass non-zero exit code..
         with:
           sarif_file: "trivy-results.sarif"
@@ -171,27 +156,94 @@ jobs:
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+  build-and-push-image:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
     needs:
-      - build
+      - test
       - audit-licenses
       - vulnerability-scan
+    permissions:
+      contents: read
+      id-token: write # This is used to complete the identity challenge with sigstore/fulcio.
+      packages: write
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Send status to Slack
-        uses: digitalservicebund/notify-on-failure-gha@15dd05b628141b7bac0ad26e08c1935cb3ba6bc8 # v1.4.0
-        if: ${{ failure() }}
+      - name: validate github workflow files to have pinned versions
+        uses: digitalservicebund/github-actions-linter@dccac3ada437947aada4bc901daff08ceb87c3f1
+
+      - name: Build image from Dockerfile
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} . --build-arg COMMIT_SHA=${{ github.sha }}
+
+      - name: Generate cosign vulnerability scan record
+        # Third-party action, pin to commit SHA!
+        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+        uses: aquasecurity/trivy-action@b77b85c0254bba6789e787844f0585cde1e56320 # v0.17.0
         with:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          image-ref: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          format: "cosign-vuln"
+          output: "vulnerabilities.json"
+
+      - name: Upload cosign vulnerability scan record
+        uses: actions/upload-artifact@v4
+        with:
+          name: "vulnerabilities.json"
+          path: "vulnerabilities.json"
+          if-no-files-found: error
+
+      - name: Install cosign
+        # Third-party action, pin to commit SHA!
+        # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+        uses: sigstore/cosign-installer@e1523de7571e31dbe865fd2e80c5c7c23ae71eb4 # v3.4.0
+
+      - name: Login to container registry
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
+        with:
+          registry: "ghcr.io"
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push image
+        run: |
+          docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ghcr.io/${{ env.IMAGE_NAME }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push --all-tags ghcr.io/${{ env.IMAGE_NAME }}
+
+      - name: Sign the published Docker image
+        env:
+          COSIGN_EXPERIMENTAL: "true"
+        # This step uses the identity token to provision an ephemeral certificate
+        # against the sigstore community Fulcio instance.
+        run: cosign sign --yes ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Attest the vulnerability scan
+        env:
+          COSIGN_EXPERIMENTAL: "true"
+        run: cosign attest --yes --replace --predicate vulnerabilities.json --type vuln ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Create SBOM
+        uses: digitalservicebund/create-sbom@095884614dac5ea922dfcb09cce2e22f3d6391a3
+        with:
+          image_name: ${{ github.repository }}:${{ github.sha }}
+
+  deploy:
+    needs: [build-and-push-image]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      packages: read
+    environment: production
+    steps:
+      - name: Deploy latest container image
+        uses: digitalservicebund/argocd-deploy@4fac1bb67c92ed168f6d9b22f8779ce241a9e412 # v1.0.0
+        with:
+          environment: production
+          version: ${{ github.sha }}
+          deploying_repo: ${{ github.event.repository.name }}
+          infra_repo: ${{ github.event.repository.name }}-infra
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          app: ${{ github.event.repository.name }}-production
+          argocd_pipeline_password: ${{ secrets.ARGOCD_PIPELINE_PASSWORD }}
+          argocd_server: ${{ secrets.ARGOCD_SERVER }}
