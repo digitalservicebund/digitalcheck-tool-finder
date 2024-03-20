@@ -15,6 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "useUnknownInCatchVariables": false,
-    "noEmit": true
+    "noEmit": true,
+    "skipLibCheck": true
   }
 }
