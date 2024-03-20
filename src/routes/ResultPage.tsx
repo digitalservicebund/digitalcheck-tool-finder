@@ -147,7 +147,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
         <Container paddingTop="0" paddingBottom="10">
           <RichText
             markdown={`Ressort: **${ressort.name}** 
-            | Object der Darstellung: **${object.name}** 
+            | Objekt der Darstellung: **${object.name}** 
             | Grund der Visualisierung: **${reason.name}**`}
           />
         </Container>
