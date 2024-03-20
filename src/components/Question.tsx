@@ -1,6 +1,4 @@
 import { z } from "zod";
-import Box from "./Box";
-import Container from "./Container";
 import RadioGroup, { RadioGroupPropsSchema } from "./RadioGroup";
 import Select, { SelectPropsSchema } from "./Select";
 
@@ -22,25 +20,16 @@ export default function Question({
   radio,
 }: QuestionProps) {
   return (
-    <Container paddingTop="0" paddingBottom="80">
-      <Box
-        label={{
-          tagName: "p",
-          look: "ds-label-02-reg",
-          text: label,
-        }}
-        heading={{
-          tagName: "h2",
-          text: heading,
-        }}
-        content={{
-          markdown: description,
-        }}
-      ></Box>
+    <fieldset className="container pt-0 pb-80">
+      <legend>
+        <p className="ds-label-02-reg">{label}</p>
+        <h2>{heading}</h2>
+        {description}
+      </legend>
       <div className={"pt-16"}>
         {select && <Select placeholder={"Bitte auswählen"} {...select} />}
         {radio && <RadioGroup {...radio} />}
       </div>
-    </Container>
+    </fieldset>
   );
 }
