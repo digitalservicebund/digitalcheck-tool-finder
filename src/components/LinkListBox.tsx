@@ -1,5 +1,5 @@
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { z } from "zod";
 import Button, { ButtonPropsSchema } from "./Button";
 import ButtonContainer from "./ButtonContainer";
@@ -36,7 +36,7 @@ const LinkListBox = ({
           <ul className="list-none pl-0 ds-stack-16">
             {links.map((link) => (
               <li key={link.text ?? link.url}>
-                <Link
+                <HashLink
                   className="text-link visited:text-black !text-black"
                   to={link.url ?? ""}
                 >
@@ -44,7 +44,7 @@ const LinkListBox = ({
                     <ArrowDownward className="h-[1em] w-[1em] inline-block" />{" "}
                     {link.text}
                   </span>
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>

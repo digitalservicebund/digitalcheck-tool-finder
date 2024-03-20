@@ -39,9 +39,12 @@ function InfoPage() {
               links={[
                 {
                   text: "In welchem Programm visualisieren?",
-                  url: "/#info-section-which-tool",
+                  url: "#info-section-which-tool",
                 },
-                { text: "Wobei helfen Ihnen Visualisierungen?", url: "#" },
+                {
+                  text: "Wobei helfen Ihnen Visualisierungen?",
+                  url: "#info-section-why-visualisation",
+                },
               ]}
             />
           </nav>
