@@ -116,16 +116,6 @@ function QuizPage({
     onChangeHandler(e.target.value, setReason, reasons, new Reason());
   };
 
-  const getErrorsForField = (name: string) => {
-    let fieldErrors = {};
-    if (errors[name]) {
-      fieldErrors = {
-        error: errors[name],
-      };
-    }
-    return fieldErrors;
-  };
-
   const onSubmit = () => {
     trackSelection(ressort, object, reason);
     navigate(PATH_RESULT);
@@ -162,7 +152,7 @@ function QuizPage({
               onChange: onChangeRessort,
               options: mapToSelectOptions(ressorts),
               formRegister: register,
-              ...getErrorsForField("ressort"),
+              error: errors["ressort"],
             }}
           />
           <Question
@@ -176,7 +166,7 @@ function QuizPage({
               onChange: onChangeObject,
               options: mapToRadioOptions(objects),
               formRegister: register,
-              ...getErrorsForField("object"),
+              error: errors["object"],
             }}
           />
           <Question
@@ -189,7 +179,7 @@ function QuizPage({
               onChange: onChangeReason,
               options: mapToRadioOptions(reasons),
               formRegister: register,
-              ...getErrorsForField("reason"),
+              error: errors["reason"],
             }}
           />
           <Container paddingTop="0" paddingBottom="48">

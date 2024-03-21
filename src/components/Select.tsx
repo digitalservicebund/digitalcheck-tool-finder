@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import type { ReactNode } from "react";
 import { ChangeEvent } from "react";
-import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
+import { FieldValues, GlobalError, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
 import InputError from "./InputError";
 
@@ -23,8 +23,8 @@ export const SelectPropsSchema = z.object({
     .args(z.custom<ChangeEvent<HTMLInputElement>>())
     .returns(z.void())
     .optional(),
-  error: z.custom<FieldError>().optional(),
   formRegister: z.custom<UseFormRegister<FieldValues>>(),
+  error: z.custom<GlobalError | undefined>(),
 });
 
 type SelectProps = z.infer<typeof SelectPropsSchema>;
@@ -39,10 +39,11 @@ const Select = ({
   formRegister,
   error,
 }: SelectProps) => {
+  const hasError = !!error;
+  const errorId = hasError ? `${name}-error` : undefined;
   const selectClassName = classNames("ds-select", {
-    "has-error": error,
+    "has-error": hasError,
   });
-  const errorId = `${name}-error`;
 
   return (
     <>
@@ -52,13 +53,14 @@ const Select = ({
         id={name}
         className={selectClassName}
         value={value}
-        aria-invalid={error !== undefined}
-        aria-describedby={error?.message && errorId}
-        aria-errormessage={error?.message && errorId}
         {...formRegister(name, {
           required: "Bitte wählen Sie eine Option aus.",
           onChange: onChange,
         })}
+        aria-required={true}
+        aria-invalid={hasError}
+        aria-describedby={errorId}
+        aria-errormessage={errorId}
       >
         {placeholder && <option value="">{placeholder}</option>}
         {options.map((option) => {
@@ -69,7 +71,10 @@ const Select = ({
           );
         })}
       </select>
-      {error?.message && <InputError id={errorId}>{error.message}</InputError>}
+
+      {error && errorId && (
+        <InputError id={errorId}>{error.message}</InputError>
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
+import { FieldValues, GlobalError, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
 import InputError from "./InputError";
 
@@ -22,8 +22,8 @@ export const RadioGroupPropsSchema = z.object({
     .args(z.custom<ChangeEvent<HTMLInputElement>>())
     .returns(z.void())
     .optional(),
-  error: z.custom<FieldError>().optional(),
   formRegister: z.custom<UseFormRegister<FieldValues>>(),
+  error: z.custom<GlobalError | undefined>(),
 });
 
 type RadioGroupProps = z.infer<typeof RadioGroupPropsSchema>;
@@ -36,7 +36,8 @@ const RadioGroup = ({
   formRegister,
   error,
 }: RadioGroupProps) => {
-  const errorId = `${name}-error`;
+  const hasError = !!error;
+  const errorId = hasError ? `${name}-error` : undefined;
 
   return (
     <>
@@ -71,10 +72,11 @@ const RadioGroup = ({
             </li>
           );
         })}
-        {error?.message && (
-          <InputError id={errorId}>{error.message}</InputError>
-        )}
       </ul>
+
+      {error && errorId && (
+        <InputError id={errorId}>{error.message}</InputError>
+      )}
     </>
   );
 };
