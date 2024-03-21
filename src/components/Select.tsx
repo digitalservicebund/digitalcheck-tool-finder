@@ -23,8 +23,8 @@ export const SelectPropsSchema = z.object({
     .args(z.custom<ChangeEvent<HTMLInputElement>>())
     .returns(z.void())
     .optional(),
-  formRegister: z.custom<UseFormRegister<FieldValues>>().optional(),
   error: z.custom<FieldError>().optional(),
+  formRegister: z.custom<UseFormRegister<FieldValues>>(),
 });
 
 type SelectProps = z.infer<typeof SelectPropsSchema>;
@@ -43,26 +43,22 @@ const Select = ({
     "has-error": error,
   });
   const errorId = `${name}-error`;
-  const registeredFormProps =
-    formRegister !== undefined
-      ? formRegister(name, {
-          required: "Bitte wählen Sie eine Option aus.",
-          onChange: onChange,
-        })
-      : {};
 
   return (
-    <div>
+    <>
       <label htmlFor={name}>{label}</label>
 
       <select
         id={name}
         className={selectClassName}
         value={value}
-        {...registeredFormProps}
         aria-invalid={error !== undefined}
         aria-describedby={error?.message && errorId}
         aria-errormessage={error?.message && errorId}
+        {...formRegister(name, {
+          required: "Bitte wählen Sie eine Option aus.",
+          onChange: onChange,
+        })}
       >
         {placeholder && <option value="">{placeholder}</option>}
         {options.map((option) => {
@@ -74,7 +70,7 @@ const Select = ({
         })}
       </select>
       {error?.message && <InputError id={errorId}>{error.message}</InputError>}
-    </div>
+    </>
   );
 };
 
