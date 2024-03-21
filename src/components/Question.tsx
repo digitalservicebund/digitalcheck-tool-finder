@@ -20,16 +20,14 @@ export default function Question({
   radio,
 }: QuestionProps) {
   return (
-    <fieldset className="container pt-0 pb-80">
-      <legend>
+    <fieldset className="container pt-0 pb-80" aria-required={true}>
+      <legend className="pb-16">
         <p className="ds-label-02-reg">{label}</p>
         <h2>{heading}</h2>
         {description}
       </legend>
-      <div className={"pt-16"}>
-        {select && <Select placeholder={"Bitte auswählen"} {...select} />}
-        {radio && <RadioGroup {...radio} />}
-      </div>
+      {select && <Select placeholder={"Bitte auswählen"} {...select} />}
+      {radio && <RadioGroup {...radio} />}
     </fieldset>
   );
 }
