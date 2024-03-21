@@ -4,7 +4,6 @@ import { ChangeEvent } from "react";
 import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
 import InputError from "./InputError";
-import InputLabel from "./InputLabel";
 
 export const SelectOptionsPropsSchema = z.array(
   z.object({ value: z.string(), text: z.string() }),
@@ -15,7 +14,7 @@ export type SelectOptionsProps = z.infer<typeof SelectOptionsPropsSchema>;
 export const SelectPropsSchema = z.object({
   name: z.string(),
   options: SelectOptionsPropsSchema,
-  label: z.custom<ReactNode>().optional(),
+  label: z.custom<ReactNode>(),
   altLabel: z.string().optional(),
   placeholder: z.string().optional(),
   value: z.string().optional(),
@@ -54,7 +53,7 @@ const Select = ({
 
   return (
     <div>
-      {label && <InputLabel id={name}>{label}</InputLabel>}
+      <label htmlFor={name}>{label}</label>
 
       <select
         id={name}
