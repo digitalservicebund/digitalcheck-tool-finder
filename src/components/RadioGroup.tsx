@@ -2,7 +2,6 @@ import { ChangeEvent } from "react";
 import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
 import { z } from "zod";
 import InputError from "./InputError";
-import Radio from "./Radio";
 
 export const RadioOptionsPropsSchema = z.array(
   z.object({
@@ -17,16 +16,14 @@ export type RadioOptionsProps = z.infer<typeof RadioOptionsPropsSchema>;
 export const RadioGroupPropsSchema = z.object({
   name: z.string(),
   options: RadioOptionsPropsSchema,
-  label: z.string().optional(),
-  altLabel: z.string().optional(),
-  value: z.string().optional(),
+  selectedValue: z.string().optional(),
   onChange: z
     .function()
     .args(z.custom<ChangeEvent<HTMLInputElement>>())
     .returns(z.void())
     .optional(),
-  formRegister: z.custom<UseFormRegister<FieldValues>>().optional(),
   error: z.custom<FieldError>().optional(),
+  formRegister: z.custom<UseFormRegister<FieldValues>>(),
 });
 
 type RadioGroupProps = z.infer<typeof RadioGroupPropsSchema>;
@@ -34,9 +31,7 @@ type RadioGroupProps = z.infer<typeof RadioGroupPropsSchema>;
 const RadioGroup = ({
   name,
   options,
-  label,
-  altLabel,
-  value,
+  selectedValue,
   onChange,
   formRegister,
   error,
@@ -44,34 +39,43 @@ const RadioGroup = ({
   const errorId = `${name}-error`;
 
   return (
-    <fieldset
-      className="border-0 p-0 m-0"
-      aria-invalid={error !== undefined}
-      aria-describedby={error?.message && errorId}
-      aria-errormessage={error?.message && errorId}
-    >
-      {altLabel && <legend className="sr-only">{altLabel}</legend>}
-      <div className="ds-stack-16">
-        {label && <legend>{label}</legend>}
-        {options.map((o) => {
+    <>
+      <ul
+        className="ds-stack-16 border-0 p-0 m-0"
+        role="radiogroup"
+        aria-invalid={!!error}
+      >
+        {options.map(({ value, text, subText }) => {
+          const id = `${name}-${value}`;
+          const checked = selectedValue === value;
+
           return (
-            <Radio
-              key={o.value}
-              name={name}
-              value={o.value}
-              text={o.text}
-              subText={o.subText}
-              onChange={onChange}
-              checked={value === o.value}
-              formRegister={formRegister}
-            />
+            <li className="flex items-center">
+              <input
+                type={"radio"}
+                id={id}
+                value={value}
+                className="ds-radio"
+                checked={checked}
+                {...formRegister(name, {
+                  required: "Bitte wählen Sie eine Option aus.",
+                  onChange: onChange,
+                })}
+                aria-describedby={errorId}
+                aria-errormessage={errorId}
+              />
+              <label htmlFor={id}>
+                {text}
+                <div className={"text-gray-800 ds-body-02-reg"}>{subText}</div>
+              </label>
+            </li>
           );
         })}
         {error?.message && (
           <InputError id={errorId}>{error.message}</InputError>
         )}
-      </div>
-    </fieldset>
+      </ul>
+    </>
   );
 };
 

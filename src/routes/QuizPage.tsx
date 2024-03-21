@@ -172,8 +172,7 @@ function QuizPage({
           auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
             radio={{
               name: "object",
-              altLabel: "Objekt der Darstellung",
-              value: object.id,
+              selectedValue: object.id,
               onChange: onChangeObject,
               options: mapToRadioOptions(objects),
               formRegister: register,
@@ -186,8 +185,7 @@ function QuizPage({
             description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
             radio={{
               name: "reason",
-              altLabel: "Grund für die Visualisierung",
-              value: reason.id,
+              selectedValue: reason.id,
               onChange: onChangeReason,
               options: mapToRadioOptions(reasons),
               formRegister: register,
