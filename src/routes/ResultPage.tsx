@@ -81,78 +81,16 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
     );
   };
 
-  return (
+  return result ? (
     <>
-      {result && (
-        <Container paddingTop="48" paddingBottom="40">
-          <div className={"border-8 rounded-lg border-[#EBF3FD]"}>
-            <Image
-              url={getImageUrl(result.cluster.img.src)}
-              alternativeText={result.cluster.img.alt}
-            />
-            <div className={"p-24 pt-16"}>
-              <div className={"p-24 pb-32"}>
-                <Box
-                  content={{
-                    markdown: `Unsere Empfehlung:`,
-                  }}
-                ></Box>
-                <Box
-                  heading={{
-                    tagName: "h2",
-                    text: result.cluster.name,
-                  }}
-                  content={{
-                    markdown: result.cluster.description,
-                  }}
-                  buttons={[
-                    {
-                      id: "result-page-cluster-guide-button",
-                      text: `${result.cluster.name} Anleitung`,
-                      href: `/${result.cluster.id}`,
-                      size: "small",
-                      look: "tertiary",
-                    },
-                  ]}
-                ></Box>
-              </div>
-              <div>{result.tools.map(renderTool)}</div>
-            </div>
-          </div>
-        </Container>
-      )}
-      {!result && (
-        <Container paddingTop="48" paddingBottom="48">
-          <Box
-            identifier={"info-section-why-visualisation"}
-            heading={{
-              tagName: "h2",
-              text: "Es ist ein Fehler aufgetreten.",
-            }}
-            content={{
-              markdown: `Es tut uns Leid! Aus unbekannten Gründen ist ein Fehler aufgetreten. 
-                    Bitte versuchen sie Es erneut.`,
-            }}
-            buttons={[
-              {
-                id: "result-error-page-back-button",
-                text: "Zurück",
-                href: PATH_QUIZ,
-              },
-            ]}
-          ></Box>
-        </Container>
-      )}
-      {ressort && object && reason && (
-        <Container paddingTop="0" paddingBottom="10">
-          <RichText
-            markdown={`Ressort: **${ressort.name}** 
-            | Objekt der Darstellung: **${object.name}** 
-            | Grund der Visualisierung: **${reason.name}**`}
-          />
-        </Container>
-      )}
-      <Container paddingTop="0" paddingBottom="48">
+      <Container paddingTop="48" paddingBottom="0">
+        <RichText
+          markdown={`Ressort: **${ressort.name}** 
+              | Objekt der Darstellung: **${object.name}** 
+              | Grund der Visualisierung: **${reason.name}**`}
+        />
+      </Container>
+      <Container paddingTop="8" paddingBottom="0">
         <ButtonContainer>
           <Button
             id={"result-change-selection"}
@@ -163,8 +101,64 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           />
         </ButtonContainer>
       </Container>
+      <Container paddingTop="48" paddingBottom="40">
+        <div className={"border-8 rounded-lg border-[#EBF3FD]"}>
+          <Image
+            url={getImageUrl(result.cluster.img.src)}
+            alternativeText={result.cluster.img.alt}
+          />
+          <div className={"p-24 pt-16"}>
+            <div className={"p-24 pb-32"}>
+              <Box
+                content={{
+                  markdown: `Unsere Empfehlung:`,
+                }}
+              ></Box>
+              <Box
+                heading={{
+                  tagName: "h2",
+                  text: result.cluster.name,
+                }}
+                content={{
+                  markdown: result.cluster.description,
+                }}
+                buttons={[
+                  {
+                    id: "result-page-cluster-guide-button",
+                    text: `${result.cluster.name} Anleitung`,
+                    href: `/${result.cluster.id}`,
+                    size: "small",
+                    look: "tertiary",
+                  },
+                ]}
+              ></Box>
+            </div>
+            <div>{result.tools.map(renderTool)}</div>
+          </div>
+        </div>
+      </Container>
     </>
+  ) : (
+    <Container paddingTop="48" paddingBottom="48">
+      <Box
+        identifier={"info-section-why-visualisation"}
+        heading={{
+          tagName: "h2",
+          text: "Es ist ein Fehler aufgetreten.",
+        }}
+        content={{
+          markdown: `Es tut uns Leid! Aus unbekannten Gründen ist ein Fehler aufgetreten. 
+                    Bitte versuchen sie Es erneut.`,
+        }}
+        buttons={[
+          {
+            id: "result-error-page-back-button",
+            text: "Zurück",
+            href: PATH_QUIZ,
+          },
+        ]}
+      ></Box>
+    </Container>
   );
 }
-
 export default ResultPage;
