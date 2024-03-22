@@ -84,6 +84,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
   return result ? (
     <>
       <Container paddingTop="48" paddingBottom="0">
+        <span className="sr-only">Zeige Empfehlung für:</span>
         <RichText
           markdown={`Ressort: **${ressort.name}** 
               | Objekt der Darstellung: **${object.name}** 
@@ -109,11 +110,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           />
           <div className={"p-24 pt-16"}>
             <div className={"p-24 pb-32"}>
-              <Box
-                content={{
-                  markdown: `Unsere Empfehlung:`,
-                }}
-              ></Box>
+              <p>Wir empfehlen Ihnen eine Visualisierung als:</p>
               <Box
                 heading={{
                   tagName: "h2",
