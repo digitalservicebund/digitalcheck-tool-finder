@@ -135,7 +135,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Die erste Version eines Flussdiagramms sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
+      "description": "Die erste Version eines Flussdiagramms sollte mit Stift und Papier angefertigt werden. Dieses Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als bereits initial mit einem digitalen Werkzeug zu arbeiten. Zudem ist die Hemmschwelle geringer, den ersten Ansatz zu verwerfen und noch einmal neu anzufangen. Dies ist aber bei den ersten Vorarbeiten völlig normal und oft hilfreich.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
