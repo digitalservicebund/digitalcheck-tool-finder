@@ -69,7 +69,7 @@
       "name": "Schaubild",
       "tools": [ "papier-schaubild", "conceptboard-schaubild", "bundescloud-drawio-schaubild"],
       "notations": [ "frei" ],
-      "description": "Ein Schaubild zeigt eine Darstellung des Gesamtsystems, nicht unbedingt einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen deuten auf Lücken in Systemen und helfen beim Austausch mit IT-Experten. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
+      "description": "Ein Schaubild zeigt eine Darstellung des Gesamtsystems, nicht unbedingt einen zeitlichen Ablauf. Visualisierungen von Daten- und Informationsflüssen decken Lücken in Systemen auf und helfen beim Austausch mit IT-Experten. Ein Schaubild muss nicht vollständig oder detailliert sein, und kann auch einen Ausschnitt eines Systems zeigen.",
       "img": {
         "src": "clusters/schaubild.jpg",
         "alt": "Drei Beispiele für einfache, freie Schaubilder"
@@ -80,7 +80,7 @@
       "name": "Entscheidungsbaum",
       "tools": [ "papier-entscheidungsbaum", "conceptboard-entscheidungsbaum", "logos", "bundescloud-drawio-entscheidungsbaum", "adonis" ],
       "notations": [ "rulemap", "dmn", "frei" ],
-      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangspunkt immer weiter auf; zusätzlich können logische Verknüpfungen wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. So können Logikfehler identifiziert und eine Grundlage für Automatisierung geschaffen werden. Der strukturierte Inhalt eines Entscheidungsbaums kann als Basis für einen Regelungstext genutzt werden.",
+      "description": "Ein Entscheidungsbaum ordnet Entscheidungen und deren Auswirkungen in ein logisches Verhältnis. Somit fächert sich ein Baum ausgehend von einem Anfangspunkt immer weiter auf. Zusätzlich können logische Verknüpfungen wie ›Und‹, ›Oder‹, ›Exlusiv Oder‹ dabei helfen, Entscheidungsmöglichkeiten in einen Kontext zu setzen. So können Logikfehler identifiziert und eine Grundlage für Automatisierung geschaffen werden. Der strukturierte Inhalt eines Entscheidungsbaums kann als Basis für einen Regelungstext genutzt werden.",
       "img": {
         "src": "clusters/entscheidungsbaum.jpg",
         "alt": "Ein beispielhafter Entscheidungsbaum ohne Text mit logischen Verknüpfungen"
@@ -91,7 +91,7 @@
       "name": "Flussdiagramm",
       "tools": [ "papier-flussdiagramm", "conceptboard-flussdiagramm", "bundescloud-drawio-flussdiagramm", "modulo", "adonis", "bic", "aris", "aris-cloud", "msvisio" ],
       "notations": ["bpmn", "fim", "frei"],
-      "description": "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Schritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
+      "description": "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Zwischenschritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
       "img": {
         "src": "clusters/flussdiagramm.jpg",
         "alt": "Ein beispielhaftes Flussdiagramms ohne Text"
@@ -111,7 +111,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Die erste Version eines Schaubilds sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
+      "description": "Die erste Version eines Schaubilds sollte mit Stift und Papier angefertigt werden. Dieses Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als bereits initial mit einem digitalen Werkzeug zu arbeiten. Zudem ist die Hemmschwelle geringer, den ersten Ansatz zu verwerfen und noch einmal neu anzufangen. Dies ist aber bei den ersten Vorarbeiten völlig normal und oft hilfreich.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
@@ -123,7 +123,7 @@
       "name": "Papier",
       "fidelity": "einfach",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Die erste Version eines Entscheidungsbaums sollte mit Stift und Papier angefertigt werden. Diese Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als in einem digitalen Werkzeug zu arbeiten. Die Barriere des Verwerfens und neuen Anfangens ist ebenfalls geringer.",
+      "description": "Die erste Version eines Entscheidungsbaums sollte mit Stift und Papier angefertigt werden. Dieses Vorgehen ist häufig schneller, um erste Gedanken zu skizzieren, als bereits initial mit einem digitalen Werkzeug zu arbeiten. Zudem ist die Hemmschwelle geringer, den ersten Ansatz zu verwerfen und noch einmal neu anzufangen. Dies ist aber bei den ersten Vorarbeiten völlig normal und oft hilfreich.",
       "link": "",
       "img": {
         "src": "tools/papier.png",
@@ -148,7 +148,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -161,7 +161,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihren Entscheidungsbaum gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "tools/bundescloud-drawio-entscheidungsbaum.png",
@@ -174,7 +174,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmi", "bmj" ],
       "description": "Als einfaches, digitales Werkzeug hilft Draw.io Ihnen dabei, Ihr Flussdiagramm gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "tools/bundescloud-drawio-flussdiagramm.png",
@@ -186,8 +186,8 @@
       "name": "Logos",
       "fidelity": "digital",
       "ressorts": [ "bmwk", "bmf", "bmi", "aa", "bmj", "bmas", "bmvg", "bmel", "bmfsfj", "bmg", "bmdv", "bmuv", "bmbf", "bmz", "bmwsb" ],
-      "description": "Mit Logos können Sie eine Rulemap erstellen; eine Art Entscheidungsbaum welcher spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+      "description": "Mit Logos können Sie eine Rulemap erstellen, eine Art Entscheidungsbaum, der spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "https://rulemapping.knowledgetools.de/rulemapping/#",
       "img": {
         "src": "",
@@ -199,8 +199,8 @@
       "name": "Adonis",
       "fidelity": "pro",
       "ressorts": [ "bmwk", "bmi", "bmas" ],
-      "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. Adonis sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung passiert in der \"BPMN\"-Notation.",
-      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
+      "description": "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen; die richtige Nutzung braucht Übung. Adonis sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben.",
+      "access": "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       "link": "",
       "img": {
         "src": "",
@@ -212,8 +212,8 @@
       "name": "BIC",
       "fidelity": "pro",
       "ressorts": [ "bmi" ],
-      "description": "BIC Process Design ist eine Spezialsoftware zum Modellieren von Prozessen, die richtige Nutzung braucht Übung. BIC Process Design sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben. Die Modellierung geschieht in der \"BPMN\"-Notation.",
-      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
+      "description": "BIC Process Design ist eine Spezialsoftware zum Modellieren von Prozessen; die richtige Nutzung braucht Übung. BIC Process Design sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben.",
+      "access": "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       "link": "",
       "img": {
         "src": "",
@@ -226,7 +226,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
       "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihr Schaubild gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung einfacher und komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+    "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "",
@@ -238,8 +238,8 @@
       "name": "Conceptboard",
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
-      "description": "Ist ein unendliches Whiteboard welches unter Anderem dazu verwendet werden kann ein Flussdiagramm darzustellen. Das Programm verhält sich wie ein Whiteboard, so können schnell Dinge ersetzt oder verschoben werde. Auch hier empfiehlt es sich an eine klare Struktur in Form von Aktionen, Akteuren und Kanten zu halten.",
-      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an Ihre ressortinterne Ansprechperson.",
+      "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihren Entscheidungsbaum gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+     "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "",
@@ -252,6 +252,7 @@
       "fidelity": "digital",
       "ressorts": [ "bmas" ],
       "description": "Als einfaches, digitales Werkzeug hilft Conceptboard Ihnen dabei, Ihr Flussdiagramm gut zu strukturieren und zu formatieren. Die große Arbeitsfläche ermöglicht die Darstellung komplexer Inhalte und Abhängigkeiten. Das Programm verhält sich wie eine Magnetwand, so können schnell Elemente ersetzt oder verschoben werden.",
+      "access": "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort.",
       "link": "",
       "img": {
         "src": "",
@@ -263,8 +264,8 @@
       "name": "MS Visio",
       "fidelity": "pro",
       "ressorts": [ "bmj", "bmfsfj", "bmf", "bmg", "bmz" ],
-      "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen. Das Interface erinnert an die bekannten Office-Programme, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
-      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
+      "description": "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen. Die Benutzeroberfläche erinnert an die bekannten Office-Programme, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       "link": "",
       "img": {
         "src": "",
@@ -289,8 +290,8 @@
       "name": "Aris",
       "fidelity": "pro",
       "ressorts": [ "bmbf", "bmdv" ],
-      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
-      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen; die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       "link": "",
       "img": {
         "src": "",
@@ -302,8 +303,8 @@
       "name": "Aris Cloud",
       "fidelity": "pro",
       "ressorts": [ "bmf" ],
-      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen, die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
-      "access": "Kontaktieren Sie uns gerne und wir verweisen Sie auf Ihren hausinternen Ansprechpartner.",
+      "description": "ARIS ist eine Spezialsoftware zur Modellierung von Prozessen; die Nutzung braucht Übung. Die Software ermöglicht eine Modellierung in der \"BPMN\"-Notation, damit ist diese dem FIM-Prozess nah. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
+      "access": "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       "link": "",
       "img": {
         "src": "",
