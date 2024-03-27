@@ -59,7 +59,6 @@ export function findResultByObjectAndRessort(
     })
     .filter((r): r is Recommendation => !!r);
 
-  console.log(recommendations);
   return {
     cluster,
     recommendations,
