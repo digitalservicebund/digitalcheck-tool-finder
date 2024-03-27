@@ -17,8 +17,8 @@ describe("Repository", () => {
     ) => {
       const result = findResultByObjectAndRessort(object, ressort);
 
-      expect(result.tools).not.toBeNull();
-      expect(result.tools.length).toBeGreaterThan(0);
+      expect(result.recommendations).not.toBeNull();
+      expect(result.recommendations.length).toBeGreaterThan(0);
     },
   );
 });
