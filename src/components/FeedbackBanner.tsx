@@ -16,6 +16,8 @@ export default function FeedbackBanner() {
             markdown: `Dieser Dienst ist im Aufbau. Kontaktieren Sie uns über digitalcheck@digitalservice.bund.de oder 0151/40 76 78 39, wenn Ihnen etwas fehlt, oder etwas nicht funktioniert. Ihr Feedback trägt dazu bei, Informationen und Gestaltung der Webseite für alle Nutzenden zu verbessern.`,
           }}
         ></Box>
+      </Container>
+      <Container paddingTop="24" paddingBottom="0">
         <Box
           heading={{
             tagName: "h2",
