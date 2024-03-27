@@ -11,13 +11,12 @@ import InfoPage from "./routes/InfoPage";
 import QuizPage, { QuizPageProps } from "./routes/QuizPage";
 import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
-import { Dispatch, SetStateAction } from "react";
 import { z } from "zod";
 import { Aria } from "./components/Aria";
 import ScrollToTop from "./components/ScrollToTop";
-import { Reason } from "./models/Reason";
-import { Ressort } from "./models/Ressort";
-import { VisualisationObject } from "./models/VisualisationObject";
+import type { Reason } from "./models/Reason";
+import type { Ressort } from "./models/Ressort";
+import type { VisualisationObject } from "./models/VisualisationObject";
 import {
   PATH_A11Y,
   PATH_DECISIONTREE,
@@ -55,28 +54,26 @@ function getBreadcrumbs(routes: RoutesProps): BreadcrumbsProps {
 }
 
 function App() {
-  const [ressort, setRessort]: [Ressort, Dispatch<SetStateAction<Ressort>>] =
-    useStorage("ressort", new Ressort());
-  const [object, setObject]: [
-    VisualisationObject,
-    Dispatch<SetStateAction<VisualisationObject>>,
-  ] = useStorage("object", new VisualisationObject());
-  const [reason, setReason]: [Reason, Dispatch<SetStateAction<Reason>>] =
-    useStorage("reason", new Reason());
+  const [ressort, setRessort] = useStorage<Ressort | null>("ressort", null);
+  const [object, setObject] = useStorage<VisualisationObject | null>(
+    "object",
+    null,
+  );
+  const [reason, setReason] = useStorage<Reason | null>("reason", null);
 
   const quizProps: QuizPageProps = {
-    ressort: ressort,
-    setRessort: setRessort,
-    object: object,
-    setObject: setObject,
-    reason: reason,
-    setReason: setReason,
+    ressort,
+    setRessort,
+    object,
+    setObject,
+    reason,
+    setReason,
   };
 
   const resultProps: ResultPageProps = {
-    ressort: ressort,
-    object: object,
-    reason: reason,
+    ressort,
+    object,
+    reason,
   };
 
   const routes: RoutesProps = [

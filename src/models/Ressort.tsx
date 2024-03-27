@@ -1,11 +1,23 @@
 import { Entity } from "./Entity";
 
-export class Ressort implements Entity {
-  constructor() {
-    this.id = "";
-    this.name = "";
-  }
+export type RessortId =
+  | "bmwk"
+  | "bmf"
+  | "bmi"
+  | "aa"
+  | "bmj"
+  | "bmas"
+  | "bmvg"
+  | "bmel"
+  | "bmfsfj"
+  | "bmg"
+  | "bmdv"
+  | "bmuv"
+  | "bmbf"
+  | "bmz"
+  | "bmwsb";
 
-  id: string;
+export interface Ressort extends Entity {
+  id: RessortId;
   name: string;
 }

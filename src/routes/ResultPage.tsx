@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { z } from "zod";
+import { Recommendation } from "src/models/Result";
 import Box from "../components/Box";
 import BoxWithImage from "../components/BoxWithImage";
 import Button from "../components/Button";
@@ -8,24 +8,18 @@ import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
 import Image from "../components/Image";
 import RichText from "../components/RichText";
-import { Reason } from "../models/Reason";
-import { Ressort } from "../models/Ressort";
-import { Tool } from "../models/Tool";
-import { VisualisationObject } from "../models/VisualisationObject";
-import {
-  findResultByObjectAndRessort,
-  getFidelityOrThrow,
-} from "../persistance/repository";
+import type { Reason } from "../models/Reason";
+import type { Ressort } from "../models/Ressort";
+import type { VisualisationObject } from "../models/VisualisationObject";
+import { findResultByObjectAndRessort } from "../persistance/repository";
 import useTitle from "../services/useTitle";
 import { PATH_QUIZ } from "./";
 
-export const ResultPagePropsSchema = z.object({
-  ressort: z.custom<Ressort>(),
-  object: z.custom<VisualisationObject>(),
-  reason: z.custom<Reason>(),
-});
-
-export type ResultPageProps = z.infer<typeof ResultPagePropsSchema>;
+export type ResultPageProps = {
+  ressort: Ressort | null;
+  object: VisualisationObject | null;
+  reason: Reason | null;
+};
 
 function getImageUrl(src: string) {
   return new URL(`../../resources/img/${src}`, import.meta.url).href;
@@ -36,19 +30,20 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!ressort.id || !object.id || !reason.id) {
+    if (!ressort?.id || !object?.id || !reason?.id) {
       navigate(PATH_QUIZ);
     }
   });
 
-  if (!ressort.id || !object.id || !reason.id) {
+  if (!ressort?.id || !object?.id || !reason?.id) {
     return null;
   }
 
   const result = findResultByObjectAndRessort(object, ressort);
 
-  const renderTool = (tool: Tool) => {
-    const fidelity = getFidelityOrThrow(tool.fidelity);
+  const renderRecommendation = (recommendation: Recommendation) => {
+    const fidelity = recommendation.fidelity;
+    const tool = recommendation.primaryTool;
 
     return (
       <div
@@ -130,7 +125,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
                 ]}
               ></Box>
             </div>
-            <div>{result.tools.map(renderTool)}</div>
+            <div>{result.recommendations.map(renderRecommendation)}</div>
           </div>
         </div>
       </Container>

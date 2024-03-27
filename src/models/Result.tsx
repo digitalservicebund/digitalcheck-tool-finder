@@ -1,12 +1,14 @@
 import { Cluster } from "./Cluster";
+import { Fidelity } from "./Fidelity";
 import { Tool } from "./Tool";
 
-export class Result {
-  constructor(cluster: Cluster, tools: Tool[]) {
-    this.cluster = cluster;
-    this.tools = tools;
-  }
+export type Recommendation = {
+  fidelity: Fidelity;
+  primaryTool: Tool;
+  alternativeTools: Tool[];
+};
 
+export interface Result {
   cluster: Cluster;
-  tools: Tool[];
+  recommendations: Recommendation[];
 }

@@ -1,7 +1,7 @@
 import Plausible from "plausible-tracker";
-import { Reason } from "../models/Reason";
-import { Ressort } from "../models/Ressort";
-import { VisualisationObject } from "../models/VisualisationObject";
+import type { Reason } from "../models/Reason";
+import type { Ressort } from "../models/Ressort";
+import type { VisualisationObject } from "../models/VisualisationObject";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
 
@@ -29,10 +29,14 @@ export function trackButtonClick(
 }
 
 export function trackSelection(
-  ressort: Ressort,
-  object: VisualisationObject,
-  reason: Reason,
+  ressort: Ressort | null,
+  object: VisualisationObject | null,
+  reason: Reason | null,
 ) {
+  if (!ressort || !object || !reason) {
+    return;
+  }
+
   const combine = (...values: string[]) => {
     return values.join(" --- ");
   };

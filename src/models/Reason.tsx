@@ -1,13 +1,14 @@
 import { Entity } from "./Entity";
 
-export class Reason implements Entity {
-  constructor() {
-    this.id = "";
-    this.name = "";
-    this.order = 0;
-  }
+type ReasonId =
+  | "austausch"
+  | "selbst"
+  | "dokumentation"
+  | "unbekannt"
+  | "anderes";
 
-  id: string;
+export interface Reason extends Entity {
+  id: ReasonId;
   name: string;
   description?: string;
   order: number;

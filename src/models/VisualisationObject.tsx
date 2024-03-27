@@ -1,14 +1,14 @@
 import { Entity } from "./Entity";
 
-export class VisualisationObject implements Entity {
-  constructor() {
-    this.id = "";
-    this.name = "";
-    this.cluster = "";
-    this.order = 0;
-  }
+type VisualisationObjectId =
+  | "interaktion"
+  | "logik"
+  | "prozess"
+  | "unbekannt"
+  | "anderes";
 
-  id: string;
+export interface VisualisationObject extends Entity {
+  id: VisualisationObjectId;
   name: string;
   description?: string;
   cluster: string;

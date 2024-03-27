@@ -8,15 +8,14 @@ import useTitle from "../services/useTitle";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { UseFormReturn, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { z } from "zod";
 import BetaBanner from "../components/BetaBanner";
 import Question from "../components/Question";
 import { RadioOptionsProps } from "../components/RadioGroup";
 import { SelectOptionsProps } from "../components/Select";
-import { Entity } from "../models/Entity";
-import { Reason } from "../models/Reason";
-import { Ressort } from "../models/Ressort";
-import { VisualisationObject } from "../models/VisualisationObject";
+import type { Entity } from "../models/Entity";
+import type { Reason } from "../models/Reason";
+import type { Ressort } from "../models/Ressort";
+import type { VisualisationObject } from "../models/VisualisationObject";
 import {
   getAllObjects,
   getAllReasons,
@@ -25,18 +24,16 @@ import {
 import { trackSelection } from "../services/tracking";
 import { PATH_RESULT } from "./";
 
-export const QuizPagePropsSchema = z.object({
-  ressort: z.custom<Ressort>(),
-  setRessort: z.custom<Dispatch<SetStateAction<Ressort>>>(),
-  object: z.custom<VisualisationObject>(),
-  setObject: z.custom<Dispatch<SetStateAction<VisualisationObject>>>(),
-  reason: z.custom<Reason>(),
-  setReason: z.custom<Dispatch<SetStateAction<Reason>>>(),
-});
+export type QuizPageProps = {
+  ressort: Ressort | null;
+  setRessort: Dispatch<SetStateAction<Ressort | null>>;
+  object: VisualisationObject | null;
+  setObject: Dispatch<SetStateAction<VisualisationObject | null>>;
+  reason: Reason | null;
+  setReason: Dispatch<SetStateAction<Reason | null>>;
+};
 
-export type QuizPageProps = z.infer<typeof QuizPagePropsSchema>;
-
-function mapToSelectOptions(entities: Entity[]): SelectOptionsProps {
+function mapToSelectOptions(entities: readonly Entity[]): SelectOptionsProps {
   return entities.map((entity) => {
     return {
       value: entity.id,
@@ -46,7 +43,7 @@ function mapToSelectOptions(entities: Entity[]): SelectOptionsProps {
 }
 
 function mapToRadioOptions<Type extends VisualisationObject | Reason>(
-  entities: Type[],
+  entities: readonly Type[],
 ): RadioOptionsProps {
   return entities.map((entity) => {
     const option = {
@@ -65,14 +62,9 @@ function mapToRadioOptions<Type extends VisualisationObject | Reason>(
 
 function onChangeHandler<Type extends Entity>(
   selectedEntityId: string,
-  setEntity: Dispatch<SetStateAction<Type>>,
-  allEntities: Type[],
-  defaultEntity: Type,
+  setEntity: Dispatch<SetStateAction<Type | null>>,
+  allEntities: readonly Type[],
 ) {
-  if (!selectedEntityId) {
-    setEntity(defaultEntity);
-    return;
-  }
   const selectedEntity = allEntities.find((e) => e.id === selectedEntityId);
   if (!selectedEntity) {
     throw new Error("Could not find entity " + selectedEntityId);
@@ -97,23 +89,18 @@ function QuizPage({
     formState: { errors },
   }: UseFormReturn = useForm();
 
-  const ressorts: Ressort[] = getAllRessorts();
-  const objects: VisualisationObject[] = getAllObjects();
-  const reasons: Reason[] = getAllReasons();
+  const ressorts = getAllRessorts();
+  const objects = getAllObjects();
+  const reasons = getAllReasons();
 
   const onChangeRessort = (e: ChangeEvent<HTMLInputElement>) => {
-    onChangeHandler(e.target.value, setRessort, ressorts, new Ressort());
+    onChangeHandler(e.target.value, setRessort, ressorts);
   };
   const onChangeObject = (e: ChangeEvent<HTMLInputElement>) => {
-    onChangeHandler(
-      e.target.value,
-      setObject,
-      objects,
-      new VisualisationObject(),
-    );
+    onChangeHandler(e.target.value, setObject, objects);
   };
   const onChangeReason = (e: ChangeEvent<HTMLInputElement>) => {
-    onChangeHandler(e.target.value, setReason, reasons, new Reason());
+    onChangeHandler(e.target.value, setReason, reasons);
   };
 
   const onSubmit = () => {
@@ -148,7 +135,7 @@ function QuizPage({
             select={{
               name: "ressort",
               label: "Ressort",
-              value: ressort.id,
+              value: ressort?.id,
               onChange: onChangeRessort,
               options: mapToSelectOptions(ressorts),
               formRegister: register,
@@ -162,7 +149,7 @@ function QuizPage({
           auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
             radio={{
               name: "object",
-              selectedValue: object.id,
+              selectedValue: object?.id,
               onChange: onChangeObject,
               options: mapToRadioOptions(objects),
               formRegister: register,
@@ -175,7 +162,7 @@ function QuizPage({
             description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
             radio={{
               name: "reason",
-              selectedValue: reason.id,
+              selectedValue: reason?.id,
               onChange: onChangeReason,
               options: mapToRadioOptions(reasons),
               formRegister: register,
