@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Breadcrumbs, { BreadcrumbsProps } from "./components/Breadcrumbs";
 import FeedbackBanner from "./components/FeedbackBanner";
@@ -11,6 +11,7 @@ import InfoPage from "./routes/InfoPage";
 import QuizPage, { QuizPageProps } from "./routes/QuizPage";
 import ResultPage, { ResultPageProps } from "./routes/ResultPage";
 
+import { useEffect } from "react";
 import { z } from "zod";
 import { Aria } from "./components/Aria";
 import ScrollToTop from "./components/ScrollToTop";
@@ -60,6 +61,16 @@ function App() {
     null,
   );
   const [reason, setReason] = useStorage<Reason | null>("reason", null);
+  const location = useLocation();
+
+  // reset state if user navigates to start page
+  useEffect(() => {
+    if (location.pathname === PATH_INFO) {
+      setRessort(null);
+      setObject(null);
+      setReason(null);
+    }
+  }, [location, setRessort, setObject, setReason]);
 
   const quizProps: QuizPageProps = {
     ressort,
