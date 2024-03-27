@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Recommendation } from "src/models/Result";
 import Box from "../components/Box";
-import BoxWithImage from "../components/BoxWithImage";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
 import Image from "../components/Image";
+import Recommendation from "../components/Recommendation";
 import RichText from "../components/RichText";
 import type { Reason } from "../models/Reason";
 import type { Ressort } from "../models/Ressort";
 import type { VisualisationObject } from "../models/VisualisationObject";
 import { findResultByObjectAndRessort } from "../persistance/repository";
+import { getImageUrl } from "../services/getImageUrl";
 import useTitle from "../services/useTitle";
 import { PATH_QUIZ } from "./";
 
@@ -20,10 +20,6 @@ export type ResultPageProps = {
   object: VisualisationObject | null;
   reason: Reason | null;
 };
-
-function getImageUrl(src: string) {
-  return new URL(`../../resources/img/${src}`, import.meta.url).href;
-}
 
 function ResultPage({ ressort, object, reason }: ResultPageProps) {
   useTitle("Empfohlenes Werkzeug");
@@ -40,41 +36,6 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
   }
 
   const result = findResultByObjectAndRessort(object, ressort);
-
-  const renderRecommendation = (recommendation: Recommendation) => {
-    const fidelity = recommendation.fidelity;
-    const tool = recommendation.primaryTool;
-
-    return (
-      <div
-        key={`tool-${tool.id}`}
-        className={
-          "p-24 border border-gray-400 border-b-0 last:border-b last:rounded-bl last:rounded-br first:rounded-tl first:rounded-tr"
-        }
-      >
-        <BoxWithImage
-          {...{
-            label: fidelity.name,
-            heading: {
-              tagName: "h3",
-              text: tool.name,
-            },
-            content: {
-              markdown: `${tool.description}
-              ${tool.link ? "\n\n" + tool.link : ""}
-              ${tool.access ? "\n\n" + tool.access : ""}`,
-            },
-            image: tool.img.src
-              ? {
-                  url: getImageUrl(tool.img.src),
-                  alternativeText: tool.img.alt,
-                }
-              : undefined,
-          }}
-        />
-      </div>
-    );
-  };
 
   return result ? (
     <>
@@ -125,7 +86,14 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
                 ]}
               ></Box>
             </div>
-            <div>{result.recommendations.map(renderRecommendation)}</div>
+            <div>
+              {result.recommendations.map((recommendation) => (
+                <Recommendation
+                  key={recommendation.fidelity.id}
+                  recommendation={recommendation}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Container>
