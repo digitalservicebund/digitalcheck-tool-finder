@@ -44,6 +44,7 @@ const RadioGroup = ({
       <ul
         className="ds-stack-16 border-0 p-0 m-0"
         role="radiogroup"
+        aria-errormessage={errorId}
         aria-invalid={!!error}
       >
         {options.map(({ value, text, subText }) => {
@@ -51,7 +52,7 @@ const RadioGroup = ({
           const checked = selectedValue === value;
 
           return (
-            <li className="flex items-center">
+            <li className="flex items-center" key={value}>
               <input
                 type={"radio"}
                 id={id}
@@ -63,7 +64,6 @@ const RadioGroup = ({
                   onChange: onChange,
                 })}
                 aria-describedby={errorId}
-                aria-errormessage={errorId}
               />
               <label htmlFor={id}>
                 {text}
