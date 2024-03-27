@@ -39,26 +39,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
 
   return result ? (
     <>
-      <Container paddingTop="48" paddingBottom="0">
-        <span className="sr-only">Zeige Empfehlung für:</span>
-        <RichText
-          markdown={`Ressort: **${ressort.name}** 
-              | Objekt der Darstellung: **${object.name}** 
-              | Grund der Visualisierung: **${reason.name}**`}
-        />
-      </Container>
-      <Container paddingTop="8" paddingBottom="0">
-        <ButtonContainer>
-          <Button
-            id={"result-change-selection"}
-            text={"Eingaben ändern"}
-            size={"small"}
-            look={"tertiary"}
-            href={PATH_QUIZ}
-          />
-        </ButtonContainer>
-      </Container>
-      <Container paddingTop="48" paddingBottom="40">
+      <Container paddingTop="48" paddingBottom="24">
         <div className={"border-8 rounded-lg border-[#EBF3FD]"}>
           <Image
             url={getImageUrl(result.cluster.img.src)}
@@ -96,6 +77,24 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
             </div>
           </div>
         </div>
+      </Container>
+      <Container paddingTop="24" paddingBottom="0">
+        <RichText
+          markdown={`Ressort: **${ressort.name}** 
+              | Objekt der Darstellung: **${object.name}** 
+              | Grund der Visualisierung: **${reason.name}**`}
+        />
+      </Container>
+      <Container paddingTop="8" paddingBottom="48">
+        <ButtonContainer>
+          <Button
+            id={"result-change-selection"}
+            text={"Eingaben ändern"}
+            size={"small"}
+            look={"tertiary"}
+            href={PATH_QUIZ}
+          />
+        </ButtonContainer>
       </Container>
     </>
   ) : (
