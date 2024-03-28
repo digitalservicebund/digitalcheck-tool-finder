@@ -4,7 +4,7 @@ export default {
       id: "interaktion",
       name: "Interaktionen von Akteuren oder Datenflüsse",
       description:
-        "Sie möchten auf einfache Weise darstellen, wie Betroffene miteinander und mit Dritten agieren; oder welche Daten benötigt werden und wie diese fließen.",
+        "Ich möchte auf einfache Weise darstellen, wie Betroffene miteinander und mit Dritten agieren; oder welche Daten benötigt werden und wie diese fließen.",
       cluster: "schaubild",
       order: 1,
     },
@@ -12,7 +12,7 @@ export default {
       id: "logik",
       name: "Entscheidungslogiken",
       description:
-        "Im Mittelpunkt Ihrer Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
+        "Im Mittelpunkt meiner Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
       cluster: "entscheidungsbaum",
       order: 2,
     },
@@ -20,7 +20,7 @@ export default {
       id: "prozess",
       name: "Ganzer Prozess",
       description:
-        "Sie möchten den gesamten oder einen großen Teil des Vollzugsprozesses Ihrer Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
+        "Ich möchte den gesamten oder einen großen Teil des Vollzugsprozesses meiner Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
       cluster: "flussdiagramm",
       order: 3,
     },
@@ -40,21 +40,21 @@ export default {
   reasons: [
     {
       id: "austausch",
-      name: "Für den Austausch mit anderen",
+      name: "Für meinen Austausch mit anderen",
       description:
-        "z. B. Kommunikation, gemeinsames Verständnis aufbauen, Ideen austauschen",
+        "z. B. Feedback einholen, gemeinsames Verständnis aufbauen, Ideen austauschen",
       order: 1,
     },
     {
       id: "selbst",
-      name: "Für mich selbst",
+      name: "Für mein eigenes Verständnis",
       description:
         "z. B. Abhängigkeiten strukturieren; Erkennen von Logikbrüchen, Digitaltauglichkeit oder Medienbrüchen",
       order: 2,
     },
     {
       id: "dokumentation",
-      name: "Zur Dokumentation",
+      name: "Zur nachträglichen Dokumentation",
       order: 3,
     },
     {
