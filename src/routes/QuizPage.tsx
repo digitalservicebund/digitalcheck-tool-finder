@@ -116,8 +116,7 @@ function QuizPage({
               text: "Werkzeugfinder für Visualisierungen",
             }}
             content={{
-              markdown: `Hier erfahren Sie, welche Art der Visualisierung und welches Werkzeug für Ihr Bedürfnis das 
-              richtige ist. Beantworten Sie uns drei Fragen und wir schlagen Ihnen das passende Werkzeug vor.`,
+              markdown: `Beantworten Sie uns drei Fragen und wir schlagen Ihnen das für Ihren Anlass passende Werkzeug vor.`,
             }}
           ></Header>
         </Container>
@@ -128,7 +127,7 @@ function QuizPage({
           <Question
             heading={"In welchem Ressort arbeiten Sie?"}
             label={"1 von 3"}
-            description={`Diese Information benötigen wir, da Sie nur auf die Werkzeuge aus Ihrem Haus zugreifen können.`}
+            description={`Diese Information benötigen wir, um in Ihrem Haus verfügbare Werkzeuge zu finden.`}
             select={{
               name: "ressort",
               label: "Ressort",
@@ -142,8 +141,7 @@ function QuizPage({
           <Question
             heading={"Was möchten Sie darstellen?"}
             label={"2 von 3"}
-            description={`Durch Ihre Antwort können wir die Art der Darstellung bestimmen. Diese gibt uns Rückschluss 
-          auf das Werkzeug, in dem diese am Besten zu erstellen ist.`}
+            description={`Die Art der Darstellung gibt vor, welches Werkzeug am besten passt.`}
             radio={{
               name: "object",
               selectedValue: object?.id,
@@ -154,7 +152,7 @@ function QuizPage({
             }}
           />
           <Question
-            heading={"Was möchten Sie mit der Visualisierung erreichen?"}
+            heading={"Wofür möchten Sie die Visualisierung erstellen?"}
             label={"3 von 3"}
             description={`Bei mehreren Gründen nennen Sie uns den wichtigsten.`}
             radio={{
