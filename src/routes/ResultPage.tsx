@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "../components/Box";
 import Button from "../components/Button";
@@ -24,8 +25,13 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
   useTitle("Empfohlenes Werkzeug");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!ressort || !object || !reason) {
+      navigate(PATH_QUIZ); // needs to be called in useEffect
+    }
+  });
+
   if (!ressort || !object || !reason) {
-    navigate(PATH_QUIZ);
     return null;
   }
 
