@@ -1,10 +1,10 @@
-import { Cluster } from "./Cluster";
-import { Fidelity } from "./Fidelity";
-import { Notation } from "./Notation";
-import { Reason } from "./Reason";
-import { Ressort } from "./Ressort";
-import { Tool } from "./Tool";
-import { VisualisationObject } from "./VisualisationObject";
+import type { Cluster } from "./Cluster";
+import type { Fidelity } from "./Fidelity";
+import type { Notation } from "./Notation";
+import type { Reason } from "./Reason";
+import type { Ressort } from "./Ressort";
+import type { Tool } from "./Tool";
+import type { VisualisationObject } from "./VisualisationObject";
 
 export interface Data {
   objects: readonly VisualisationObject[];

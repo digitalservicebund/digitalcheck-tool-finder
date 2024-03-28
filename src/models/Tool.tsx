@@ -1,5 +1,5 @@
-import { Entity } from "./Entity";
-import { Image } from "./Image";
+import type { Entity } from "./Entity";
+import type { Image } from "./Image";
 
 export type ToolId =
   | "papier-schaubild"
@@ -21,7 +21,7 @@ export type ToolId =
   | "powerpoint";
 
 export interface Tool extends Entity {
-  id: string;
+  id: ToolId;
   name: string;
   description: string;
   link: string;

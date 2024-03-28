@@ -1,6 +1,6 @@
-import { Cluster } from "./Cluster";
-import { Fidelity } from "./Fidelity";
-import { Tool } from "./Tool";
+import type { Cluster } from "./Cluster";
+import type { Fidelity } from "./Fidelity";
+import type { Tool } from "./Tool";
 
 export type Recommendation = {
   fidelity: Fidelity;

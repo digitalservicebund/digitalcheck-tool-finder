@@ -1,5 +1,5 @@
 import type { ClusterId } from "./Cluster";
-import { Entity } from "./Entity";
+import type { Entity } from "./Entity";
 import type { RessortId } from "./Ressort";
 import type { ToolId } from "./Tool";
 
