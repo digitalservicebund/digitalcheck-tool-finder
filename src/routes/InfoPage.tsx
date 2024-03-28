@@ -75,10 +75,10 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
       <Container
         paddingTop="0"
         paddingBottom="48"
-        additionalClassNames={"flex"}
+        additionalClassNames={"flex flex-col md:flex-row gap-32 md:gap-32"}
       >
         <Box
-          additionalClassNames={"pr-20"}
+          additionalClassNames={"pt-20"}
           heading={{
             tagName: "h3",
             text: "Die Darstellungen helfen auch bei Verständnis und Umsetzung im Vollzug",
