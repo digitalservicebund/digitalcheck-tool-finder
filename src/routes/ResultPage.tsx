@@ -4,6 +4,7 @@ import Box from "../components/Box";
 import Button from "../components/Button";
 import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
+import FeedbackForm from "../components/FeedbackForm";
 import Image from "../components/Image";
 import Recommendation from "../components/Recommendation";
 import RichText from "../components/RichText";
@@ -97,6 +98,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           />
         </ButtonContainer>
       </Container>
+      <FeedbackForm />
     </>
   ) : (
     <Container paddingTop="48" paddingBottom="48">
