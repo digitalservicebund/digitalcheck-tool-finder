@@ -71,6 +71,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
               {result.recommendations.map((recommendation) => (
                 <Recommendation
                   key={recommendation.fidelity.id}
+                  clusterName={result.cluster.name}
                   recommendation={recommendation}
                 />
               ))}
