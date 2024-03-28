@@ -1,3 +1,4 @@
+import { trackFeedbackCick } from "../services/tracking";
 import Background from "./Background";
 import Box from "./Box";
 import Container from "./Container";
@@ -11,6 +12,10 @@ function RadioAnswer({
   value: number;
   annotation?: string;
 }) {
+  function onClick() {
+    trackFeedbackCick(name, value);
+  }
+
   return (
     <div className="flex flex-col w-1/5 gap-16">
       {annotation && (
@@ -18,7 +23,13 @@ function RadioAnswer({
       )}
       <label className="flex flex-col items-center gap-8">
         <span className="ml-2">{value}</span>
-        <input type="radio" className="ds-radio" name={name} value={value} />
+        <input
+          type="radio"
+          className="ds-radio"
+          name={name}
+          value={value}
+          onChange={onClick}
+        />
       </label>
     </div>
   );
@@ -86,12 +97,12 @@ export default function FeedbackForm() {
           <p className="">5 = {fullAnnotation}</p>
         </div>
         <Question
-          name="question-1"
+          name="question-useful"
           question="Ich habe gefunden, was ich brauche."
           hasAnnotations
         />
         <Question
-          name="question-2"
+          name="question-simple"
           question="Die Anwendung war einfach zu nutzen."
         />
       </Container>

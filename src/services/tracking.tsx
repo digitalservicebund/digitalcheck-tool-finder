@@ -4,6 +4,7 @@ import type { Ressort } from "../models/Ressort";
 import type { VisualisationObject } from "../models/VisualisationObject";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
+const EVENT_FEEDBACK_CLICK = "Feedback: Click";
 
 const { enableAutoPageviews, enableAutoOutboundTracking, trackEvent } =
   Plausible({
@@ -24,6 +25,15 @@ export function trackButtonClick(
     props: {
       id: id ?? "",
       href: href ?? "",
+    },
+  });
+}
+
+export function trackFeedbackCick(question: string, value: number) {
+  trackEvent(EVENT_FEEDBACK_CLICK, {
+    props: {
+      question,
+      value,
     },
   });
 }
