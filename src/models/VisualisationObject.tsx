@@ -1,12 +1,8 @@
+import data from "resources/data";
 import type { ClusterId } from "./Cluster";
 import type { Entity } from "./Entity";
 
-type VisualisationObjectId =
-  | "interaktion"
-  | "logik"
-  | "prozess"
-  | "unbekannt"
-  | "anderes";
+type VisualisationObjectId = (typeof data)["objects"][number]["id"];
 
 export interface VisualisationObject extends Entity {
   id: VisualisationObjectId;

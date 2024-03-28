@@ -1,11 +1,7 @@
+import data from "resources/data";
 import type { Entity } from "./Entity";
 
-type ReasonId =
-  | "austausch"
-  | "selbst"
-  | "dokumentation"
-  | "unbekannt"
-  | "anderes";
+type ReasonId = (typeof data)["reasons"][number]["id"];
 
 export interface Reason extends Entity {
   id: ReasonId;
