@@ -66,10 +66,7 @@ function onChangeHandler<Type extends Entity>(
   allEntities: readonly Type[],
 ) {
   const selectedEntity = allEntities.find((e) => e.id === selectedEntityId);
-  if (!selectedEntity) {
-    throw new Error("Could not find entity " + selectedEntityId);
-  }
-  setEntity(selectedEntity);
+  setEntity(selectedEntity ?? null);
 }
 
 function QuizPage({
