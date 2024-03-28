@@ -18,7 +18,7 @@ export default function FeedbackBanner() {
             text: "Es fehlt ein Werkzeug? Sie haben allgemeine Fragen oder Anmerkungen?",
           }}
           content={{
-            markdown: `Dieser Dienst ist im Aufbau. Kontaktieren Sie uns über <a href="mailto:${email}?subject=${subject}" class="text-link">${email}</a> oder 0151/40 76 78 39, wenn Ihnen etwas fehlt, oder etwas nicht funktioniert. Ihr Feedback trägt dazu bei, Informationen und Gestaltung der Webseite für alle Nutzenden zu verbessern.`,
+            markdown: `Dieser Dienst ist im Aufbau. Wenn Ihnen etwas fehlt, oder etwas nicht funktioniert, kontaktieren Sie uns über <a href="mailto:${email}?subject=${subject}" class="text-link">${email}</a> oder 0151/40 76 78 39. Ihr Feedback trägt dazu bei, Informationen und Gestaltung der Webseite für alle Nutzenden zu verbessern.`,
           }}
         ></Box>
       </Container>
