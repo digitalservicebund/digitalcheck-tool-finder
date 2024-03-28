@@ -7,7 +7,7 @@ export default function Header() {
     <header className="py-20 px-16">
       <Link
         to="/"
-        className="ds-label-01-bold no-underline hover:underline mr-8 text-black focus:outline active:underline active:decoration-4"
+        className="ds-label-01-bold no-underline hover:underline focus:outline active:underline"
         aria-label="Werkzeugfinder - Zurück zur Startseite"
       >
         <Image
