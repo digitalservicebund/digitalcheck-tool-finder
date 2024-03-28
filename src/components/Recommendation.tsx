@@ -30,7 +30,7 @@ export default function renderRecommendation({
         <Heading tagName="h3" text={tool.name} />
         <div className="flex flex-col sm:flex-row gap-16 sm:gap-24">
           <RichText
-            className="flex-1"
+            className="flex-1 [word-break:break-word]"
             markdown={`${tool.description}
               ${tool.link ? "\n\n" + tool.link : ""}
               ${tool.access ? "\n\n" + tool.access : ""}`}
