@@ -32,8 +32,7 @@ export function trackButtonClick(
 export function trackFeedbackCick(question: string, value: number) {
   trackEvent(EVENT_FEEDBACK_CLICK, {
     props: {
-      question,
-      value,
+      questionAndValue: `${question} --- ${value}`,
     },
   });
 }
