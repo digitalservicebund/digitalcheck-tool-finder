@@ -37,8 +37,8 @@ export function findResultByObjectAndRessort(
 ): Result {
   const cluster = getOrThrow(data.clusters, object.cluster);
 
-  const recommendations = Object.entries(cluster.fidelityToolMaps).flatMap(
-    ([fidelity, toolMap]) => {
+  const recommendations = cluster.fidelityToolMaps.flatMap(
+    ({ fidelity, toolMap }) => {
       const toolResult = toolMap.find((t) => t.ressorts.includes(ressort.id));
       if (!toolResult) return []; // Return an empty array for flatMap
 

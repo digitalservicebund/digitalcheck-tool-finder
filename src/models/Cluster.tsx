@@ -14,11 +14,12 @@ export interface Cluster extends Entity {
   notations: readonly NotationId[];
   description: string;
   img: Image;
-  fidelityToolMaps: {
-    [K in FidelityId]?: readonly {
+  fidelityToolMaps: readonly {
+    fidelity: FidelityId;
+    toolMap: readonly {
       ressorts: readonly RessortId[];
       primaryTool: ToolId;
       alternativeTools?: readonly ToolId[];
     }[];
-  };
+  }[];
 }
