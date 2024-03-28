@@ -1,10 +1,9 @@
 import rawData from "../../resources/data";
-import type { Cluster } from "../models/Cluster";
 import type { Data } from "../models/Data";
 import type { Entity } from "../models/Entity";
 import type { Reason } from "../models/Reason";
 import type { Ressort } from "../models/Ressort";
-import type { Recommendation, Result } from "../models/Result";
+import type { Result } from "../models/Result";
 import type { VisualisationObject } from "../models/VisualisationObject";
 
 const data: Data = rawData;
@@ -36,28 +35,25 @@ export function findResultByObjectAndRessort(
   object: VisualisationObject,
   ressort: Ressort,
 ): Result {
-  const cluster: Cluster = getOrThrow(data.clusters, object.cluster);
-  const recommendations = data.fidelities
-    .map((fidelity) => {
-      // Find the clusterRessortToolMap for the current cluster
-      const map = fidelity.clusterRessortToolMap[cluster.id];
-      if (!map) return;
+  const cluster = getOrThrow(data.clusters, object.cluster);
 
-      // Find the tools for the current ressort
-      const toolForRessort = map.find((m) => m.ressorts.includes(ressort.id));
-      if (!toolForRessort) return;
-      const primaryTool = getOrThrow(data.tools, toolForRessort.primaryTool);
-      const alternativeTools = toolForRessort.alternativeTools?.map((id) =>
-        getOrThrow(data.tools, id),
-      );
+  const recommendations = Object.entries(cluster.fidelityToolMaps).flatMap(
+    ([fidelity, toolMap]) => {
+      const toolResult = toolMap.find((t) => t.ressorts.includes(ressort.id));
+      if (!toolResult) return []; // Return an empty array for flatMap
 
-      return {
-        fidelity,
-        primaryTool,
-        alternativeTools,
-      };
-    })
-    .filter((r): r is Recommendation => !!r);
+      return [
+        {
+          fidelity: getOrThrow(data.fidelities, fidelity),
+          primaryTool: getOrThrow(data.tools, toolResult.primaryTool),
+          alternativeTools:
+            toolResult.alternativeTools?.map((id) =>
+              getOrThrow(data.tools, id),
+            ) ?? [],
+        },
+      ];
+    },
+  );
 
   return {
     cluster,
