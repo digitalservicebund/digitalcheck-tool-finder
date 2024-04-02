@@ -437,7 +437,7 @@ export default {
         "Mit Logos können Sie eine Rulemap erstellen, eine Art Entscheidungsbaum, der spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
       access:
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
-      link: "https://rulemapping.knowledgetools.de/rulemapping/#",
+      link: "https://rulemapping.knowledgetools.de/rulemapping",
       img: {
         src: "",
         alt: "",
