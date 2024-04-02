@@ -37,7 +37,7 @@ export default function Footer() {
   const linksSecondColumn: typeof links = links.slice(linksMiddleIndex);
 
   const renderLink = (link: LinkProps) => (
-    <li key={link.url} className="leading-snug">
+    <li key={link.url}>
       <Link
         to={link.url}
         className="text-link increase-tap-area"
@@ -62,13 +62,10 @@ export default function Footer() {
     link(href, _, text) {
       return `<a class="text-link increase-tap-area whitespace-nowrap" href=${href} target="_blank" rel="noopener" aria-describedby=${A11Y_MESSAGE_NEW_WINDOW}>${text}</a>`;
     },
-    paragraph(text) {
-      return `<p class="leading-snug">${text}</p>`;
-    },
   };
 
   return (
-    <footer className="text-base">
+    <footer className="text-base leading-snug">
       <Container paddingTop="48">
         <div className="flex flex-wrap items-start justify-between gap-y-32">
           <div className="flex flex-col sm:flex-row gap-32">
