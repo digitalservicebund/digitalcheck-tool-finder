@@ -80,7 +80,7 @@ function Question({
 
 export default function FeedbackForm() {
   return (
-    <Background backgroundColor="lightGrey" paddingTop="32" paddingBottom="40">
+    <Background backgroundColor="yellow" paddingTop="32" paddingBottom="40">
       <Container
         paddingTop="0"
         paddingBottom="0"
