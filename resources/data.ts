@@ -325,8 +325,8 @@ export default {
           toolMap: [
             {
               ressorts: ["bmi"],
-              primaryTool: "bic",
-              alternativeTools: ["adonis"],
+              primaryTool: "adonis",
+              alternativeTools: ["bic"],
             },
             {
               ressorts: ["bmf"],
