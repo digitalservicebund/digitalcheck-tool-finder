@@ -52,10 +52,10 @@ Prinzessinnenstraße 8-14
 E-Mail: hallo@digitalservice.bund.de 
 
 ## Datenschutz
-Erfahren Sie mehr hierzu in der [Datenschutzerklärung](#${PATH_PRIVACY})
+Erfahren Sie mehr hierzu in der [Datenschutzerklärung](${PATH_PRIVACY})
 
 ## Barrierefreiheit
-Erfahren Sie mehr hierzu in der [Barrierefreiheitserklärung](#${PATH_A11Y})
+Erfahren Sie mehr hierzu in der [Barrierefreiheitserklärung](${PATH_A11Y})
 `,
           }}
         ></Box>
