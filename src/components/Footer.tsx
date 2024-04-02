@@ -1,4 +1,3 @@
-import type { Renderer } from "marked";
 import { Link } from "react-router-dom";
 import bmiLogo from "../../resources/img/bmi-logo.png";
 import { PATH_A11Y, PATH_IMPRINT, PATH_PRIVACY } from "../routes";
@@ -58,12 +57,6 @@ export default function Footer() {
     </ul>
   );
 
-  const paragraphRenderer: Partial<Renderer> = {
-    link(href, _, text) {
-      return `<a class="text-link increase-tap-area whitespace-nowrap" href=${href} target="_blank" rel="noopener" aria-describedby=${A11Y_MESSAGE_NEW_WINDOW}>${text}</a>`;
-    },
-  };
-
   return (
     <footer className="text-base leading-snug">
       <Container paddingTop="48">
@@ -77,7 +70,7 @@ export default function Footer() {
             <div className="ds-stack-8">
               {paragraphs.map((paragraph) => (
                 <div key={paragraph.markdown}>
-                  <RichText {...paragraph} renderer={paragraphRenderer} />
+                  <RichText {...paragraph} />
                 </div>
               ))}
             </div>

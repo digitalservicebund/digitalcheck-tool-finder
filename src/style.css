@@ -39,6 +39,18 @@
     color: currentcolor;
   }
 
+  .rich-text a {
+    @apply text-link;
+  }
+
+  main .rich-text p {
+    @apply text-lg;
+  }
+
+  footer a {
+    @apply increase-tap-area whitespace-nowrap;
+  }
+
   /* There is a specific design request to remove the margin above lists and below small headlines */
   .rich-text ul,
   .rich-text .ds-label-01-bold + p {

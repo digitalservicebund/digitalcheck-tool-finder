@@ -1,42 +1,38 @@
-import { Marked, type Renderer } from "marked";
+import { Marked } from "marked";
+import { A11Y_MESSAGE_NEW_WINDOW } from "./Aria";
 
 export type RichTextProps = {
   markdown: string;
   className?: string;
 };
 
-const defaultRenderer: Partial<Renderer> = {
-  link(href: string, title: string, text: string) {
-    const cssClass = "text-link";
-    if (href.includes("ext:")) {
-      const newHref = href.replace("ext:", "");
-      return `<a href="${newHref}" class="${cssClass}" target="_blank" rel="noopener">${text}</a>`;
+const RichText = ({ markdown, className, ...props }: RichTextProps) => {
+  const marked = new Marked();
+
+  const renderer = new marked.Renderer();
+  const linkRenderer = renderer.link;
+  renderer.link = (href, title, text) => {
+    const linkHtml = linkRenderer.call(renderer, href, title, text);
+    // Open external links in new tab
+    // TODO: This doesnt work due to enableAutoOutboundTracking() from Plausible
+    if (href.startsWith("http")) {
+      return linkHtml.replace(
+        /^<a /,
+        `<a target="_blank" aria-describedby=${A11Y_MESSAGE_NEW_WINDOW} `,
+      );
     }
-    return `<a href="${href}" class="${cssClass}">${text}</a>`;
-  },
-  paragraph(text: string) {
-    return `<p class="text-lg">${text}</p>`;
-  },
-} as const;
+    return linkHtml;
+  };
 
-const RichText = ({
-  markdown,
-  renderer,
-  className,
-  ...props
-}: RichTextProps) => {
-  const marked = new Marked({ renderer: renderer ?? defaultRenderer });
-  const html = marked.parse(markdown);
+  const html = marked.parse(markdown, { renderer });
 
-  if (!html) return null;
-
-  return (
+  return html ? (
     <div
       {...props}
       className={`rich-text ds-stack-8 ${className ?? ""}`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
-  );
+  ) : null;
 };
 
 export default RichText;
