@@ -1,13 +1,8 @@
 import { Marked, type Renderer } from "marked";
-import { z } from "zod";
 
-export const RichTextPropsSchema = z.object({
-  markdown: z.string(),
-  className: z.string().optional(),
-});
-
-type RichTextProps = z.infer<typeof RichTextPropsSchema> & {
-  renderer?: Partial<Renderer>;
+export type RichTextProps = {
+  markdown: string;
+  className?: string;
 };
 
 const defaultRenderer: Partial<Renderer> = {

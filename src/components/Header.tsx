@@ -1,13 +1,10 @@
-import { z } from "zod";
-import Heading, { HeadingPropsSchema } from "./Heading";
-import RichText, { RichTextPropsSchema } from "./RichText";
+import Heading, { type HeadingProps } from "./Heading";
+import RichText, { type RichTextProps } from "./RichText";
 
-export const HeaderPropsSchema = z.object({
-  heading: HeadingPropsSchema,
-  content: RichTextPropsSchema.optional(),
-});
-
-type HeaderProps = z.infer<typeof HeaderPropsSchema>;
+type HeaderProps = {
+  heading: HeadingProps;
+  content?: RichTextProps;
+};
 
 export default function Header({ heading, content }: HeaderProps) {
   return (

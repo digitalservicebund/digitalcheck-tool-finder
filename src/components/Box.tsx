@@ -1,22 +1,17 @@
 import classNames from "classnames";
-import { z } from "zod";
 import Button, { ButtonLinkProps, ButtonProps } from "./Button";
 import ButtonContainer from "./ButtonContainer";
-import Heading, { HeadingPropsSchema } from "./Heading";
-import RichText, { RichTextPropsSchema } from "./RichText";
+import Heading, { type HeadingProps } from "./Heading";
+import RichText, { type RichTextProps } from "./RichText";
 
-export const BoxPropsSchema = z.object({
-  identifier: z.string().optional(),
-  label: HeadingPropsSchema.optional(),
-  heading: HeadingPropsSchema.optional(),
-  content: RichTextPropsSchema.optional(),
-  additionalClassNames: z.string().optional(),
-  buttons: z
-    .array(z.custom<ButtonLinkProps>().or(z.custom<ButtonProps>()))
-    .optional(),
-});
-
-type BoxProps = z.infer<typeof BoxPropsSchema>;
+type BoxProps = {
+  identifier?: string;
+  label?: HeadingProps;
+  heading?: HeadingProps;
+  content?: RichTextProps;
+  additionalClassNames?: string;
+  buttons?: (ButtonLinkProps | ButtonProps)[];
+};
 
 const Box = ({
   identifier,

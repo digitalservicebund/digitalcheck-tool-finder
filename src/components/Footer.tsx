@@ -1,6 +1,5 @@
 import type { Renderer } from "marked";
 import { Link } from "react-router-dom";
-import { z } from "zod";
 import bmiLogo from "../../resources/img/bmi-logo.png";
 import { PATH_A11Y, PATH_IMPRINT, PATH_PRIVACY } from "../routes";
 import { A11Y_MESSAGE_NEW_WINDOW } from "./Aria";
@@ -8,13 +7,11 @@ import Container from "./Container";
 import Image from "./Image";
 import RichText from "./RichText";
 
-const LinkPropsSchema = z.object({
-  url: z.string(),
-  text: z.string(),
-  openInNewTab: z.boolean().optional(),
-});
-
-type LinkProps = z.infer<typeof LinkPropsSchema>;
+type LinkProps = {
+  url: string;
+  text: string;
+  openInNewTab?: boolean;
+};
 
 const paragraphs = [
   {
