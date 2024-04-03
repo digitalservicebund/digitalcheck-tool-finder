@@ -13,11 +13,11 @@ export function getAllRessorts() {
 }
 
 export function getAllObjects(): readonly VisualisationObject[] {
-  return data.objects.toSorted((a, b) => a.order - b.order);
+  return [...data.objects].sort((a, b) => a.order - b.order);
 }
 
 export function getAllReasons(): readonly Reason[] {
-  return data.reasons.toSorted((a, b) => a.order - b.order);
+  return [...data.reasons].sort((a, b) => a.order - b.order);
 }
 
 function getOrThrow<Type extends Entity>(
