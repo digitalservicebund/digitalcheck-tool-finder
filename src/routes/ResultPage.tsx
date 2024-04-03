@@ -45,6 +45,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           <Image
             url={getImageUrl(result.cluster.img.src)}
             alternativeText={result.cluster.img.alt}
+            data-testid="cluster"
           />
           <div className={"p-24 pt-16"}>
             <div className={"p-24 pb-32"}>

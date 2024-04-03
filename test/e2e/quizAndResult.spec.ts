@@ -68,7 +68,19 @@ test.describe("test result page", () => {
       await expect(
         page.getByRole("heading", { name: object.cluster }),
       ).toBeVisible();
+      await expect(page.getByTestId("cluster-img")).toBeVisible();
     }
+  });
+
+  test("recommendation shows image and alternatives", async ({ page }) => {
+    await expect(
+      page.getByRole("img", { name: "Benutzeroberfläche" }),
+    ).toBeVisible();
+    await expect(
+      page
+        .getByText("VersionBundescloud")
+        .getByRole("heading", { name: "Alternativen" }),
+    ).toBeVisible();
   });
 
   test("change selection button works", async ({ page }) => {
