@@ -40,13 +40,13 @@ const RadioGroup = ({
   const errorId = hasError ? `${name}-error` : undefined;
 
   return (
-    <>
-      <ul
-        className="ds-stack-16 border-0 p-0 m-0"
-        role="radiogroup"
-        aria-errormessage={errorId}
-        aria-invalid={!!error}
-      >
+    <div
+      role="radiogroup"
+      aria-required={true}
+      aria-errormessage={errorId}
+      aria-invalid={!!error}
+    >
+      <ul className="ds-stack-16 border-0 p-0 m-0">
         {options.map(({ value, text, subText }) => {
           const id = `${name}-${value}`;
           const checked = selectedValue === value;
@@ -77,7 +77,7 @@ const RadioGroup = ({
       {error && errorId && (
         <InputError id={errorId}>{error.message}</InputError>
       )}
-    </>
+    </div>
   );
 };
 
