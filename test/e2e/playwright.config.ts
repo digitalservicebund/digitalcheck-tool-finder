@@ -12,6 +12,7 @@ const config: PlaywrightTestConfig = {
     acceptDownloads: true,
     baseURL: `http://localhost:${port}`,
     screenshot: "only-on-failure",
+    trace: "on-first-retry",
   },
   projects: [
     {
