@@ -32,7 +32,7 @@ export default function renderRecommendation({
           <RichText
             className="flex-1 [word-break:break-word]"
             markdown={`${tool.description}
-              ${tool.link ? `\n\n<a target="_blank" href="${tool.link}">${tool.link}</a>` : ""}
+              ${tool.link ? `\n\n${tool.link}` : ""}
               ${tool.access ? "\n\n" + tool.access : ""}`}
           />
           {(tool.img.src || recommendation.alternativeTools.length > 0) && (
