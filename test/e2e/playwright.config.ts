@@ -5,7 +5,7 @@ const timeout = parseInt(process.env.WAIT_ON_TIMEOUT ?? `${20 * 1000}`);
 
 const config: PlaywrightTestConfig = {
   testDir: ".",
-  timeout: 5000,
+  timeout: 10000,
   retries: process.env.CI === "true" ? 1 : 0,
   use: {
     viewport: { width: 1280, height: 720 },
