@@ -530,8 +530,8 @@ export default {
         "Den Koffer mit den Magnetkarten finden Sie bei Ihrem hausinternen Ansprechpartner, kontaktieren Sie uns hierzu gerne direkt.",
       link: "https://shi-institut.de/produkte/modulo/",
       img: {
-        src: "",
-        alt: "",
+        src: "tools/tool_Modulo_Flussdiagramm-1.png",
+        alt: "Ein mit den Modulo-Karten gelegter Prozess wird per iPad eingelesen.",
       },
     },
     {
@@ -543,8 +543,8 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "",
-        alt: "",
+        src: "tools/tool_Aris_Flussdiagramm.png",
+        alt: "Die Benutzeroberfläche von Aris, die den Ausschnitt einer Prozessmodellierung zeigt.",
       },
     },
     {
@@ -556,8 +556,8 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "",
-        alt: "",
+        src: "tools/tool_Aris_Flussdiagramm.png",
+        alt: "Die Benutzeroberfläche von Aris, die den Ausschnitt einer Prozessmodellierung zeigt.",
       },
     },
     {
