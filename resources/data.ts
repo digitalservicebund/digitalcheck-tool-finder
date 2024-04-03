@@ -18,7 +18,7 @@ export default {
     },
     {
       id: "prozess",
-      name: "Ganzer Prozess",
+      name: "Einen ganzen Prozess",
       description:
         "Ich möchte den gesamten oder einen großen Teil des Vollzugsprozesses meiner Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
       cluster: "flussdiagramm",
