@@ -439,8 +439,8 @@ export default {
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "https://rulemapping.knowledgetools.de/rulemapping",
       img: {
-        src: "",
-        alt: "",
+        src: "tool_Logos_Rulemap.png",
+        alt: "Eine Rulemap in Logos, die einen Gesetzesparagrafen zeigt.",
       },
     },
     {
@@ -452,8 +452,8 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "",
-        alt: "",
+        src: "tool_Adonis_Flussdiagramm.png",
+        alt: "Die Benutzeroberfläche von Adonis, die den Ausschnitt einer Prozessmodellierung zeigt.",
       },
     },
     {
@@ -517,8 +517,8 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "",
-        alt: "",
+        src: "tool_MS Visio_Flussdiagramm.png",
+        alt: "Die Benutzeroberfläche von MS Visio, die einen Ablauf zeigt.",
       },
     },
     {
