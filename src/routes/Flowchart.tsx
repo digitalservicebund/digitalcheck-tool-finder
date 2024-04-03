@@ -28,7 +28,8 @@ function Flowchart() {
       <Container paddingTop="48" paddingBottom="24">
         <Box
           heading={{
-            tagName: "h3",
+            tagName: "h2",
+            look: "ds-heading-03-bold",
             text: "So fangen Sie an",
           }}
           content={{
@@ -57,7 +58,8 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
       <Container paddingTop="0" paddingBottom="24">
         <Box
           heading={{
-            tagName: "h3",
+            tagName: "h2",
+            look: "ds-heading-03-bold",
             text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungen darauf an",
           }}
           content={{
@@ -71,7 +73,8 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
       <Container paddingTop="0" paddingBottom="24">
         <Box
           heading={{
-            tagName: "h3",
+            tagName: "h2",
+            look: "ds-heading-03-bold",
             text: "Arbeiten Sie von grob zu fein",
           }}
           content={{
@@ -84,7 +87,8 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
       <Container paddingTop="0" paddingBottom="48">
         <Box
           heading={{
-            tagName: "h3",
+            tagName: "h2",
+            look: "ds-heading-03-bold",
             text: "Hier bekommen Sie Hilfe",
           }}
           content={{

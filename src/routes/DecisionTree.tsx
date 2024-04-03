@@ -24,7 +24,8 @@ function DecisionTree() {
       <Container paddingTop="48" paddingBottom="48">
         <Box
           heading={{
-            tagName: "h3",
+            tagName: "h2",
+            look: "ds-heading-03-bold",
             text: "Diese Seite befindet sich im Aufbau",
           }}
           content={{
