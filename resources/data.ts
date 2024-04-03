@@ -400,7 +400,7 @@ export default {
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "",
       img: {
-        src: "tools/bundescloud-drawio-flussdiagramm.png",
+        src: "tools/bundescloud_drawio_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von Draw.io, die ein einfaches Schaubild darstellt",
       },
     },
@@ -413,7 +413,7 @@ export default {
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "",
       img: {
-        src: "tools/bundescloud-drawio-entscheidungsbaum.png",
+        src: "tools/bundescloud_drawio_entscheidungsbaum.png",
         alt: "Die Benutzeroberfläche von Draw.io, die einen einfachen Entscheidungsbaum darstellt",
       },
     },
@@ -426,7 +426,7 @@ export default {
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "",
       img: {
-        src: "tools/bundescloud-drawio-flussdiagramm.png",
+        src: "tools/bundescloud_drawio_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von Draw.io, die ein einfaches Flussdiagramm darstellt",
       },
     },
@@ -439,7 +439,7 @@ export default {
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "https://rulemapping.knowledgetools.de/rulemapping",
       img: {
-        src: "tool_Logos_Rulemap.png",
+        src: "tools/logos_rulemap.png",
         alt: "Eine Rulemap in Logos, die einen Gesetzesparagrafen zeigt.",
       },
     },
@@ -452,7 +452,7 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "tool_Adonis_Flussdiagramm.png",
+        src: "tools/adonis_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von Adonis, die den Ausschnitt einer Prozessmodellierung zeigt.",
       },
     },
@@ -517,7 +517,7 @@ export default {
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
       link: "",
       img: {
-        src: "tool_MS Visio_Flussdiagramm.png",
+        src: "tools/msvisio_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von MS Visio, die einen Ablauf zeigt.",
       },
     },
