@@ -450,7 +450,7 @@ export default {
         "Adonis ist eine Spezialsoftware zum Modellieren von Prozessen; die richtige Nutzung braucht Übung. Adonis sollten Sie dann einsetzen, wenn Sie eine FIM-Modellierung anfertigen möchten oder in Zukunft öfter mit FIM-Modellierungen zu tun haben.",
       access:
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
-      link: "",
+      link: "https://www.boc-group.com/de/adonis/",
       img: {
         src: "tools/adonis_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von Adonis, die den Ausschnitt einer Prozessmodellierung zeigt.",
@@ -515,7 +515,7 @@ export default {
         "Microsoft Visio ist eine Spezialsoftware zur Modellierung von Prozessen. Die Benutzeroberfläche erinnert an die bekannten Office-Programme, trotzdem braucht die Nutzung Übung. Wir empfehlen den Einsatz dann, wenn Sie sich sicher sind, dass Sie in der Zukunft öfter modellieren werden.",
       access:
         "Kontaktieren Sie uns gerne, so dass wir Sie auf Ihren hausinternen Ansprechpartner verweisen können.",
-      link: "",
+      link: "https://www.microsoft.com/de-de/microsoft-365/visio/flowchart-software",
       img: {
         src: "tools/msvisio_flussdiagramm.png",
         alt: "Die Benutzeroberfläche von MS Visio, die einen Ablauf zeigt.",
