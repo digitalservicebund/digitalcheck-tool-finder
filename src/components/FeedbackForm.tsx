@@ -8,12 +8,12 @@ function RadioAnswer({
   value,
   onClick,
   annotation,
-}: {
+}: Readonly<{
   name: string;
   value: number;
   onClick: () => void;
   annotation?: string;
-}) {
+}>) {
   return (
     <div className="flex flex-col w-1/5 gap-16">
       {annotation && (
@@ -41,12 +41,12 @@ function Question({
   name,
   onFeedbackClick,
   hasAnnotations = false,
-}: {
+}: Readonly<{
   question: string;
   name: string;
   onFeedbackClick: (question: string, value: number) => void;
   hasAnnotations?: boolean;
-}) {
+}>) {
   return (
     <fieldset className="flex flex-col sm:flex-row items-stretch sm:items-end w-full gap-16 sm:gap-32">
       <div className="w-full sm:w-1/5">
