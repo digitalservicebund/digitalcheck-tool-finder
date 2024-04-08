@@ -60,7 +60,7 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
           heading={{
             tagName: "h2",
             look: "ds-heading-03-bold",
-            text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungsvorhaben darauf an",
+            text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Gesetze darauf an",
           }}
           content={{
             markdown: `Markieren Sie in Ihrer Visualisierung, in welchen Schritten der Umsetzung die fünf Prinzipien 
