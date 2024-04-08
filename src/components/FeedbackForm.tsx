@@ -33,8 +33,8 @@ function RadioAnswer({
   );
 }
 
-const noAnnotation = "Ich stimme überhaupt nicht zu.";
-const fullAnnotation = "Ich stimme voll und ganz zu.";
+const disagreeAnnotation = "Ich stimme überhaupt nicht zu.";
+const agreeAnnotation = "Ich stimme voll und ganz zu.";
 
 function Question({
   question,
@@ -57,19 +57,18 @@ function Question({
         className="flex-1 flex justify-between items-end mb-8"
       >
         {[1, 2, 3, 4, 5].map((value) => {
-          const annotation =
-            value === 1
-              ? noAnnotation
-              : value === 5
-                ? fullAnnotation
-                : undefined;
+          let annotation: string | undefined = undefined;
+          if (hasAnnotations) {
+            if (value === 1) annotation = disagreeAnnotation;
+            if (value === 5) annotation = agreeAnnotation;
+          }
 
           return (
             <RadioAnswer
               key={value}
               name={name}
               value={value}
-              annotation={hasAnnotations ? annotation : undefined}
+              annotation={annotation}
               onClick={() => onFeedbackClick(name, value)}
             />
           );
@@ -106,8 +105,8 @@ export default function FeedbackForm({
           }}
         ></Box>
         <div className="sm:hidden w-full flex flex-col">
-          <p className="">1 = {noAnnotation}</p>
-          <p className="">5 = {fullAnnotation}</p>
+          <p className="">1 = {disagreeAnnotation}</p>
+          <p className="">5 = {agreeAnnotation}</p>
         </div>
         <Question
           name="question-useful"
