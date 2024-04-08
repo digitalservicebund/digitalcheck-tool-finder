@@ -5,6 +5,7 @@ import type { VisualisationObject } from "../models/VisualisationObject";
 
 const EVENT_BUTTON_CLICK = "Button: Click";
 const EVENT_FEEDBACK_CLICK = "Feedback: Click";
+const EVENT_SELECTION_SUBMIT = "Selection: Submit";
 
 const { enableAutoPageviews, enableAutoOutboundTracking, trackEvent } =
   Plausible({
@@ -46,7 +47,7 @@ export function trackSelection(
   const objectName = object.name;
   const reasonName = reason.name;
 
-  trackEvent("Selection: Submit", {
+  trackEvent(EVENT_SELECTION_SUBMIT, {
     props: {
       ressort: ressortName,
       object: objectName,
