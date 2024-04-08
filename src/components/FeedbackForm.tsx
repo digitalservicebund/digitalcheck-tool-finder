@@ -1,4 +1,4 @@
-import { trackFeedbackCick } from "../services/tracking";
+import { trackFeedbackClick } from "../services/tracking";
 import Background from "./Background";
 import Box from "./Box";
 import Container from "./Container";
@@ -6,16 +6,14 @@ import Container from "./Container";
 function RadioAnswer({
   name,
   value,
+  onClick,
   annotation,
 }: {
   name: string;
   value: number;
+  onClick: () => void;
   annotation?: string;
 }) {
-  function onClick() {
-    trackFeedbackCick(name, value);
-  }
-
   return (
     <div className="flex flex-col w-1/5 gap-16">
       {annotation && (
@@ -41,10 +39,12 @@ const fullAnnotation = "Ich stimme voll und ganz zu.";
 function Question({
   question,
   name,
+  onFeedbackClick,
   hasAnnotations = false,
 }: {
   question: string;
   name: string;
+  onFeedbackClick: (question: string, value: number) => void;
   hasAnnotations?: boolean;
 }) {
   return (
@@ -70,6 +70,7 @@ function Question({
               name={name}
               value={value}
               annotation={hasAnnotations ? annotation : undefined}
+              onClick={() => onFeedbackClick(name, value)}
             />
           );
         })}
@@ -78,7 +79,19 @@ function Question({
   );
 }
 
-export default function FeedbackForm() {
+export default function FeedbackForm({
+  ressort,
+  object,
+  reason,
+}: Readonly<{
+  ressort: string;
+  object: string;
+  reason: string;
+}>) {
+  function sendFeedback(name: string, value: number) {
+    trackFeedbackClick(name, value, ressort, object, reason);
+  }
+
   return (
     <Background backgroundColor="yellow" paddingTop="32" paddingBottom="40">
       <Container
@@ -100,10 +113,12 @@ export default function FeedbackForm() {
           name="question-useful"
           question="Ich habe gefunden, was ich brauche."
           hasAnnotations
+          onFeedbackClick={sendFeedback}
         />
         <Question
           name="question-simple"
           question="Die Anwendung war einfach zu nutzen."
+          onFeedbackClick={sendFeedback}
         />
       </Container>
     </Background>

@@ -29,13 +29,9 @@ export function trackButtonClick(
   });
 }
 
-export function trackFeedbackCick(question: string, value: number) {
-  trackEvent(EVENT_FEEDBACK_CLICK, {
-    props: {
-      questionAndValue: `${question} --- ${value}`,
-    },
-  });
-}
+const combine = (...values: string[]) => {
+  return values.join(" --- ");
+};
 
 export function trackSelection(
   ressort: Ressort | null,
@@ -45,10 +41,6 @@ export function trackSelection(
   if (!ressort || !object || !reason) {
     return;
   }
-
-  const combine = (...values: string[]) => {
-    return values.join(" --- ");
-  };
 
   const ressortName = ressort.name;
   const objectName = object.name;
@@ -63,6 +55,28 @@ export function trackSelection(
       ressortAndReason: combine(ressortName, reasonName),
       objectAndReason: combine(objectName, reasonName),
       ressortAndObjectAndReason: combine(ressortName, objectName, reasonName),
+    },
+  });
+}
+
+export function trackFeedbackClick(
+  question: string,
+  value: number,
+  ressort: string,
+  object: string,
+  reason: string,
+) {
+  const valueString = value.toString();
+  trackEvent(EVENT_FEEDBACK_CLICK, {
+    props: {
+      questionAndValue: combine(question, valueString),
+      questionAndValueForSelection: combine(
+        ressort,
+        object,
+        reason,
+        question,
+        valueString,
+      ),
     },
   });
 }

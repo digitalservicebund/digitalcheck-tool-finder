@@ -99,7 +99,11 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           />
         </ButtonContainer>
       </Container>
-      <FeedbackForm />
+      <FeedbackForm
+        ressort={ressort.name}
+        object={object.name}
+        reason={reason.name}
+      />
     </>
   ) : (
     <Container paddingTop="48" paddingBottom="48">
