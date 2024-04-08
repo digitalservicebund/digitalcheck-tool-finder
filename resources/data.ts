@@ -12,7 +12,7 @@ export default {
       id: "logik",
       name: "Entscheidungslogiken",
       description:
-        "Im Mittelpunkt meiner Regelung stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
+        "Im Mittelpunkt meines Regelungsvorhabens stehen voneinander abhängige Entscheidungen, die Auswirkungen auf die Betroffenen haben.",
       cluster: "entscheidungsbaum",
       order: 2,
     },
@@ -20,7 +20,7 @@ export default {
       id: "prozess",
       name: "Einen ganzen Prozess",
       description:
-        "Ich möchte den gesamten oder einen großen Teil des Vollzugsprozesses meiner Regelung zeigen; vielleicht sogar der umliegenden Gesetzeslandschaft.",
+        "Ich möchte einen großen Teil oder die Gesamtheit der Umsetzung meines Regelungsvorhabens — oder sogar der umliegenden Gesetzeslandschaft — zeigen.",
       cluster: "flussdiagramm",
       order: 3,
     },
@@ -249,7 +249,7 @@ export default {
       name: "Flussdiagramm",
       notations: ["bpmn", "fim", "frei"],
       description:
-        "Ein Flussdiagramm stellt einen Vollzugsprozess oder Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Zwischenschritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
+        "Ein Flussdiagramm stellt die gesamte Umsetzung eines Regelungsvorhabens oder einen spezifischen Arbeitsablauf visuell dar. Mit Hilfe standardisierter Symbole wird der Prozess in einzelnen, chronologischen Schritten abgebildet. Flussdiagramme helfen dabei, fehlende Zwischenschritte, Medienbrüche und Möglichkeiten zum Vereinfachen von Prozessen zu erkennen.",
       img: {
         src: "clusters/flussdiagramm.jpg",
         alt: "Ein beispielhaftes Flussdiagramms ohne Text",
@@ -434,7 +434,7 @@ export default {
       id: "logos",
       name: "Logos",
       description:
-        "Mit Logos können Sie eine Rulemap erstellen, eine Art Entscheidungsbaum, der spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihre gesamte Regelung abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
+        "Mit Logos können Sie eine Rulemap erstellen, eine Art Entscheidungsbaum, der spezifisch für den juristischen Kontext entwickelt wurde. Sie können Ihr gesamtes Regelungsvorhaben abbilden und so verschiedene Tatbestände simulieren. Desweiteren ermöglicht das Format der Rulemap eine Logikprüfung.",
       access:
         "Für einen Zugang schreiben Sie einfach eine formlose E-Mail an die Ansprechperson in Ihrem Ressort. In der Regel ist das Referat für die Informations- und Kommunikationstechnik im Ressort in Abteilung Z zuständig.",
       link: "Mehr Informationen: https://www.knowledgetools.de\n\nLogin: https://rulemapping.knowledgetools.de/rulemapping",

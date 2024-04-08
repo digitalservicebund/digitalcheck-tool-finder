@@ -20,7 +20,7 @@ function InfoPage() {
               text: "Visualisieren im Digitalcheck",
             }}
             content={{
-              markdown: `Die Visualisierung hilft Ihnen, komplexe Sachverhalte zu strukturieren und dadurch schneller und intuitiver erfassbar zu machen – Zusammenhänge werden sichtbar und Sie können Möglichkeiten der Digitalisierung in der Umsetzung identifizieren. Beginnen Sie die Arbeit mit der Visualisierung vor der ersten Textarbeit, um Aspekte der Digitaltauglichkeit frühzeitig zu erkennen und bei der Verschriftlichung Ihrer Regelung berücksichtigen zu können.`,
+              markdown: `Die Visualisierung hilft Ihnen, komplexe Sachverhalte zu strukturieren und dadurch schneller und intuitiver erfassbar zu machen – Zusammenhänge werden sichtbar und Sie können Möglichkeiten der Digitalisierung in der Umsetzung identifizieren. Beginnen Sie die Arbeit mit der Visualisierung vor der ersten Textarbeit, um Aspekte der Digitaltauglichkeit frühzeitig zu erkennen und bei der Verschriftlichung Ihres Regelungsvorhabens berücksichtigen zu können.`,
             }}
           ></Header>
         </Container>
@@ -74,10 +74,10 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
           additionalClassNames={"pt-20"}
           heading={{
             tagName: "h3",
-            text: "Die Darstellungen helfen auch bei der Umsetzung im Vollzug",
+            text: "Die Darstellungen helfen auch bei der Umsetzung",
           }}
           content={{
-            markdown: `Personen, die Ihre Regelung digital umsetzen (z. B. Programmiererinnen und Programmierer), denken in Prozessen, Strukturen, Systemen und Zusammenhängen. Mit einer Visualisierung können Sie diesen beim Verstehen und Übersetzen Ihrer Regelung helfen und so eine bessere Umsetzung ermöglichen. Darüber hinaus kann Ihre Visualisierung Ihren Kolleginnen und Kollegen sowie dem NKR das Verständnis erleichtern. Schon einfache Scans oder Fotos Ihrer Skizzen reichen dafür häufig.
+            markdown: `Personen, die Ihr Regelungsvorhaben digital umsetzen (z. B. Programmiererinnen und Programmierer), denken in Prozessen, Strukturen, Systemen und Zusammenhängen. Mit einer Visualisierung können Sie diesen beim Verstehen und Übersetzen Ihres Regelungsvorhabens helfen und so eine bessere Umsetzung ermöglichen. Darüber hinaus kann Ihre Visualisierung Ihren Kolleginnen und Kollegen sowie dem NKR das Verständnis erleichtern. Schon einfache Scans oder Fotos Ihrer Skizzen reichen dafür häufig.
 
 Mehr dazu lesen Sie in diesem Blogbeitrag: [Mit Visualisierungen zu einer digitaltauglichen Gesetzgebung](https://digitalservice.bund.de/blog/mit-visualisierungen-zu-einer-digitaltauglichen-gesetzgebung).
             `,
@@ -91,7 +91,7 @@ Mehr dazu lesen Sie in diesem Blogbeitrag: [Mit Visualisierungen zu einer digita
               text: "Tipp: Schaffen Sie ein gemeinsames Verständnis",
             }}
             content={{
-              markdown: `Visualisieren Sie gemeinsam mit Kolleginnen und Kollegen aus Ihrem Referat, anderen Abteilungen, anderen Expertinnen und Experten oder Akteuren des Vollzugs, um schnell ein gemeinsames Verständnis von der Regelung und den Umsetzungsmöglichkeiten zu schaffen. Die Diskussion auf gleicher Grundlage ist häufig ebenso wertvoll wie die entstandene Visualisierung selbst.`,
+              markdown: `Visualisieren Sie gemeinsam mit Kolleginnen und Kollegen aus Ihrem Referat, anderen Abteilungen, anderen Expertinnen und Experten oder an der Umsetzung beteiligten Akteuren, um schnell ein gemeinsames Verständnis des Regelungsvorhabens und seiner Umsetzungsmöglichkeiten zu schaffen. Die Diskussion auf gleicher Grundlage ist häufig ebenso wertvoll wie die entstandene Visualisierung selbst.`,
             }}
           ></Box>
         </Background>

@@ -35,10 +35,10 @@ function Flowchart() {
           content={{
             markdown: `Es gibt unterschiedliche Arten der Visualisierung. Je nach Zielsetzung eignen 
             sich beispielsweise Nutzerreisen, Entscheidungsbäume, Datenflüsse oder Prozessmodellierungen 
-            (z. B. nach BPMN oder FIM-Methodik). Um den Vollzug einer Regelung zu visualisieren, 
+            (z. B. nach BPMN oder FIM-Methodik). Um die Umsetzung eines Regelungsvorhabens zu visualisieren, 
             empfehlen wir die Arbeit mit einem Flussdiagramm.
             
-Notieren Sie die am Vollzug Beteiligten und deren Aktionen. Fragen Sie sich: 
+Notieren Sie die an der Umsetzung Beteiligten und deren Aktionen. Fragen Sie sich: 
 - Welche Akteure sind beteiligt? (z. B. Bürger oder Bürgerin, eine Behörde, ein System, eine Applikation) 
 - Welche Aktionen passieren? (z. B. prüft Angaben, sendet Daten) 
 - Wann passiert etwas? (z. B. zeitliche oder prozessuale Abhängigkeit) 
@@ -60,13 +60,13 @@ Der Start mag Ihnen leichter fallen, wenn Sie als Basis eine zeitliche Abfolge w
           heading={{
             tagName: "h2",
             look: "ds-heading-03-bold",
-            text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungen darauf an",
+            text: "Wenn die erste Skizze steht: wenden Sie die fünf Prinzipien für digitaltaugliche Regelungsvorhaben darauf an",
           }}
           content={{
-            markdown: `Markieren Sie in Ihrer Visualisierung, in welchen Schritten des Vollzugs die fünf Prinzipien 
+            markdown: `Markieren Sie in Ihrer Visualisierung, in welchen Schritten der Umsetzung die fünf Prinzipien 
             für digitaltaugliche Gesetze relevant sein könnten. Gehen Sie dabei Prinzip für Prinzip vor. 
-            Lassen Sie die dadurch gewonnenen Erkenntnisse in die digitaltaugliche Gestaltung der 
-            Regelung einfließen.`,
+            Lassen Sie die dadurch gewonnenen Erkenntnisse in die digitaltaugliche Gestaltung des 
+            Regelungsvorhabens einfließen.`,
           }}
         ></Box>
       </Container>
