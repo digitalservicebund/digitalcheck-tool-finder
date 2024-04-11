@@ -1,8 +1,6 @@
 # Digitalcheck Werkzeugfinder aka Tool Finder
 
 [![Pipeline](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml)
-[![Scan](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml)
-[![Secrets Check](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml)
 
 A simple web-application to enable anyone working on policy making in the german government to find the right tools for visualisation.
 
