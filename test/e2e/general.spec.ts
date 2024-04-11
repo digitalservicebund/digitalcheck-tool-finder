@@ -100,7 +100,7 @@ test.describe("test links", () => {
     ).toHaveAttribute("target", "_blank");
 
     await page.goto(allRoutes.PATH_IMPRINT);
-    const link = await page.getByRole("link", {
+    const link = page.getByRole("link", {
       name: "DigitalService GmbH des Bundes",
     });
     await expect(link).toHaveAttribute("target", "_blank");

@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { getAllObjects } from "src/persistance/repository";
+import { getAllObjects } from "../../src/persistance/repository";
 import * as allRoutes from "../../src/routes";
 
 async function selectDefaultOptionsAndSubmit(
