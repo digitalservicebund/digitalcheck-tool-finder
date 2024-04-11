@@ -122,7 +122,13 @@ Jede:r ist herzlich eingeladen, die Entwicklung der _digitalcheck-tool-finder_ m
 indem du Pull-Requests eröffnest, die Dokumentation erweiterst, Fragen beantwortest oder Feedback gibst.
 Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUCT_DE.md).
 
-## Contributing code
+### Updating the content
+
+To update texts or links, change https://github.com/digitalservicebund/digitalcheck-tool-finder/blob/main/resources/data.ts.
+
+To add images, upload them to https://github.com/digitalservicebund/digitalcheck-tool-finder/tree/main/resources/img and edit https://github.com/digitalservicebund/digitalcheck-tool-finder/blob/main/resources/data.ts with the corresponding path. Don't forget to add a fitting alt text.
+
+### Contributing code
 
 🇬🇧
 Open a pull request with your changes and it will be reviewed by someone from the team. When you submit a pull request,
