@@ -124,9 +124,9 @@ Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUC
 
 ### Updating the content
 
-To update texts or links, change https://github.com/digitalservicebund/digitalcheck-tool-finder/blob/main/resources/data.ts.
+To update texts or links, change [data.ts](resources/data.ts).
 
-To add images, upload them to https://github.com/digitalservicebund/digitalcheck-tool-finder/tree/main/resources/img and edit https://github.com/digitalservicebund/digitalcheck-tool-finder/blob/main/resources/data.ts with the corresponding path. Don't forget to add a fitting alt text.
+To add images, upload them to [/resources/img](resources/img) and edit [data.ts](resources/data.ts) with the corresponding path. Don't forget to add a fitting alt text.
 
 ### Contributing code
 
