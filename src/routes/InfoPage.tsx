@@ -48,6 +48,7 @@ function InfoPage() {
       </Container>
       <Container paddingTop="0" paddingBottom="48">
         <Box
+          additionalClassNames="ds-stack-16"
           identifier={"info-section-why-visualisation"}
           heading={{
             tagName: "h2",
