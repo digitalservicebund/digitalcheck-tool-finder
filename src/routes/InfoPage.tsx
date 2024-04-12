@@ -68,8 +68,10 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
       </Container>
       <Container
         paddingTop="0"
-        paddingBottom="48"
-        additionalClassNames={"flex flex-col md:flex-row gap-32 md:gap-32"}
+        paddingBottom="0"
+        additionalClassNames={
+          "flex flex-col md:flex-row gap-32 md:gap-32 items-start"
+        }
       >
         <Box
           additionalClassNames={"pt-20"}
