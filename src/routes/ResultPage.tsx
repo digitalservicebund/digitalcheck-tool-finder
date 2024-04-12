@@ -40,15 +40,19 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
 
   return result ? (
     <>
-      <Container paddingTop="48" paddingBottom="24">
-        <div className={"border-8 rounded-lg border-[#EBF3FD]"}>
+      <Container
+        paddingTop="48"
+        paddingBottom="24"
+        additionalClassNames="max-sm:px-0"
+      >
+        <div className={"border-4 sm:border-8 rounded-lg border-[#EBF3FD]"}>
           <Image
             url={getImageUrl(result.cluster.img.src)}
             alternativeText={result.cluster.img.alt}
             data-testid="cluster-img"
           />
-          <div className={"p-24 pt-16"}>
-            <div className={"p-24 pb-32"}>
+          <div className={"p-12 md:p-24 pt-16"}>
+            <div className={"p-12 md:p-24 pb-32"}>
               <p className="ds-label-section text-gray-900">
                 Wir empfehlen Ihnen eine Visualisierung als:
               </p>

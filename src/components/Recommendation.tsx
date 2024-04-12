@@ -19,7 +19,7 @@ export default function renderRecommendation({
   return (
     <div
       key={`tool-${tool.id}`}
-      className="p-24 border border-gray-400 border-b-0 last:border-b last:rounded-bl last:rounded-br first:rounded-tl first:rounded-tr"
+      className="p-12 md:p-24 border border-gray-400 border-b-0 last:border-b last:rounded-bl last:rounded-br first:rounded-tl first:rounded-tr"
     >
       <div className="ds-stack-8">
         <Heading
