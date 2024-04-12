@@ -78,8 +78,6 @@ Schleifen, uneinheitliche Rechtsbegriffe und mögliche zu vermeidende Schriftfor
           }}
           content={{
             markdown: `Personen, die Ihr Regelungsvorhaben digital umsetzen (z. B. Programmiererinnen und Programmierer), denken in Prozessen, Strukturen, Systemen und Zusammenhängen. Mit einer Visualisierung können Sie diesen beim Verstehen und Übersetzen Ihres Regelungsvorhabens helfen und so eine bessere Umsetzung ermöglichen. Darüber hinaus kann Ihre Visualisierung Ihren Kolleginnen und Kollegen sowie dem NKR das Verständnis erleichtern. Schon einfache Scans oder Fotos Ihrer Skizzen reichen dafür häufig.
-
-Mehr dazu lesen Sie in diesem Blogbeitrag: [Mit Visualisierungen zu einer digitaltauglichen Gesetzgebung](https://digitalservice.bund.de/blog/mit-visualisierungen-zu-einer-digitaltauglichen-gesetzgebung).
             `,
           }}
         ></Box>
@@ -95,6 +93,14 @@ Mehr dazu lesen Sie in diesem Blogbeitrag: [Mit Visualisierungen zu einer digita
             }}
           ></Box>
         </Background>
+      </Container>
+      <Container paddingTop="16" paddingBottom="48">
+        <Box
+          content={{
+            markdown: `Mehr dazu lesen Sie in diesem Blogbeitrag: [Mit Visualisierungen zu einer digitaltauglichen Gesetzgebung](https://digitalservice.bund.de/blog/mit-visualisierungen-zu-einer-digitaltauglichen-gesetzgebung).
+            `,
+          }}
+        ></Box>
       </Container>
     </>
   );
