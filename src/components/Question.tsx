@@ -21,10 +21,10 @@ export default function Question({
 }: QuestionProps) {
   return (
     <fieldset className="container pt-0 pb-80">
-      <legend className="pb-16">
+      <legend className="pb-16 ds-stack-8">
         <p className="ds-label-02-reg">{label}</p>
         <h2>{heading}</h2>
-        {description}
+        <p>{description}</p>
       </legend>
       {select && <Select placeholder={"Bitte auswählen"} {...select} />}
       {radio && <RadioGroup {...radio} />}
