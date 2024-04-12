@@ -122,7 +122,7 @@ function QuizPage({
         </Container>
       </Background>
       <BetaBanner />
-      <div className={"pt-48 max-w-2xl m-auto"}>
+      <div className={"pt-80 max-w-2xl m-auto"}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Question
             heading={"In welchem Ressort arbeiten Sie?"}
@@ -164,7 +164,7 @@ function QuizPage({
               error: errors["reason"],
             }}
           />
-          <Container paddingTop="0" paddingBottom="48">
+          <Container paddingTop="0" paddingBottom="80">
             <ButtonContainer>
               <Button
                 text={"Werkzeug suchen"}
