@@ -112,7 +112,6 @@ function QuizPage({
           <Header
             heading={{
               tagName: "h1",
-              look: "ds-heading-01-reg",
               text: "Werkzeugfinder für Visualisierungen",
             }}
             content={{

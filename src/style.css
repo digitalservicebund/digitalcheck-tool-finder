@@ -6,7 +6,7 @@
 
 @layer base {
   h1 {
-    @apply ds-heading-01-reg;
+    @apply ds-heading-01-reg max-sm:text-5xl max-md:text-6xl;
   }
 
   h2 {
