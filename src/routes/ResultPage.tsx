@@ -49,10 +49,13 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           />
           <div className={"p-24 pt-16"}>
             <div className={"p-24 pb-32"}>
-              <p>Wir empfehlen Ihnen eine Visualisierung als:</p>
+              <p className="ds-label-section text-gray-900">
+                Wir empfehlen Ihnen eine Visualisierung als:
+              </p>
               <Box
+                additionalClassNames="pt-16"
                 heading={{
-                  tagName: "h2",
+                  tagName: "h1",
                   text: result.cluster.name,
                 }}
                 content={{
