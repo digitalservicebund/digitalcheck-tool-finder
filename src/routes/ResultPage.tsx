@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "../components/Box";
-import Button from "../components/Button";
-import ButtonContainer from "../components/ButtonContainer";
 import Container from "../components/Container";
 import FeedbackForm from "../components/FeedbackForm";
 import Image from "../components/Image";
 import Recommendation from "../components/Recommendation";
-import RichText from "../components/RichText";
 import type { Reason } from "../models/Reason";
 import type { Ressort } from "../models/Ressort";
 import type { VisualisationObject } from "../models/VisualisationObject";
@@ -45,7 +42,7 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
         paddingBottom="24"
         additionalClassNames="max-sm:px-0"
       >
-        <div className={"border-4 sm:border-8 rounded-lg border-[#EBF3FD]"}>
+        <div className={"border-4 sm:border-8 sm:rounded-lg border-[#EBF3FD]"}>
           <Image
             url={getImageUrl(result.cluster.img.src)}
             alternativeText={result.cluster.img.alt}
@@ -88,23 +85,34 @@ function ResultPage({ ressort, object, reason }: ResultPageProps) {
           </div>
         </div>
       </Container>
-      <Container paddingTop="24" paddingBottom="0">
-        <RichText
-          markdown={`Ressort: **${ressort.name}** 
-              | Objekt der Darstellung: **${object.name}** 
-              | Grund der Visualisierung: **${reason.name}**`}
-        />
-      </Container>
-      <Container paddingTop="8" paddingBottom="48">
-        <ButtonContainer>
-          <Button
-            id={"result-change-selection"}
-            text={"Eingaben ändern"}
-            size={"small"}
-            look={"tertiary"}
-            href={PATH_QUIZ}
-          />
-        </ButtonContainer>
+      <Container
+        paddingTop="24"
+        paddingBottom="48"
+        additionalClassNames="max-sm:px-0"
+      >
+        <Box
+          additionalClassNames="p-12 sm:border-2 sm:rounded-md border-blue-100 bg-blue-100"
+          heading={{
+            tagName: "h3",
+            look: "ds-label-01-bold",
+            text: "Ihre Auswahl",
+          }}
+          content={{
+            markdown: `
+- Ressort: **${ressort.name}**  
+- Objekt der Darstellung: **${object.name}**  
+- Grund der Visualisierung: **${reason.name}**`,
+          }}
+          buttons={[
+            {
+              id: "result-change-selection",
+              text: "Eingaben ändern",
+              size: "small",
+              look: "tertiary",
+              href: PATH_QUIZ,
+            },
+          ]}
+        ></Box>
       </Container>
       <FeedbackForm
         ressort={ressort.name}
