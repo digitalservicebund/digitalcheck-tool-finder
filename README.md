@@ -1,8 +1,6 @@
-# Digitalcheck Tool Finder
+# Digitalcheck Werkzeugfinder aka Tool Finder
 
 [![Pipeline](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml)
-[![Scan](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/scan.yml)
-[![Secrets Check](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/secrets-check.yml)
 
 A simple web-application to enable anyone working on policy making in the german government to find the right tools for visualisation.
 
@@ -66,6 +64,7 @@ The application has
 
 - unit tests (using [Jest](https://jestjs.io/docs/getting-started))
 - end-to-end tests (using [Playwright](https://playwright.dev/docs/intro))
+- a11y tests (using [axe-playwright](https://www.npmjs.com/package/axe-playwright))
 
 **Test commands**
 
@@ -73,6 +72,7 @@ The application has
 - Run unit tests with watcher: `npm test -- --watch`
 - Run E2E tests: `npm run test:e2e`
 - Run accessibility tests: `npm run test:a11y`
+- Run all tests: `npm run tests`
 
 ### Code quality checks (linting & formatting)
 
@@ -122,7 +122,13 @@ Jede:r ist herzlich eingeladen, die Entwicklung der _digitalcheck-tool-finder_ m
 indem du Pull-Requests eröffnest, die Dokumentation erweiterst, Fragen beantwortest oder Feedback gibst.
 Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUCT_DE.md).
 
-## Contributing code
+### Updating the content
+
+To update texts or links, change [data.ts](resources/data.ts).
+
+To add images, upload them to [/resources/img](resources/img) and edit [data.ts](resources/data.ts) with the corresponding path. Don't forget to add a fitting alt text.
+
+### Contributing code
 
 🇬🇧
 Open a pull request with your changes and it will be reviewed by someone from the team. When you submit a pull request,

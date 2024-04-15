@@ -24,7 +24,7 @@ We identified two possible hosting options with their respective pros and cons:
 
 ## Decision
 
-We will host the application on **Open Telekom Cloud**, using the existing templates provided by our plattform team. The additional work (manageable) and cost (negligible) are worth the added benefit of a more custom configuration, real client side navigation and reduced regulatory overhead.
+We will host the application on **Open Telekom Cloud**, using the existing templates provided by our plattform team. The additional work (manageable, 1-2 days of migration and a few hours each months for upkeep) and cost (negligible, a few dozen euros per month) are worth the added benefit of a more custom configuration, real client side navigation and reduced regulatory overhead.
 
 ## Consequences
 
@@ -32,3 +32,5 @@ We setup nginx as a server for our application and use docker for building a shi
 We create an additional infrastrucure repository and follow the platform docs to deploy our application on the DigitalService kubernetes cluster.
 
 There is a higher risk of the application breaking down. We either need to make sure to always have an engineer not on vacation or live with that risk (someone from plattform could probably also mitigate the issue). This is especially relevant from 2025 on, as we might not work on the project anymore.
+
+We will set up a security modelling workshop to identify possible threats and requirements due to hosting on OTC.
