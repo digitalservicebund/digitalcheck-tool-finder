@@ -20,7 +20,7 @@ We also already have experience with specific libraries that aid with building f
 
 ## Decision
 
-We will use the version 18 of React as the frontend framework for developing the tool finder.
+We will use React as the frontend framework for developing the tool finder.
 
 ## Consequences
 
