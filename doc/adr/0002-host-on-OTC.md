@@ -13,7 +13,7 @@ This hosting has to generally conform with the demands of GDPR and specifically 
 We identified two possible hosting options with their respective pros and cons:
 
 1. **GitHub pages** (GH pages) is a managed solution and allows for a very simple setup and integration with the repository.
-   - The servers (and thus IP logging) are located in the United States. The BMI would be fine with that aslong as a data processing agreement is in place, however, we would need to write that data processing agreement.
+   - The servers (and thus IP logging) are located in the United States. The BMI would be fine with that aslong as a data processing agreement is in place. However, we would need to write that data processing agreement.
    - GH pages only support hash-based navigation with negative implications for scroll-to elements and source-tags for tracking.
    - GH pages only support static websites, there is no possibility of adding a backend.
    - Security headers cannot be configured on GH pages.
