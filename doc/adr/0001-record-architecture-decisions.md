@@ -20,6 +20,6 @@ See Michael Nygard's article, linked above. For a lightweight ADR toolset, see N
 
 Furthermore, some additional clarification on how we use the sections of an ADR:
 
-- The `Context` provides information about the requirements of the decision topic and states out the considerations made, like pros and cons of different options considered.
-- The `Decision` explains the reasoning of the decision such as the main arguments.
-- The `Consequences` lay out the impact on the context and the actions derived from it.
+- The `Context` provides information about the requirements of the decision topic and describes the considerations made, like pros and cons of different competing options.
+- The `Decision` clearly states what we will do and can contain a short reasoning that lead to the decision.
+- The `Consequences` lay out the resulting context; mentioning specific benefits, drawbacks and derived actions/mitigations.
