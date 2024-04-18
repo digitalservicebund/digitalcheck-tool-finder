@@ -8,7 +8,8 @@ Accepted
 
 ## Context
 
-We need to decide on whether to use TypeScript for developing the web application.
+We need to decide on whether to use TypeScript or pure JavaScript for developing the web application.
+
 TypeScript is a superset of JavaScript that adds static type definitions.
 It is widely used in the industry and has been adopted by many companies, including DigitalService, for frontend development.
 Through its type safety, TypeScript improves reliability and maintainability while adding a moderate amount of engineering overhead.
