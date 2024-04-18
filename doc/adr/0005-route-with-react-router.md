@@ -12,7 +12,7 @@ React in and of itself does not provide a routing solution.
 To handle routing in a React application, we need to choose a routing library.
 As the tool finder is a simple form-based and static single page application, we do not need a backend and want to opt for the simplest solution possible.
 Options include React Router, Remix, Next.js.
-All of those is a modern and well-maintained solution for routing in React applications.
+All of these are modern and well-maintained and come with a solution for routing in React applications.
 However, Remix and Next.js are primarily suited for more complex applications requiring backend integration or server-side rendering.
 
 ## Decision
