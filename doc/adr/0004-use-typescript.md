@@ -27,4 +27,4 @@ We will use a template that includes TypeScript support for React (see [ADR-0003
 Developers will benefit from TypeScripts type safety by having more confidence in deployments and better maintainablity.
 Development might appear to be slower due to the additional time needed for writing type definitions.
 
-Th build pipeline will be slightly slower due to the time needed for type checking.
+The build pipeline will be slightly slower due to the time needed for type checking.
