@@ -3,13 +3,13 @@ import { expect, test, type Page } from "@playwright/test";
 import { getAllObjects } from "../../src/persistance/repository";
 import * as allRoutes from "../../src/routes";
 
-async function fillOutForm(page: Page) {
+export async function fillOutForm(page: Page) {
   await page.getByLabel("Ressort").selectOption("bmi");
   await page.getByLabel("Für meinen Austausch").check();
   await page.getByLabel("Interaktionen von Akteuren").check();
 }
 
-async function submitForm(page: Page) {
+export async function submitForm(page: Page) {
   await page.getByRole("button", { name: "Werkzeug suchen" }).click();
 }
 
