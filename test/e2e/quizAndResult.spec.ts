@@ -3,15 +3,13 @@ import { expect, test, type Page } from "@playwright/test";
 import { getAllObjects } from "../../src/persistance/repository";
 import * as allRoutes from "../../src/routes";
 
-async function selectDefaultOptionsAndSubmit(
-  page: Page,
-  withVisualisationObject = true,
-) {
+async function fillOutForm(page: Page) {
   await page.getByLabel("Ressort").selectOption("bmi");
   await page.getByLabel("Für meinen Austausch").check();
-  if (withVisualisationObject) {
-    await page.getByLabel("Interaktionen von Akteuren").check();
-  }
+  await page.getByLabel("Interaktionen von Akteuren").check();
+}
+
+async function submitForm(page: Page) {
   await page.getByRole("button", { name: "Werkzeug suchen" }).click();
 }
 
@@ -29,7 +27,8 @@ test.describe("test quiz page", () => {
   test("selecting and submitting form redirects to result page", async ({
     page,
   }) => {
-    await selectDefaultOptionsAndSubmit(page);
+    await fillOutForm(page);
+    await submitForm(page);
     await expect(page).toHaveURL(allRoutes.PATH_RESULT);
   });
 
@@ -52,7 +51,8 @@ test.describe("test quiz page", () => {
 test.describe("test result page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(allRoutes.PATH_QUIZ);
-    await selectDefaultOptionsAndSubmit(page);
+    await fillOutForm(page);
+    await submitForm(page);
   });
 
   test("visualisation object leads to correct cluster", async ({ page }) => {
@@ -60,11 +60,12 @@ test.describe("test result page", () => {
 
     for (const object of allObjects) {
       await page.goto(allRoutes.PATH_QUIZ);
+      await fillOutForm(page);
       await page
         .getByRole("group", { name: "2 von 3" })
         .getByLabel(object.name)
         .check();
-      await selectDefaultOptionsAndSubmit(page, false);
+      await submitForm(page);
       await expect(
         page.getByRole("heading", { name: object.cluster }),
       ).toBeVisible();
