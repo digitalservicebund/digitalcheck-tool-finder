@@ -8,7 +8,7 @@ test.describe("test general functionality", () => {
   }) => {
     for (const route of Object.values(allRoutes)) {
       await page.goto(route);
-      await expect(page.getByLabel("breadcrumbs-menu")).toBeVisible();
+      await expect(page.getByTestId("breadcrumbs-menu")).toBeVisible();
       await expect(page).toHaveTitle(/- Digitalcheck Werkzeugfinder$/);
     }
   });
@@ -30,11 +30,11 @@ test.describe("test links", () => {
 
   test("examplary breadcrumbs are correct", async ({ page }) => {
     await page.goto(allRoutes.PATH_QUIZ);
-    await expect(page.getByLabel("breadcrumbs-menu")).toHaveText(
+    await expect(page.getByTestId("breadcrumbs-menu")).toHaveText(
       "Startseite/Werkzeugfinder für Visualisierungen",
     );
     await page.goto(allRoutes.PATH_A11Y);
-    await expect(page.getByLabel("breadcrumbs-menu")).toHaveText(
+    await expect(page.getByTestId("breadcrumbs-menu")).toHaveText(
       "Startseite/Barrierefreiheit",
     );
   });
