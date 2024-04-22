@@ -1,7 +1,5 @@
 import { expect, test } from "@playwright/test";
-
 import * as allRoutes from "../../src/routes";
-import { fillOutForm, submitForm } from "./quizAndResult.spec";
 
 test.describe("test general functionality", () => {
   test("all routes are reachable and have a breadcrumb menu + title", async ({
@@ -32,15 +30,20 @@ test.describe("test links", () => {
   test("examplary breadcrumbs are correct", async ({ page }) => {
     await page.goto(allRoutes.PATH_INFO);
     await expect(page.getByTestId("breadcrumbs-menu")).toHaveText("Startseite");
+
     await page.goto(allRoutes.PATH_QUIZ);
     await expect(page.getByTestId("breadcrumbs-menu")).toHaveText(
       "Startseite/Werkzeugfinder für Visualisierungen",
     );
-    await fillOutForm(page);
-    await submitForm(page);
+
+    await page.getByLabel("Ressort").selectOption("bmi");
+    await page.getByLabel("Für meinen Austausch").check();
+    await page.getByLabel("Interaktionen von Akteuren").check();
+    await page.getByRole("button", { name: "Werkzeug suchen" }).click();
     await expect(page.getByTestId("breadcrumbs-menu")).toHaveText(
       "Startseite/Werkzeugfinder für Visualisierungen/Empfohlenes Werkzeug",
     );
+
     await page.goto(allRoutes.PATH_A11Y);
     await expect(page.getByTestId("breadcrumbs-menu")).toHaveText(
       "Startseite/Barrierefreiheit",
