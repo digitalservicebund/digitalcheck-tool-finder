@@ -1,6 +1,6 @@
 # Deprecated: Digitalcheck Werkzeugfinder aka Tool Finder
 
-⚠️ Deprecated: This repository is no longer maintained since it is superseded by [digitalcheck-apps-infra](https://github.com/digitalservicebund/digitalcheck-apps).
+⚠️ Deprecated: This repository is no longer maintained since it is superseded by [digitalcheck-apps](https://github.com/digitalservicebund/digitalcheck-apps).
 
 ## Prerequisites
 
