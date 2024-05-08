@@ -1,8 +1,6 @@
-# Digitalcheck Werkzeugfinder aka Tool Finder
+# Deprecated: Digitalcheck Werkzeugfinder aka Tool Finder
 
-[![Pipeline](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml/badge.svg)](https://github.com/digitalservicebund/digitalcheck-tool-finder/actions/workflows/pipeline.yml)
-
-A simple web-application to enable anyone working on policy making in the german government to find the right tools for visualisation.
+⚠️ Deprecated: This repository is no longer maintained since it is superseded by [digitalcheck-apps-infra](https://github.com/digitalservicebund/digitalcheck-apps).
 
 ## Prerequisites
 
